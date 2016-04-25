@@ -23,10 +23,7 @@ namespace BazyDanych
         //m - menadżer, o - opiekun, k - kierowca
         private void loginButton_Click(object sender, EventArgs e)
         {
-            if (this.usernameTextBox.Text == "")
-                MessageBox.Show("W pole Login wpisz uprawnienia: \nm - aby zalogować się jako menadżer\no - aby zalogować się jako opiekun\nk - aby zalogować się jako kierowca");
-
-            else if (this.usernameTextBox.Text == "m")
+            if (this.usernameTextBox.Text == "m")
             {
                 obj.InitializeComponentMenadzer();
                 this.Close();
@@ -42,9 +39,11 @@ namespace BazyDanych
                 obj.InitializeComponentKierowca();
                 this.Close();
             }
-               
-            
-          
+            else
+                MessageBox.Show("W pole Login wpisz uprawnienia: \nm - aby zalogować się jako menadżer\no - aby zalogować się jako opiekun\nk - aby zalogować się jako kierowca");
+
+
+
         }
     }
 }

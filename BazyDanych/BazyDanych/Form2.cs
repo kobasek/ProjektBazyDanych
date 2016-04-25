@@ -22,53 +22,91 @@ namespace BazyDanych
             InitializeComponentStart();
         }
 
-        private void tabPage1_Click(object sender, EventArgs e)
-        {
 
+        private void InitializeComponentStart()
+        {
+            this.panelS.Visible = true;
+            this.panelM.Visible = false;
+            this.panelO.Visible = false;
+            this.panelK.Visible = false;
         }
 
-        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        public void InitializeComponentMenadzer()
         {
-            Form3 obj = new Form3();
-            obj.Show();
+            this.panelS.Visible = false;
+            this.panelM.Visible = true;
         }
 
-        private void linkLabel3_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        public void InitializeComponentOpieka()
+        {
+            this.panelS.Visible = false;
+            this.panelO.Visible = true;
+        }
+
+        public void InitializeComponentKierowca()
+        {
+            this.panelS.Visible = false;
+            this.panelK.Visible = true;
+        }
+
+        private void zalogujSLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Form1 obj = new Form1(this);
             obj.Show();
         }
 
-        private void InitializeComponentStart()
+        private void wylogujKLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            this.tabControl1.Hide();
-            this.linkLabel1.Hide();
-            this.linkLabel2.Hide();
-            this.linkLabel3.Text = "Zaloguj";
+            this.panelS.Visible = true;
+            this.panelM.Visible = false;
+            this.panelO.Visible = false;
+            this.panelK.Visible = false;
         }
 
-        public void InitializeComponentMenadzer()
+        private void powiadomieniaKLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            this.tabControl1.Show();
-            this.linkLabel1.Show();
-            this.linkLabel2.Show();
-            this.linkLabel3.Text = "Wyloguj";
+
         }
 
-        public void InitializeComponentOpieka()
+        private void profilKLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            this.tabControl1.Show();
-            this.linkLabel1.Show();
-            this.linkLabel2.Show();
-            this.linkLabel3.Text = "Wyloguj";
+
         }
 
-        public void InitializeComponentKierowca()
+        private void wylogujOLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            this.tabControl1.Show();
-            this.linkLabel1.Show();
-            this.linkLabel2.Show();
-            this.linkLabel3.Text = "Wyloguj";
+            this.panelS.Visible = true;
+            this.panelM.Visible = false;
+            this.panelO.Visible = false;
+            this.panelK.Visible = false;
+        }
+
+        private void powiadomieniaOLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+        }
+
+        private void profilOLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+        }
+
+        private void profilMLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+        }
+
+        private void wylogujMLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.panelS.Visible = true;
+            this.panelM.Visible = false;
+            this.panelO.Visible = false;
+            this.panelK.Visible = false;
+        }
+
+        private void powiadomieniaMLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
         }
     }
 }
