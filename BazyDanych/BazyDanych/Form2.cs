@@ -21,5 +21,11 @@ namespace BazyDanych
         {
 
         }
+
+        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Form3 obj = new Form3();
+            obj.Show();
+        }
     }
 }
