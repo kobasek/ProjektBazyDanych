@@ -10,15 +10,16 @@ using System.Windows.Forms;
 
 namespace BazyDanych
 {
+
+    //Okienko główne
     public partial class Form2 : Form
     {
+        public char uprawnienia;
+
         public Form2()
         {
             InitializeComponent();
-            tabControl1.Hide();
-            linkLabel1.Hide();
-            linkLabel2.Hide();
-            linkLabel3.Text = "Zaloguj";
+            InitializeComponentStart();
         }
 
         private void tabPage1_Click(object sender, EventArgs e)
@@ -36,6 +37,38 @@ namespace BazyDanych
         {
             Form1 obj = new Form1(this);
             obj.Show();
+        }
+
+        private void InitializeComponentStart()
+        {
+            this.tabControl1.Hide();
+            this.linkLabel1.Hide();
+            this.linkLabel2.Hide();
+            this.linkLabel3.Text = "Zaloguj";
+        }
+
+        public void InitializeComponentMenadzer()
+        {
+            this.tabControl1.Show();
+            this.linkLabel1.Show();
+            this.linkLabel2.Show();
+            this.linkLabel3.Text = "Wyloguj";
+        }
+
+        public void InitializeComponentOpieka()
+        {
+            this.tabControl1.Show();
+            this.linkLabel1.Show();
+            this.linkLabel2.Show();
+            this.linkLabel3.Text = "Wyloguj";
+        }
+
+        public void InitializeComponentKierowca()
+        {
+            this.tabControl1.Show();
+            this.linkLabel1.Show();
+            this.linkLabel2.Show();
+            this.linkLabel3.Text = "Wyloguj";
         }
     }
 }

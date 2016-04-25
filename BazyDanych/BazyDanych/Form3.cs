@@ -12,6 +12,7 @@ namespace BazyDanych
 {
     public partial class Form3 : Form
     {
+        //Okienko - powiadomienia
         public Form3()
         {
             InitializeComponent();

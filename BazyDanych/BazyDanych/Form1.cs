@@ -10,6 +10,7 @@ using System.Windows.Forms;
 
 namespace BazyDanych
 {
+    //Okienko odpowiedzialne za logowanie
     public partial class Form1 : Form
     {
         private Form2 obj;
@@ -19,13 +20,30 @@ namespace BazyDanych
             InitializeComponent();
         }
 
+        //m - menadżer, o - opiekun, k - kierowca
         private void loginButton_Click(object sender, EventArgs e)
         {
-            obj.tabControl1.Show();
-            obj.linkLabel1.Show();
-            obj.linkLabel2.Show();
-            obj.linkLabel3.Text = "Wyloguj";
-            this.Close();
+            if (this.usernameTextBox.Text == "")
+                MessageBox.Show("W pole Login wpisz uprawnienia: \nm - aby zalogować się jako menadżer\no - aby zalogować się jako opiekun\nk - aby zalogować się jako kierowca");
+
+            else if (this.usernameTextBox.Text == "m")
+            {
+                obj.InitializeComponentMenadzer();
+                this.Close();
+            }
+            else if (this.usernameTextBox.Text == "o")
+            {
+                obj.InitializeComponentOpieka();
+                this.Close();
+            }
+
+            else if (this.usernameTextBox.Text == "k")
+            {
+                obj.InitializeComponentKierowca();
+                this.Close();
+            }
+               
+            
           
         }
     }
