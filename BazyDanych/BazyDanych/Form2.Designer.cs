@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tabMControl = new System.Windows.Forms.TabControl();
             this.tabMPage1 = new System.Windows.Forms.TabPage();
             this.tabMPage2 = new System.Windows.Forms.TabPage();
@@ -51,16 +52,6 @@
             this.wylogujKLabel = new System.Windows.Forms.LinkLabel();
             this.panelS = new System.Windows.Forms.Panel();
             this.zalogujSLabel = new System.Windows.Forms.LinkLabel();
-            this.tabMControl.SuspendLayout();
-            this.panelM.SuspendLayout();
-            this.panelO.SuspendLayout();
-            this.tabOControl.SuspendLayout();
-            this.panelK.SuspendLayout();
-            this.tabKControl.SuspendLayout();
-            this.panelS.SuspendLayout();
-            this.components = new System.ComponentModel.Container();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
             this.deleteButton = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Column6 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
@@ -71,12 +62,13 @@
             this.Column5 = new System.Windows.Forms.DataGridViewLinkColumn();
             this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
             this.klasaTestowaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
-            this.linkLabel3 = new System.Windows.Forms.LinkLabel();
-            this.tabControl1.SuspendLayout();
-            this.tabPage1.SuspendLayout();
+            this.tabMControl.SuspendLayout();
+            this.panelM.SuspendLayout();
+            this.panelO.SuspendLayout();
+            this.tabOControl.SuspendLayout();
+            this.panelK.SuspendLayout();
+            this.tabKControl.SuspendLayout();
+            this.panelS.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.klasaTestowaBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -93,6 +85,7 @@
             // 
             // tabMPage1
             // 
+            this.tabMPage1.Controls.Add(dataGridView1);
             this.tabMPage1.Location = new System.Drawing.Point(4, 22);
             this.tabMPage1.Name = "tabMPage1";
             this.tabMPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -255,6 +248,75 @@
             // 
             // tabKPage1
             // 
+            this.tabKPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabKPage1.Name = "tabKPage1";
+            this.tabKPage1.Size = new System.Drawing.Size(852, 374);
+            this.tabKPage1.TabIndex = 0;
+            this.tabKPage1.Text = "Zlecenia";
+            // 
+            // tabKPage2
+            // 
+            this.tabKPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabKPage2.Name = "tabKPage2";
+            this.tabKPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabKPage2.Size = new System.Drawing.Size(852, 374);
+            this.tabKPage2.TabIndex = 1;
+            this.tabKPage2.Text = "Rezerwuj";
+            this.tabKPage2.UseVisualStyleBackColor = true;
+            // 
+            // profilKLabel
+            // 
+            this.profilKLabel.AutoSize = true;
+            this.profilKLabel.Location = new System.Drawing.Point(707, 9);
+            this.profilKLabel.Name = "profilKLabel";
+            this.profilKLabel.Size = new System.Drawing.Size(30, 13);
+            this.profilKLabel.TabIndex = 2;
+            this.profilKLabel.TabStop = true;
+            this.profilKLabel.Text = "Profil";
+            this.profilKLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.profilKLabel_LinkClicked);
+            // 
+            // powiadomieniaKLabel
+            // 
+            this.powiadomieniaKLabel.AutoSize = true;
+            this.powiadomieniaKLabel.Location = new System.Drawing.Point(743, 9);
+            this.powiadomieniaKLabel.Name = "powiadomieniaKLabel";
+            this.powiadomieniaKLabel.Size = new System.Drawing.Size(78, 13);
+            this.powiadomieniaKLabel.TabIndex = 1;
+            this.powiadomieniaKLabel.TabStop = true;
+            this.powiadomieniaKLabel.Text = "Powiadomienia";
+            this.powiadomieniaKLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.powiadomieniaKLabel_LinkClicked);
+            // 
+            // wylogujKLabel
+            // 
+            this.wylogujKLabel.AutoSize = true;
+            this.wylogujKLabel.Location = new System.Drawing.Point(827, 9);
+            this.wylogujKLabel.Name = "wylogujKLabel";
+            this.wylogujKLabel.Size = new System.Drawing.Size(45, 13);
+            this.wylogujKLabel.TabIndex = 0;
+            this.wylogujKLabel.TabStop = true;
+            this.wylogujKLabel.Text = "Wyloguj";
+            this.wylogujKLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.wylogujKLabel_LinkClicked);
+            // 
+            // panelS
+            // 
+            this.panelS.Controls.Add(this.zalogujSLabel);
+            this.panelS.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelS.Location = new System.Drawing.Point(0, 0);
+            this.panelS.Name = "panelS";
+            this.panelS.Size = new System.Drawing.Size(884, 461);
+            this.panelS.TabIndex = 4;
+            // 
+            // zalogujSLabel
+            // 
+            this.zalogujSLabel.AutoSize = true;
+            this.zalogujSLabel.Location = new System.Drawing.Point(830, 9);
+            this.zalogujSLabel.Name = "zalogujSLabel";
+            this.zalogujSLabel.Size = new System.Drawing.Size(42, 13);
+            this.zalogujSLabel.TabIndex = 0;
+            this.zalogujSLabel.TabStop = true;
+            this.zalogujSLabel.Text = "Zaloguj";
+            this.zalogujSLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.zalogujSLabel_LinkClicked);
+            // 
             // deleteButton
             // 
             this.deleteButton.Enabled = false;
@@ -283,7 +345,6 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(735, 366);
             this.dataGridView1.TabIndex = 0;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // Column6
             // 
@@ -340,92 +401,19 @@
             // klasaTestowaBindingSource
             // 
             this.klasaTestowaBindingSource.DataSource = typeof(BazyDanych.KlasaTestowa);
-            this.klasaTestowaBindingSource.CurrentChanged += new System.EventHandler(this.klasaTestowaBindingSource_CurrentChanged);
-            // 
-            // tabPage2
-            // 
-            // tabKPage2
-            // 
-            this.tabKPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabKPage2.Name = "tabKPage2";
-            this.tabKPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabKPage2.Size = new System.Drawing.Size(852, 374);
-            this.tabKPage2.TabIndex = 1;
-            this.tabKPage2.Text = "Rezerwuj";
-            this.tabKPage2.UseVisualStyleBackColor = true;
-            // 
-            // profilKLabel
-            // 
-            this.profilKLabel.AutoSize = true;
-            this.profilKLabel.Location = new System.Drawing.Point(707, 9);
-            this.profilKLabel.Name = "profilKLabel";
-            this.profilKLabel.Size = new System.Drawing.Size(30, 13);
-            this.profilKLabel.TabIndex = 2;
-            this.profilKLabel.TabStop = true;
-            this.profilKLabel.Text = "Profil";
-            this.profilKLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.profilKLabel_LinkClicked);
-            // 
-            // powiadomieniaKLabel
-            // 
-            this.powiadomieniaKLabel.AutoSize = true;
-            this.powiadomieniaKLabel.Location = new System.Drawing.Point(743, 9);
-            this.powiadomieniaKLabel.Name = "powiadomieniaKLabel";
-            this.powiadomieniaKLabel.Size = new System.Drawing.Size(78, 13);
-            this.powiadomieniaKLabel.TabIndex = 1;
-            this.powiadomieniaKLabel.TabStop = true;
-            this.powiadomieniaKLabel.Text = "Powiadomienia";
-            this.powiadomieniaKLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.powiadomieniaKLabel_LinkClicked);
-            // 
-            // wylogujKLabel
-            // 
-            this.wylogujKLabel.AutoSize = true;
-            this.wylogujKLabel.Location = new System.Drawing.Point(827, 9);
-            this.wylogujKLabel.Name = "wylogujKLabel";
-            this.wylogujKLabel.Size = new System.Drawing.Size(45, 13);
-            this.wylogujKLabel.TabIndex = 0;
-            this.wylogujKLabel.TabStop = true;
-            this.wylogujKLabel.Text = "Wyloguj";
-            this.wylogujKLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.wylogujKLabel_LinkClicked);
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(673, 13);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(30, 13);
-            this.linkLabel1.TabIndex = 1;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Profil";
-            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
-            // 
-            // panelS
-            // 
-            this.panelS.Controls.Add(this.zalogujSLabel);
-            this.panelS.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelS.Location = new System.Drawing.Point(0, 0);
-            this.panelS.Name = "panelS";
-            this.panelS.Size = new System.Drawing.Size(884, 461);
-            this.panelS.TabIndex = 4;
-            // 
-            // zalogujSLabel
-            // 
-            this.zalogujSLabel.AutoSize = true;
-            this.zalogujSLabel.Location = new System.Drawing.Point(830, 9);
-            this.zalogujSLabel.Name = "zalogujSLabel";
-            this.zalogujSLabel.Size = new System.Drawing.Size(42, 13);
-            this.zalogujSLabel.TabIndex = 0;
-            this.zalogujSLabel.TabStop = true;
-            this.zalogujSLabel.Text = "Zaloguj";
-            this.zalogujSLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.zalogujSLabel_LinkClicked);
             // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(884, 461);
-            this.Controls.Add(this.panelO);
             this.Controls.Add(this.panelM);
             this.Controls.Add(this.panelS);
             this.Controls.Add(this.panelK);
+            this.Controls.Add(this.panelO);
             this.Name = "Form2";
-            this.Text = "Menedżer Floty";
+            this.Text = "Form2";
+            this.Load += new System.EventHandler(this.Form2_Load);
             this.tabMControl.ResumeLayout(false);
             this.panelM.ResumeLayout(false);
             this.panelM.PerformLayout();
@@ -437,10 +425,6 @@
             this.tabKControl.ResumeLayout(false);
             this.panelS.ResumeLayout(false);
             this.panelS.PerformLayout();
-            this.Text = "Form2";
-            this.Load += new System.EventHandler(this.Form2_Load);
-            this.tabControl1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.klasaTestowaBindingSource)).EndInit();
             this.ResumeLayout(false);
@@ -475,11 +459,6 @@
         private System.Windows.Forms.Panel panelS;
         private System.Windows.Forms.LinkLabel zalogujSLabel;
         private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.LinkLabel linkLabel1;
-        private System.Windows.Forms.LinkLabel linkLabel2;
-        private System.Windows.Forms.LinkLabel linkLabel3;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.BindingSource klasaTestowaBindingSource;
         private System.Windows.Forms.Button deleteButton;

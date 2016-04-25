@@ -23,7 +23,7 @@ namespace BazyDanych
         }
 
 
-        private void InitializeComponentStart()
+        
         private void Form2_Load(object sender, EventArgs e)
         {
             klasaTestowaBindingSource.Add(new KlasaTestowa(1, "Opel", "Astra", "Janusz"));
@@ -32,11 +32,11 @@ namespace BazyDanych
   
      
         }
-       
-        
 
 
-        private void tabPage1_Click(object sender, EventArgs e)
+
+
+        private void InitializeComponentStart()
         {
             this.panelS.Visible = true;
             this.panelM.Visible = false;
