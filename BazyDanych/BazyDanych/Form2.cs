@@ -125,6 +125,7 @@ namespace BazyDanych
         private void EdytujAuto()
         {
             Form4 obj = new Form4();
+            obj.Text = "Menedżer Floty - Edytuj pojazd";
             obj.label14.Visible = false;
             obj.dateTimePicker2.Visible = false;
             obj.buttonDodajPojazd.Visible = false;
@@ -133,9 +134,10 @@ namespace BazyDanych
             obj.Show();
         }
 
-        private void UsunAuto()
+        private void DodajAuto()
         {
             Form4 obj = new Form4();
+            obj.Text = "Menedżer Floty - Dodaj pojazd";
             obj.buttonZatwierdzZmiany.Visible = false;
             obj.Show();
         }
@@ -156,7 +158,7 @@ namespace BazyDanych
 
         private void button1_Click(object sender, EventArgs e)
         {
-            UsunAuto();
+            DodajAuto();
         }
     }
 }
