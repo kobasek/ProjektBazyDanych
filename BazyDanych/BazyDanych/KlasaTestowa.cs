@@ -13,6 +13,7 @@ namespace BazyDanych
         private string modelPojazdu;
         private string opiekunPojazdu;
         private static string editButton = "Edytuj";
+        private static string showCalendar = "Wyświetl";
 
         public KlasaTestowa(int _nrPojazdu, string _markaPojazdu, string _modelPojazdu, string _opiekunPojazdu)
         {
@@ -21,6 +22,14 @@ namespace BazyDanych
             this.modelPojazdu = _modelPojazdu;
             this.opiekunPojazdu = _opiekunPojazdu;
 
+        }
+
+        public string ShowCalendar
+        {
+            get
+            {
+                return showCalendar;
+            }
         }
 
         public int NrPojazdu

@@ -403,9 +403,9 @@
 
         #endregion
 
-        private System.Windows.Forms.Button buttonDodajPojazd;
-        private System.Windows.Forms.Button buttonZapiszSzablon;
-        private System.Windows.Forms.Button buttonWczytajSzablon;
+        public System.Windows.Forms.Button buttonDodajPojazd;
+        public System.Windows.Forms.Button buttonZapiszSzablon;
+        public System.Windows.Forms.Button buttonWczytajSzablon;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBoxVIN;
@@ -432,9 +432,9 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Panel panelSzczegoly;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.Button buttonZatwierdzZmiany;
+        public System.Windows.Forms.Label label14;
+        public System.Windows.Forms.DateTimePicker dateTimePicker2;
+        public System.Windows.Forms.Button buttonZatwierdzZmiany;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label15;
     }

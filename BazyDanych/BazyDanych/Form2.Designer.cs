@@ -54,14 +54,15 @@
             this.wylogujKLabel = new System.Windows.Forms.LinkLabel();
             this.panelS = new System.Windows.Forms.Panel();
             this.zalogujSLabel = new System.Windows.Forms.LinkLabel();
-            this.klasaTestowaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.Column6 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
             this.nrPojazduDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.markaPojazduDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.modelPojazduDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.opiekunPojazduDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewLinkColumn();
-            this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.klasaTestowaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.button1 = new System.Windows.Forms.Button();
             this.tabMControl.SuspendLayout();
             this.tabMPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -78,7 +79,7 @@
             // 
             this.tabMControl.Controls.Add(this.tabMPage1);
             this.tabMControl.Controls.Add(this.tabMPage2);
-            this.tabMControl.Location = new System.Drawing.Point(12, 43);
+            this.tabMControl.Location = new System.Drawing.Point(12, 12);
             this.tabMControl.Name = "tabMControl";
             this.tabMControl.SelectedIndex = 0;
             this.tabMControl.Size = new System.Drawing.Size(860, 400);
@@ -86,6 +87,7 @@
             // 
             // tabMPage1
             // 
+            this.tabMPage1.Controls.Add(this.button1);
             this.tabMPage1.Controls.Add(this.dataGridView1);
             this.tabMPage1.Controls.Add(this.deleteButton);
             this.tabMPage1.Location = new System.Drawing.Point(4, 22);
@@ -110,7 +112,7 @@
             this.Column5,
             this.Edit});
             this.dataGridView1.DataSource = this.klasaTestowaBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 78);
+            this.dataGridView1.Location = new System.Drawing.Point(6, 6);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(744, 341);
             this.dataGridView1.TabIndex = 0;
@@ -119,7 +121,7 @@
             // deleteButton
             // 
             this.deleteButton.Enabled = false;
-            this.deleteButton.Location = new System.Drawing.Point(747, 17);
+            this.deleteButton.Location = new System.Drawing.Point(771, 38);
             this.deleteButton.Name = "deleteButton";
             this.deleteButton.Size = new System.Drawing.Size(75, 23);
             this.deleteButton.TabIndex = 2;
@@ -349,15 +351,29 @@
             this.zalogujSLabel.Text = "Zaloguj";
             this.zalogujSLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.zalogujSLabel_LinkClicked);
             // 
-            // klasaTestowaBindingSource
-            // 
-            this.klasaTestowaBindingSource.DataSource = typeof(BazyDanych.KlasaTestowa);
-            // 
             // Column6
             // 
             this.Column6.HeaderText = "Zaznacz pojazd";
             this.Column6.Name = "Column6";
             this.Column6.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "ShowCalendar";
+            this.Column5.HeaderText = "Terminarz";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            this.Column5.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Column5.Text = "Wyświetl terminarz";
+            // 
+            // Edit
+            // 
+            this.Edit.DataPropertyName = "EditButton";
+            this.Edit.HeaderText = "Edycja pojazdu";
+            this.Edit.Name = "Edit";
+            this.Edit.ReadOnly = true;
+            this.Edit.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Edit.Text = "Edytuj";
             // 
             // nrPojazduDataGridViewTextBoxColumn
             // 
@@ -391,21 +407,19 @@
             this.opiekunPojazduDataGridViewTextBoxColumn.ReadOnly = true;
             this.opiekunPojazduDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
-            // Column5
+            // klasaTestowaBindingSource
             // 
-            this.Column5.HeaderText = "Terminarz";
-            this.Column5.Name = "Column5";
-            this.Column5.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Column5.Text = "Wyświetl terminarz";
+            this.klasaTestowaBindingSource.DataSource = typeof(BazyDanych.KlasaTestowa);
             // 
-            // Edit
+            // button1
             // 
-            this.Edit.DataPropertyName = "EditButton";
-            this.Edit.HeaderText = "Edycja pojazdu";
-            this.Edit.Name = "Edit";
-            this.Edit.ReadOnly = true;
-            this.Edit.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Edit.Text = "Edytuj";
+            this.button1.Location = new System.Drawing.Point(771, 9);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "Dodaj";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Form2
             // 
@@ -474,5 +488,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn opiekunPojazduDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewLinkColumn Column5;
         private System.Windows.Forms.DataGridViewButtonColumn Edit;
+        private System.Windows.Forms.Button button1;
     }
 }

@@ -122,6 +122,23 @@ namespace BazyDanych
 
         }
 
+        private void EdytujAuto()
+        {
+            Form4 obj = new Form4();
+            obj.label14.Visible = false;
+            obj.dateTimePicker2.Visible = false;
+            obj.buttonDodajPojazd.Visible = false;
+            obj.buttonWczytajSzablon.Visible = false;
+            obj.buttonZapiszSzablon.Visible = false;
+            obj.Show();
+        }
+
+        private void UsunAuto()
+        {
+            Form4 obj = new Form4();
+            obj.buttonZatwierdzZmiany.Visible = false;
+            obj.Show();
+        }
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.ColumnIndex == 0)
@@ -129,8 +146,17 @@ namespace BazyDanych
                 deleteButton.Enabled = true;
             } else if (e.ColumnIndex == 6)
             {
-
+                EdytujAuto();
+            } else if(e.ColumnIndex == 5)
+            {
+                Form5 obj = new Form5();
+                obj.Show();
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            UsunAuto();
         }
     }
 }
