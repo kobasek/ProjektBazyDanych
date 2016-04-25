@@ -417,7 +417,7 @@
             this.Controls.Add(this.panelK);
             this.Controls.Add(this.panelO);
             this.Name = "Form2";
-            this.Text = "Form2";
+            this.Text = "Menedżer Floty";
             this.Load += new System.EventHandler(this.Form2_Load);
             this.tabMControl.ResumeLayout(false);
             this.tabMPage1.ResumeLayout(false);
