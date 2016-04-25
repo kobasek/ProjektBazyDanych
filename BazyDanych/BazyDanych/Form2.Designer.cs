@@ -86,6 +86,7 @@
             // tabMPage1
             // 
             this.tabMPage1.Controls.Add(dataGridView1);
+            this.tabMPage1.Controls.Add(deleteButton);
             this.tabMPage1.Location = new System.Drawing.Point(4, 22);
             this.tabMPage1.Name = "tabMPage1";
             this.tabMPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -458,7 +459,6 @@
         private System.Windows.Forms.LinkLabel wylogujKLabel;
         private System.Windows.Forms.Panel panelS;
         private System.Windows.Forms.LinkLabel zalogujSLabel;
-        private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.BindingSource klasaTestowaBindingSource;
         private System.Windows.Forms.Button deleteButton;
