@@ -22,6 +22,7 @@ namespace BazyDanych
             Form2 obj = new Form2();
             obj.Show();
             this.Hide();
+
         }
     }
 }
