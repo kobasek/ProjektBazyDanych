@@ -31,6 +31,8 @@
             this.components = new System.ComponentModel.Container();
             this.tabMControl = new System.Windows.Forms.TabControl();
             this.tabMPage1 = new System.Windows.Forms.TabPage();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.deleteButton = new System.Windows.Forms.Button();
             this.tabMPage2 = new System.Windows.Forms.TabPage();
             this.profilMLabel = new System.Windows.Forms.LinkLabel();
             this.powiadomieniaMLabel = new System.Windows.Forms.LinkLabel();
@@ -52,8 +54,7 @@
             this.wylogujKLabel = new System.Windows.Forms.LinkLabel();
             this.panelS = new System.Windows.Forms.Panel();
             this.zalogujSLabel = new System.Windows.Forms.LinkLabel();
-            this.deleteButton = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.klasaTestowaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.Column6 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.nrPojazduDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.markaPojazduDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -61,15 +62,15 @@
             this.opiekunPojazduDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewLinkColumn();
             this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.klasaTestowaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabMControl.SuspendLayout();
+            this.tabMPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panelM.SuspendLayout();
             this.panelO.SuspendLayout();
             this.tabOControl.SuspendLayout();
             this.panelK.SuspendLayout();
             this.tabKControl.SuspendLayout();
             this.panelS.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.klasaTestowaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -85,8 +86,8 @@
             // 
             // tabMPage1
             // 
-            this.tabMPage1.Controls.Add(dataGridView1);
-            this.tabMPage1.Controls.Add(deleteButton);
+            this.tabMPage1.Controls.Add(this.dataGridView1);
+            this.tabMPage1.Controls.Add(this.deleteButton);
             this.tabMPage1.Location = new System.Drawing.Point(4, 22);
             this.tabMPage1.Name = "tabMPage1";
             this.tabMPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -94,6 +95,36 @@
             this.tabMPage1.TabIndex = 0;
             this.tabMPage1.Text = "Opieka nad pojazdami";
             this.tabMPage1.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToOrderColumns = true;
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column6,
+            this.nrPojazduDataGridViewTextBoxColumn,
+            this.markaPojazduDataGridViewTextBoxColumn,
+            this.modelPojazduDataGridViewTextBoxColumn,
+            this.opiekunPojazduDataGridViewTextBoxColumn,
+            this.Column5,
+            this.Edit});
+            this.dataGridView1.DataSource = this.klasaTestowaBindingSource;
+            this.dataGridView1.Location = new System.Drawing.Point(6, 78);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(744, 341);
+            this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // deleteButton
+            // 
+            this.deleteButton.Enabled = false;
+            this.deleteButton.Location = new System.Drawing.Point(747, 17);
+            this.deleteButton.Name = "deleteButton";
+            this.deleteButton.Size = new System.Drawing.Size(75, 23);
+            this.deleteButton.TabIndex = 2;
+            this.deleteButton.Text = "Usuń";
+            this.deleteButton.UseVisualStyleBackColor = true;
             // 
             // tabMPage2
             // 
@@ -318,34 +349,9 @@
             this.zalogujSLabel.Text = "Zaloguj";
             this.zalogujSLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.zalogujSLabel_LinkClicked);
             // 
-            // deleteButton
+            // klasaTestowaBindingSource
             // 
-            this.deleteButton.Enabled = false;
-            this.deleteButton.Location = new System.Drawing.Point(747, 17);
-            this.deleteButton.Name = "deleteButton";
-            this.deleteButton.Size = new System.Drawing.Size(75, 23);
-            this.deleteButton.TabIndex = 2;
-            this.deleteButton.Text = "Usuń";
-            this.deleteButton.UseVisualStyleBackColor = true;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToOrderColumns = true;
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column6,
-            this.nrPojazduDataGridViewTextBoxColumn,
-            this.markaPojazduDataGridViewTextBoxColumn,
-            this.modelPojazduDataGridViewTextBoxColumn,
-            this.opiekunPojazduDataGridViewTextBoxColumn,
-            this.Column5,
-            this.Edit});
-            this.dataGridView1.DataSource = this.klasaTestowaBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 6);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(735, 366);
-            this.dataGridView1.TabIndex = 0;
+            this.klasaTestowaBindingSource.DataSource = typeof(BazyDanych.KlasaTestowa);
             // 
             // Column6
             // 
@@ -394,14 +400,12 @@
             // 
             // Edit
             // 
+            this.Edit.DataPropertyName = "EditButton";
             this.Edit.HeaderText = "Edycja pojazdu";
             this.Edit.Name = "Edit";
+            this.Edit.ReadOnly = true;
             this.Edit.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.Edit.Text = "Edytuj";
-            // 
-            // klasaTestowaBindingSource
-            // 
-            this.klasaTestowaBindingSource.DataSource = typeof(BazyDanych.KlasaTestowa);
             // 
             // Form2
             // 
@@ -416,6 +420,8 @@
             this.Text = "Form2";
             this.Load += new System.EventHandler(this.Form2_Load);
             this.tabMControl.ResumeLayout(false);
+            this.tabMPage1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panelM.ResumeLayout(false);
             this.panelM.PerformLayout();
             this.panelO.ResumeLayout(false);
@@ -426,7 +432,6 @@
             this.tabKControl.ResumeLayout(false);
             this.panelS.ResumeLayout(false);
             this.panelS.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.klasaTestowaBindingSource)).EndInit();
             this.ResumeLayout(false);
 

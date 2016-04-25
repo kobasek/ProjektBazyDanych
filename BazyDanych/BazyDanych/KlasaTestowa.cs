@@ -12,6 +12,7 @@ namespace BazyDanych
         private string markaPojazdu;
         private string modelPojazdu;
         private string opiekunPojazdu;
+        private static string editButton = "Edytuj";
 
         public KlasaTestowa(int _nrPojazdu, string _markaPojazdu, string _modelPojazdu, string _opiekunPojazdu)
         {
@@ -34,6 +35,14 @@ namespace BazyDanych
             }
         }
 
+        public string EditButton
+        {
+            get
+            {
+                return editButton;
+            }
+          
+        }
         public string MarkaPojazdu
         {
             get

@@ -121,5 +121,16 @@ namespace BazyDanych
         {
 
         }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 0)
+            {
+                deleteButton.Enabled = true;
+            } else if (e.ColumnIndex == 6)
+            {
+
+            }
+        }
     }
 }
