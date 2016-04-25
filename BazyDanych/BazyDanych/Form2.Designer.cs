@@ -197,7 +197,7 @@
             this.tabOPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabOPage1.Size = new System.Drawing.Size(852, 374);
             this.tabOPage1.TabIndex = 0;
-            this.tabOPage1.Text = "tabPage3";
+            this.tabOPage1.Text = "Zlecenia";
             this.tabOPage1.UseVisualStyleBackColor = true;
             // 
             // tabOPage2
@@ -239,7 +239,7 @@
             this.tabKPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabKPage1.Size = new System.Drawing.Size(852, 374);
             this.tabKPage1.TabIndex = 0;
-            this.tabKPage1.Text = "tabPage1";
+            this.tabKPage1.Text = "Zlecenia";
             this.tabKPage1.UseVisualStyleBackColor = true;
             // 
             // tabKPage2
@@ -249,7 +249,7 @@
             this.tabKPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabKPage2.Size = new System.Drawing.Size(852, 374);
             this.tabKPage2.TabIndex = 1;
-            this.tabKPage2.Text = "tabPage2";
+            this.tabKPage2.Text = "Rezerwuj";
             this.tabKPage2.UseVisualStyleBackColor = true;
             // 
             // profilKLabel
@@ -310,12 +310,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(884, 461);
+            this.Controls.Add(this.panelO);
             this.Controls.Add(this.panelM);
             this.Controls.Add(this.panelS);
             this.Controls.Add(this.panelK);
-            this.Controls.Add(this.panelO);
             this.Name = "Form2";
-            this.Text = "Form2";
+            this.Text = "Menedżer Floty";
             this.tabMControl.ResumeLayout(false);
             this.panelM.ResumeLayout(false);
             this.panelM.PerformLayout();
