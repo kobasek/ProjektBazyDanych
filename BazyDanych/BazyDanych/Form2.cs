@@ -15,6 +15,10 @@ namespace BazyDanych
         public Form2()
         {
             InitializeComponent();
+            tabControl1.Hide();
+            linkLabel1.Hide();
+            linkLabel2.Hide();
+            linkLabel3.Text = "Zaloguj";
         }
 
         private void tabPage1_Click(object sender, EventArgs e)
@@ -25,6 +29,12 @@ namespace BazyDanych
         private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Form3 obj = new Form3();
+            obj.Show();
+        }
+
+        private void linkLabel3_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Form1 obj = new Form1(this);
             obj.Show();
         }
     }

@@ -12,16 +12,21 @@ namespace BazyDanych
 {
     public partial class Form1 : Form
     {
-        public Form1()
+        private Form2 obj;
+        public Form1(Form2 obj)
         {
+            this.obj = obj;
             InitializeComponent();
         }
 
         private void loginButton_Click(object sender, EventArgs e)
         {
-            Form2 obj = new Form2();
-            obj.Show();
-            this.Hide();
+            obj.tabControl1.Show();
+            obj.linkLabel1.Show();
+            obj.linkLabel2.Show();
+            obj.linkLabel3.Text = "Wyloguj";
+            this.Close();
+          
         }
     }
 }
