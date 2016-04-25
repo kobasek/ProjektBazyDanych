@@ -60,6 +60,8 @@
             this.label14 = new System.Windows.Forms.Label();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.buttonZatwierdzZmiany = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label15 = new System.Windows.Forms.Label();
             this.panelSzczegoly.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -308,7 +310,7 @@
             this.panelSzczegoly.Controls.Add(this.comboBoxSkrzynia);
             this.panelSzczegoly.Controls.Add(this.comboBoxKlimatyzacja);
             this.panelSzczegoly.Controls.Add(this.label5);
-            this.panelSzczegoly.Location = new System.Drawing.Point(67, 211);
+            this.panelSzczegoly.Location = new System.Drawing.Point(67, 242);
             this.panelSzczegoly.Name = "panelSzczegoly";
             this.panelSzczegoly.Size = new System.Drawing.Size(274, 207);
             this.panelSzczegoly.TabIndex = 29;
@@ -347,11 +349,30 @@
             this.buttonZatwierdzZmiany.Text = "Zatwierdź zmiany";
             this.buttonZatwierdzZmiany.UseVisualStyleBackColor = true;
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(169, 198);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 33;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(116, 201);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(47, 13);
+            this.label15.TabIndex = 34;
+            this.label15.Text = "Opiekun";
+            // 
             // Form4
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(534, 461);
+            this.Controls.Add(this.label15);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.buttonZatwierdzZmiany);
             this.Controls.Add(this.dateTimePicker2);
             this.Controls.Add(this.label14);
@@ -414,5 +435,7 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.Button buttonZatwierdzZmiany;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label15;
     }
 }
