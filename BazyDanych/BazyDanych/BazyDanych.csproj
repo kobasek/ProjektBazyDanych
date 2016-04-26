@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddOrEditUserWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddOrEditUserWindow.Designer.cs">
+      <DependentUpon>AddOrEditUserWindow.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddOrEditOrderWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -72,11 +78,11 @@
     <Compile Include="NotificationsWindow.Designer.cs">
       <DependentUpon>NotificationsWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="AddCarWindow.cs">
+    <Compile Include="AddOrEditCarWindow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddCarWindow.Designer.cs">
-      <DependentUpon>AddCarWindow.cs</DependentUpon>
+    <Compile Include="AddOrEditCarWindow.Designer.cs">
+      <DependentUpon>AddOrEditCarWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="ScheduleWindow.cs">
       <SubType>Form</SubType>
@@ -88,6 +94,9 @@
     <Compile Include="Model.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AddOrEditUserWindow.resx">
+      <DependentUpon>AddOrEditUserWindow.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddOrEditOrderWindow.resx">
       <DependentUpon>AddOrEditOrderWindow.cs</DependentUpon>
     </EmbeddedResource>
@@ -100,8 +109,8 @@
     <EmbeddedResource Include="NotificationsWindow.resx">
       <DependentUpon>NotificationsWindow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AddCarWindow.resx">
-      <DependentUpon>AddCarWindow.cs</DependentUpon>
+    <EmbeddedResource Include="AddOrEditCarWindow.resx">
+      <DependentUpon>AddOrEditCarWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ScheduleWindow.resx">
       <DependentUpon>ScheduleWindow.cs</DependentUpon>

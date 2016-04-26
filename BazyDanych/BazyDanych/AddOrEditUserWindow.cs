@@ -10,11 +10,9 @@ using System.Windows.Forms;
 
 namespace BazyDanych
 {
-
-    //Okno dodawania oraz edycji pojazdu
-    public partial class AddCarWindow : Form
+    public partial class AddOrEditUserWindow : Form
     {
-        public AddCarWindow()
+        public AddOrEditUserWindow()
         {
             InitializeComponent();
         }

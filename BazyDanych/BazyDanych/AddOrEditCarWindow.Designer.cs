@@ -1,6 +1,6 @@
 ﻿namespace BazyDanych
 {
-    partial class AddCarWindow
+    partial class AddOrEditCarWindow
     {
         /// <summary>
         /// Required designer variable.
@@ -366,7 +366,7 @@
             this.label15.TabIndex = 34;
             this.label15.Text = "Opiekun";
             // 
-            // Form4
+            // AddCarWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -392,8 +392,8 @@
             this.Controls.Add(this.buttonWczytajSzablon);
             this.Controls.Add(this.buttonZapiszSzablon);
             this.Controls.Add(this.buttonDodajPojazd);
-            this.Name = "Form4";
-            this.Text = "Menedżer Floty - Dodaj pojazd";
+            this.Name = "AddCarWindow";
+            this.Text = "Menadżer Floty - Dodaj pojazd";
             this.panelSzczegoly.ResumeLayout(false);
             this.panelSzczegoly.PerformLayout();
             this.ResumeLayout(false);
