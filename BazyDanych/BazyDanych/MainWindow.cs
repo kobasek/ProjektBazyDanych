@@ -231,5 +231,14 @@ namespace BazyDanych
             obj.button2.Visible = false;
             obj.Show();
         }
+
+        private void kTabelaRezerwacje_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 7)
+            {
+                Form1 obj = new Form1();
+                obj.Show();
+            }
+        }
     }
 }
