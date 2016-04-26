@@ -10,10 +10,11 @@ using System.Windows.Forms;
 
 namespace BazyDanych
 {
-    public partial class Form3 : Form
+    public partial class ScheduleWindow : Form
     {
-        //Okienko - powiadomienia
-        public Form3()
+
+        //Terminarz
+        public ScheduleWindow()
         {
             InitializeComponent();
         }

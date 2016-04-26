@@ -12,11 +12,11 @@ namespace BazyDanych
 {
 
     //Okienko główne
-    public partial class Form2 : Form
+    public partial class MainWindow : Form
     {
         public char uprawnienia;
 
-        public Form2()
+        public MainWindow()
         {
             InitializeComponent();
             InitializeComponentStart();
@@ -64,7 +64,7 @@ namespace BazyDanych
 
         private void zalogujSLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Form1 obj = new Form1(this);
+            LoginWindow obj = new LoginWindow(this);
             obj.Show();
         }
 
@@ -124,7 +124,7 @@ namespace BazyDanych
 
         private void EdytujAuto()
         {
-            Form4 obj = new Form4();
+            AddCarWindow obj = new AddCarWindow();
             obj.Text = "Menedżer Floty - Edytuj pojazd";
             obj.label14.Visible = false;
             obj.dateTimePicker2.Visible = false;
@@ -136,7 +136,7 @@ namespace BazyDanych
 
         private void DodajAuto()
         {
-            Form4 obj = new Form4();
+            AddCarWindow obj = new AddCarWindow();
             obj.Text = "Menedżer Floty - Dodaj pojazd";
             obj.buttonZatwierdzZmiany.Visible = false;
             obj.Show();
@@ -151,7 +151,7 @@ namespace BazyDanych
                 EdytujAuto();
             } else if(e.ColumnIndex == 5)
             {
-                Form5 obj = new Form5();
+                ScheduleWindow obj = new ScheduleWindow();
                 obj.Show();
             }
         }

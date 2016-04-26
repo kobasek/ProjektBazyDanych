@@ -1,6 +1,6 @@
 ﻿namespace BazyDanych
 {
-    partial class Form5
+    partial class ScheduleWindow
     {
         /// <summary>
         /// Required designer variable.

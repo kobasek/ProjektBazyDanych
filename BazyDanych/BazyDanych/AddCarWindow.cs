@@ -12,9 +12,9 @@ namespace BazyDanych
 {
 
     //Okno dodawania oraz edycji pojazdu
-    public partial class Form4 : Form
+    public partial class AddCarWindow : Form
     {
-        public Form4()
+        public AddCarWindow()
         {
             InitializeComponent();
         }

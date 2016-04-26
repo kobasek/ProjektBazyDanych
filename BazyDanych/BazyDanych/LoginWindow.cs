@@ -11,10 +11,10 @@ using System.Windows.Forms;
 namespace BazyDanych
 {
     //Okienko odpowiedzialne za logowanie
-    public partial class Form1 : Form
+    public partial class LoginWindow : Form
     {
-        private Form2 obj;
-        public Form1(Form2 obj)
+        private MainWindow obj;
+        public LoginWindow(MainWindow obj)
         {
             this.obj = obj;
             InitializeComponent();

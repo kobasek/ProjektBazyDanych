@@ -10,11 +10,10 @@ using System.Windows.Forms;
 
 namespace BazyDanych
 {
-    public partial class Form5 : Form
+    public partial class NotificationsWindow : Form
     {
-
-        //Terminarz
-        public Form5()
+        //Okienko - powiadomienia
+        public NotificationsWindow()
         {
             InitializeComponent();
         }

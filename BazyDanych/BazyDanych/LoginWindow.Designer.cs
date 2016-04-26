@@ -1,6 +1,6 @@
 ﻿namespace BazyDanych
 {
-    partial class Form1
+    partial class LoginWindow
     {
         /// <summary>
         /// Required designer variable.

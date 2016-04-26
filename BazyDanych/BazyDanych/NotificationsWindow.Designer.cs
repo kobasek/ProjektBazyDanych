@@ -1,6 +1,6 @@
 ﻿namespace BazyDanych
 {
-    partial class Form3
+    partial class NotificationsWindow
     {
         /// <summary>
         /// Required designer variable.

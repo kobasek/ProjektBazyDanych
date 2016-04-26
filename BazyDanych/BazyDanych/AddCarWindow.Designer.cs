@@ -1,6 +1,6 @@
 ﻿namespace BazyDanych
 {
-    partial class Form4
+    partial class AddCarWindow
     {
         /// <summary>
         /// Required designer variable.
