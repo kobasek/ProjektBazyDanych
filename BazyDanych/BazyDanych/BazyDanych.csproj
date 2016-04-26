@@ -46,10 +46,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Address.cs" />
     <Compile Include="Brand.cs" />
     <Compile Include="Car.cs" />
-    <Compile Include="DrivingLicense.cs" />
     <Compile Include="LoginWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -74,12 +72,6 @@
     <Compile Include="AddCarWindow.Designer.cs">
       <DependentUpon>AddCarWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="ProfileInfo.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ProfileInfo.Designer.cs">
-      <DependentUpon>ProfileInfo.cs</DependentUpon>
-    </Compile>
     <Compile Include="ScheduleWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,7 +82,6 @@
     <Compile Include="Model.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UserData.cs" />
     <EmbeddedResource Include="LoginWindow.resx">
       <DependentUpon>LoginWindow.cs</DependentUpon>
     </EmbeddedResource>
@@ -102,9 +93,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AddCarWindow.resx">
       <DependentUpon>AddCarWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ProfileInfo.resx">
-      <DependentUpon>ProfileInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ScheduleWindow.resx">
       <DependentUpon>ScheduleWindow.cs</DependentUpon>
