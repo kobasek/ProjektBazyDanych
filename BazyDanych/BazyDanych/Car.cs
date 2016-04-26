@@ -19,8 +19,9 @@ namespace BazyDanych
         private bool automaticGearBox;
         private string VIN;
         private bool assistance;
+        private Model model;
 
-        public Car(DateTime dateOfPurchase, DateTime dateOfScrapping, bool airCondition, Decimal costOfPurchase, string registrationNumber, float engineCapacity, string typeOfBody, string typeOfFuel, bool automaticGearBox, string VIN, bool assistance)
+        public Car(DateTime dateOfPurchase, DateTime dateOfScrapping, bool airCondition, Decimal costOfPurchase, string registrationNumber, float engineCapacity, string typeOfBody, string typeOfFuel, bool automaticGearBox, string VIN, bool assistance, Model model)
         {
             this.dateOfPurchase = dateOfPurchase;
             this.dateOfScrapping = dateOfScrapping;
@@ -33,6 +34,7 @@ namespace BazyDanych
             this.automaticGearBox = automaticGearBox;
             this.VIN = VIN;
             this.assistance = assistance;
+            this.model = model;
         }
     }
 }
