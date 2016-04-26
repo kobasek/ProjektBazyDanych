@@ -58,6 +58,12 @@
     <Compile Include="AddOrEditOrderWindow.Designer.cs">
       <DependentUpon>AddOrEditOrderWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddServiceWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddServiceWindow.Designer.cs">
+      <DependentUpon>AddServiceWindow.cs</DependentUpon>
+    </Compile>
     <Compile Include="Brand.cs" />
     <Compile Include="Car.cs" />
     <Compile Include="CarDetailsWindow.cs">
@@ -111,6 +117,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AddOrEditOrderWindow.resx">
       <DependentUpon>AddOrEditOrderWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddServiceWindow.resx">
+      <DependentUpon>AddServiceWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CarDetailsWindow.resx">
       <DependentUpon>CarDetailsWindow.cs</DependentUpon>

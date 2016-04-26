@@ -58,6 +58,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.comboBox4 = new System.Windows.Forms.ComboBox();
             this.label14 = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
@@ -329,11 +330,22 @@
             this.label14.TabIndex = 30;
             this.label14.Text = "Kierowca";
             // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(545, 165);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(95, 45);
+            this.button3.TabIndex = 32;
+            this.button3.Text = "Dodaj serwis";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // AddOrEditOrderWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(710, 541);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.comboBox4);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.button2);
@@ -405,5 +417,6 @@
         public System.Windows.Forms.Button button2;
         private System.Windows.Forms.ComboBox comboBox4;
         private System.Windows.Forms.Label label14;
+        public System.Windows.Forms.Button button3;
     }
 }
