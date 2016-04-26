@@ -14,12 +14,14 @@ namespace BazyDanych
     //Okienko główne
     public partial class MainWindow : Form
     {
-        public char uprawnienia;
-
+        private bool isLogged;
         public MainWindow()
         {
             InitializeComponent();
             InitializeComponentStart();
+            isLogged = false;
+            profilLabel.Visible = false;
+            powiadomieniaLabel.Visible = false;
         }
 
 
@@ -46,80 +48,46 @@ namespace BazyDanych
 
         public void InitializeComponentMenadzer()
         {
-            this.panelS.Visible = false;
             this.panelM.Visible = true;
+            this.powiadomieniaLabel.Visible = true;
+            this.profilLabel.Visible = true;
+            this.logowanieLabel.Text = "Wyloguj";
         }
 
         public void InitializeComponentOpieka()
         {
-            this.panelS.Visible = false;
             this.panelO.Visible = true;
+            this.powiadomieniaLabel.Visible = true;
+            this.profilLabel.Visible = true;
+            this.logowanieLabel.Text = "Wyloguj";
         }
 
         public void InitializeComponentKierowca()
         {
-            this.panelS.Visible = false;
             this.panelK.Visible = true;
+            this.powiadomieniaLabel.Visible = true;
+            this.profilLabel.Visible = true;
+            this.logowanieLabel.Text = "Wyloguj";
         }
 
         private void zalogujSLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            LoginWindow obj = new LoginWindow(this);
-            obj.Show();
-        }
-
-        private void wylogujKLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            this.panelS.Visible = true;
-            this.panelM.Visible = false;
-            this.panelO.Visible = false;
-            this.panelK.Visible = false;
-        }
-
-        private void powiadomieniaKLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-
-        }
-
-        private void profilKLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-
-        }
-
-        private void wylogujOLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            this.panelS.Visible = true;
-            this.panelM.Visible = false;
-            this.panelO.Visible = false;
-            this.panelK.Visible = false;
-        }
-
-        private void powiadomieniaOLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-
-        }
-
-        private void profilOLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-
-        }
-
-        private void profilMLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-
-        }
-
-        private void wylogujMLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            this.panelS.Visible = true;
-            this.panelM.Visible = false;
-            this.panelO.Visible = false;
-            this.panelK.Visible = false;
-        }
-
-        private void powiadomieniaMLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-
+            if (!isLogged)
+            {
+                LoginWindow obj = new LoginWindow(this);
+                isLogged = true;
+                obj.Show();
+            }
+            else
+            {
+                this.panelM.Visible = false;
+                this.panelO.Visible = false;
+                this.panelK.Visible = false;
+                this.logowanieLabel.Text = "Zaloguj";
+                this.powiadomieniaLabel.Visible = false;
+                this.profilLabel.Visible = false;
+                isLogged = false;
+            }
         }
 
         private void EdytujAuto()
@@ -164,11 +132,6 @@ namespace BazyDanych
         private void button1_Click(object sender, EventArgs e)
         {
             DodajAuto();
-        }
-
-        private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
-        {
-
         }
 
         private void klasaTestowaBindingSource_CurrentChanged(object sender, EventArgs e)
