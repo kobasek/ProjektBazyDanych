@@ -41,6 +41,7 @@ namespace BazyDanych
         private void InitializeComponentStart()
         {
             this.panelS.Visible = true;
+            this.panelS.SendToBack();
             this.panelM.Visible = false;
             this.panelO.Visible = false;
             this.panelK.Visible = false;
@@ -240,6 +241,12 @@ namespace BazyDanych
                 ScheduleWindow obj = new ScheduleWindow();
                 obj.Show();
             }
+        }
+
+        private void powiadomieniaLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            NotificationsWindow obj = new NotificationsWindow();
+            obj.Show();
         }
     }
 }
