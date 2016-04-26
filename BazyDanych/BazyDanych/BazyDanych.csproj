@@ -90,6 +90,12 @@
     <Compile Include="AddOrEditCarWindow.Designer.cs">
       <DependentUpon>AddOrEditCarWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="ReservationWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReservationWindow.Designer.cs">
+      <DependentUpon>ReservationWindow.cs</DependentUpon>
+    </Compile>
     <Compile Include="ScheduleWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -120,6 +126,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AddOrEditCarWindow.resx">
       <DependentUpon>AddOrEditCarWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReservationWindow.resx">
+      <DependentUpon>ReservationWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ScheduleWindow.resx">
       <DependentUpon>ScheduleWindow.cs</DependentUpon>

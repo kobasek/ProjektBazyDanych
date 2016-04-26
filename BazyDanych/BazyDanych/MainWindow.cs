@@ -149,9 +149,14 @@ namespace BazyDanych
             } else if (e.ColumnIndex == 7)
             {
                 EdytujAuto();
-            } else if(e.ColumnIndex == 5)
+            } else if(e.ColumnIndex == 6)
             {
                 ScheduleWindow obj = new ScheduleWindow();
+                obj.Show();
+            }
+            else if (e.ColumnIndex == 5)
+            {
+                CarDetailsWindow obj = new CarDetailsWindow();
                 obj.Show();
             }
         }
@@ -173,7 +178,11 @@ namespace BazyDanych
 
         private void oTabelaPojazdy_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            if (e.ColumnIndex == 5)
+            {
+                CarDetailsWindow obj = new CarDetailsWindow();
+                obj.Show();
+            }
         }
 
         private void oTabelaZlecenia_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -234,9 +243,15 @@ namespace BazyDanych
 
         private void kTabelaRezerwacje_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == 7)
+            if (e.ColumnIndex == 5)
             {
-                
+                CarDetailsWindow obj = new CarDetailsWindow();
+                obj.Show();
+            }
+            else if (e.ColumnIndex == 7)
+            {
+                ReservationWindow obj = new ReservationWindow();
+                obj.Show();
             }
         }
     }
