@@ -333,7 +333,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(721, 541);
+            this.ClientSize = new System.Drawing.Size(710, 541);
             this.Controls.Add(this.comboBox4);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.button2);
@@ -365,7 +365,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
             this.Name = "AddOrEditOrderWindow";
-            this.Text = "Menedżer Floty - Dodaj zlecenie";
+            this.Text = "Menadżer Floty - Dodaj zlecenie";
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();

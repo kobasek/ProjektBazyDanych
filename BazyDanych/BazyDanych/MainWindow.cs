@@ -124,7 +124,7 @@ namespace BazyDanych
 
         private void EdytujAuto()
         {
-            AddCarWindow obj = new AddCarWindow();
+            AddOrEditCarWindow obj = new AddOrEditCarWindow();
             obj.Text = "Menedżer Floty - Edytuj pojazd";
             obj.label14.Visible = false;
             obj.dateTimePicker2.Visible = false;
@@ -136,7 +136,7 @@ namespace BazyDanych
 
         private void DodajAuto()
         {
-            AddCarWindow obj = new AddCarWindow();
+            AddOrEditCarWindow obj = new AddOrEditCarWindow();
             obj.Text = "Menedżer Floty - Dodaj pojazd";
             obj.buttonZatwierdzZmiany.Visible = false;
             obj.Show();
