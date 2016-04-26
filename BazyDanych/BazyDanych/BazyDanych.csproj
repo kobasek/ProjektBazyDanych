@@ -60,7 +60,9 @@
     </Compile>
     <Compile Include="Brand.cs" />
     <Compile Include="Car.cs" />
-    <Compile Include="CarDetailsWindow.cs" />
+    <Compile Include="CarDetailsWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="CarDetailsWindow.Designer.cs">
       <DependentUpon>CarDetailsWindow.cs</DependentUpon>
     </Compile>
@@ -103,6 +105,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AddOrEditOrderWindow.resx">
       <DependentUpon>AddOrEditOrderWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CarDetailsWindow.resx">
+      <DependentUpon>CarDetailsWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginWindow.resx">
       <DependentUpon>LoginWindow.cs</DependentUpon>
