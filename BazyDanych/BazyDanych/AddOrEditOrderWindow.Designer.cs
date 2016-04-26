@@ -300,6 +300,7 @@
             this.button1.TabIndex = 28;
             this.button1.Text = "Edytuj zlecenie";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -309,6 +310,7 @@
             this.button2.TabIndex = 29;
             this.button2.Text = "Dodaj zlecenie";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // comboBox4
             // 
@@ -399,8 +401,8 @@
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        public System.Windows.Forms.Button button1;
+        public System.Windows.Forms.Button button2;
         private System.Windows.Forms.ComboBox comboBox4;
         private System.Windows.Forms.Label label14;
     }

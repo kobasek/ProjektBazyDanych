@@ -175,5 +175,39 @@ namespace BazyDanych
         {
 
         }
+
+        private void oTabelaZlecenia_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 5)
+            {
+                AddOrEditOrderWindow obj = new AddOrEditOrderWindow();
+                obj.button2.Visible = false;
+                obj.Show();
+            }
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            AddOrEditOrderWindow obj = new AddOrEditOrderWindow();
+            obj.button1.Visible = false;
+            obj.Show();
+        }
+
+        private void mTabelaZlecenia_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 6)
+            {
+                AddOrEditOrderWindow obj = new AddOrEditOrderWindow();
+                obj.button2.Visible = false;
+                obj.Show();
+            }
+        }
+
+        private void addButtonMZlecenia_Click(object sender, EventArgs e)
+        {
+            AddOrEditOrderWindow obj = new AddOrEditOrderWindow();
+            obj.button1.Visible = false;
+            obj.Show();
+        }
     }
 }
