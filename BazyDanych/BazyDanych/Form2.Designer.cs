@@ -31,7 +31,11 @@
             this.components = new System.ComponentModel.Container();
             this.tabMControl = new System.Windows.Forms.TabControl();
             this.tabMPage1 = new System.Windows.Forms.TabPage();
+            this.button1 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Column6 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
             this.deleteButton = new System.Windows.Forms.Button();
             this.tabMPage2 = new System.Windows.Forms.TabPage();
             this.profilMLabel = new System.Windows.Forms.LinkLabel();
@@ -54,15 +58,11 @@
             this.wylogujKLabel = new System.Windows.Forms.LinkLabel();
             this.panelS = new System.Windows.Forms.Panel();
             this.zalogujSLabel = new System.Windows.Forms.LinkLabel();
-            this.Column6 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewLinkColumn();
-            this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
             this.nrPojazduDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.markaPojazduDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.modelPojazduDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.opiekunPojazduDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.klasaTestowaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.button1 = new System.Windows.Forms.Button();
             this.tabMControl.SuspendLayout();
             this.tabMPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -98,6 +98,16 @@
             this.tabMPage1.Text = "Opieka nad pojazdami";
             this.tabMPage1.UseVisualStyleBackColor = true;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(771, 9);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "Dodaj";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToOrderColumns = true;
@@ -117,6 +127,30 @@
             this.dataGridView1.Size = new System.Drawing.Size(744, 341);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "Zaznacz pojazd";
+            this.Column6.Name = "Column6";
+            this.Column6.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "ShowCalendar";
+            this.Column5.HeaderText = "Terminarz";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            this.Column5.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Column5.Text = "Wyświetl terminarz";
+            // 
+            // Edit
+            // 
+            this.Edit.DataPropertyName = "EditButton";
+            this.Edit.HeaderText = "Edycja pojazdu";
+            this.Edit.Name = "Edit";
+            this.Edit.ReadOnly = true;
+            this.Edit.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Edit.Text = "Edytuj";
             // 
             // deleteButton
             // 
@@ -255,7 +289,7 @@
             this.tabOPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabOPage2.Size = new System.Drawing.Size(852, 374);
             this.tabOPage2.TabIndex = 1;
-            this.tabOPage2.Text = "tabPage4";
+            this.tabOPage2.Text = "Opieka";
             this.tabOPage2.UseVisualStyleBackColor = true;
             // 
             // panelK
@@ -351,30 +385,6 @@
             this.zalogujSLabel.Text = "Zaloguj";
             this.zalogujSLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.zalogujSLabel_LinkClicked);
             // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "Zaznacz pojazd";
-            this.Column6.Name = "Column6";
-            this.Column6.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // Column5
-            // 
-            this.Column5.DataPropertyName = "ShowCalendar";
-            this.Column5.HeaderText = "Terminarz";
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            this.Column5.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Column5.Text = "Wyświetl terminarz";
-            // 
-            // Edit
-            // 
-            this.Edit.DataPropertyName = "EditButton";
-            this.Edit.HeaderText = "Edycja pojazdu";
-            this.Edit.Name = "Edit";
-            this.Edit.ReadOnly = true;
-            this.Edit.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Edit.Text = "Edytuj";
-            // 
             // nrPojazduDataGridViewTextBoxColumn
             // 
             this.nrPojazduDataGridViewTextBoxColumn.DataPropertyName = "NrPojazdu";
@@ -410,26 +420,17 @@
             // klasaTestowaBindingSource
             // 
             this.klasaTestowaBindingSource.DataSource = typeof(BazyDanych.KlasaTestowa);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(771, 9);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Dodaj";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.klasaTestowaBindingSource.CurrentChanged += new System.EventHandler(this.klasaTestowaBindingSource_CurrentChanged);
             // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(884, 461);
+            this.Controls.Add(this.panelO);
             this.Controls.Add(this.panelM);
             this.Controls.Add(this.panelS);
             this.Controls.Add(this.panelK);
-            this.Controls.Add(this.panelO);
             this.Name = "Form2";
             this.Text = "Menedżer Floty";
             this.Load += new System.EventHandler(this.Form2_Load);

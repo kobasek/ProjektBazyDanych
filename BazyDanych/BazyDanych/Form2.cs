@@ -160,5 +160,15 @@ namespace BazyDanych
         {
             DodajAuto();
         }
+
+        private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+
+        }
+
+        private void klasaTestowaBindingSource_CurrentChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
