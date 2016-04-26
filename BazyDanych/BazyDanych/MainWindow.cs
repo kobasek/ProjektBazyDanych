@@ -41,6 +41,7 @@ namespace BazyDanych
         private void InitializeComponentStart()
         {
             this.panelS.Visible = true;
+            this.panelS.SendToBack();
             this.panelM.Visible = false;
             this.panelO.Visible = false;
             this.panelK.Visible = false;
