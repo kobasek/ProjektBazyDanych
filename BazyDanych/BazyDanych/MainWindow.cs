@@ -236,8 +236,7 @@ namespace BazyDanych
         {
             if (e.ColumnIndex == 7)
             {
-                Form1 obj = new Form1();
-                obj.Show();
+                
             }
         }
     }
