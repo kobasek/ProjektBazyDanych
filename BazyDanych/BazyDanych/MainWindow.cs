@@ -145,8 +145,8 @@ namespace BazyDanych
         {
             if (e.ColumnIndex == 0)
             {
-                deleteButton.Enabled = true;
-            } else if (e.ColumnIndex == 6)
+                deleteButtonMPojazdy.Enabled = true;
+            } else if (e.ColumnIndex == 7)
             {
                 EdytujAuto();
             } else if(e.ColumnIndex == 5)
@@ -167,6 +167,11 @@ namespace BazyDanych
         }
 
         private void klasaTestowaBindingSource_CurrentChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void oTabelaPojazdy_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
