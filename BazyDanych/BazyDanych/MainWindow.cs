@@ -242,5 +242,11 @@ namespace BazyDanych
                 obj.Show();
             }
         }
+
+        private void powiadomieniaLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            NotificationsWindow obj = new NotificationsWindow();
+            obj.Show();
+        }
     }
 }
