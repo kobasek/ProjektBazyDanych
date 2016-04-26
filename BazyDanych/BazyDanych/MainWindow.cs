@@ -198,6 +198,7 @@ namespace BazyDanych
             if (e.ColumnIndex == 6)
             {
                 AddOrEditOrderWindow obj = new AddOrEditOrderWindow();
+                obj.Text = "Menedżer Floty - Edytuj Zlecenie";
                 obj.button2.Visible = false;
                 obj.Show();
             }
@@ -206,7 +207,28 @@ namespace BazyDanych
         private void addButtonMZlecenia_Click(object sender, EventArgs e)
         {
             AddOrEditOrderWindow obj = new AddOrEditOrderWindow();
+            obj.Text = "Menedżer Floty - Dodaj Zlecenie";
             obj.button1.Visible = false;
+            obj.Show();
+        }
+
+        private void mTabelaKierowcy_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 7)
+            {
+                AddOrEditUserWindow obj = new AddOrEditUserWindow();
+                obj.Text = "Menedżer Floty - Edytuj Użytkownika";
+                obj.button1.Visible = false;
+                obj.Show();
+            }
+
+        }
+
+        private void addButtonMKierowcy_Click(object sender, EventArgs e)
+        {
+            AddOrEditUserWindow obj = new AddOrEditUserWindow();
+            obj.Text = "Menedżer Floty - Dodaj Użytkownika";
+            obj.button2.Visible = false;
             obj.Show();
         }
     }
