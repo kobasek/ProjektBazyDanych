@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
             this.tabMControl = new System.Windows.Forms.TabControl();
             this.mPojazdy = new System.Windows.Forms.TabPage();
             this.addButtonMPojazdy = new System.Windows.Forms.Button();
@@ -87,6 +88,7 @@
             this.profilLabel = new System.Windows.Forms.LinkLabel();
             this.powiadomieniaLabel = new System.Windows.Forms.LinkLabel();
             this.logowanieLabel = new System.Windows.Forms.LinkLabel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.nrPojazduDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.markaPojazduDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.modelPojazduDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -141,6 +143,7 @@
             this.tabKPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kTabelaRezerwacje)).BeginInit();
             this.panelS.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.klasaTestowaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -706,6 +709,7 @@
             // 
             // panelS
             // 
+            this.panelS.Controls.Add(this.pictureBox1);
             this.panelS.Controls.Add(this.profilLabel);
             this.panelS.Controls.Add(this.powiadomieniaLabel);
             this.panelS.Controls.Add(this.logowanieLabel);
@@ -746,6 +750,16 @@
             this.logowanieLabel.TabStop = true;
             this.logowanieLabel.Text = "Zaloguj";
             this.logowanieLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.zalogujSLabel_LinkClicked);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(150, 87);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(600, 259);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabStop = false;
             // 
             // nrPojazduDataGridViewTextBoxColumn
             // 
@@ -997,9 +1011,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(884, 461);
+            this.Controls.Add(this.panelS);
             this.Controls.Add(this.panelM);
             this.Controls.Add(this.panelK);
-            this.Controls.Add(this.panelS);
             this.Controls.Add(this.panelO);
             this.Name = "MainWindow";
             this.Text = "Menedżer Floty";
@@ -1028,6 +1042,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.kTabelaRezerwacje)).EndInit();
             this.panelS.ResumeLayout(false);
             this.panelS.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.klasaTestowaBindingSource)).EndInit();
             this.ResumeLayout(false);
 
@@ -1137,5 +1152,6 @@
         private System.Windows.Forms.DataGridViewButtonColumn Edit;
         private System.Windows.Forms.LinkLabel profilLabel;
         private System.Windows.Forms.LinkLabel powiadomieniaLabel;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
