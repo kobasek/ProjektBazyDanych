@@ -183,6 +183,11 @@ namespace BazyDanych
                 CarDetailsWindow obj = new CarDetailsWindow();
                 obj.Show();
             }
+            else if (e.ColumnIndex == 4)
+            {
+                ScheduleWindow obj = new ScheduleWindow();
+                obj.Show();
+            }
         }
 
         private void oTabelaZlecenia_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -230,6 +235,11 @@ namespace BazyDanych
                 obj.button1.Visible = false;
                 obj.Show();
             }
+            else if (e.ColumnIndex == 5)
+            {
+                ScheduleWindow obj = new ScheduleWindow();
+                obj.Show();
+            }
 
         }
 
@@ -248,9 +258,23 @@ namespace BazyDanych
                 CarDetailsWindow obj = new CarDetailsWindow();
                 obj.Show();
             }
+            else if (e.ColumnIndex == 6)
+            {
+                ScheduleWindow obj = new ScheduleWindow();
+                obj.Show();
+            }
             else if (e.ColumnIndex == 7)
             {
                 ReservationWindow obj = new ReservationWindow();
+                obj.Show();
+            }
+        }
+
+        private void oTabelaKierowcy_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 4)
+            {
+                ScheduleWindow obj = new ScheduleWindow();
                 obj.Show();
             }
         }
