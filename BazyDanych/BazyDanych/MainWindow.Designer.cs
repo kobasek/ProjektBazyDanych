@@ -30,20 +30,35 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
-            this.tabMControl = new System.Windows.Forms.TabControl();
+            this.panelS = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.profilLabel = new System.Windows.Forms.LinkLabel();
+            this.powiadomieniaLabel = new System.Windows.Forms.LinkLabel();
+            this.logowanieLabel = new System.Windows.Forms.LinkLabel();
+            this.panelM = new System.Windows.Forms.Panel();
+            this.tableControlM = new System.Windows.Forms.TabControl();
             this.mPojazdy = new System.Windows.Forms.TabPage();
             this.addButtonMPojazdy = new System.Windows.Forms.Button();
-            this.mTabelaPojazdy = new System.Windows.Forms.DataGridView();
+            this.tableCarsM = new System.Windows.Forms.DataGridView();
             this.Column6 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.nrPojazduDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.markaPojazduDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.modelPojazduDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.opiekunPojazduDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewLinkColumn();
             this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.klasaTestowaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.deleteButtonMPojazdy = new System.Windows.Forms.Button();
             this.mKierowcy = new System.Windows.Forms.TabPage();
             this.addButtonMKierowcy = new System.Windows.Forms.Button();
             this.deleteButtonMKierowcy = new System.Windows.Forms.Button();
             this.mTabelaKierowcy = new System.Windows.Forms.DataGridView();
             this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewLinkColumn1 = new System.Windows.Forms.DataGridViewLinkColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.dataGridViewButtonColumn1 = new System.Windows.Forms.DataGridViewButtonColumn();
@@ -52,6 +67,10 @@
             this.deleteButtonMZlecenia = new System.Windows.Forms.Button();
             this.mTabelaZlecenia = new System.Windows.Forms.DataGridView();
             this.dataGridViewCheckBoxColumn2 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewLinkColumn2 = new System.Windows.Forms.DataGridViewLinkColumn();
             this.dataGridViewButtonColumn2 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.mFinanse = new System.Windows.Forms.TabPage();
@@ -95,11 +114,14 @@
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.label1 = new System.Windows.Forms.Label();
-            this.panelM = new System.Windows.Forms.Panel();
             this.panelO = new System.Windows.Forms.Panel();
-            this.tabOControl = new System.Windows.Forms.TabControl();
+            this.tableControlO = new System.Windows.Forms.TabControl();
             this.oPojazdy = new System.Windows.Forms.TabPage();
             this.oTabelaPojazdy = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewLinkColumn3 = new System.Windows.Forms.DataGridViewLinkColumn();
             this.dataGridViewButtonColumn3 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.oZlecenia = new System.Windows.Forms.TabPage();
@@ -107,62 +129,44 @@
             this.button1 = new System.Windows.Forms.Button();
             this.oTabelaZlecenia = new System.Windows.Forms.DataGridView();
             this.dataGridViewCheckBoxColumn4 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewButtonColumn5 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.dataGridViewButtonColumn6 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.oKierowcy = new System.Windows.Forms.TabPage();
             this.oTabelaKierowcy = new System.Windows.Forms.DataGridView();
-            this.dataGridViewLinkColumn4 = new System.Windows.Forms.DataGridViewLinkColumn();
-            this.dataGridViewButtonColumn4 = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.panelK = new System.Windows.Forms.Panel();
-            this.tabKControl = new System.Windows.Forms.TabControl();
-            this.tabKPage1 = new System.Windows.Forms.TabPage();
-            this.kTabelaZlecenia = new System.Windows.Forms.DataGridView();
-            this.dataGridViewLinkColumn5 = new System.Windows.Forms.DataGridViewLinkColumn();
-            this.tabKPage2 = new System.Windows.Forms.TabPage();
-            this.kTabelaRezerwacje = new System.Windows.Forms.DataGridView();
-            this.dataGridViewCheckBoxColumn3 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.dataGridViewButtonColumn7 = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.dataGridViewLinkColumn6 = new System.Windows.Forms.DataGridViewLinkColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.panelS = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.profilLabel = new System.Windows.Forms.LinkLabel();
-            this.powiadomieniaLabel = new System.Windows.Forms.LinkLabel();
-            this.logowanieLabel = new System.Windows.Forms.LinkLabel();
-            this.dataGridViewTextBoxColumn20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn23 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.klasaTestowaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataGridViewTextBoxColumn22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn24 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn25 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn26 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nrPojazduDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.markaPojazduDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.modelPojazduDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.opiekunPojazduDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tabMControl.SuspendLayout();
+            this.dataGridViewLinkColumn4 = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.dataGridViewButtonColumn4 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.panelK = new System.Windows.Forms.Panel();
+            this.tableControlK = new System.Windows.Forms.TabControl();
+            this.tabKPage1 = new System.Windows.Forms.TabPage();
+            this.kTabelaZlecenia = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn23 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewLinkColumn5 = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.tabKPage2 = new System.Windows.Forms.TabPage();
+            this.kTabelaRezerwacje = new System.Windows.Forms.DataGridView();
+            this.dataGridViewCheckBoxColumn3 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dataGridViewTextBoxColumn22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn24 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn25 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn26 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewButtonColumn7 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.dataGridViewLinkColumn6 = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.panelS.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panelM.SuspendLayout();
+            this.tableControlM.SuspendLayout();
             this.mPojazdy.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.mTabelaPojazdy)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tableCarsM)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.klasaTestowaBindingSource)).BeginInit();
             this.mKierowcy.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.mTabelaKierowcy)).BeginInit();
             this.mZlecenia.SuspendLayout();
@@ -170,9 +174,8 @@
             this.mFinanse.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.panelM.SuspendLayout();
             this.panelO.SuspendLayout();
-            this.tabOControl.SuspendLayout();
+            this.tableControlO.SuspendLayout();
             this.oPojazdy.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.oTabelaPojazdy)).BeginInit();
             this.oZlecenia.SuspendLayout();
@@ -180,32 +183,92 @@
             this.oKierowcy.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.oTabelaKierowcy)).BeginInit();
             this.panelK.SuspendLayout();
-            this.tabKControl.SuspendLayout();
+            this.tableControlK.SuspendLayout();
             this.tabKPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kTabelaZlecenia)).BeginInit();
             this.tabKPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kTabelaRezerwacje)).BeginInit();
-            this.panelS.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.klasaTestowaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // tabMControl
+            // panelS
             // 
-            this.tabMControl.Controls.Add(this.mPojazdy);
-            this.tabMControl.Controls.Add(this.mKierowcy);
-            this.tabMControl.Controls.Add(this.mZlecenia);
-            this.tabMControl.Controls.Add(this.mFinanse);
-            this.tabMControl.Location = new System.Drawing.Point(12, 12);
-            this.tabMControl.Name = "tabMControl";
-            this.tabMControl.SelectedIndex = 0;
-            this.tabMControl.Size = new System.Drawing.Size(860, 400);
-            this.tabMControl.TabIndex = 0;
+            this.panelS.Controls.Add(this.pictureBox1);
+            this.panelS.Controls.Add(this.profilLabel);
+            this.panelS.Controls.Add(this.powiadomieniaLabel);
+            this.panelS.Controls.Add(this.logowanieLabel);
+            this.panelS.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelS.Location = new System.Drawing.Point(0, 0);
+            this.panelS.Name = "panelS";
+            this.panelS.Size = new System.Drawing.Size(884, 461);
+            this.panelS.TabIndex = 4;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(150, 87);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(600, 259);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabStop = false;
+            // 
+            // profilLabel
+            // 
+            this.profilLabel.AutoSize = true;
+            this.profilLabel.Location = new System.Drawing.Point(710, 9);
+            this.profilLabel.Name = "profilLabel";
+            this.profilLabel.Size = new System.Drawing.Size(30, 13);
+            this.profilLabel.TabIndex = 2;
+            this.profilLabel.TabStop = true;
+            this.profilLabel.Text = "Profil";
+            this.profilLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.profilLabel_LinkClicked);
+            // 
+            // powiadomieniaLabel
+            // 
+            this.powiadomieniaLabel.AutoSize = true;
+            this.powiadomieniaLabel.Location = new System.Drawing.Point(746, 9);
+            this.powiadomieniaLabel.Name = "powiadomieniaLabel";
+            this.powiadomieniaLabel.Size = new System.Drawing.Size(78, 13);
+            this.powiadomieniaLabel.TabIndex = 1;
+            this.powiadomieniaLabel.TabStop = true;
+            this.powiadomieniaLabel.Text = "Powiadomienia";
+            this.powiadomieniaLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.powiadomieniaLabel_LinkClicked);
+            // 
+            // logowanieLabel
+            // 
+            this.logowanieLabel.AutoSize = true;
+            this.logowanieLabel.Location = new System.Drawing.Point(830, 9);
+            this.logowanieLabel.Name = "logowanieLabel";
+            this.logowanieLabel.Size = new System.Drawing.Size(42, 13);
+            this.logowanieLabel.TabIndex = 0;
+            this.logowanieLabel.TabStop = true;
+            this.logowanieLabel.Text = "Zaloguj";
+            this.logowanieLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.zalogujSLabel_LinkClicked);
+            // 
+            // panelM
+            // 
+            this.panelM.Controls.Add(this.tableControlM);
+            this.panelM.Location = new System.Drawing.Point(0, 25);
+            this.panelM.Name = "panelM";
+            this.panelM.Size = new System.Drawing.Size(884, 436);
+            this.panelM.TabIndex = 4;
+            // 
+            // tableControlM
+            // 
+            this.tableControlM.Controls.Add(this.mPojazdy);
+            this.tableControlM.Controls.Add(this.mKierowcy);
+            this.tableControlM.Controls.Add(this.mZlecenia);
+            this.tableControlM.Controls.Add(this.mFinanse);
+            this.tableControlM.Location = new System.Drawing.Point(12, 12);
+            this.tableControlM.Name = "tableControlM";
+            this.tableControlM.SelectedIndex = 0;
+            this.tableControlM.Size = new System.Drawing.Size(860, 400);
+            this.tableControlM.TabIndex = 0;
             // 
             // mPojazdy
             // 
             this.mPojazdy.Controls.Add(this.addButtonMPojazdy);
-            this.mPojazdy.Controls.Add(this.mTabelaPojazdy);
+            this.mPojazdy.Controls.Add(this.tableCarsM);
             this.mPojazdy.Controls.Add(this.deleteButtonMPojazdy);
             this.mPojazdy.Location = new System.Drawing.Point(4, 22);
             this.mPojazdy.Name = "mPojazdy";
@@ -225,12 +288,12 @@
             this.addButtonMPojazdy.UseVisualStyleBackColor = true;
             this.addButtonMPojazdy.Click += new System.EventHandler(this.button1_Click);
             // 
-            // mTabelaPojazdy
+            // tableCarsM
             // 
-            this.mTabelaPojazdy.AllowUserToOrderColumns = true;
-            this.mTabelaPojazdy.AutoGenerateColumns = false;
-            this.mTabelaPojazdy.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.mTabelaPojazdy.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.tableCarsM.AllowUserToOrderColumns = true;
+            this.tableCarsM.AutoGenerateColumns = false;
+            this.tableCarsM.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tableCarsM.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column6,
             this.nrPojazduDataGridViewTextBoxColumn,
             this.markaPojazduDataGridViewTextBoxColumn,
@@ -239,18 +302,50 @@
             this.Column1,
             this.Column5,
             this.Edit});
-            this.mTabelaPojazdy.DataSource = this.klasaTestowaBindingSource;
-            this.mTabelaPojazdy.Location = new System.Drawing.Point(6, 6);
-            this.mTabelaPojazdy.Name = "mTabelaPojazdy";
-            this.mTabelaPojazdy.Size = new System.Drawing.Size(744, 341);
-            this.mTabelaPojazdy.TabIndex = 0;
-            this.mTabelaPojazdy.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.tableCarsM.DataSource = this.klasaTestowaBindingSource;
+            this.tableCarsM.Location = new System.Drawing.Point(6, 6);
+            this.tableCarsM.Name = "tableCarsM";
+            this.tableCarsM.Size = new System.Drawing.Size(744, 341);
+            this.tableCarsM.TabIndex = 0;
+            this.tableCarsM.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // Column6
             // 
             this.Column6.HeaderText = "Zaznacz pojazd";
             this.Column6.Name = "Column6";
             this.Column6.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // nrPojazduDataGridViewTextBoxColumn
+            // 
+            this.nrPojazduDataGridViewTextBoxColumn.DataPropertyName = "NrPojazdu";
+            this.nrPojazduDataGridViewTextBoxColumn.HeaderText = "Numer pojazdu";
+            this.nrPojazduDataGridViewTextBoxColumn.Name = "nrPojazduDataGridViewTextBoxColumn";
+            this.nrPojazduDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nrPojazduDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // markaPojazduDataGridViewTextBoxColumn
+            // 
+            this.markaPojazduDataGridViewTextBoxColumn.DataPropertyName = "MarkaPojazdu";
+            this.markaPojazduDataGridViewTextBoxColumn.HeaderText = "Marka pojazdu";
+            this.markaPojazduDataGridViewTextBoxColumn.Name = "markaPojazduDataGridViewTextBoxColumn";
+            this.markaPojazduDataGridViewTextBoxColumn.ReadOnly = true;
+            this.markaPojazduDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // modelPojazduDataGridViewTextBoxColumn
+            // 
+            this.modelPojazduDataGridViewTextBoxColumn.DataPropertyName = "ModelPojazdu";
+            this.modelPojazduDataGridViewTextBoxColumn.HeaderText = "Model pojazdu";
+            this.modelPojazduDataGridViewTextBoxColumn.Name = "modelPojazduDataGridViewTextBoxColumn";
+            this.modelPojazduDataGridViewTextBoxColumn.ReadOnly = true;
+            this.modelPojazduDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // opiekunPojazduDataGridViewTextBoxColumn
+            // 
+            this.opiekunPojazduDataGridViewTextBoxColumn.DataPropertyName = "OpiekunPojazdu";
+            this.opiekunPojazduDataGridViewTextBoxColumn.HeaderText = "Opiekun pojazdu";
+            this.opiekunPojazduDataGridViewTextBoxColumn.Name = "opiekunPojazduDataGridViewTextBoxColumn";
+            this.opiekunPojazduDataGridViewTextBoxColumn.ReadOnly = true;
+            this.opiekunPojazduDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // Column1
             // 
@@ -274,6 +369,11 @@
             this.Edit.ReadOnly = true;
             this.Edit.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.Edit.Text = "Edytuj";
+            // 
+            // klasaTestowaBindingSource
+            // 
+            this.klasaTestowaBindingSource.DataSource = typeof(BazyDanych.KlasaTestowa);
+            this.klasaTestowaBindingSource.CurrentChanged += new System.EventHandler(this.klasaTestowaBindingSource_CurrentChanged);
             // 
             // deleteButtonMPojazdy
             // 
@@ -344,6 +444,38 @@
             this.dataGridViewCheckBoxColumn1.HeaderText = "Zaznacz kierowce";
             this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
             this.dataGridViewCheckBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "NrPojazdu";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Numer kierowcy";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "MarkaPojazdu";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Nazwisko";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "ModelPojazdu";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Imie";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "OpiekunPojazdu";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Telefon";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.dataGridViewTextBoxColumn4.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // dataGridViewLinkColumn1
             // 
@@ -426,6 +558,38 @@
             this.dataGridViewCheckBoxColumn2.HeaderText = "Zaznacz zlecenie";
             this.dataGridViewCheckBoxColumn2.Name = "dataGridViewCheckBoxColumn2";
             this.dataGridViewCheckBoxColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "NrPojazdu";
+            this.dataGridViewTextBoxColumn5.HeaderText = "Numer zlecenia";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            this.dataGridViewTextBoxColumn5.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "MarkaPojazdu";
+            this.dataGridViewTextBoxColumn6.HeaderText = "Opiekun";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            this.dataGridViewTextBoxColumn6.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "ModelPojazdu";
+            this.dataGridViewTextBoxColumn7.HeaderText = "Kierowca";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
+            this.dataGridViewTextBoxColumn7.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "OpiekunPojazdu";
+            this.dataGridViewTextBoxColumn8.HeaderText = "Pojazd";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.ReadOnly = true;
+            this.dataGridViewTextBoxColumn8.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // dataGridViewLinkColumn2
             // 
@@ -883,32 +1047,24 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Pojazdy";
             // 
-            // panelM
-            // 
-            this.panelM.Controls.Add(this.tabMControl);
-            this.panelM.Location = new System.Drawing.Point(0, 25);
-            this.panelM.Name = "panelM";
-            this.panelM.Size = new System.Drawing.Size(884, 436);
-            this.panelM.TabIndex = 4;
-            // 
             // panelO
             // 
-            this.panelO.Controls.Add(this.tabOControl);
+            this.panelO.Controls.Add(this.tableControlO);
             this.panelO.Location = new System.Drawing.Point(0, 25);
             this.panelO.Name = "panelO";
             this.panelO.Size = new System.Drawing.Size(884, 436);
             this.panelO.TabIndex = 4;
             // 
-            // tabOControl
+            // tableControlO
             // 
-            this.tabOControl.Controls.Add(this.oPojazdy);
-            this.tabOControl.Controls.Add(this.oZlecenia);
-            this.tabOControl.Controls.Add(this.oKierowcy);
-            this.tabOControl.Location = new System.Drawing.Point(12, 12);
-            this.tabOControl.Name = "tabOControl";
-            this.tabOControl.SelectedIndex = 0;
-            this.tabOControl.Size = new System.Drawing.Size(860, 400);
-            this.tabOControl.TabIndex = 0;
+            this.tableControlO.Controls.Add(this.oPojazdy);
+            this.tableControlO.Controls.Add(this.oZlecenia);
+            this.tableControlO.Controls.Add(this.oKierowcy);
+            this.tableControlO.Location = new System.Drawing.Point(12, 12);
+            this.tableControlO.Name = "tableControlO";
+            this.tableControlO.SelectedIndex = 0;
+            this.tableControlO.Size = new System.Drawing.Size(860, 400);
+            this.tableControlO.TabIndex = 0;
             // 
             // oPojazdy
             // 
@@ -939,6 +1095,38 @@
             this.oTabelaPojazdy.Size = new System.Drawing.Size(744, 341);
             this.oTabelaPojazdy.TabIndex = 1;
             this.oTabelaPojazdy.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.oTabelaPojazdy_CellContentClick);
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.DataPropertyName = "NrPojazdu";
+            this.dataGridViewTextBoxColumn9.HeaderText = "Numer pojazdu";
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.ReadOnly = true;
+            this.dataGridViewTextBoxColumn9.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // dataGridViewTextBoxColumn10
+            // 
+            this.dataGridViewTextBoxColumn10.DataPropertyName = "MarkaPojazdu";
+            this.dataGridViewTextBoxColumn10.HeaderText = "Marka pojazdu";
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            this.dataGridViewTextBoxColumn10.ReadOnly = true;
+            this.dataGridViewTextBoxColumn10.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // dataGridViewTextBoxColumn11
+            // 
+            this.dataGridViewTextBoxColumn11.DataPropertyName = "ModelPojazdu";
+            this.dataGridViewTextBoxColumn11.HeaderText = "Model pojazdu";
+            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+            this.dataGridViewTextBoxColumn11.ReadOnly = true;
+            this.dataGridViewTextBoxColumn11.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // dataGridViewTextBoxColumn12
+            // 
+            this.dataGridViewTextBoxColumn12.DataPropertyName = "OpiekunPojazdu";
+            this.dataGridViewTextBoxColumn12.HeaderText = "Opiekun pojazdu";
+            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
+            this.dataGridViewTextBoxColumn12.ReadOnly = true;
+            this.dataGridViewTextBoxColumn12.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // dataGridViewLinkColumn3
             // 
@@ -1011,6 +1199,30 @@
             this.dataGridViewCheckBoxColumn4.Name = "dataGridViewCheckBoxColumn4";
             this.dataGridViewCheckBoxColumn4.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
+            // dataGridViewTextBoxColumn13
+            // 
+            this.dataGridViewTextBoxColumn13.DataPropertyName = "NrPojazdu";
+            this.dataGridViewTextBoxColumn13.HeaderText = "Numer zlecenia";
+            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
+            this.dataGridViewTextBoxColumn13.ReadOnly = true;
+            this.dataGridViewTextBoxColumn13.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // dataGridViewTextBoxColumn14
+            // 
+            this.dataGridViewTextBoxColumn14.DataPropertyName = "MarkaPojazdu";
+            this.dataGridViewTextBoxColumn14.HeaderText = "Kierowca";
+            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
+            this.dataGridViewTextBoxColumn14.ReadOnly = true;
+            this.dataGridViewTextBoxColumn14.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // dataGridViewTextBoxColumn15
+            // 
+            this.dataGridViewTextBoxColumn15.DataPropertyName = "ModelPojazdu";
+            this.dataGridViewTextBoxColumn15.HeaderText = "Pojazd";
+            this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
+            this.dataGridViewTextBoxColumn15.ReadOnly = true;
+            this.dataGridViewTextBoxColumn15.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
             // dataGridViewButtonColumn5
             // 
             this.dataGridViewButtonColumn5.HeaderText = "Szczegóły";
@@ -1055,6 +1267,38 @@
             this.oTabelaKierowcy.TabIndex = 2;
             this.oTabelaKierowcy.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.oTabelaKierowcy_CellContentClick);
             // 
+            // dataGridViewTextBoxColumn16
+            // 
+            this.dataGridViewTextBoxColumn16.DataPropertyName = "NrPojazdu";
+            this.dataGridViewTextBoxColumn16.HeaderText = "Numer kierowcy";
+            this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
+            this.dataGridViewTextBoxColumn16.ReadOnly = true;
+            this.dataGridViewTextBoxColumn16.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // dataGridViewTextBoxColumn17
+            // 
+            this.dataGridViewTextBoxColumn17.DataPropertyName = "MarkaPojazdu";
+            this.dataGridViewTextBoxColumn17.HeaderText = "Nazwisko";
+            this.dataGridViewTextBoxColumn17.Name = "dataGridViewTextBoxColumn17";
+            this.dataGridViewTextBoxColumn17.ReadOnly = true;
+            this.dataGridViewTextBoxColumn17.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // dataGridViewTextBoxColumn18
+            // 
+            this.dataGridViewTextBoxColumn18.DataPropertyName = "ModelPojazdu";
+            this.dataGridViewTextBoxColumn18.HeaderText = "Imie";
+            this.dataGridViewTextBoxColumn18.Name = "dataGridViewTextBoxColumn18";
+            this.dataGridViewTextBoxColumn18.ReadOnly = true;
+            this.dataGridViewTextBoxColumn18.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // dataGridViewTextBoxColumn19
+            // 
+            this.dataGridViewTextBoxColumn19.DataPropertyName = "OpiekunPojazdu";
+            this.dataGridViewTextBoxColumn19.HeaderText = "Telefon";
+            this.dataGridViewTextBoxColumn19.Name = "dataGridViewTextBoxColumn19";
+            this.dataGridViewTextBoxColumn19.ReadOnly = true;
+            this.dataGridViewTextBoxColumn19.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
             // dataGridViewLinkColumn4
             // 
             this.dataGridViewLinkColumn4.DataPropertyName = "ShowCalendar";
@@ -1071,21 +1315,21 @@
             // 
             // panelK
             // 
-            this.panelK.Controls.Add(this.tabKControl);
+            this.panelK.Controls.Add(this.tableControlK);
             this.panelK.Location = new System.Drawing.Point(0, 25);
             this.panelK.Name = "panelK";
             this.panelK.Size = new System.Drawing.Size(884, 436);
             this.panelK.TabIndex = 4;
             // 
-            // tabKControl
+            // tableControlK
             // 
-            this.tabKControl.Controls.Add(this.tabKPage1);
-            this.tabKControl.Controls.Add(this.tabKPage2);
-            this.tabKControl.Location = new System.Drawing.Point(12, 12);
-            this.tabKControl.Name = "tabKControl";
-            this.tabKControl.SelectedIndex = 0;
-            this.tabKControl.Size = new System.Drawing.Size(860, 400);
-            this.tabKControl.TabIndex = 3;
+            this.tableControlK.Controls.Add(this.tabKPage1);
+            this.tableControlK.Controls.Add(this.tabKPage2);
+            this.tableControlK.Location = new System.Drawing.Point(12, 12);
+            this.tableControlK.Name = "tableControlK";
+            this.tableControlK.SelectedIndex = 0;
+            this.tableControlK.Size = new System.Drawing.Size(860, 400);
+            this.tableControlK.TabIndex = 3;
             // 
             // tabKPage1
             // 
@@ -1111,6 +1355,30 @@
             this.kTabelaZlecenia.Name = "kTabelaZlecenia";
             this.kTabelaZlecenia.Size = new System.Drawing.Size(744, 341);
             this.kTabelaZlecenia.TabIndex = 2;
+            // 
+            // dataGridViewTextBoxColumn20
+            // 
+            this.dataGridViewTextBoxColumn20.DataPropertyName = "NrPojazdu";
+            this.dataGridViewTextBoxColumn20.HeaderText = "Numer zlecenia";
+            this.dataGridViewTextBoxColumn20.Name = "dataGridViewTextBoxColumn20";
+            this.dataGridViewTextBoxColumn20.ReadOnly = true;
+            this.dataGridViewTextBoxColumn20.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // dataGridViewTextBoxColumn21
+            // 
+            this.dataGridViewTextBoxColumn21.DataPropertyName = "MarkaPojazdu";
+            this.dataGridViewTextBoxColumn21.HeaderText = "Opiekun";
+            this.dataGridViewTextBoxColumn21.Name = "dataGridViewTextBoxColumn21";
+            this.dataGridViewTextBoxColumn21.ReadOnly = true;
+            this.dataGridViewTextBoxColumn21.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // dataGridViewTextBoxColumn23
+            // 
+            this.dataGridViewTextBoxColumn23.DataPropertyName = "OpiekunPojazdu";
+            this.dataGridViewTextBoxColumn23.HeaderText = "Pojazd";
+            this.dataGridViewTextBoxColumn23.Name = "dataGridViewTextBoxColumn23";
+            this.dataGridViewTextBoxColumn23.ReadOnly = true;
+            this.dataGridViewTextBoxColumn23.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // dataGridViewLinkColumn5
             // 
@@ -1159,109 +1427,6 @@
             this.dataGridViewCheckBoxColumn3.Name = "dataGridViewCheckBoxColumn3";
             this.dataGridViewCheckBoxColumn3.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
-            // dataGridViewButtonColumn7
-            // 
-            this.dataGridViewButtonColumn7.HeaderText = "Szczegóły";
-            this.dataGridViewButtonColumn7.Name = "dataGridViewButtonColumn7";
-            // 
-            // dataGridViewLinkColumn6
-            // 
-            this.dataGridViewLinkColumn6.DataPropertyName = "ShowCalendar";
-            this.dataGridViewLinkColumn6.HeaderText = "Terminarz";
-            this.dataGridViewLinkColumn6.Name = "dataGridViewLinkColumn6";
-            this.dataGridViewLinkColumn6.ReadOnly = true;
-            this.dataGridViewLinkColumn6.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewLinkColumn6.Text = "Wyświetl terminarz";
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Rezerwuj";
-            this.Column3.Name = "Column3";
-            // 
-            // panelS
-            // 
-            this.panelS.Controls.Add(this.pictureBox1);
-            this.panelS.Controls.Add(this.profilLabel);
-            this.panelS.Controls.Add(this.powiadomieniaLabel);
-            this.panelS.Controls.Add(this.logowanieLabel);
-            this.panelS.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelS.Location = new System.Drawing.Point(0, 0);
-            this.panelS.Name = "panelS";
-            this.panelS.Size = new System.Drawing.Size(884, 461);
-            this.panelS.TabIndex = 4;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(150, 87);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(600, 259);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
-            // 
-            // profilLabel
-            // 
-            this.profilLabel.AutoSize = true;
-            this.profilLabel.Location = new System.Drawing.Point(710, 9);
-            this.profilLabel.Name = "profilLabel";
-            this.profilLabel.Size = new System.Drawing.Size(30, 13);
-            this.profilLabel.TabIndex = 2;
-            this.profilLabel.TabStop = true;
-            this.profilLabel.Text = "Profil";
-            this.profilLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.profilLabel_LinkClicked);
-            // 
-            // powiadomieniaLabel
-            // 
-            this.powiadomieniaLabel.AutoSize = true;
-            this.powiadomieniaLabel.Location = new System.Drawing.Point(746, 9);
-            this.powiadomieniaLabel.Name = "powiadomieniaLabel";
-            this.powiadomieniaLabel.Size = new System.Drawing.Size(78, 13);
-            this.powiadomieniaLabel.TabIndex = 1;
-            this.powiadomieniaLabel.TabStop = true;
-            this.powiadomieniaLabel.Text = "Powiadomienia";
-            this.powiadomieniaLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.powiadomieniaLabel_LinkClicked);
-            // 
-            // logowanieLabel
-            // 
-            this.logowanieLabel.AutoSize = true;
-            this.logowanieLabel.Location = new System.Drawing.Point(830, 9);
-            this.logowanieLabel.Name = "logowanieLabel";
-            this.logowanieLabel.Size = new System.Drawing.Size(42, 13);
-            this.logowanieLabel.TabIndex = 0;
-            this.logowanieLabel.TabStop = true;
-            this.logowanieLabel.Text = "Zaloguj";
-            this.logowanieLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.zalogujSLabel_LinkClicked);
-            // 
-            // dataGridViewTextBoxColumn20
-            // 
-            this.dataGridViewTextBoxColumn20.DataPropertyName = "NrPojazdu";
-            this.dataGridViewTextBoxColumn20.HeaderText = "Numer zlecenia";
-            this.dataGridViewTextBoxColumn20.Name = "dataGridViewTextBoxColumn20";
-            this.dataGridViewTextBoxColumn20.ReadOnly = true;
-            this.dataGridViewTextBoxColumn20.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // dataGridViewTextBoxColumn21
-            // 
-            this.dataGridViewTextBoxColumn21.DataPropertyName = "MarkaPojazdu";
-            this.dataGridViewTextBoxColumn21.HeaderText = "Opiekun";
-            this.dataGridViewTextBoxColumn21.Name = "dataGridViewTextBoxColumn21";
-            this.dataGridViewTextBoxColumn21.ReadOnly = true;
-            this.dataGridViewTextBoxColumn21.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // dataGridViewTextBoxColumn23
-            // 
-            this.dataGridViewTextBoxColumn23.DataPropertyName = "OpiekunPojazdu";
-            this.dataGridViewTextBoxColumn23.HeaderText = "Pojazd";
-            this.dataGridViewTextBoxColumn23.Name = "dataGridViewTextBoxColumn23";
-            this.dataGridViewTextBoxColumn23.ReadOnly = true;
-            this.dataGridViewTextBoxColumn23.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // klasaTestowaBindingSource
-            // 
-            this.klasaTestowaBindingSource.DataSource = typeof(BazyDanych.KlasaTestowa);
-            this.klasaTestowaBindingSource.CurrentChanged += new System.EventHandler(this.klasaTestowaBindingSource_CurrentChanged);
-            // 
             // dataGridViewTextBoxColumn22
             // 
             this.dataGridViewTextBoxColumn22.DataPropertyName = "NrPojazdu";
@@ -1294,189 +1459,24 @@
             this.dataGridViewTextBoxColumn26.ReadOnly = true;
             this.dataGridViewTextBoxColumn26.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
-            // dataGridViewTextBoxColumn9
+            // dataGridViewButtonColumn7
             // 
-            this.dataGridViewTextBoxColumn9.DataPropertyName = "NrPojazdu";
-            this.dataGridViewTextBoxColumn9.HeaderText = "Numer pojazdu";
-            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            this.dataGridViewTextBoxColumn9.ReadOnly = true;
-            this.dataGridViewTextBoxColumn9.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewButtonColumn7.HeaderText = "Szczegóły";
+            this.dataGridViewButtonColumn7.Name = "dataGridViewButtonColumn7";
             // 
-            // dataGridViewTextBoxColumn10
+            // dataGridViewLinkColumn6
             // 
-            this.dataGridViewTextBoxColumn10.DataPropertyName = "MarkaPojazdu";
-            this.dataGridViewTextBoxColumn10.HeaderText = "Marka pojazdu";
-            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
-            this.dataGridViewTextBoxColumn10.ReadOnly = true;
-            this.dataGridViewTextBoxColumn10.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewLinkColumn6.DataPropertyName = "ShowCalendar";
+            this.dataGridViewLinkColumn6.HeaderText = "Terminarz";
+            this.dataGridViewLinkColumn6.Name = "dataGridViewLinkColumn6";
+            this.dataGridViewLinkColumn6.ReadOnly = true;
+            this.dataGridViewLinkColumn6.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewLinkColumn6.Text = "Wyświetl terminarz";
             // 
-            // dataGridViewTextBoxColumn11
+            // Column3
             // 
-            this.dataGridViewTextBoxColumn11.DataPropertyName = "ModelPojazdu";
-            this.dataGridViewTextBoxColumn11.HeaderText = "Model pojazdu";
-            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
-            this.dataGridViewTextBoxColumn11.ReadOnly = true;
-            this.dataGridViewTextBoxColumn11.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // dataGridViewTextBoxColumn12
-            // 
-            this.dataGridViewTextBoxColumn12.DataPropertyName = "OpiekunPojazdu";
-            this.dataGridViewTextBoxColumn12.HeaderText = "Opiekun pojazdu";
-            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
-            this.dataGridViewTextBoxColumn12.ReadOnly = true;
-            this.dataGridViewTextBoxColumn12.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // dataGridViewTextBoxColumn13
-            // 
-            this.dataGridViewTextBoxColumn13.DataPropertyName = "NrPojazdu";
-            this.dataGridViewTextBoxColumn13.HeaderText = "Numer zlecenia";
-            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
-            this.dataGridViewTextBoxColumn13.ReadOnly = true;
-            this.dataGridViewTextBoxColumn13.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // dataGridViewTextBoxColumn14
-            // 
-            this.dataGridViewTextBoxColumn14.DataPropertyName = "MarkaPojazdu";
-            this.dataGridViewTextBoxColumn14.HeaderText = "Kierowca";
-            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
-            this.dataGridViewTextBoxColumn14.ReadOnly = true;
-            this.dataGridViewTextBoxColumn14.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // dataGridViewTextBoxColumn15
-            // 
-            this.dataGridViewTextBoxColumn15.DataPropertyName = "ModelPojazdu";
-            this.dataGridViewTextBoxColumn15.HeaderText = "Pojazd";
-            this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
-            this.dataGridViewTextBoxColumn15.ReadOnly = true;
-            this.dataGridViewTextBoxColumn15.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // dataGridViewTextBoxColumn16
-            // 
-            this.dataGridViewTextBoxColumn16.DataPropertyName = "NrPojazdu";
-            this.dataGridViewTextBoxColumn16.HeaderText = "Numer kierowcy";
-            this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
-            this.dataGridViewTextBoxColumn16.ReadOnly = true;
-            this.dataGridViewTextBoxColumn16.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // dataGridViewTextBoxColumn17
-            // 
-            this.dataGridViewTextBoxColumn17.DataPropertyName = "MarkaPojazdu";
-            this.dataGridViewTextBoxColumn17.HeaderText = "Nazwisko";
-            this.dataGridViewTextBoxColumn17.Name = "dataGridViewTextBoxColumn17";
-            this.dataGridViewTextBoxColumn17.ReadOnly = true;
-            this.dataGridViewTextBoxColumn17.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // dataGridViewTextBoxColumn18
-            // 
-            this.dataGridViewTextBoxColumn18.DataPropertyName = "ModelPojazdu";
-            this.dataGridViewTextBoxColumn18.HeaderText = "Imie";
-            this.dataGridViewTextBoxColumn18.Name = "dataGridViewTextBoxColumn18";
-            this.dataGridViewTextBoxColumn18.ReadOnly = true;
-            this.dataGridViewTextBoxColumn18.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // dataGridViewTextBoxColumn19
-            // 
-            this.dataGridViewTextBoxColumn19.DataPropertyName = "OpiekunPojazdu";
-            this.dataGridViewTextBoxColumn19.HeaderText = "Telefon";
-            this.dataGridViewTextBoxColumn19.Name = "dataGridViewTextBoxColumn19";
-            this.dataGridViewTextBoxColumn19.ReadOnly = true;
-            this.dataGridViewTextBoxColumn19.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // nrPojazduDataGridViewTextBoxColumn
-            // 
-            this.nrPojazduDataGridViewTextBoxColumn.DataPropertyName = "NrPojazdu";
-            this.nrPojazduDataGridViewTextBoxColumn.HeaderText = "Numer pojazdu";
-            this.nrPojazduDataGridViewTextBoxColumn.Name = "nrPojazduDataGridViewTextBoxColumn";
-            this.nrPojazduDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nrPojazduDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // markaPojazduDataGridViewTextBoxColumn
-            // 
-            this.markaPojazduDataGridViewTextBoxColumn.DataPropertyName = "MarkaPojazdu";
-            this.markaPojazduDataGridViewTextBoxColumn.HeaderText = "Marka pojazdu";
-            this.markaPojazduDataGridViewTextBoxColumn.Name = "markaPojazduDataGridViewTextBoxColumn";
-            this.markaPojazduDataGridViewTextBoxColumn.ReadOnly = true;
-            this.markaPojazduDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // modelPojazduDataGridViewTextBoxColumn
-            // 
-            this.modelPojazduDataGridViewTextBoxColumn.DataPropertyName = "ModelPojazdu";
-            this.modelPojazduDataGridViewTextBoxColumn.HeaderText = "Model pojazdu";
-            this.modelPojazduDataGridViewTextBoxColumn.Name = "modelPojazduDataGridViewTextBoxColumn";
-            this.modelPojazduDataGridViewTextBoxColumn.ReadOnly = true;
-            this.modelPojazduDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // opiekunPojazduDataGridViewTextBoxColumn
-            // 
-            this.opiekunPojazduDataGridViewTextBoxColumn.DataPropertyName = "OpiekunPojazdu";
-            this.opiekunPojazduDataGridViewTextBoxColumn.HeaderText = "Opiekun pojazdu";
-            this.opiekunPojazduDataGridViewTextBoxColumn.Name = "opiekunPojazduDataGridViewTextBoxColumn";
-            this.opiekunPojazduDataGridViewTextBoxColumn.ReadOnly = true;
-            this.opiekunPojazduDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "NrPojazdu";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Numer kierowcy";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "MarkaPojazdu";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Nazwisko";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "ModelPojazdu";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Imie";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            this.dataGridViewTextBoxColumn3.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "OpiekunPojazdu";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Telefon";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            this.dataGridViewTextBoxColumn4.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "NrPojazdu";
-            this.dataGridViewTextBoxColumn5.HeaderText = "Numer zlecenia";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            this.dataGridViewTextBoxColumn5.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "MarkaPojazdu";
-            this.dataGridViewTextBoxColumn6.HeaderText = "Opiekun";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
-            this.dataGridViewTextBoxColumn6.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "ModelPojazdu";
-            this.dataGridViewTextBoxColumn7.HeaderText = "Kierowca";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.ReadOnly = true;
-            this.dataGridViewTextBoxColumn7.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            this.dataGridViewTextBoxColumn8.DataPropertyName = "OpiekunPojazdu";
-            this.dataGridViewTextBoxColumn8.HeaderText = "Pojazd";
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            this.dataGridViewTextBoxColumn8.ReadOnly = true;
-            this.dataGridViewTextBoxColumn8.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Column3.HeaderText = "Rezerwuj";
+            this.Column3.Name = "Column3";
             // 
             // MainWindow
             // 
@@ -1490,9 +1490,14 @@
             this.Name = "MainWindow";
             this.Text = "Menedżer Floty";
             this.Load += new System.EventHandler(this.Form2_Load);
-            this.tabMControl.ResumeLayout(false);
+            this.panelS.ResumeLayout(false);
+            this.panelS.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panelM.ResumeLayout(false);
+            this.tableControlM.ResumeLayout(false);
             this.mPojazdy.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.mTabelaPojazdy)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tableCarsM)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.klasaTestowaBindingSource)).EndInit();
             this.mKierowcy.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.mTabelaKierowcy)).EndInit();
             this.mZlecenia.ResumeLayout(false);
@@ -1502,9 +1507,8 @@
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panelM.ResumeLayout(false);
             this.panelO.ResumeLayout(false);
-            this.tabOControl.ResumeLayout(false);
+            this.tableControlO.ResumeLayout(false);
             this.oPojazdy.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.oTabelaPojazdy)).EndInit();
             this.oZlecenia.ResumeLayout(false);
@@ -1512,15 +1516,11 @@
             this.oKierowcy.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.oTabelaKierowcy)).EndInit();
             this.panelK.ResumeLayout(false);
-            this.tabKControl.ResumeLayout(false);
+            this.tableControlK.ResumeLayout(false);
             this.tabKPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.kTabelaZlecenia)).EndInit();
             this.tabKPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.kTabelaRezerwacje)).EndInit();
-            this.panelS.ResumeLayout(false);
-            this.panelS.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.klasaTestowaBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1532,9 +1532,9 @@
         private System.Windows.Forms.Panel panelS;
 
         private System.Windows.Forms.Panel panelM;
-        private System.Windows.Forms.TabControl tabMControl;
+        private System.Windows.Forms.TabControl tableControlM;
         private System.Windows.Forms.TabPage mPojazdy;
-        private System.Windows.Forms.DataGridView mTabelaPojazdy;
+        private System.Windows.Forms.DataGridView tableCarsM;
 
 
 
@@ -1544,12 +1544,12 @@
         private System.Windows.Forms.TabPage mFinanse;
 
         private System.Windows.Forms.Panel panelO;
-        private System.Windows.Forms.TabControl tabOControl;
+        private System.Windows.Forms.TabControl tableControlO;
         private System.Windows.Forms.TabPage oPojazdy;
         private System.Windows.Forms.TabPage oZlecenia;
 
         private System.Windows.Forms.Panel panelK;
-        private System.Windows.Forms.TabControl tabKControl;
+        private System.Windows.Forms.TabControl tableControlK;
         private System.Windows.Forms.TabPage tabKPage1;
         private System.Windows.Forms.TabPage tabKPage2;
         private System.Windows.Forms.LinkLabel logowanieLabel;
