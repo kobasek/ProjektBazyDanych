@@ -41,7 +41,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 23);
+            this.label1.Location = new System.Drawing.Point(13, 26);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(90, 13);
             this.label1.TabIndex = 0;
@@ -124,7 +124,7 @@
             this.Controls.Add(this.label1);
             this.Name = "ChangingPassword";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ChangingPassword";
+            this.Text = "Zmiana hasła";
             this.ResumeLayout(false);
             this.PerformLayout();
 
