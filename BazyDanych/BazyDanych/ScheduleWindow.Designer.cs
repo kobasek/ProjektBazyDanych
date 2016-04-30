@@ -28,22 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.SuspendLayout();
-            // 
-            // monthCalendar1
-            // 
-            this.monthCalendar1.Location = new System.Drawing.Point(18, 18);
-            this.monthCalendar1.Name = "monthCalendar1";
-            this.monthCalendar1.SelectionRange = new System.Windows.Forms.SelectionRange(new System.DateTime(2016, 4, 25, 0, 0, 0, 0), new System.DateTime(2016, 4, 26, 0, 0, 0, 0));
-            this.monthCalendar1.TabIndex = 0;
             // 
             // ScheduleWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(307, 197);
-            this.Controls.Add(this.monthCalendar1);
+            this.ClientSize = new System.Drawing.Size(1070, 416);
             this.Name = "ScheduleWindow";
             this.Text = "Menedżer Floty - Terminarz";
             this.ResumeLayout(false);
@@ -51,7 +42,5 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.MonthCalendar monthCalendar1;
     }
 }
