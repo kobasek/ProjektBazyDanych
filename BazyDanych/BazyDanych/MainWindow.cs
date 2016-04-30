@@ -339,5 +339,11 @@ namespace BazyDanych
             this.textBox5.Text = privateTimeValue.ToString() + " h";
             this.textBox7.Text = privateValue.ToString() + " zł";
         }
+
+        private void profilLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            ProfilWindow obj = new ProfilWindow();
+            obj.Show();
+        }
     }
 }
