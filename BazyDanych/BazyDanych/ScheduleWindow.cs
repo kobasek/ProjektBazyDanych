@@ -12,19 +12,28 @@ namespace BazyDanych
 {
     public partial class ScheduleWindow : Form
     {
-        string[] Months;
+        string[] months;
 
 
         //Terminarz
         public ScheduleWindow()
         {
+            months = new string[12] { "Styczeń", "Luty", "Marzec", "Kwiecień", "Maj", "Czerwiec", "Lipiec", "Sierpień", "Wrzesień", "Październik", "Listopad", "Grudzień" };
+
+
             InitializeComponent();
-            Months = new string[12] { "Styczeń", "Luty", "Marzec", "Kwiecień", "Maj", "Czerwiec", "Lipiec", "Sierpień", "Wrzesień", "Październik", "Listopad", "Grudzień" };
+            
         }
 
         private string GetActualMonth()
         {
-            return "month";
+            
+            return months[DateTime.Now.Month];
+        }
+
+        private void SetMonthPanel()
+        {
+
         }
     }
 
