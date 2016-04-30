@@ -10,20 +10,19 @@ using System.Windows.Forms;
 
 namespace BazyDanych
 {
-    public partial class ProfilWindow : Form
+    public partial class ChangingPassword : Form
     {
-        public ProfilWindow()
+        public ChangingPassword()
         {
             InitializeComponent();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-            ChangingPassword obj = new ChangingPassword();
-            obj.Show();
+            this.Close();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
             this.Close();
         }
