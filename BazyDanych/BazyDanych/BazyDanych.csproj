@@ -125,6 +125,12 @@
     <Compile Include="Model.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="vehicleCondition.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vehicleCondition.Designer.cs">
+      <DependentUpon>vehicleCondition.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AddOrEditUserWindow.resx">
       <DependentUpon>AddOrEditUserWindow.cs</DependentUpon>
     </EmbeddedResource>
@@ -170,6 +176,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="vehicleCondition.resx">
+      <DependentUpon>vehicleCondition.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\DataSources\KlasaTestowa.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
