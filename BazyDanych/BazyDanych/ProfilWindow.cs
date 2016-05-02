@@ -10,17 +10,27 @@ using System.Windows.Forms;
 
 namespace BazyDanych
 {
-    public partial class CarDetailsWindow : Form
+    public partial class ProfilWindow : Form
     {
-        public CarDetailsWindow()
+        public ProfilWindow()
         {
             InitializeComponent();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            vehicleCondition obj = new vehicleCondition();
+            ChangingPassword obj = new ChangingPassword();
             obj.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

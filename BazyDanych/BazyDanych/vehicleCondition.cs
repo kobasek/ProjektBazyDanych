@@ -10,17 +10,21 @@ using System.Windows.Forms;
 
 namespace BazyDanych
 {
-    public partial class CarDetailsWindow : Form
+    public partial class vehicleCondition : Form
     {
-        public CarDetailsWindow()
+        public vehicleCondition()
         {
             InitializeComponent();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void label2_Click(object sender, EventArgs e)
         {
-            vehicleCondition obj = new vehicleCondition();
-            obj.Show();
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

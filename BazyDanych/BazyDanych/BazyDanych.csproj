@@ -35,6 +35,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -73,7 +74,16 @@
     <Compile Include="CarDetailsWindow.Designer.cs">
       <DependentUpon>CarDetailsWindow.cs</DependentUpon>
     </Compile>
+<<<<<<< HEAD
     <Compile Include="DrivingLicense.cs" />
+=======
+    <Compile Include="ChangingPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChangingPassword.Designer.cs">
+      <DependentUpon>ChangingPassword.cs</DependentUpon>
+    </Compile>
+>>>>>>> origin/master
     <Compile Include="LoginWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,11 +108,19 @@
     <Compile Include="AddOrEditCarWindow.Designer.cs">
       <DependentUpon>AddOrEditCarWindow.cs</DependentUpon>
     </Compile>
+<<<<<<< HEAD
     <Compile Include="ProfileInfo.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ProfileInfo.Designer.cs">
       <DependentUpon>ProfileInfo.cs</DependentUpon>
+=======
+    <Compile Include="ProfilWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProfilWindow.Designer.cs">
+      <DependentUpon>ProfilWindow.cs</DependentUpon>
+>>>>>>> origin/master
     </Compile>
     <Compile Include="ReservationWindow.cs">
       <SubType>Form</SubType>
@@ -120,7 +138,16 @@
     <Compile Include="Model.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+<<<<<<< HEAD
     <Compile Include="UserData.cs" />
+=======
+    <Compile Include="vehicleCondition.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vehicleCondition.Designer.cs">
+      <DependentUpon>vehicleCondition.cs</DependentUpon>
+    </Compile>
+>>>>>>> origin/master
     <EmbeddedResource Include="AddOrEditUserWindow.resx">
       <DependentUpon>AddOrEditUserWindow.cs</DependentUpon>
     </EmbeddedResource>
@@ -132,6 +159,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CarDetailsWindow.resx">
       <DependentUpon>CarDetailsWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChangingPassword.resx">
+      <DependentUpon>ChangingPassword.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginWindow.resx">
       <DependentUpon>LoginWindow.cs</DependentUpon>
@@ -145,9 +175,14 @@
     <EmbeddedResource Include="AddOrEditCarWindow.resx">
       <DependentUpon>AddOrEditCarWindow.cs</DependentUpon>
     </EmbeddedResource>
+<<<<<<< HEAD
     <EmbeddedResource Include="ProfileInfo.resx">
       <DependentUpon>ProfileInfo.cs</DependentUpon>
       <SubType>Designer</SubType>
+=======
+    <EmbeddedResource Include="ProfilWindow.resx">
+      <DependentUpon>ProfilWindow.cs</DependentUpon>
+>>>>>>> origin/master
     </EmbeddedResource>
     <EmbeddedResource Include="ReservationWindow.resx">
       <DependentUpon>ReservationWindow.cs</DependentUpon>
@@ -164,6 +199,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="vehicleCondition.resx">
+      <DependentUpon>vehicleCondition.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\DataSources\KlasaTestowa.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

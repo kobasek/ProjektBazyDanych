@@ -249,10 +249,109 @@ namespace BazyDanych
             obj.Show();
         }
 
+<<<<<<< HEAD
 		private void profilLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
 		{
 			ProfileInfo profile = new ProfileInfo();
 			profile.Show();
 		}
+=======
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            if(this.radioButton1.Checked == true)
+            {
+                this.comboBox1.Visible = true;
+                this.comboBox2.Visible = false;
+                this.comboBox3.Visible = false;
+            }
+        }
+
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+            if (this.radioButton2.Checked == true)
+            {
+                this.comboBox1.Visible = false;
+                this.comboBox2.Visible = true;
+                this.comboBox3.Visible = false;
+            }
+        }
+
+        private void radioButton3_CheckedChanged(object sender, EventArgs e)
+        {
+            if (this.radioButton3.Checked == true)
+            {
+                this.comboBox1.Visible = false;
+                this.comboBox2.Visible = false;
+                this.comboBox3.Visible = true;
+            }
+        }
+
+        private void comboBox4_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (this.comboBox4.SelectedIndex == 5)
+            {
+                this.label3.Visible = true;
+                this.label4.Visible = true;
+                this.dateTimePicker1.Visible = true;
+                this.dateTimePicker2.Visible = true;
+            }
+            else
+            {
+                this.label3.Visible = false;
+                this.label4.Visible = false;
+                this.dateTimePicker1.Visible = false;
+                this.dateTimePicker2.Visible = false;
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            double value = 50;
+            double servisValue = 100;
+            this.textBox1.Text = value.ToString() + " zł";
+            this.textBox2.Text = servisValue.ToString() + " zł";
+        }
+
+        private void comboBox5_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (this.comboBox5.SelectedIndex == 5)
+            {
+                this.label9.Visible = true;
+                this.label10.Visible = true;
+                this.dateTimePicker3.Visible = true;
+                this.dateTimePicker4.Visible = true;
+            }
+            else
+            {
+                this.label9.Visible = false;
+                this.label10.Visible = false;
+                this.dateTimePicker3.Visible = false;
+                this.dateTimePicker4.Visible = false;
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            double businessKilimetersValue = 50;
+            double businessTimeValue = 50;
+            double businessValue = 50;
+            double privateKilimetersValue = 100;
+            double privateTimeValue = 100;
+            double privateValue = 100;
+
+            this.textBox3.Text = businessKilimetersValue.ToString() + " km";
+            this.textBox6.Text = businessTimeValue.ToString() + " h";
+            this.textBox8.Text = businessValue.ToString() + " zł";
+            this.textBox4.Text = privateKilimetersValue.ToString() + " km";
+            this.textBox5.Text = privateTimeValue.ToString() + " h";
+            this.textBox7.Text = privateValue.ToString() + " zł";
+        }
+
+        private void profilLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            ProfilWindow obj = new ProfilWindow();
+            obj.Show();
+        }
+>>>>>>> origin/master
     }
 }
