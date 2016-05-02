@@ -248,5 +248,11 @@ namespace BazyDanych
             NotificationsWindow obj = new NotificationsWindow();
             obj.Show();
         }
+
+		private void profilLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+		{
+			ProfileInfo profile = new ProfileInfo();
+			profile.Show();
+		}
     }
 }
