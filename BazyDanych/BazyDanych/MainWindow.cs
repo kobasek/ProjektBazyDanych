@@ -249,13 +249,6 @@ namespace BazyDanych
             obj.Show();
         }
 
-<<<<<<< HEAD
-		private void profilLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-		{
-			ProfileInfo profile = new ProfileInfo();
-			profile.Show();
-		}
-=======
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
             if(this.radioButton1.Checked == true)
@@ -352,6 +345,5 @@ namespace BazyDanych
             ProfilWindow obj = new ProfilWindow();
             obj.Show();
         }
->>>>>>> origin/master
     }
 }
