@@ -12,7 +12,7 @@ namespace BazyDanych
 	{
 		public int id;
 		public DateTime dateOfPurchase;
-		public DateTime dateOfScrapping;
+		public DateTime? dateOfScrapping;
 		public bool airCondition;
 		public Decimal costOfPurchase;
 		public string registrationNumber;
@@ -76,7 +76,8 @@ namespace BazyDanych
 					carDto.AirCondition = dataReader.GetBoolean(9);
 					carDto.AutomaticGearBox = dataReader.GetBoolean(10);
 					carDto.DateOfPurchase = dataReader.GetDateTime(11);
-					carDto.DateOfScrapping = dataReader.GetDateTime(12);
+					carDto.DateOfScrapping = !dataReader.IsDBNull(12) ? dataReader.GetDateTime(12) : (DateTime?)null;
+					carDto.ModelId = dataReader.GetInt32(13);
 
 					var car = new Car(carDto);
 					list.Add(car);
@@ -119,7 +120,8 @@ namespace BazyDanych
 					carDto.AirCondition = dataReader.GetBoolean(9);
 					carDto.AutomaticGearBox = dataReader.GetBoolean(10);
 					carDto.DateOfPurchase = dataReader.GetDateTime(11);
-					carDto.DateOfScrapping = dataReader.GetDateTime(12);
+					carDto.DateOfScrapping = !dataReader.IsDBNull(12) ? dataReader.GetDateTime(12) : (DateTime?)null;
+					carDto.ModelId = dataReader.GetInt32(13);
 
 					connection.Close();
 					return new Car(carDto);

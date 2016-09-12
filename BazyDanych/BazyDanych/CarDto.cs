@@ -11,7 +11,7 @@ namespace BazyDanych
 		public int Id { get; set; }
 		public DateTime DateOfPurchase { get; set; }
 
-		public DateTime DateOfScrapping { get; set; }
+		public DateTime? DateOfScrapping { get; set; }
 
 		public bool AirCondition { get; set; }
 
