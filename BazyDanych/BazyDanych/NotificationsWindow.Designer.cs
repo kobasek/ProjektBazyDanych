@@ -54,7 +54,7 @@
             // 
             // klasaTestowaBindingSource
             // 
-            this.klasaTestowaBindingSource.DataSource = typeof(BazyDanych.KlasaTestowa);
+            this.klasaTestowaBindingSource.DataSource = typeof(BazyDanych.Car);
             // 
             // Column1
             // 

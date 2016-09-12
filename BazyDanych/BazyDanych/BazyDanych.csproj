@@ -94,6 +94,7 @@
     <Compile Include="MainWindow.Designer.cs">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="ModelDto.cs" />
     <Compile Include="NotificationsWindow.cs">
       <SubType>Form</SubType>
     </Compile>

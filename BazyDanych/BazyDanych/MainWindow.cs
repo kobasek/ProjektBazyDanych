@@ -28,10 +28,13 @@ namespace BazyDanych
 
 		private void Form2_Load(object sender, EventArgs e)
 		{
-			var list = Functions.GetCarList();
-			klasaTestowaBindingSource.Add(new KlasaTestowa(1, "Opel", "Astra", "Janusz"));
-			klasaTestowaBindingSource.Add(new KlasaTestowa(2, "Mercedes", "Vito", "Filip"));
-			klasaTestowaBindingSource.Add(new KlasaTestowa(3, "Fiat", "Panda", "Marek"));
+			var list = Car.GetCarList();
+			foreach (var car in list)
+			{
+				var model = Model.GetModelById(car.modelId);
+				var brand = Brand.GetBrandById(model.brandId);
+				klasaTestowaBindingSource.Add(new KlasaTestowa(car.id, brand.name, model.name, "Janusz"));
+			}
 		}
 
 

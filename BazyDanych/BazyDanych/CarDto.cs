@@ -8,6 +8,7 @@ namespace BazyDanych
 {
 	class CarDto
 	{
+		public int Id { get; set; }
 		public DateTime DateOfPurchase { get; set; }
 
 		public DateTime DateOfScrapping { get; set; }
