@@ -38,7 +38,7 @@ namespace BazyDanych
 				var connection = new MySql.Data.MySqlClient.MySqlConnection { ConnectionString = connectionString };
 				connection.Open();
 
-				const string query = "SELECT * FROM projekt_bazy_danych.model;";
+				string query = "SELECT * FROM projekt_bazy_danych.model WHERE model.id ="+id;
 				var command = new MySqlCommand(query, connection);
 				var dataReader = command.ExecuteReader();
 

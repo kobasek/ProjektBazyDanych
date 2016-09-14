@@ -183,7 +183,6 @@
     <EmbeddedResource Include="vehicleCondition.resx">
       <DependentUpon>vehicleCondition.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="ConnectionString.config" />
     <None Include="Properties\DataSources\KlasaTestowa.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

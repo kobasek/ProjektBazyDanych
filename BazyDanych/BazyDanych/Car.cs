@@ -102,7 +102,7 @@ namespace BazyDanych
 				var connection = new MySql.Data.MySqlClient.MySqlConnection { ConnectionString = connectionString };
 				connection.Open();
 
-				const string query = "SELECT * FROM projekt_bazy_danych.pojazd;";
+				string query = "SELECT * FROM projekt_bazy_danych.pojazd where pojazd.id = "+id;
 				var command = new MySqlCommand(query, connection);
 				var dataReader = command.ExecuteReader();
 

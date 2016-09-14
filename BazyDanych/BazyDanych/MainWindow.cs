@@ -129,7 +129,9 @@ namespace BazyDanych
 			}
 			else if (e.ColumnIndex == 5)
 			{
-				CarDetailsWindow obj = new CarDetailsWindow();
+				var row = e.RowIndex;
+				var carId = (int)tableCarsM.Rows[row].Cells[1].Value;
+				CarDetailsWindow obj = new CarDetailsWindow(carId);
 				obj.Show();
 			}
 		}
