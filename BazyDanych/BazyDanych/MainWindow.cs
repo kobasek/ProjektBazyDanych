@@ -97,8 +97,6 @@ namespace BazyDanych
 		{
 			AddOrEditCarWindow obj = new AddOrEditCarWindow();
 			obj.Text = "Menedżer Floty - Edytuj pojazd";
-			obj.label14.Visible = false;
-			obj.dateTimePicker2.Visible = false;
 			obj.buttonDodajPojazd.Visible = false;
 			obj.buttonWczytajSzablon.Visible = false;
 			obj.buttonZapiszSzablon.Visible = false;

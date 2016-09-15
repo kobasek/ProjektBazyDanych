@@ -18,7 +18,7 @@ namespace BazyDanych
 		public string registrationNumber;
 		public float engineCapacity;
 		public string typeOfBody;
-		public string typeOfFuel;
+		public char typeOfFuel;
 		public bool automaticGearBox;
 		public string vin;
 		public bool assistance;
@@ -69,7 +69,7 @@ namespace BazyDanych
 					carDto.EngineCapacity = dataReader.GetFloat(2);
 					carDto.TypeOfBody = dataReader.GetString(3);
 					carDto.RegistrationNumber = dataReader.GetString(4);
-					carDto.TypeOfFuel = dataReader.GetString(5);
+					carDto.TypeOfFuel = dataReader.GetChar(5);
 					carDto.CostOfPurchase = dataReader.GetDecimal(6);
 					carDto.ElectricWindows = dataReader.GetBoolean(7);
 					carDto.Assistance = dataReader.GetBoolean(8);
@@ -102,7 +102,7 @@ namespace BazyDanych
 				var connection = new MySql.Data.MySqlClient.MySqlConnection { ConnectionString = connectionString };
 				connection.Open();
 
-				string query = "SELECT * FROM projekt_bazy_danych.pojazd where pojazd.id = "+id;
+				string query = "SELECT * FROM projekt_bazy_danych.pojazd where pojazd.id = " + id;
 				var command = new MySqlCommand(query, connection);
 				var dataReader = command.ExecuteReader();
 
@@ -113,7 +113,7 @@ namespace BazyDanych
 					carDto.EngineCapacity = dataReader.GetFloat(2);
 					carDto.TypeOfBody = dataReader.GetString(3);
 					carDto.RegistrationNumber = dataReader.GetString(4);
-					carDto.TypeOfFuel = dataReader.GetString(5);
+					carDto.TypeOfFuel = dataReader.GetChar(5);
 					carDto.CostOfPurchase = dataReader.GetDecimal(6);
 					carDto.ElectricWindows = dataReader.GetBoolean(7);
 					carDto.Assistance = dataReader.GetBoolean(8);
@@ -138,6 +138,55 @@ namespace BazyDanych
 			}
 
 			return new Car();
+		}
+
+		public static void AddCar(CarDto carDto)
+		{
+			var connectionString = Functions.GetConnectionString();
+
+			try
+			{
+				var connection = new MySql.Data.MySqlClient.MySqlConnection { ConnectionString = connectionString };
+				connection.Open();
+				var dateOfScrapping = carDto.DateOfScrapping?.ToLongDateString() ?? "null";
+
+				string query = "INSERT INTO projekt_bazy_danych.pojazd VALUES(null, \"" +
+								carDto.Vin +
+								"\",\"" +
+								carDto.EngineCapacity +
+								"\",\"" +
+								carDto.TypeOfBody +
+								"\",\"" +
+								carDto.RegistrationNumber +
+								"\",'" +
+								carDto.TypeOfFuel +
+								"'," +
+								carDto.CostOfPurchase +
+								"," +
+								carDto.ElectricWindows +
+								"," +
+								carDto.Assistance +
+								"," +
+								carDto.AirCondition +
+								"," +
+								carDto.AutomaticGearBox +
+								",\"" +
+								carDto.DateOfPurchase +
+								"\"," +
+								dateOfScrapping +
+								"," +
+								carDto.ModelId +
+								");";
+
+				var command = new MySqlCommand(query, connection);
+				command.ExecuteReader();
+				MessageBox.Show("Poprawnie dodano pojazd");
+				connection.Close();
+			}
+			catch (MySql.Data.MySqlClient.MySqlException ex)
+			{
+				MessageBox.Show(ex.Message);
+			}
 		}
 	}
 }

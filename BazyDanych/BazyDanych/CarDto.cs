@@ -23,7 +23,7 @@ namespace BazyDanych
 
 		public string TypeOfBody { get; set; }
 
-		public string TypeOfFuel { get; set; }
+		public char TypeOfFuel { get; set; }
 
 		public bool AutomaticGearBox { get; set; }
 
@@ -34,6 +34,5 @@ namespace BazyDanych
 		public int ModelId { get; set; }
 
 		public bool ElectricWindows { get; set; }
-		public Model Model { get; internal set; }
 	}
 }

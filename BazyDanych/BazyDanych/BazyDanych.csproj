@@ -81,6 +81,7 @@
     <Compile Include="ChangingPassword.Designer.cs">
       <DependentUpon>ChangingPassword.cs</DependentUpon>
     </Compile>
+    <Compile Include="ComboBoxItem.cs" />
     <Compile Include="Functions.cs" />
     <Compile Include="LoginWindow.cs">
       <SubType>Form</SubType>

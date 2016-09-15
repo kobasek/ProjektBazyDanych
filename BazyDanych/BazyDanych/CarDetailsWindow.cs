@@ -10,13 +10,13 @@ using System.Windows.Forms;
 
 namespace BazyDanych
 {
-    public partial class CarDetailsWindow : Form
-    {
-	    private Car car;
-        public CarDetailsWindow()
-        {
-            InitializeComponent();
-        }
+	public partial class CarDetailsWindow : Form
+	{
+		private Car car;
+		public CarDetailsWindow()
+		{
+			InitializeComponent();
+		}
 
 		public CarDetailsWindow(int carId)
 		{
@@ -26,17 +26,17 @@ namespace BazyDanych
 		}
 
 		private void button2_Click(object sender, EventArgs e)
-        {
-            vehicleCondition obj = new vehicleCondition();
-            obj.Show();
-        }
+		{
+			vehicleCondition obj = new vehicleCondition();
+			obj.Show();
+		}
 
-	    private void SetCarDetails()
-	    {
-		    var model = Model.GetModelById(car.modelId);
-		    var brand = Brand.GetBrandById(model.brandId);
+		private void SetCarDetails()
+		{
+			var model = Model.GetModelById(car.modelId);
+			var brand = Brand.GetBrandById(model.brandId);
 
-		    textBox1.Text = brand.name;
+			textBox1.Text = brand.name;
 			textBox2.Text = model.name;
 			textBox3.Text = car.vin;
 			textBox4.Text = car.registrationNumber;
@@ -45,11 +45,11 @@ namespace BazyDanych
 			textBox7.Text = car.dateOfScrapping.ToString();
 			textBox8.Text = "Janusz";
 			textBox9.Text = car.engineCapacity.ToString();
-			textBox10.Text = car.typeOfFuel;
-			textBox11.Text = car.automaticGearBox ? "TAK":"NIE";
+			textBox10.Text = car.typeOfFuel.ToString();
+			textBox11.Text = car.automaticGearBox ? "TAK" : "NIE";
 			textBox12.Text = car.airCondition ? "TAK" : "NIE";
 			textBox13.Text = car.assistance ? "TAK" : "NIE";
 			textBox14.Text = car.electricWindows ? "TAK" : "NIE";
 		}
-    }
+	}
 }
