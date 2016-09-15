@@ -25,7 +25,7 @@ DROP TABLE IF EXISTS `zlecenie`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `zlecenie` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `planowana_data_rozpoczecia` date NOT NULL,
   `planowana_data_zakonczenia` date NOT NULL,
   `faktyczna_data_rozpoczecia` date DEFAULT NULL,
@@ -42,9 +42,7 @@ CREATE TABLE `zlecenie` (
   `uzytkownik_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `uzytkownik_id` (`uzytkownik_id`),
-  KEY `opieka_id` (`opieka_id`),
-  CONSTRAINT `zlecenie_ibfk_1` FOREIGN KEY (`uzytkownik_id`) REFERENCES `uzytkownik` (`id`),
-  CONSTRAINT `zlecenie_ibfk_2` FOREIGN KEY (`opieka_id`) REFERENCES `opieka` (`id`)
+  KEY `opieka_id` (`opieka_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -66,4 +64,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-09-10 11:41:31
+-- Dump completed on 2016-09-15 22:22:30

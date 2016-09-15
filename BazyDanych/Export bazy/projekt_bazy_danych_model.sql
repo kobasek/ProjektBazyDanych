@@ -25,17 +25,15 @@ DROP TABLE IF EXISTS `model`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `model` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `nazwa` varchar(20) NOT NULL,
   `kategoria` varchar(3) NOT NULL,
   `marka_id` int(11) NOT NULL,
   `szablon_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `marka_id` (`marka_id`),
-  KEY `szablon_id` (`szablon_id`),
-  CONSTRAINT `model_ibfk_1` FOREIGN KEY (`marka_id`) REFERENCES `marka` (`id`),
-  CONSTRAINT `model_ibfk_2` FOREIGN KEY (`szablon_id`) REFERENCES `szablon` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  KEY `szablon_id` (`szablon_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -44,6 +42,7 @@ CREATE TABLE `model` (
 
 LOCK TABLES `model` WRITE;
 /*!40000 ALTER TABLE `model` DISABLE KEYS */;
+INSERT INTO `model` VALUES (1,'Passat B3','B',1,NULL),(2,'Golf IV','B',1,NULL),(3,'Golf V','B',1,NULL),(4,'Polo','B',1,NULL),(5,'Caddy','B',1,NULL),(6,'Up','B',1,NULL),(7,'A3','B',2,NULL),(8,'A4','B',2,NULL),(9,'A5','B',2,NULL),(10,'A6','B',2,NULL),(11,'A7','B',2,NULL),(12,'A8','B',2,NULL),(13,'Klasa A','B',3,NULL),(14,'Klasa B','B',3,NULL),(15,'Klasa C','B',3,NULL),(16,'Klasa E','B',3,NULL),(17,'Klasa S','B',3,NULL),(18,'Klasa G','B',3,NULL);
 /*!40000 ALTER TABLE `model` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -56,4 +55,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-09-10 11:41:31
+-- Dump completed on 2016-09-15 22:22:30

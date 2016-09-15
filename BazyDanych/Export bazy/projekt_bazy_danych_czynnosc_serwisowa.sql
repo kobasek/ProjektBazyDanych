@@ -25,16 +25,14 @@ DROP TABLE IF EXISTS `czynnosc_serwisowa`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `czynnosc_serwisowa` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `nazwa` varchar(50) DEFAULT NULL,
   `koszt` float DEFAULT NULL,
   `katalog_id` int(11) DEFAULT NULL,
   `serwis_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `serwis_id` (`serwis_id`),
-  KEY `katalog_id` (`katalog_id`),
-  CONSTRAINT `czynnosc_serwisowa_ibfk_1` FOREIGN KEY (`serwis_id`) REFERENCES `serwis` (`id`),
-  CONSTRAINT `czynnosc_serwisowa_ibfk_2` FOREIGN KEY (`katalog_id`) REFERENCES `katalog` (`id`)
+  KEY `katalog_id` (`katalog_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -56,4 +54,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-09-10 11:41:31
+-- Dump completed on 2016-09-15 22:22:30

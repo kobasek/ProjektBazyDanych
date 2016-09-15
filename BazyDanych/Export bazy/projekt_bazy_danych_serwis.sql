@@ -25,17 +25,15 @@ DROP TABLE IF EXISTS `serwis`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `serwis` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `koszt` float NOT NULL,
   `data_serwisu` date NOT NULL,
   `komentarz` varchar(255) NOT NULL,
   `miejsce_serwisu_id` int(11) NOT NULL,
   `zlecenie_id` int(11) NOT NULL,
-  PRIMARY KEY (`id`,`zlecenie_id`,`miejsce_serwisu_id`,`komentarz`,`data_serwisu`,`koszt`),
+  PRIMARY KEY (`id`),
   KEY `zlecenie_id` (`zlecenie_id`),
-  KEY `miejsce_serwisu_id` (`miejsce_serwisu_id`),
-  CONSTRAINT `serwis_ibfk_1` FOREIGN KEY (`zlecenie_id`) REFERENCES `zlecenie` (`id`),
-  CONSTRAINT `serwis_ibfk_2` FOREIGN KEY (`miejsce_serwisu_id`) REFERENCES `miejsce_serwisu` (`id`)
+  KEY `miejsce_serwisu_id` (`miejsce_serwisu_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -57,4 +55,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-09-10 11:41:31
+-- Dump completed on 2016-09-15 22:22:30

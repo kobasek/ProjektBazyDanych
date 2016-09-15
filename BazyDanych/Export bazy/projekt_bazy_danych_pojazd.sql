@@ -25,7 +25,7 @@ DROP TABLE IF EXISTS `pojazd`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `pojazd` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `vin` varchar(17) NOT NULL,
   `pojemnosc_silnika` float NOT NULL,
   `rodzaj_nadwozia` varchar(20) NOT NULL,
@@ -40,9 +40,8 @@ CREATE TABLE `pojazd` (
   `data_zlomowania` date DEFAULT NULL,
   `model_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
-  KEY `pojazd_ibfk_1` (`model_id`),
-  CONSTRAINT `pojazd_ibfk_1` FOREIGN KEY (`model_id`) REFERENCES `model` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  KEY `pojazd_ibfk_1` (`model_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -51,6 +50,7 @@ CREATE TABLE `pojazd` (
 
 LOCK TABLES `pojazd` WRITE;
 /*!40000 ALTER TABLE `pojazd` DISABLE KEYS */;
+INSERT INTO `pojazd` VALUES (1,'Caddy1Auto1234567',2,'Bus','','D',100000,'','','','','2016-04-25',NULL,5),(2,'Caddy2Auto6789012',2,'Bus','','D',100000,'','','','','2016-07-25',NULL,5),(3,'Caddy3Auto9876543',2,'Bus','','D',100000,'','','','','2016-08-25',NULL,5),(4,'AudiA3VIN12345678',2,'','SG12345','B',50000,'','','','\0','2016-09-15',NULL,7);
 /*!40000 ALTER TABLE `pojazd` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -63,4 +63,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-09-10 11:41:30
+-- Dump completed on 2016-09-15 22:22:30

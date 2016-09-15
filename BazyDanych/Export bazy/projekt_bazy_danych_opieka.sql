@@ -25,16 +25,14 @@ DROP TABLE IF EXISTS `opieka`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `opieka` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `data_poczatku` date NOT NULL,
   `data_konca` date DEFAULT NULL,
   `uzytkownik_id` int(11) NOT NULL,
   `pojazd_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
-  KEY `pojazd_id` (`pojazd_id`),
   KEY `uzytkownik_id` (`uzytkownik_id`),
-  CONSTRAINT `opieka_ibfk_1` FOREIGN KEY (`pojazd_id`) REFERENCES `pojazd` (`id`),
-  CONSTRAINT `opieka_ibfk_2` FOREIGN KEY (`uzytkownik_id`) REFERENCES `uzytkownik` (`id`)
+  KEY `pojazd_id` (`pojazd_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -56,4 +54,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-09-10 11:41:31
+-- Dump completed on 2016-09-15 22:22:30
