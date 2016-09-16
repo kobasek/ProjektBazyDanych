@@ -152,9 +152,9 @@ namespace BazyDanych
 
 				string query = "INSERT INTO projekt_bazy_danych.pojazd VALUES(null, \"" +
 								carDto.Vin +
-								"\",\"" +
+								"\"," +
 								carDto.EngineCapacity +
-								"\",\"" +
+								",\"" +
 								carDto.TypeOfBody +
 								"\",\"" +
 								carDto.RegistrationNumber +
@@ -186,6 +186,7 @@ namespace BazyDanych
 			catch (MySql.Data.MySqlClient.MySqlException ex)
 			{
 				MessageBox.Show(ex.Message);
+				throw ex;
 			}
 		}
 	}

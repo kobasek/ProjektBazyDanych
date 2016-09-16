@@ -59,6 +59,8 @@ namespace BazyDanych
 			this.comboBoxPaliwo = new System.Windows.Forms.ComboBox();
 			this.label12 = new System.Windows.Forms.Label();
 			this.panelSzczegoly = new System.Windows.Forms.Panel();
+			this.comboBoxTypNadwozia = new System.Windows.Forms.ComboBox();
+			this.label14 = new System.Windows.Forms.Label();
 			this.label13 = new System.Windows.Forms.Label();
 			this.buttonZatwierdzZmiany = new System.Windows.Forms.Button();
 			this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -130,7 +132,7 @@ namespace BazyDanych
 			// 
 			// textBoxPojemnosc
 			// 
-			this.textBoxPojemnosc.Location = new System.Drawing.Point(141, 42);
+			this.textBoxPojemnosc.Location = new System.Drawing.Point(165, 37);
 			this.textBoxPojemnosc.Name = "textBoxPojemnosc";
 			this.textBoxPojemnosc.Size = new System.Drawing.Size(100, 20);
 			this.textBoxPojemnosc.TabIndex = 9;
@@ -138,7 +140,7 @@ namespace BazyDanych
 			// label4
 			// 
 			this.label4.AutoSize = true;
-			this.label4.Location = new System.Drawing.Point(44, 45);
+			this.label4.Location = new System.Drawing.Point(68, 40);
 			this.label4.Name = "label4";
 			this.label4.Size = new System.Drawing.Size(91, 13);
 			this.label4.TabIndex = 10;
@@ -148,13 +150,6 @@ namespace BazyDanych
 			// 
 			this.comboBoxMarka.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.comboBoxMarka.FormattingEnabled = true;
-			foreach (var brand in Brand.GetBrandList())
-			{
-				var comboBoxItem = new ComboBoxItem();
-				comboBoxItem.Text = brand.name;
-				comboBoxItem.Value = brand.id;
-				comboBoxMarka.Items.Add(comboBoxItem);
-			}
 			this.comboBoxMarka.Location = new System.Drawing.Point(169, 21);
 			this.comboBoxMarka.Name = "comboBoxMarka";
 			this.comboBoxMarka.Size = new System.Drawing.Size(121, 21);
@@ -177,7 +172,7 @@ namespace BazyDanych
 			this.comboBoxKlimatyzacja.Items.AddRange(new object[] {
             "TAK",
             "NIE"});
-			this.comboBoxKlimatyzacja.Location = new System.Drawing.Point(141, 122);
+			this.comboBoxKlimatyzacja.Location = new System.Drawing.Point(165, 144);
 			this.comboBoxKlimatyzacja.Name = "comboBoxKlimatyzacja";
 			this.comboBoxKlimatyzacja.Size = new System.Drawing.Size(121, 21);
 			this.comboBoxKlimatyzacja.TabIndex = 13;
@@ -185,7 +180,7 @@ namespace BazyDanych
 			// label5
 			// 
 			this.label5.AutoSize = true;
-			this.label5.Location = new System.Drawing.Point(70, 125);
+			this.label5.Location = new System.Drawing.Point(94, 147);
 			this.label5.Name = "label5";
 			this.label5.Size = new System.Drawing.Size(65, 13);
 			this.label5.TabIndex = 14;
@@ -214,7 +209,7 @@ namespace BazyDanych
 			this.comboBoxSzyby.Items.AddRange(new object[] {
             "TAK",
             "NIE"});
-			this.comboBoxSzyby.Location = new System.Drawing.Point(141, 176);
+			this.comboBoxSzyby.Location = new System.Drawing.Point(165, 198);
 			this.comboBoxSzyby.Name = "comboBoxSzyby";
 			this.comboBoxSzyby.Size = new System.Drawing.Size(121, 21);
 			this.comboBoxSzyby.TabIndex = 17;
@@ -222,7 +217,7 @@ namespace BazyDanych
 			// label7
 			// 
 			this.label7.AutoSize = true;
-			this.label7.Location = new System.Drawing.Point(44, 179);
+			this.label7.Location = new System.Drawing.Point(68, 201);
 			this.label7.Name = "label7";
 			this.label7.Size = new System.Drawing.Size(91, 13);
 			this.label7.TabIndex = 18;
@@ -231,7 +226,7 @@ namespace BazyDanych
 			// label8
 			// 
 			this.label8.AutoSize = true;
-			this.label8.Location = new System.Drawing.Point(7, 152);
+			this.label8.Location = new System.Drawing.Point(31, 174);
 			this.label8.Name = "label8";
 			this.label8.Size = new System.Drawing.Size(128, 13);
 			this.label8.TabIndex = 19;
@@ -244,7 +239,7 @@ namespace BazyDanych
 			this.comboBoxWspomaganie.Items.AddRange(new object[] {
             "TAK",
             "NIE"});
-			this.comboBoxWspomaganie.Location = new System.Drawing.Point(141, 149);
+			this.comboBoxWspomaganie.Location = new System.Drawing.Point(165, 171);
 			this.comboBoxWspomaganie.Name = "comboBoxWspomaganie";
 			this.comboBoxWspomaganie.Size = new System.Drawing.Size(121, 21);
 			this.comboBoxWspomaganie.TabIndex = 20;
@@ -252,11 +247,11 @@ namespace BazyDanych
 			// label9
 			// 
 			this.label9.AutoSize = true;
-			this.label9.Location = new System.Drawing.Point(51, 98);
+			this.label9.Location = new System.Drawing.Point(7, 120);
 			this.label9.Name = "label9";
-			this.label9.Size = new System.Drawing.Size(84, 13);
+			this.label9.Size = new System.Drawing.Size(152, 13);
 			this.label9.TabIndex = 21;
-			this.label9.Text = "Skrzynia biegów";
+			this.label9.Text = "Automatyczna skrzynia biegów";
 			// 
 			// comboBoxSkrzynia
 			// 
@@ -265,7 +260,7 @@ namespace BazyDanych
 			this.comboBoxSkrzynia.Items.AddRange(new object[] {
             "TAK",
             "NIE"});
-			this.comboBoxSkrzynia.Location = new System.Drawing.Point(141, 95);
+			this.comboBoxSkrzynia.Location = new System.Drawing.Point(165, 117);
 			this.comboBoxSkrzynia.Name = "comboBoxSkrzynia";
 			this.comboBoxSkrzynia.Size = new System.Drawing.Size(121, 21);
 			this.comboBoxSkrzynia.TabIndex = 22;
@@ -313,7 +308,7 @@ namespace BazyDanych
             "BENZYNA + LPG",
             "ENERGIA ELEKTRYCZNA",
             "HYBRYDA"});
-			this.comboBoxPaliwo.Location = new System.Drawing.Point(141, 68);
+			this.comboBoxPaliwo.Location = new System.Drawing.Point(165, 90);
 			this.comboBoxPaliwo.Name = "comboBoxPaliwo";
 			this.comboBoxPaliwo.Size = new System.Drawing.Size(121, 21);
 			this.comboBoxPaliwo.TabIndex = 27;
@@ -321,7 +316,7 @@ namespace BazyDanych
 			// label12
 			// 
 			this.label12.AutoSize = true;
-			this.label12.Location = new System.Drawing.Point(62, 73);
+			this.label12.Location = new System.Drawing.Point(86, 95);
 			this.label12.Name = "label12";
 			this.label12.Size = new System.Drawing.Size(73, 13);
 			this.label12.TabIndex = 28;
@@ -330,6 +325,8 @@ namespace BazyDanych
 			// panelSzczegoly
 			// 
 			this.panelSzczegoly.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.panelSzczegoly.Controls.Add(this.comboBoxTypNadwozia);
+			this.panelSzczegoly.Controls.Add(this.label14);
 			this.panelSzczegoly.Controls.Add(this.label13);
 			this.panelSzczegoly.Controls.Add(this.label12);
 			this.panelSzczegoly.Controls.Add(this.label4);
@@ -345,13 +342,44 @@ namespace BazyDanych
 			this.panelSzczegoly.Controls.Add(this.label5);
 			this.panelSzczegoly.Location = new System.Drawing.Point(67, 201);
 			this.panelSzczegoly.Name = "panelSzczegoly";
-			this.panelSzczegoly.Size = new System.Drawing.Size(274, 207);
+			this.panelSzczegoly.Size = new System.Drawing.Size(302, 224);
 			this.panelSzczegoly.TabIndex = 29;
+			// 
+			// comboBoxTypNadwozia
+			// 
+			this.comboBoxTypNadwozia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.comboBoxTypNadwozia.FormattingEnabled = true;
+			this.comboBoxTypNadwozia.Items.AddRange(new object[] {
+			"SEDAN",
+			"KOMBI",
+			"COUPE",
+			"SUV",
+			"FASTBACK",
+			"HATCHBACK",
+			"KABRIOLET",
+			"LIMUZYNA",
+			"PICK-UP",
+			"VAN",
+			"MINIVAN",
+			"ROADSTER"});
+			this.comboBoxTypNadwozia.Location = new System.Drawing.Point(165, 63);
+			this.comboBoxTypNadwozia.Name = "comboBoxTypNadwozia";
+			this.comboBoxTypNadwozia.Size = new System.Drawing.Size(121, 21);
+			this.comboBoxTypNadwozia.TabIndex = 30;
+			// 
+			// label14
+			// 
+			this.label14.AutoSize = true;
+			this.label14.Location = new System.Drawing.Point(86, 66);
+			this.label14.Name = "label14";
+			this.label14.Size = new System.Drawing.Size(73, 13);
+			this.label14.TabIndex = 29;
+			this.label14.Text = "Typ nadwozia";
 			// 
 			// label13
 			// 
 			this.label13.AutoSize = true;
-			this.label13.Location = new System.Drawing.Point(113, 16);
+			this.label13.Location = new System.Drawing.Point(126, 16);
 			this.label13.Name = "label13";
 			this.label13.Size = new System.Drawing.Size(60, 13);
 			this.label13.TabIndex = 0;
@@ -387,7 +415,7 @@ namespace BazyDanych
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(534, 420);
+			this.ClientSize = new System.Drawing.Size(534, 437);
 			this.Controls.Add(this.label15);
 			this.Controls.Add(this.comboBox1);
 			this.Controls.Add(this.buttonZatwierdzZmiany);
@@ -450,5 +478,7 @@ namespace BazyDanych
 		public System.Windows.Forms.Button buttonZatwierdzZmiany;
 		private System.Windows.Forms.ComboBox comboBox1;
 		private System.Windows.Forms.Label label15;
+		private System.Windows.Forms.ComboBox comboBoxTypNadwozia;
+		private System.Windows.Forms.Label label14;
 	}
 }

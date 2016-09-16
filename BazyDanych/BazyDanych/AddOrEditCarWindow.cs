@@ -9,6 +9,14 @@ namespace BazyDanych
 		public AddOrEditCarWindow()
 		{
 			InitializeComponent();
+			var brandList = Brand.GetBrandList();
+			foreach (var brand in brandList)
+			{
+				var comboBoxItem = new ComboBoxItem();
+				comboBoxItem.Text = brand.name;
+				comboBoxItem.Value = brand.id;
+				comboBoxMarka.Items.Add(comboBoxItem);
+			}
 		}
 
 		private void buttonDodajPojazd_Click(object sender, EventArgs e)
@@ -38,6 +46,11 @@ namespace BazyDanych
 				isError = true;
 				errorNumber++;
 				errorMessage += errorNumber + ". Niepoprawny numer VIN.\n";
+			}
+
+			if (comboBoxTypNadwozia.SelectedItem != null)
+			{
+				carDto.TypeOfBody = comboBoxTypNadwozia.Text;
 			}
 
 			if (textBox1.TextLength == 7)
@@ -129,8 +142,15 @@ namespace BazyDanych
 			}
 			else
 			{
-				Car.AddCar(carDto);
-				Close();
+				try
+				{
+					Car.AddCar(carDto);
+					Close();
+				}
+				catch (MySql.Data.MySqlClient.MySqlException ex)
+				{
+					MessageBox.Show("Dodawanie pojazdu nie powiodło się!");
+				}
 			}
 		}
 
