@@ -19,6 +19,20 @@ namespace BazyDanych
 			}
 		}
 
+		public AddOrEditCarWindow(MainWindow mainWindow)
+		{
+			InitializeComponent();
+			main = mainWindow;
+			var brandList = Brand.GetBrandList();
+			foreach (var brand in brandList)
+			{
+				var comboBoxItem = new ComboBoxItem();
+				comboBoxItem.Text = brand.name;
+				comboBoxItem.Value = brand.id;
+				comboBoxMarka.Items.Add(comboBoxItem);
+			}
+		}
+
 		private void buttonDodajPojazd_Click(object sender, EventArgs e)
 		{
 			var errorNumber = 0;
@@ -144,13 +158,15 @@ namespace BazyDanych
 			{
 				try
 				{
-					Car.AddCar(carDto);
+					main.AddCarToDatabase(carDto);
 					Close();
 				}
 				catch (MySql.Data.MySqlClient.MySqlException ex)
 				{
+
 					MessageBox.Show("Dodawanie pojazdu nie powiodło się!");
 				}
+				
 			}
 		}
 

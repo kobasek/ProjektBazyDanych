@@ -10,6 +10,8 @@ namespace BazyDanych
 		/// </summary>
 		private System.ComponentModel.IContainer components = null;
 
+		private MainWindow main;
+
 		/// <summary>
 		/// Clean up any resources being used.
 		/// </summary>

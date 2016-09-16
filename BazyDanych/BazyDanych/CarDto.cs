@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BazyDanych
 {
-	class CarDto
+	public class CarDto
 	{
 		public int Id { get; set; }
 		public DateTime DateOfPurchase { get; set; }

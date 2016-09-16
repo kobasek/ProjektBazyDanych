@@ -105,7 +105,7 @@ namespace BazyDanych
 
 		private void DodajAuto()
 		{
-			AddOrEditCarWindow obj = new AddOrEditCarWindow();
+			var obj = new AddOrEditCarWindow(this);
 			obj.Text = "Menedżer Floty - Dodaj pojazd";
 			obj.buttonZatwierdzZmiany.Visible = false;
 			obj.Show();
@@ -137,11 +137,6 @@ namespace BazyDanych
 		private void button1_Click(object sender, EventArgs e)
 		{
 			DodajAuto();
-		}
-
-		private void klasaTestowaBindingSource_CurrentChanged(object sender, EventArgs e)
-		{
-
 		}
 
 		private void oTabelaPojazdy_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -348,6 +343,27 @@ namespace BazyDanych
 		{
 			ProfilWindow obj = new ProfilWindow();
 			obj.Show();
+		}
+
+		public void AddCarToDatabase(CarDto carDto)
+		{
+			try
+			{
+				Car.AddCar(carDto);
+				klasaTestowaBindingSource.Clear();
+				var list = Car.GetCarList();
+				foreach (var car in list)
+				{
+					var model = Model.GetModelById(car.modelId);
+					var brand = Brand.GetBrandById(model.brandId);
+					klasaTestowaBindingSource.Add(new KlasaTestowa(car.id, brand.name, model.name, "Janusz"));
+				}
+
+			}
+			catch (MySql.Data.MySqlClient.MySqlException ex)
+			{
+				throw ex;
+			}
 		}
 	}
 }

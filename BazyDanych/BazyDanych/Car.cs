@@ -153,7 +153,7 @@ namespace BazyDanych
 				string query = "INSERT INTO projekt_bazy_danych.pojazd VALUES(null, \"" +
 								carDto.Vin +
 								"\"," +
-								carDto.EngineCapacity +
+								carDto.EngineCapacity.ToString("F").Replace(",", ".") +
 								",\"" +
 								carDto.TypeOfBody +
 								"\",\"" +
@@ -161,7 +161,7 @@ namespace BazyDanych
 								"\",'" +
 								carDto.TypeOfFuel +
 								"'," +
-								carDto.CostOfPurchase +
+								carDto.CostOfPurchase.ToString("F").Replace(",", ".") +
 								"," +
 								carDto.ElectricWindows +
 								"," +

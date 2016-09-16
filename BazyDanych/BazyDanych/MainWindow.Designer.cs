@@ -373,7 +373,6 @@
             // klasaTestowaBindingSource
             // 
             this.klasaTestowaBindingSource.DataSource = typeof(BazyDanych.KlasaTestowa);
-            this.klasaTestowaBindingSource.CurrentChanged += new System.EventHandler(this.klasaTestowaBindingSource_CurrentChanged);
             // 
             // deleteButtonMPojazdy
             // 
