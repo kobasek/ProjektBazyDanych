@@ -93,9 +93,9 @@ namespace BazyDanych
 			}
 		}
 
-		private void EdytujAuto()
+		private void EdytujAuto(int carId)
 		{
-			AddOrEditCarWindow obj = new AddOrEditCarWindow();
+			var obj = new AddOrEditCarWindow(carId);
 			obj.Text = "Menedżer Floty - Edytuj pojazd";
 			obj.buttonDodajPojazd.Visible = false;
 			obj.buttonWczytajSzablon.Visible = false;
@@ -118,7 +118,9 @@ namespace BazyDanych
 			}
 			else if (e.ColumnIndex == 7)
 			{
-				EdytujAuto();
+				var row = e.RowIndex;
+				var carId = (int)tableCarsM.Rows[row].Cells[1].Value;
+				EdytujAuto(carId);
 			}
 			else if (e.ColumnIndex == 6)
 			{

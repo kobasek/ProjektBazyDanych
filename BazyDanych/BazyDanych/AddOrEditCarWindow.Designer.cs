@@ -352,18 +352,18 @@ namespace BazyDanych
 			this.comboBoxTypNadwozia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.comboBoxTypNadwozia.FormattingEnabled = true;
 			this.comboBoxTypNadwozia.Items.AddRange(new object[] {
-			"SEDAN",
-			"KOMBI",
-			"COUPE",
-			"SUV",
-			"FASTBACK",
-			"HATCHBACK",
-			"KABRIOLET",
-			"LIMUZYNA",
-			"PICK-UP",
-			"VAN",
-			"MINIVAN",
-			"ROADSTER"});
+            "SEDAN",
+            "KOMBI",
+            "COUPE",
+            "SUV",
+            "FASTBACK",
+            "HATCHBACK",
+            "KABRIOLET",
+            "LIMUZYNA",
+            "PICK-UP",
+            "VAN",
+            "MINIVAN",
+            "ROADSTER"});
 			this.comboBoxTypNadwozia.Location = new System.Drawing.Point(165, 63);
 			this.comboBoxTypNadwozia.Name = "comboBoxTypNadwozia";
 			this.comboBoxTypNadwozia.Size = new System.Drawing.Size(121, 21);
@@ -395,6 +395,7 @@ namespace BazyDanych
 			this.buttonZatwierdzZmiany.TabIndex = 32;
 			this.buttonZatwierdzZmiany.Text = "Zatwierdź zmiany";
 			this.buttonZatwierdzZmiany.UseVisualStyleBackColor = true;
+			this.buttonZatwierdzZmiany.Click += new System.EventHandler(this.buttonZatwierdzZmiany_Click);
 			// 
 			// comboBox1
 			// 

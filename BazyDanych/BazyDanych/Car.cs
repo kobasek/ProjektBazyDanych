@@ -148,7 +148,6 @@ namespace BazyDanych
 			{
 				var connection = new MySql.Data.MySqlClient.MySqlConnection { ConnectionString = connectionString };
 				connection.Open();
-				var dateOfScrapping = carDto.DateOfScrapping?.ToLongDateString() ?? "null";
 
 				string query = "INSERT INTO projekt_bazy_danych.pojazd VALUES(null, \"" +
 								carDto.Vin +
@@ -172,15 +171,45 @@ namespace BazyDanych
 								carDto.AutomaticGearBox +
 								",\"" +
 								carDto.DateOfPurchase +
-								"\"," +
-								dateOfScrapping +
-								"," +
+								"\", null," +
 								carDto.ModelId +
 								");";
 
 				var command = new MySqlCommand(query, connection);
 				command.ExecuteReader();
 				MessageBox.Show("Poprawnie dodano pojazd");
+				connection.Close();
+			}
+			catch (MySql.Data.MySqlClient.MySqlException ex)
+			{
+				MessageBox.Show(ex.Message);
+				throw ex;
+			}
+		}
+
+		public static void UpdateCar(CarDto carDto)
+		{
+			var connectionString = Functions.GetConnectionString();
+
+			try
+			{
+				var connection = new MySql.Data.MySqlClient.MySqlConnection { ConnectionString = connectionString };
+				connection.Open();
+				var dateOfScrapping = carDto.DateOfScrapping.HasValue ? carDto.DateOfScrapping.ToString() : "null";
+
+				string query = "UPDATE projekt_bazy_danych.pojazd " +
+								"SET nr_rejestracyjny = \"" +
+								carDto.RegistrationNumber +
+								"\",paliwo = '" +
+								carDto.TypeOfFuel +
+								"',data_zlomowania = \"" +
+								dateOfScrapping +
+								"\" WHERE id = " +
+								carDto.Id;
+
+				var command = new MySqlCommand(query, connection);
+				command.ExecuteReader();
+				MessageBox.Show("Poprawnie edytowano pojazd");
 				connection.Close();
 			}
 			catch (MySql.Data.MySqlClient.MySqlException ex)

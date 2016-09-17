@@ -6,6 +6,14 @@ namespace BazyDanych
 	//Okno dodawania oraz edycji pojazdu
 	public partial class AddOrEditCarWindow : Form
 	{
+		private Car car;
+
+		public AddOrEditCarWindow(int carId)
+		{
+			InitializeComponent();
+			EditInitialize(carId);
+		}
+
 		public AddOrEditCarWindow()
 		{
 			InitializeComponent();
@@ -172,9 +180,10 @@ namespace BazyDanych
 
 		private void comboBoxMarka_SelectedIndexChanged(object sender, EventArgs e)
 		{
-			comboBoxModel.Items.Clear();
+			
 			var markaId = (int)((ComboBoxItem) comboBoxMarka.SelectedItem).Value;
 
+			comboBoxModel.Items.Clear();
 			var modelList = Model.GetModelListForBrand(markaId);
 			foreach (var model in modelList)
 			{
@@ -182,6 +191,147 @@ namespace BazyDanych
 				comboBoxItem.Text = model.name;
 				comboBoxItem.Value = model.id;
 				comboBoxModel.Items.Add(comboBoxItem);
+			}
+		}
+
+		private void EditInitialize(int carId)
+		{
+			car = Car.GetCarById(carId);
+			var model = Model.GetModelById(car.modelId);
+			var brand = Brand.GetBrandById(model.brandId);
+
+			var comboBoxBr = new ComboBoxItem(brand.name, brand.id);
+			var comboBoxMod = new ComboBoxItem(model.name, model.id);
+
+
+			label10.Text = "Data złomowania";
+			label10.Location = new System.Drawing.Point(73, 151);
+
+			comboBoxMarka.Items.Insert(0, comboBoxBr);
+			comboBoxMarka.SelectedIndex = 0;
+			comboBoxMarka.Enabled = false;
+
+			comboBoxModel.Items.Insert(0, comboBoxMod);
+			comboBoxModel.SelectedIndex = 0;
+			comboBoxModel.Enabled = false;
+
+			textBoxVIN.Text = car.vin;
+			textBoxVIN.Enabled = false;
+
+			textBox1.Text = car.registrationNumber;
+
+			textBoxKoszt.Text = car.costOfPurchase.ToString();
+			textBoxKoszt.Enabled = false;
+
+			dateTimePicker1.ShowCheckBox = true;
+			dateTimePicker1.Checked = false;
+
+			comboBox1.Text = "Janusz";
+
+			textBoxPojemnosc.Text = car.engineCapacity.ToString();
+			textBoxPojemnosc.Enabled = false;
+
+			comboBoxTypNadwozia.Text = car.typeOfBody;
+			comboBoxTypNadwozia.Enabled = false;
+
+			switch (car.typeOfFuel)
+			{
+				case 'D':
+					comboBoxPaliwo.Text = "ROPA";
+					comboBoxPaliwo.Enabled = false;
+					break;
+				case 'B':
+					comboBoxPaliwo.Items.Clear();
+					comboBoxPaliwo.Items.AddRange(new object[] { "BENZYNA", "BENZYNA + LPG" });
+					comboBoxPaliwo.Text = "BENZYNA";
+					break;
+				case 'L':
+					comboBoxPaliwo.Text = "LPG";
+					comboBoxPaliwo.Enabled = false;
+					break;
+				case 'G':
+					comboBoxPaliwo.Text = "BENZYNA + LPG";
+					comboBoxPaliwo.Enabled = false;
+					break;
+				case 'E':
+					comboBoxPaliwo.Text = "ENERGIA ELEKTRYCZNA";
+					comboBoxPaliwo.Enabled = false;
+					break;
+				case 'H':
+					comboBoxPaliwo.Text = "HYBRYDA";
+					comboBoxPaliwo.Enabled = false;
+					break;
+			}
+
+			comboBoxKlimatyzacja.Text = car.airCondition ? "TAK" : "NIE";
+			comboBoxKlimatyzacja.Enabled = false;
+
+			comboBoxSkrzynia.Text = car.automaticGearBox ? "TAK" : "NIE";
+			comboBoxSkrzynia.Enabled = false;
+
+			comboBoxSzyby.Text = car.electricWindows ? "TAK" : "NIE";
+			comboBoxSzyby.Enabled = false;
+
+			comboBoxWspomaganie.Text = car.assistance ? "TAK" : "NIE";
+			comboBoxWspomaganie.Enabled = false;
+		}
+
+		private void buttonZatwierdzZmiany_Click(object sender, EventArgs e)
+		{
+			var carDto = new CarDto();
+			var isError = false;
+			var errorNumber = 0;
+			var errorMessage = "";
+
+			carDto.Id = car.id;
+
+			if (textBox1.TextLength == 7)
+			{
+				carDto.RegistrationNumber = textBox1.Text;
+			}
+			else
+			{
+				isError = true;
+				errorNumber++;
+				errorMessage += errorNumber + ". Niepoprawny numer rejestracyjny.\n";
+			}
+
+			carDto.DateOfScrapping = dateTimePicker1.Checked ? dateTimePicker1.Value : (DateTime?) null;
+
+			if (comboBoxPaliwo.Enabled)
+			{
+				switch (comboBoxPaliwo.SelectedIndex)
+				{
+					case 0:
+						carDto.TypeOfFuel = 'B';
+						break;
+					case 1:
+						carDto.TypeOfFuel = 'L';
+						break;
+				}
+			}
+			else
+			{
+				carDto.TypeOfFuel = car.typeOfFuel;
+			}
+
+			if (isError)
+			{
+				MessageBox.Show(errorMessage);
+			}
+			else
+			{
+				try
+				{
+					Car.UpdateCar(carDto);
+					Close();
+				}
+				catch (MySql.Data.MySqlClient.MySqlException ex)
+				{
+
+					MessageBox.Show("Edytowanie pojazdu nie powiodło się!");
+				}
+
 			}
 		}
 	}
