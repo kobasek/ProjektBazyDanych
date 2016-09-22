@@ -6,22 +6,21 @@ using System.Threading.Tasks;
 
 namespace BazyDanych
 {
-    class KlasaTestowa
+    class KlasaTestowa_order
     {
-        private int nrPojazdu;
-        private string markaPojazdu;
-        private string modelPojazdu;
-        private string opiekunPojazdu;
+        private int id;
+        private string keeper;
+        private string driver;
+        private string car;
         private static string editButton = "Edytuj";
         private static string showCalendar = "Wyświetl";
 
-        public KlasaTestowa(int _nrPojazdu, string _markaPojazdu, string _modelPojazdu, string _opiekunPojazdu)
+        public KlasaTestowa_order(int _id, string _keeper, string _driver, string _car)
         {
-            this.nrPojazdu = _nrPojazdu;
-            this.markaPojazdu = _markaPojazdu;
-            this.modelPojazdu = _modelPojazdu;
-            this.opiekunPojazdu = _opiekunPojazdu;
-
+            this.id = _id;
+            this.keeper = _keeper;
+            this.driver = _driver;
+            this.car = _car;
         }
 
         public string ShowCalendar
@@ -32,15 +31,15 @@ namespace BazyDanych
             }
         }
 
-        public int NrPojazdu
+        public int Id
         {
             get
             {
-                return nrPojazdu;
+                return id;
             }
             set
             {
-                nrPojazdu = value;
+                id = value;
             }
         }
 
@@ -50,41 +49,41 @@ namespace BazyDanych
             {
                 return editButton;
             }
-          
+
         }
-        public string MarkaPojazdu
+        public string Keeper
         {
             get
             {
-                return markaPojazdu;
+                return keeper;
             }
             set
             {
-                markaPojazdu = value;
+               keeper = value;
             }
         }
 
-        public string ModelPojazdu
+        public string Car
         {
             get
             {
-                return modelPojazdu;
+                return car;
             }
             set
             {
-                modelPojazdu = value;
+               car = value;
             }
         }
 
-        public string OpiekunPojazdu
+        public string Driver
         {
             get
             {
-                return opiekunPojazdu;
+                return driver;
             }
             set
             {
-                opiekunPojazdu = value;
+                driver = value;
             }
         }
     }

@@ -7,6 +7,8 @@
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
+        private MainWindow main;
+
         /// <summary>
         /// Clean up any resources being used.
         /// </summary>
@@ -43,8 +45,8 @@
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.textBox11 = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.textBox7 = new System.Windows.Forms.TextBox();
@@ -55,15 +57,17 @@
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.buttonAddUser = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.textBox13 = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -87,7 +91,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(100, 391);
+            this.label3.Location = new System.Drawing.Point(100, 407);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(36, 13);
             this.label3.TabIndex = 2;
@@ -114,7 +118,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(22, 266);
+            this.label6.Location = new System.Drawing.Point(22, 280);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(113, 13);
             this.label6.TabIndex = 5;
@@ -123,7 +127,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(94, 303);
+            this.label7.Location = new System.Drawing.Point(94, 307);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(41, 13);
             this.label7.TabIndex = 6;
@@ -132,7 +136,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(104, 337);
+            this.label8.Location = new System.Drawing.Point(104, 353);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(30, 13);
             this.label8.TabIndex = 7;
@@ -161,14 +165,14 @@
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(140, 264);
+            this.textBox4.Location = new System.Drawing.Point(140, 278);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(121, 20);
             this.textBox4.TabIndex = 11;
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(140, 300);
+            this.textBox5.Location = new System.Drawing.Point(140, 304);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(121, 20);
             this.textBox5.TabIndex = 12;
@@ -179,15 +183,15 @@
             this.comboBox1.Items.AddRange(new object[] {
             "Mężczyzna",
             "Kobieta"});
-            this.comboBox1.Location = new System.Drawing.Point(140, 334);
+            this.comboBox1.Location = new System.Drawing.Point(140, 350);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 21);
             this.comboBox1.TabIndex = 13;
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.numericUpDown2);
-            this.groupBox1.Controls.Add(this.numericUpDown1);
+            this.groupBox1.Controls.Add(this.textBox12);
+            this.groupBox1.Controls.Add(this.textBox11);
             this.groupBox1.Controls.Add(this.label12);
             this.groupBox1.Controls.Add(this.label11);
             this.groupBox1.Controls.Add(this.textBox7);
@@ -203,19 +207,19 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Miejsce zamieszkania";
             // 
-            // numericUpDown2
+            // textBox12
             // 
-            this.numericUpDown2.Location = new System.Drawing.Point(123, 127);
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(120, 20);
-            this.numericUpDown2.TabIndex = 17;
+            this.textBox12.Location = new System.Drawing.Point(123, 129);
+            this.textBox12.Name = "textBox12";
+            this.textBox12.Size = new System.Drawing.Size(128, 20);
+            this.textBox12.TabIndex = 17;
             // 
-            // numericUpDown1
+            // textBox11
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(123, 100);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(120, 20);
-            this.numericUpDown1.TabIndex = 16;
+            this.textBox11.Location = new System.Drawing.Point(123, 102);
+            this.textBox11.Name = "textBox11";
+            this.textBox11.Size = new System.Drawing.Size(128, 20);
+            this.textBox11.TabIndex = 16;
             // 
             // label12
             // 
@@ -276,7 +280,7 @@
             // 
             // textBox8
             // 
-            this.textBox8.Location = new System.Drawing.Point(140, 387);
+            this.textBox8.Location = new System.Drawing.Point(140, 403);
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(121, 20);
             this.textBox8.TabIndex = 16;
@@ -309,14 +313,15 @@
             this.label13.TabIndex = 29;
             this.label13.Text = "Posiadane kategorie prawa jazdy";
             // 
-            // button1
+            // buttonAddUser
             // 
-            this.button1.Location = new System.Drawing.Point(404, 287);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(90, 52);
-            this.button1.TabIndex = 30;
-            this.button1.Text = "Dodaj użytkownika";
-            this.button1.UseVisualStyleBackColor = true;
+            this.buttonAddUser.Location = new System.Drawing.Point(404, 287);
+            this.buttonAddUser.Name = "buttonAddUser";
+            this.buttonAddUser.Size = new System.Drawing.Size(90, 52);
+            this.buttonAddUser.TabIndex = 30;
+            this.buttonAddUser.Text = "Dodaj użytkownika";
+            this.buttonAddUser.UseVisualStyleBackColor = true;
+            this.buttonAddUser.Click += new System.EventHandler(this.buttonAddUser_Click);
             // 
             // button2
             // 
@@ -324,12 +329,13 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(90, 52);
             this.button2.TabIndex = 31;
-            this.button2.Text = "Edytuj użytkownika";
+            this.button2.Text = "Zapisz";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // textBox9
             // 
-            this.textBox9.Location = new System.Drawing.Point(140, 361);
+            this.textBox9.Location = new System.Drawing.Point(140, 377);
             this.textBox9.Name = "textBox9";
             this.textBox9.Size = new System.Drawing.Size(121, 20);
             this.textBox9.TabIndex = 33;
@@ -337,7 +343,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(32, 364);
+            this.label14.Location = new System.Drawing.Point(32, 380);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(102, 13);
             this.label14.TabIndex = 32;
@@ -346,7 +352,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(68, 417);
+            this.label15.Location = new System.Drawing.Point(68, 433);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(66, 13);
             this.label15.TabIndex = 34;
@@ -359,22 +365,58 @@
             "Menadżer",
             "Opiekun",
             "Kierowca"});
-            this.comboBox2.Location = new System.Drawing.Point(140, 414);
+            this.comboBox2.Location = new System.Drawing.Point(140, 430);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(121, 21);
             this.comboBox2.TabIndex = 35;
+            // 
+            // textBox10
+            // 
+            this.textBox10.Location = new System.Drawing.Point(140, 327);
+            this.textBox10.Name = "textBox10";
+            this.textBox10.Size = new System.Drawing.Size(121, 20);
+            this.textBox10.TabIndex = 36;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(92, 333);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(43, 13);
+            this.label16.TabIndex = 37;
+            this.label16.Text = "Telefon";
+            // 
+            // textBox13
+            // 
+            this.textBox13.Location = new System.Drawing.Point(140, 256);
+            this.textBox13.Name = "textBox13";
+            this.textBox13.Size = new System.Drawing.Size(121, 20);
+            this.textBox13.TabIndex = 38;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(42, 259);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(92, 13);
+            this.label17.TabIndex = 39;
+            this.label17.Text = "Miejsce urodzenia";
             // 
             // AddOrEditUserWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(530, 452);
+            this.Controls.Add(this.label17);
+            this.Controls.Add(this.textBox13);
+            this.Controls.Add(this.label16);
+            this.Controls.Add(this.textBox10);
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.textBox9);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.buttonAddUser);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.checkedListBox1);
             this.Controls.Add(this.textBox8);
@@ -396,8 +438,6 @@
             this.Text = "Menadżer Floty - Dodaj użytkownika";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -424,19 +464,23 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.CheckedListBox checkedListBox1;
         private System.Windows.Forms.Label label13;
-        public System.Windows.Forms.Button button1;
+        public System.Windows.Forms.Button buttonAddUser;
         public System.Windows.Forms.Button button2;
         private System.Windows.Forms.TextBox textBox9;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.TextBox textBox12;
+        private System.Windows.Forms.TextBox textBox11;
+        private System.Windows.Forms.TextBox textBox13;
+        private System.Windows.Forms.Label label17;
     }
 }

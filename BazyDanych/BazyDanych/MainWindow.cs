@@ -25,22 +25,23 @@ namespace BazyDanych
 		}
 
 
-
 		private void Form2_Load(object sender, EventArgs e)
 		{
-			var list = Car.GetCarList();
-			foreach (var car in list)
+			var carList = Car.GetCarList();
+			foreach (var car in carList)
 			{
 				var model = Model.GetModelById(car.modelId);
 				var brand = Brand.GetBrandById(model.brandId);
-				klasaTestowaBindingSource.Add(new KlasaTestowa(car.id, brand.name, model.name, "Janusz"));
+				klasaTestowaBindingSource.Add(new KlasaTestowa_car(car.id, brand.name, model.name, "Janusz"));
 			}
-		}
+            var userList = User.GetUserList();
+            foreach (var user in userList)
+            {
+                klasaTestowauserBindingSource.Add(new KlasaTestowa_user(user.id, user.name, user.lastName, user.phone));
+            }
+        }
 
-
-
-
-		private void InitializeComponentStart()
+        private void InitializeComponentStart()
 		{
 			this.panelS.Visible = true;
 			this.panelS.SendToBack();
@@ -103,14 +104,40 @@ namespace BazyDanych
 			obj.Show();
 		}
 
-		private void DodajAuto()
+        private void EdytujUser(int userId)
+        {
+            var obj = new AddOrEditUserWindow(userId);
+            obj.Text = "Menedżer Floty - Edytuj Użytkownika";
+            obj.buttonAddUser.Visible = false;
+            obj.Show();
+        }
+
+        private void DodajAuto()
 		{
 			var obj = new AddOrEditCarWindow(this);
 			obj.Text = "Menedżer Floty - Dodaj pojazd";
 			obj.buttonZatwierdzZmiany.Visible = false;
 			obj.Show();
 		}
-		private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+
+        private void DodajUser()
+        {
+            AddOrEditUserWindow obj = new AddOrEditUserWindow(this);
+            obj.Text = "Menedżer Floty - Dodaj Użytkownika";
+            obj.button2.Visible = false;
+            obj.Show();
+        }
+
+        private void SzczegolyUser(int userId)
+        {
+            var obj = new AddOrEditUserWindow(userId, "sz");
+            obj.Text = "Menedżer Floty - Szczegóły Użytkownika";
+            obj.buttonAddUser.Visible = false;
+            obj.button2.Visible = false;
+            obj.Show();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
 		{
 			if (e.ColumnIndex == 0)
 			{
@@ -195,25 +222,28 @@ namespace BazyDanych
 		{
 			if (e.ColumnIndex == 7)
 			{
-				AddOrEditUserWindow obj = new AddOrEditUserWindow();
-				obj.Text = "Menedżer Floty - Edytuj Użytkownika";
-				obj.button1.Visible = false;
-				obj.Show();
+
+                var row = e.RowIndex;
+                var userId = (int)tableDriversM.Rows[row].Cells[1].Value;
+                EdytujUser(userId);
 			}
-			else if (e.ColumnIndex == 5)
+			else if (e.ColumnIndex == 6)
 			{
 				ScheduleWindow obj = new ScheduleWindow();
 				obj.Show();
 			}
+            else if (e.ColumnIndex == 5)
+            {
+                var row = e.RowIndex;
+                var userId = (int)tableDriversM.Rows[row].Cells[1].Value;
+                SzczegolyUser(userId);
+            }
 
-		}
+        }
 
 		private void addButtonMKierowcy_Click(object sender, EventArgs e)
 		{
-			AddOrEditUserWindow obj = new AddOrEditUserWindow();
-			obj.Text = "Menedżer Floty - Dodaj Użytkownika";
-			obj.button2.Visible = false;
-			obj.Show();
+            DodajUser();
 		}
 
 		private void kTabelaRezerwacje_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -358,7 +388,7 @@ namespace BazyDanych
 				{
 					var model = Model.GetModelById(car.modelId);
 					var brand = Brand.GetBrandById(model.brandId);
-					klasaTestowaBindingSource.Add(new KlasaTestowa(car.id, brand.name, model.name, "Janusz"));
+					klasaTestowaBindingSource.Add(new KlasaTestowa_car(car.id, brand.name, model.name, "Janusz"));
 				}
 
 			}
@@ -367,5 +397,24 @@ namespace BazyDanych
 				throw ex;
 			}
 		}
-	}
+
+        public void AddUserToDatabase(UserDto userDto)
+        {
+            try
+            {
+                User.AddUser(userDto);
+                klasaTestowauserBindingSource.Clear();
+                var userList = User.GetUserList();
+                foreach (var user in userList)
+                {
+                    klasaTestowauserBindingSource.Add(new KlasaTestowa_user(user.id, user.name, user.lastName, user.phone));
+                }
+
+            }
+            catch (MySql.Data.MySqlClient.MySqlException ex)
+            {
+                throw ex;
+            }
+        }
+    }
 }
