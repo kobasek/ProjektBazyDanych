@@ -15,6 +15,8 @@ namespace BazyDanych
 	public partial class MainWindow : Form
 	{
 		private bool isLogged;
+        private char permission;
+        private int userID;
 		public MainWindow()
 		{
 			InitializeComponent();
@@ -32,7 +34,8 @@ namespace BazyDanych
 			{
 				var model = Model.GetModelById(car.modelId);
 				var brand = Brand.GetBrandById(model.brandId);
-				klasaTestowaBindingSource.Add(new KlasaTestowa_car(car.id, brand.name, model.name, "Janusz"));
+                string keeper = User.GetUserNameById(Opieka.GetOpiekunID(car.id));
+				klasaTestowaBindingSource.Add(new KlasaTestowa_car(car.id, brand.name, model.name, keeper));
 			}
             var userList = User.GetUserList();
             foreach (var user in userList)
@@ -50,25 +53,31 @@ namespace BazyDanych
 			this.panelK.Visible = false;
 		}
 
-		public void InitializeComponentMenadzer()
+		public void InitializeComponentMenadzer(int id)
 		{
+            permission = 'M';
+            userID = id;
 			this.panelM.Visible = true;
 			this.powiadomieniaLabel.Visible = true;
 			this.profilLabel.Visible = true;
 			this.logowanieLabel.Text = "Wyloguj";
 		}
 
-		public void InitializeComponentOpieka()
+		public void InitializeComponentOpieka(int id)
 		{
-			this.panelO.Visible = true;
+            permission = 'O';
+            userID = id;
+            this.panelO.Visible = true;
 			this.powiadomieniaLabel.Visible = true;
 			this.profilLabel.Visible = true;
 			this.logowanieLabel.Text = "Wyloguj";
 		}
 
-		public void InitializeComponentKierowca()
+		public void InitializeComponentKierowca(int id)
 		{
-			this.panelK.Visible = true;
+            permission = 'K';
+            userID = id;
+            this.panelK.Visible = true;
 			this.powiadomieniaLabel.Visible = true;
 			this.profilLabel.Visible = true;
 			this.logowanieLabel.Text = "Wyloguj";
@@ -388,7 +397,8 @@ namespace BazyDanych
 				{
 					var model = Model.GetModelById(car.modelId);
 					var brand = Brand.GetBrandById(model.brandId);
-					klasaTestowaBindingSource.Add(new KlasaTestowa_car(car.id, brand.name, model.name, "Janusz"));
+                    string keeper = User.GetUserNameById(Opieka.GetOpiekunID(car.id));
+                    klasaTestowaBindingSource.Add(new KlasaTestowa_car(car.id, brand.name, model.name, keeper));
 				}
 
 			}

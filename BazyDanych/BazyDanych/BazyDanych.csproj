@@ -110,6 +110,7 @@
     <Compile Include="AddOrEditCarWindow.Designer.cs">
       <DependentUpon>AddOrEditCarWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="Opieka.cs" />
     <Compile Include="ProfilWindow.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace BazyDanych
 {
@@ -404,10 +405,11 @@ namespace BazyDanych
 			this.comboBox1.Name = "comboBox1";
 			this.comboBox1.Size = new System.Drawing.Size(121, 21);
 			this.comboBox1.TabIndex = 33;
-			// 
-			// label15
-			// 
-			this.label15.AutoSize = true;
+            this.comboBox1.Items.AddRange((User.GetKeeperNameList()).ToArray());
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
 			this.label15.Location = new System.Drawing.Point(116, 177);
 			this.label15.Name = "label15";
 			this.label15.Size = new System.Drawing.Size(47, 13);

@@ -218,5 +218,5 @@ namespace BazyDanych
 				throw ex;
 			}
 		}
-	}
+    }
 }

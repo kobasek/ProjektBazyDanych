@@ -251,5 +251,101 @@ namespace BazyDanych
                 throw ex;
             }
         }
+
+        public static IList<string> GetKeeperNameList()
+        {
+            var connectionString = Functions.GetConnectionString();
+            var list = new List<string>();
+            string pom = "";
+
+            try
+            {
+                var connection = new MySql.Data.MySqlClient.MySqlConnection { ConnectionString = connectionString };
+                connection.Open();
+
+                const string query = "SELECT nazwisko, imie FROM projekt_bazy_danych.uzytkownik WHERE uzytkownik.uprawnienia = \"O\"";
+                var command = new MySqlCommand(query, connection);
+                var dataReader = command.ExecuteReader();
+
+                while (dataReader.Read())
+                {
+                    pom = dataReader.GetString(0) + " " + dataReader.GetString(1);
+                    list.Add(pom);
+                }
+                connection.Close();
+            }
+            catch (MySql.Data.MySqlClient.MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            return list;
+        }
+
+        public static string GetUserNameById(int id)
+        {
+            var connectionString = Functions.GetConnectionString();
+            string name = "";
+
+            try
+            {
+                var connection = new MySql.Data.MySqlClient.MySqlConnection { ConnectionString = connectionString };
+                connection.Open();
+
+                string query = "SELECT nazwisko, imie FROM projekt_bazy_danych.uzytkownik where uzytkownik.id = " + id;
+                var command = new MySqlCommand(query, connection);
+                var dataReader = command.ExecuteReader();
+
+                if (dataReader.Read())
+                {
+                    name = dataReader.GetString(0) + " " + dataReader.GetString(1);
+                    connection.Close();
+                    return name;
+                }
+                else
+                {
+                    connection.Close();
+                    return name;
+                }
+            }
+            catch (MySql.Data.MySqlClient.MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+            return name;
+        }
+
+        public static int GetUserIdByName(string name, string lastName)
+        {
+            var connectionString = Functions.GetConnectionString();
+            int id = 0;
+
+            try
+            {
+                var connection = new MySql.Data.MySqlClient.MySqlConnection { ConnectionString = connectionString };
+                connection.Open();
+
+                string query = "SELECT id FROM projekt_bazy_danych.uzytkownik where uzytkownik.imie = \"" + name + "\" AND uzytkownik.nazwisko = \"" + lastName + "\"";
+                var command = new MySqlCommand(query, connection);
+                var dataReader = command.ExecuteReader();
+
+                if (dataReader.Read())
+                {
+                    id = dataReader.GetInt32(0);
+                    connection.Close();
+                    return id;
+                }
+                else
+                {
+                    connection.Close();
+                    return id;
+                }
+            }
+            catch (MySql.Data.MySqlClient.MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            return id;
+        }
     }
 }

@@ -237,7 +237,6 @@ namespace BazyDanych
                     break;
             }
 
-            userDto.DriversLicense = "A, B";
             if (isError)
             {
                 MessageBox.Show(errorMessage);

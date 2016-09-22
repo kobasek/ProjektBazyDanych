@@ -1,12 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
+using System.Data.SqlClient;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace BazyDanych
 {
@@ -14,6 +11,8 @@ namespace BazyDanych
     public partial class LoginWindow : Form
     {
         private MainWindow obj;
+        private int id;
+        private char permission;
         public LoginWindow(MainWindow obj)
         {
             this.obj = obj;
@@ -23,27 +22,49 @@ namespace BazyDanych
         //m - menadżer, o - opiekun, k - kierowca
         private void loginButton_Click(object sender, EventArgs e)
         {
-            if (this.usernameTextBox.Text == "m")
+            var connectionString = Functions.GetConnectionString();
+            try
             {
-                obj.InitializeComponentMenadzer();
+                var connection = new MySql.Data.MySqlClient.MySqlConnection { ConnectionString = connectionString };
+                connection.Open();
+
+                string query = "SELECT id, uprawnienia FROM projekt_bazy_danych.uzytkownik WHERE uzytkownik.login = \"" + usernameTextBox.Text + "\" AND uzytkownik.haslo = \"" + passwordTextBox.Text+"\"";
+                var command = new MySqlCommand(query, connection);
+                var dataReader = command.ExecuteReader();
+
+                if (dataReader.Read())
+                {
+                    id = dataReader.GetInt32(0);
+                    permission = dataReader.GetChar(1);
+                }
+                else
+                    id = 0;
+                connection.Close();
+            }
+            catch (MySql.Data.MySqlClient.MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            if(id == 0)
+            {
+                MessageBox.Show("Podany login bądź hasło są błędne");
+            }
+            else if (permission == 'M')
+            {
+                obj.InitializeComponentMenadzer(id);
                 this.Close();
             }
-            else if (this.usernameTextBox.Text == "o")
+            else if (permission == 'O')
             {
-                obj.InitializeComponentOpieka();
+                obj.InitializeComponentOpieka(id);
                 this.Close();
             }
 
-            else if (this.usernameTextBox.Text == "k")
+            else if (permission == 'K')
             {
-                obj.InitializeComponentKierowca();
+                obj.InitializeComponentKierowca(id);
                 this.Close();
             }
-            else
-                MessageBox.Show("W pole Login wpisz uprawnienia: \nm - aby zalogować się jako menadżer\no - aby zalogować się jako opiekun\nk - aby zalogować się jako kierowca");
-
-
-
         }
     }
 }

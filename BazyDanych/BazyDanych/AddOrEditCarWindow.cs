@@ -158,7 +158,9 @@ namespace BazyDanych
 
 			carDto.ElectricWindows = comboBoxSzyby.SelectedIndex == 0;
 
-			if (isError)
+            string[] pomtable = comboBox1.SelectedItem.ToString().Split(' ');
+
+            if (isError)
 			{
 				MessageBox.Show(errorMessage);
 			}
@@ -167,7 +169,8 @@ namespace BazyDanych
 				try
 				{
 					main.AddCarToDatabase(carDto);
-					Close();
+                    Opieka.AddOpieka(User.GetUserIdByName(pomtable[1], pomtable[0]), carDto.Id, DateTime.Now);
+                    Close();
 				}
 				catch (MySql.Data.MySqlClient.MySqlException ex)
 				{
@@ -226,8 +229,6 @@ namespace BazyDanych
 			dateTimePicker1.ShowCheckBox = true;
 			dateTimePicker1.Checked = false;
 
-			comboBox1.Text = "Janusz";
-
 			textBoxPojemnosc.Text = car.engineCapacity.ToString();
 			textBoxPojemnosc.Enabled = false;
 
@@ -274,7 +275,9 @@ namespace BazyDanych
 
 			comboBoxWspomaganie.Text = car.assistance ? "TAK" : "NIE";
 			comboBoxWspomaganie.Enabled = false;
-		}
+
+            comboBox1.Text = User.GetUserNameById(Opieka.GetOpiekunID(car.id));
+        }
 
 		private void buttonZatwierdzZmiany_Click(object sender, EventArgs e)
 		{
@@ -315,7 +318,10 @@ namespace BazyDanych
 				carDto.TypeOfFuel = car.typeOfFuel;
 			}
 
-			if (isError)
+            string[] pomtable = comboBox1.SelectedItem.ToString().Split(' ');
+
+
+            if (isError)
 			{
 				MessageBox.Show(errorMessage);
 			}
@@ -324,6 +330,7 @@ namespace BazyDanych
 				try
 				{
 					Car.UpdateCar(carDto);
+                    Opieka.AddOpieka(User.GetUserIdByName(pomtable[1], pomtable[0]), carDto.Id, DateTime.Now);
 					Close();
 				}
 				catch (MySql.Data.MySqlClient.MySqlException ex)
