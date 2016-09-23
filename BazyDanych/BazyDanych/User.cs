@@ -252,6 +252,35 @@ namespace BazyDanych
             }
         }
 
+        public static IList<string> GetUsersNameList()
+        {
+            var connectionString = Functions.GetConnectionString();
+            var list = new List<string>();
+            string pom = "";
+
+            try
+            {
+                var connection = new MySql.Data.MySqlClient.MySqlConnection { ConnectionString = connectionString };
+                connection.Open();
+
+                const string query = "SELECT nazwisko, imie FROM projekt_bazy_danych.uzytkownik;";
+                var command = new MySqlCommand(query, connection);
+                var dataReader = command.ExecuteReader();
+
+                while (dataReader.Read())
+                {
+                    pom = dataReader.GetString(0) + " " + dataReader.GetString(1);
+                    list.Add(pom);
+                }
+                connection.Close();
+            }
+            catch (MySql.Data.MySqlClient.MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            return list;
+        }
+
         public static IList<string> GetKeeperNameList()
         {
             var connectionString = Functions.GetConnectionString();
@@ -346,6 +375,56 @@ namespace BazyDanych
                 MessageBox.Show(ex.Message);
             }
             return id;
+        }
+
+        public static void SetKeeper(int id)
+        {
+            var connectionString = Functions.GetConnectionString();
+
+            try
+            {
+                var connection = new MySql.Data.MySqlClient.MySqlConnection { ConnectionString = connectionString };
+                connection.Open();
+
+                string query = "UPDATE projekt_bazy_danych.uzytkownik " +
+                               "SET uprawnienia = \"O\" WHERE id = " +
+                                id;
+
+                var command = new MySqlCommand(query, connection);
+                command.ExecuteReader();
+                MessageBox.Show("Poprawnie edytowano użytkownika");
+                connection.Close();
+            }
+            catch (MySql.Data.MySqlClient.MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+                throw ex;
+            }
+        }
+
+        public static void SetDriver(int id)
+        {
+            var connectionString = Functions.GetConnectionString();
+
+            try
+            {
+                var connection = new MySql.Data.MySqlClient.MySqlConnection { ConnectionString = connectionString };
+                connection.Open();
+
+                string query = "UPDATE projekt_bazy_danych.uzytkownik " +
+                               "SET uprawnienia = \"K\" WHERE id = " +
+                                id;
+
+                var command = new MySqlCommand(query, connection);
+                command.ExecuteReader();
+                MessageBox.Show("Poprawnie edytowano użytkownika");
+                connection.Close();
+            }
+            catch (MySql.Data.MySqlClient.MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+                throw ex;
+            }
         }
     }
 }

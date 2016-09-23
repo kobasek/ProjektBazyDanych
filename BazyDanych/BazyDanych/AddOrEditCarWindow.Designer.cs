@@ -405,7 +405,7 @@ namespace BazyDanych
 			this.comboBox1.Name = "comboBox1";
 			this.comboBox1.Size = new System.Drawing.Size(121, 21);
 			this.comboBox1.TabIndex = 33;
-            this.comboBox1.Items.AddRange((User.GetKeeperNameList()).ToArray());
+            this.comboBox1.Items.AddRange((User.GetUsersNameList()).ToArray());
             // 
             // label15
             // 

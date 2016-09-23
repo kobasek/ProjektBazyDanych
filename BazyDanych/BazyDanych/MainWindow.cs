@@ -105,7 +105,7 @@ namespace BazyDanych
 
 		private void EdytujAuto(int carId)
 		{
-			var obj = new AddOrEditCarWindow(carId);
+			var obj = new AddOrEditCarWindow(this, carId);
 			obj.Text = "Menedżer Floty - Edytuj pojazd";
 			obj.buttonDodajPojazd.Visible = false;
 			obj.buttonWczytajSzablon.Visible = false;
@@ -407,6 +407,28 @@ namespace BazyDanych
 				throw ex;
 			}
 		}
+
+        public void UpdateCar(CarDto carDto)
+        {
+            try
+            {
+                klasaTestowaBindingSource.Clear();
+                var list = Car.GetCarList();
+                foreach (var car in list)
+                {
+                    var model = Model.GetModelById(car.modelId);
+                    var brand = Brand.GetBrandById(model.brandId);
+                    string keeper = User.GetUserNameById(Opieka.GetOpiekunID(car.id));
+                    klasaTestowaBindingSource.Add(new KlasaTestowa_car(car.id, brand.name, model.name, keeper));
+                }
+
+            }
+            catch (MySql.Data.MySqlClient.MySqlException ex)
+            {
+                throw ex;
+            }
+        }
+
 
         public void AddUserToDatabase(UserDto userDto)
         {
