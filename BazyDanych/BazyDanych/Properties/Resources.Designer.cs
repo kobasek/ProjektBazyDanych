@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Portal.Properties
+namespace BazyDanych.Properties
 {
 
 

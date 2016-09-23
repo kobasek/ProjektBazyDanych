@@ -1,4 +1,4 @@
-﻿namespace Portal
+﻿namespace BazyDanych
 {
     partial class ChangingPassword
     {

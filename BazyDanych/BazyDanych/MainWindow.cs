@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Portal
+namespace BazyDanych
 {
 
 	//Okienko główne
@@ -28,24 +28,21 @@ namespace Portal
 
 		private void Form2_Load(object sender, EventArgs e)
 		{
-            var studentList = User.GetUserList('S');
-            foreach (var user in studentList)
-            {
-                klasaTestowauserBindingSource.Add(new KlasaTestowa_user(user.id, user.name, user.lastName, user.mail));
-            }
+            var carList = Car.GetCarList();
 
-            studentList = User.GetUserList('N');
-            foreach (var user in studentList)
-            {
-                klasaTestowateacherBindingSource.Add(new KlasaTestowa_teacher(user.id, user.name, user.lastName, user.mail));
-            }
+            carList = Car.GetUserCarList(userID);
 
-            var courseList = Course.GetCourseList();
-            foreach (var course in courseList)
+            foreach (var car in carList)
+			{
+				var model = Model.GetModelById(car.modelId);
+				var brand = Brand.GetBrandById(model.brandId);
+                string keeper = User.GetUserNameById(Opieka.GetOpiekunID(car.id));
+				klasaTestowaBindingSource.Add(new KlasaTestowa_car(car.id, brand.name, model.name, keeper));
+			}
+            var userList = User.GetUserList();
+            foreach (var user in userList)
             {
-                User user = User.GetUserById(course.idTeacher);
-                string teacher = user.lastName + " " + user.name;
-                klasaTestowakursBindingSource.Add(new KlasaTestowa_kurs(course.id, course.topic, course.studentsNumber, teacher));
+                klasaTestowauserBindingSource.Add(new KlasaTestowa_user(user.id, user.name, user.lastName, user.phone));
             }
         }
 
@@ -58,31 +55,58 @@ namespace Portal
 			this.panelK.Visible = false;
 		}
 
-		public void InitializeComponentAdmin(int id)
+		public void InitializeComponentMenadzer(int id)
 		{
-            permission = 'A';
+            permission = 'M';
             userID = id;
 			this.panelM.Visible = true;
 			this.profilLabel.Visible = true;
 			this.logowanieLabel.Text = "Wyloguj";
+            var carList = Car.GetCarList();
+
+            foreach (var car in carList)
+            {
+                var model = Model.GetModelById(car.modelId);
+                var brand = Brand.GetBrandById(model.brandId);
+                string keeper = User.GetUserNameById(Opieka.GetOpiekunID(car.id));
+                klasaTestowaBindingSource.Add(new KlasaTestowa_car(car.id, brand.name, model.name, keeper));
+            }
         }
 
-		public void InitializeComponentTeacher(int id)
+		public void InitializeComponentOpieka(int id)
 		{
             permission = 'O';
             userID = id;
             this.panelO.Visible = true;
 			this.profilLabel.Visible = true;
 			this.logowanieLabel.Text = "Wyloguj";
+            var carList = Car.GetUserCarList(userID);
+
+            foreach (var car in carList)
+            {
+                var model = Model.GetModelById(car.modelId);
+                var brand = Brand.GetBrandById(model.brandId);
+                string keeper = User.GetUserNameById(Opieka.GetOpiekunID(car.id));
+                klasaTestowaBindingSource.Add(new KlasaTestowa_car(car.id, brand.name, model.name, keeper));
+            }
         }
 
-		public void InitializeComponentStudent(int id)
+		public void InitializeComponentKierowca(int id)
 		{
             permission = 'K';
             userID = id;
             this.panelK.Visible = true;
 			this.profilLabel.Visible = true;
 			this.logowanieLabel.Text = "Wyloguj";
+            var carList = Car.GetCarList();
+
+            foreach (var car in carList)
+            {
+                var model = Model.GetModelById(car.modelId);
+                var brand = Brand.GetBrandById(model.brandId);
+                string keeper = User.GetUserNameById(Opieka.GetOpiekunID(car.id));
+                klasaTestowaBindingSource.Add(new KlasaTestowa_car(car.id, brand.name, model.name, keeper));
+            }
         }
 
 		private void zalogujSLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -104,22 +128,296 @@ namespace Portal
 			}
 		}
 
+		private void EdytujAuto(int carId)
+		{
+			var obj = new AddOrEditCarWindow(this, carId);
+			obj.Text = "Menedżer Floty - Edytuj pojazd";
+			obj.buttonDodajPojazd.Visible = false;
+			obj.buttonWczytajSzablon.Visible = false;
+			obj.buttonZapiszSzablon.Visible = false;
+			obj.Show();
+		}
+
+        private void EdytujUser(int userId)
+        {
+            var obj = new AddOrEditUserWindow(this, userId);
+            obj.Text = "Menedżer Floty - Edytuj Użytkownika";
+            obj.buttonAddUser.Visible = false;
+            obj.Show();
+        }
+
+        private void DodajAuto()
+		{
+			var obj = new AddOrEditCarWindow(this);
+			obj.Text = "Menedżer Floty - Dodaj pojazd";
+			obj.buttonZatwierdzZmiany.Visible = false;
+			obj.Show();
+		}
+
+        private void DodajUser()
+        {
+            AddOrEditUserWindow obj = new AddOrEditUserWindow(this);
+            obj.Text = "Menedżer Floty - Dodaj Użytkownika";
+            obj.button2.Visible = false;
+            obj.Show();
+        }
+
+        private void SzczegolyUser(int userId)
+        {
+            var obj = new AddOrEditUserWindow(userId, "sz");
+            obj.Text = "Menedżer Floty - Szczegóły Użytkownika";
+            obj.buttonAddUser.Visible = false;
+            obj.button2.Visible = false;
+            obj.Show();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+		{
+			if (e.ColumnIndex == 0)
+			{
+				deleteButtonMPojazdy.Enabled = true;
+			}
+			else if (e.ColumnIndex == 7)
+			{
+				var row = e.RowIndex;
+				var carId = (int)tableCarsM.Rows[row].Cells[1].Value;
+				EdytujAuto(carId);
+			}
+			else if (e.ColumnIndex == 6)
+			{
+				ScheduleWindow obj = new ScheduleWindow();
+				obj.Show();
+			}
+			else if (e.ColumnIndex == 5)
+			{
+				var row = e.RowIndex;
+				var carId = (int)tableCarsM.Rows[row].Cells[1].Value;
+				CarDetailsWindow obj = new CarDetailsWindow(carId);
+				obj.Show();
+			}
+		}
+
+		private void button1_Click(object sender, EventArgs e)
+		{
+			DodajAuto();
+		}
+
+		private void oTabelaPojazdy_CellContentClick(object sender, DataGridViewCellEventArgs e)
+		{
+			if (e.ColumnIndex == 5)
+			{
+				CarDetailsWindow obj = new CarDetailsWindow();
+				obj.Show();
+			}
+			else if (e.ColumnIndex == 4)
+			{
+				ScheduleWindow obj = new ScheduleWindow();
+				obj.Show();
+			}
+		}
+
+		private void oTabelaZlecenia_CellContentClick(object sender, DataGridViewCellEventArgs e)
+		{
+			if (e.ColumnIndex == 5)
+			{
+				AddOrEditOrderWindow obj = new AddOrEditOrderWindow();
+				obj.button2.Visible = false;
+				obj.Show();
+			}
+		}
+
+		private void button1_Click_1(object sender, EventArgs e)
+		{
+			AddOrEditOrderWindow obj = new AddOrEditOrderWindow();
+			obj.button1.Visible = false;
+			obj.Show();
+		}
+
+		private void mTabelaZlecenia_CellContentClick(object sender, DataGridViewCellEventArgs e)
+		{
+			if (e.ColumnIndex == 6)
+			{
+				AddOrEditOrderWindow obj = new AddOrEditOrderWindow();
+				obj.Text = "Menedżer Floty - Edytuj Zlecenie";
+				obj.button2.Visible = false;
+				obj.Show();
+			}
+		}
+
+		private void addButtonMZlecenia_Click(object sender, EventArgs e)
+		{
+			AddOrEditOrderWindow obj = new AddOrEditOrderWindow();
+			obj.Text = "Menedżer Floty - Dodaj Zlecenie";
+			obj.button1.Visible = false;
+			obj.Show();
+		}
+
+		private void mTabelaKierowcy_CellContentClick(object sender, DataGridViewCellEventArgs e)
+		{
+			if (e.ColumnIndex == 7)
+			{
+
+                var row = e.RowIndex;
+                var userId = (int)tableDriversM.Rows[row].Cells[1].Value;
+                EdytujUser(userId);
+			}
+			else if (e.ColumnIndex == 6)
+			{
+				ScheduleWindow obj = new ScheduleWindow();
+				obj.Show();
+			}
+            else if (e.ColumnIndex == 5)
+            {
+                var row = e.RowIndex;
+                var userId = (int)tableDriversM.Rows[row].Cells[1].Value;
+                SzczegolyUser(userId);
+            }
+
+        }
+
+		private void addButtonMKierowcy_Click(object sender, EventArgs e)
+		{
+            DodajUser();
+		}
+
+		private void kTabelaRezerwacje_CellContentClick(object sender, DataGridViewCellEventArgs e)
+		{
+			if (e.ColumnIndex == 5)
+			{
+				CarDetailsWindow obj = new CarDetailsWindow();
+				obj.Show();
+			}
+			else if (e.ColumnIndex == 6)
+			{
+				ScheduleWindow obj = new ScheduleWindow();
+				obj.Show();
+			}
+			else if (e.ColumnIndex == 7)
+			{
+				ReservationWindow obj = new ReservationWindow();
+				obj.Show();
+			}
+		}
+
+		private void oTabelaKierowcy_CellContentClick(object sender, DataGridViewCellEventArgs e)
+		{
+			if (e.ColumnIndex == 4)
+			{
+				ScheduleWindow obj = new ScheduleWindow();
+				obj.Show();
+			}
+		}
+
+		private void radioButton1_CheckedChanged(object sender, EventArgs e)
+		{
+			if (this.radioButton1.Checked == true)
+			{
+				this.comboBox1.Visible = true;
+				this.comboBox2.Visible = false;
+				this.comboBox3.Visible = false;
+			}
+		}
+
+		private void radioButton2_CheckedChanged(object sender, EventArgs e)
+		{
+			if (this.radioButton2.Checked == true)
+			{
+				this.comboBox1.Visible = false;
+				this.comboBox2.Visible = true;
+				this.comboBox3.Visible = false;
+			}
+		}
+
+		private void radioButton3_CheckedChanged(object sender, EventArgs e)
+		{
+			if (this.radioButton3.Checked == true)
+			{
+				this.comboBox1.Visible = false;
+				this.comboBox2.Visible = false;
+				this.comboBox3.Visible = true;
+			}
+		}
+
+		private void comboBox4_SelectedIndexChanged(object sender, EventArgs e)
+		{
+			if (this.comboBox4.SelectedIndex == 5)
+			{
+				this.label3.Visible = true;
+				this.label4.Visible = true;
+				this.dateTimePicker1.Visible = true;
+				this.dateTimePicker2.Visible = true;
+			}
+			else
+			{
+				this.label3.Visible = false;
+				this.label4.Visible = false;
+				this.dateTimePicker1.Visible = false;
+				this.dateTimePicker2.Visible = false;
+			}
+		}
+
+		private void button3_Click(object sender, EventArgs e)
+		{
+			double value = 50;
+			double servisValue = 100;
+			this.textBox1.Text = value.ToString() + " zł";
+			this.textBox2.Text = servisValue.ToString() + " zł";
+		}
+
+		private void comboBox5_SelectedIndexChanged(object sender, EventArgs e)
+		{
+			if (this.comboBox5.SelectedIndex == 5)
+			{
+				this.label9.Visible = true;
+				this.label10.Visible = true;
+				this.dateTimePicker3.Visible = true;
+				this.dateTimePicker4.Visible = true;
+			}
+			else
+			{
+				this.label9.Visible = false;
+				this.label10.Visible = false;
+				this.dateTimePicker3.Visible = false;
+				this.dateTimePicker4.Visible = false;
+			}
+		}
+
+		private void button4_Click(object sender, EventArgs e)
+		{
+			double businessKilimetersValue = 50;
+			double businessTimeValue = 50;
+			double businessValue = 50;
+			double privateKilimetersValue = 100;
+			double privateTimeValue = 100;
+			double privateValue = 100;
+
+			this.textBox3.Text = businessKilimetersValue.ToString() + " km";
+			this.textBox6.Text = businessTimeValue.ToString() + " h";
+			this.textBox8.Text = businessValue.ToString() + " zł";
+			this.textBox4.Text = privateKilimetersValue.ToString() + " km";
+			this.textBox5.Text = privateTimeValue.ToString() + " h";
+			this.textBox7.Text = privateValue.ToString() + " zł";
+		}
+
 		private void profilLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
 		{
 			ProfilWindow obj = new ProfilWindow();
 			obj.Show();
 		}
 
-		public void AddUserToDatabase(UserDto userDto)
+		public void AddCarToDatabase(CarDto carDto)
 		{
 			try
 			{
-				User.AddUser(userDto);
-				klasaTestowauserBindingSource.Clear();
-				var list = User.GetUserList(userDto.Permissions);
-				foreach (var user in list)
+				Car.AddCar(carDto);
+				klasaTestowaBindingSource.Clear();
+				var list = Car.GetCarList();
+				foreach (var car in list)
 				{
-                    klasaTestowauserBindingSource.Add(new KlasaTestowa_user(user.id, user.name, user.lastName, user.mail));
+					var model = Model.GetModelById(car.modelId);
+					var brand = Brand.GetBrandById(model.brandId);
+                    string keeper = User.GetUserNameById(Opieka.GetOpiekunID(car.id));
+                    klasaTestowaBindingSource.Add(new KlasaTestowa_car(car.id, brand.name, model.name, keeper));
 				}
 
 			}
@@ -129,91 +427,56 @@ namespace Portal
 			}
 		}
 
+        public void UpdateCar(CarDto carDto)
+        {
+            try
+            {
+                klasaTestowaBindingSource.Clear();
+                var list = Car.GetCarList();
+                foreach (var car in list)
+                {
+                    var model = Model.GetModelById(car.modelId);
+                    var brand = Brand.GetBrandById(model.brandId);
+                    string keeper = User.GetUserNameById(Opieka.GetOpiekunID(car.id));
+                    klasaTestowaBindingSource.Add(new KlasaTestowa_car(car.id, brand.name, model.name, keeper));
+                }
+
+            }
+            catch (MySql.Data.MySqlClient.MySqlException ex)
+            {
+                throw ex;
+            }
+        }
+
+
+        public void AddUserToDatabase(UserDto userDto)
+        {
+            try
+            {
+                User.AddUser(userDto);
+                klasaTestowauserBindingSource.Clear();
+                var userList = User.GetUserList();
+                foreach (var user in userList)
+                {
+                    klasaTestowauserBindingSource.Add(new KlasaTestowa_user(user.id, user.name, user.lastName, user.phone));
+                }
+
+            }
+            catch (MySql.Data.MySqlClient.MySqlException ex)
+            {
+                throw ex;
+            }
+        }
+
         public void UpdateUser(UserDto userDto)
         {
             try
             {
                 klasaTestowauserBindingSource.Clear();
-                var list = User.GetUserList(userDto.Permissions);
-                foreach (var user in list)
+                var userList = User.GetUserList();
+                foreach (var user in userList)
                 {
-                    klasaTestowauserBindingSource.Add(new KlasaTestowa_user(user.id, user.name, user.lastName, user.mail));
-                }
-            }
-            catch (MySql.Data.MySqlClient.MySqlException ex)
-            {
-                throw ex;
-            }
-        }
-
-        public void AddTeacherToDatabase(UserDto userDto)
-        {
-            try
-            {
-                User.AddUser(userDto);
-                klasaTestowateacherBindingSource.Clear();
-                var list = User.GetUserList(userDto.Permissions);
-                foreach (var user in list)
-                {
-                    klasaTestowateacherBindingSource.Add(new KlasaTestowa_teacher(user.id, user.name, user.lastName, user.mail));
-                }
-
-            }
-            catch (MySql.Data.MySqlClient.MySqlException ex)
-            {
-                throw ex;
-            }
-        }
-
-        public void UpdateTeacher(UserDto userDto)
-        {
-            try
-            {
-                klasaTestowateacherBindingSource.Clear();
-                var list = User.GetUserList(userDto.Permissions);
-                foreach (var user in list)
-                {
-                    klasaTestowateacherBindingSource.Add(new KlasaTestowa_teacher(user.id, user.name, user.lastName, user.mail));
-                }
-            }
-            catch (MySql.Data.MySqlClient.MySqlException ex)
-            {
-                throw ex;
-            }
-        }
-
-        public void AddCourseToDatabase(CourseDto courseDto)
-        {
-            try
-            {
-                Course.AddCourse(courseDto);
-                klasaTestowauserBindingSource.Clear();
-                var list = Course.GetCourseList();
-                User user = User.GetUserById(courseDto.IdTeacher);
-                string teacher = user.lastName + " " + user.name;
-                foreach (var course in list)
-                {
-                    klasaTestowauserBindingSource.Add(new KlasaTestowa_kurs(course.id, course.topic, course.studentsNumber, teacher));
-                }
-
-            }
-            catch (MySql.Data.MySqlClient.MySqlException ex)
-            {
-                throw ex;
-            }
-        }
-
-        public void UpdateCourse(CourseDto courseDto)
-        {
-            try
-            {
-                klasaTestowauserBindingSource.Clear();
-                var list = Course.GetCourseList();
-                User user = User.GetUserById(courseDto.IdTeacher);
-                string teacher = user.lastName + " " + user.name;
-                foreach (var course in list)
-                {
-                    klasaTestowauserBindingSource.Add(new KlasaTestowa_kurs(course.id, course.topic, course.studentsNumber, teacher));
+                    klasaTestowauserBindingSource.Add(new KlasaTestowa_user(user.id, user.name, user.lastName, user.phone));
                 }
 
             }

@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 5.7.12, for Win64 (x86_64)
 --
--- Host: localhost    Database: projekt_pp
+-- Host: localhost    Database: projekt_bazy_danych
 -- ------------------------------------------------------
 -- Server version	5.7.15-log
 
@@ -16,28 +16,26 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `dziennik_ocen`
+-- Table structure for table `szablon`
 --
 
-DROP TABLE IF EXISTS `dziennik_ocen`;
+DROP TABLE IF EXISTS `szablon`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `dziennik_ocen` (
-  `id` int(11) NOT NULL,
-  `id_uczestnik` int(11) NOT NULL,
-  `ocena` int(11) NOT NULL,
-  `opis` varchar(45) DEFAULT NULL,
+CREATE TABLE `szablon` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nazwa` varchar(20) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `dziennik_ocen`
+-- Dumping data for table `szablon`
 --
 
-LOCK TABLES `dziennik_ocen` WRITE;
-/*!40000 ALTER TABLE `dziennik_ocen` DISABLE KEYS */;
-/*!40000 ALTER TABLE `dziennik_ocen` ENABLE KEYS */;
+LOCK TABLES `szablon` WRITE;
+/*!40000 ALTER TABLE `szablon` DISABLE KEYS */;
+/*!40000 ALTER TABLE `szablon` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -49,4 +47,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-09-23 14:38:04
+-- Dump completed on 2016-09-23 13:49:36

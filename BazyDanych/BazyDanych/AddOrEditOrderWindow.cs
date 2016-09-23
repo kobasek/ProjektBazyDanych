@@ -10,27 +10,27 @@ using System.Windows.Forms;
 
 namespace BazyDanych
 {
-    public partial class ProfilWindow : Form
+    public partial class AddOrEditOrderWindow : Form
     {
-        public ProfilWindow()
+        public AddOrEditOrderWindow()
         {
             InitializeComponent();
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            ChangingPassword obj = new ChangingPassword();
-            obj.Show();
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            AddServiceWindow obj = new AddServiceWindow();
+            obj.Show();
         }
     }
 }

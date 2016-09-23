@@ -4,23 +4,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Portal
+namespace BazyDanych
 {
-    class KlasaTestowa_teacher
+    class KlasaTestowa_car
     {
-        private int id;
-        private string name;
-        private string lastName;
-        private string mail;
+        private int nrPojazdu;
+        private string markaPojazdu;
+        private string modelPojazdu;
+        private string opiekunPojazdu;
         private static string editButton = "Edytuj";
         private static string showCalendar = "Wyświetl";
 
-        public KlasaTestowa_teacher(int _id, string _name, string _lastName, string _mail)
+        public KlasaTestowa_car(int _nrPojazdu, string _markaPojazdu, string _modelPojazdu, string _opiekunPojazdu)
         {
-            this.id = _id;
-            this.name = _name;
-            this.lastName = _lastName;
-            this.mail = _mail;
+            this.nrPojazdu = _nrPojazdu;
+            this.markaPojazdu = _markaPojazdu;
+            this.modelPojazdu = _modelPojazdu;
+            this.opiekunPojazdu = _opiekunPojazdu;
         }
 
         public string ShowCalendar
@@ -31,15 +31,15 @@ namespace Portal
             }
         }
 
-        public int Id
+        public int NrPojazdu
         {
             get
             {
-                return id;
+                return nrPojazdu;
             }
             set
             {
-                id = value;
+                nrPojazdu = value;
             }
         }
 
@@ -49,41 +49,41 @@ namespace Portal
             {
                 return editButton;
             }
-
+          
         }
-        public string Name
+        public string MarkaPojazdu
         {
             get
             {
-                return name;
+                return markaPojazdu;
             }
             set
             {
-                name = value;
+                markaPojazdu = value;
             }
         }
 
-        public string LastName
+        public string ModelPojazdu
         {
             get
             {
-                return lastName;
+                return modelPojazdu;
             }
             set
             {
-                lastName = value;
+                modelPojazdu = value;
             }
         }
 
-        public string Mail
+        public string OpiekunPojazdu
         {
             get
             {
-                return mail;
+                return opiekunPojazdu;
             }
             set
             {
-                mail = value;
+                opiekunPojazdu = value;
             }
         }
     }

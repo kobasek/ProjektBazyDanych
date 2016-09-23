@@ -10,21 +10,21 @@ using System.Windows.Forms;
 
 namespace BazyDanych
 {
-    public partial class ChangingPassword : Form
+    public partial class vehicleCondition : Form
     {
-        public ChangingPassword()
+        public vehicleCondition()
         {
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void label2_Click(object sender, EventArgs e)
         {
-            this.Close();
+
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void groupBox1_Enter(object sender, EventArgs e)
         {
-            this.Close();
+
         }
     }
 }
