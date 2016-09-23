@@ -23,14 +23,16 @@ namespace BazyDanych
 			InitializeComponentStart();
 			isLogged = false;
 			profilLabel.Visible = false;
-			powiadomieniaLabel.Visible = false;
 		}
 
 
 		private void Form2_Load(object sender, EventArgs e)
 		{
-			var carList = Car.GetCarList();
-			foreach (var car in carList)
+            var carList = Car.GetCarList();
+
+            carList = Car.GetUserCarList(userID);
+
+            foreach (var car in carList)
 			{
 				var model = Model.GetModelById(car.modelId);
 				var brand = Brand.GetBrandById(model.brandId);
@@ -58,30 +60,54 @@ namespace BazyDanych
             permission = 'M';
             userID = id;
 			this.panelM.Visible = true;
-			this.powiadomieniaLabel.Visible = true;
 			this.profilLabel.Visible = true;
 			this.logowanieLabel.Text = "Wyloguj";
-		}
+            var carList = Car.GetCarList();
+
+            foreach (var car in carList)
+            {
+                var model = Model.GetModelById(car.modelId);
+                var brand = Brand.GetBrandById(model.brandId);
+                string keeper = User.GetUserNameById(Opieka.GetOpiekunID(car.id));
+                klasaTestowaBindingSource.Add(new KlasaTestowa_car(car.id, brand.name, model.name, keeper));
+            }
+        }
 
 		public void InitializeComponentOpieka(int id)
 		{
             permission = 'O';
             userID = id;
             this.panelO.Visible = true;
-			this.powiadomieniaLabel.Visible = true;
 			this.profilLabel.Visible = true;
 			this.logowanieLabel.Text = "Wyloguj";
-		}
+            var carList = Car.GetUserCarList(userID);
+
+            foreach (var car in carList)
+            {
+                var model = Model.GetModelById(car.modelId);
+                var brand = Brand.GetBrandById(model.brandId);
+                string keeper = User.GetUserNameById(Opieka.GetOpiekunID(car.id));
+                klasaTestowaBindingSource.Add(new KlasaTestowa_car(car.id, brand.name, model.name, keeper));
+            }
+        }
 
 		public void InitializeComponentKierowca(int id)
 		{
             permission = 'K';
             userID = id;
             this.panelK.Visible = true;
-			this.powiadomieniaLabel.Visible = true;
 			this.profilLabel.Visible = true;
 			this.logowanieLabel.Text = "Wyloguj";
-		}
+            var carList = Car.GetCarList();
+
+            foreach (var car in carList)
+            {
+                var model = Model.GetModelById(car.modelId);
+                var brand = Brand.GetBrandById(model.brandId);
+                string keeper = User.GetUserNameById(Opieka.GetOpiekunID(car.id));
+                klasaTestowaBindingSource.Add(new KlasaTestowa_car(car.id, brand.name, model.name, keeper));
+            }
+        }
 
 		private void zalogujSLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
 		{
@@ -97,7 +123,6 @@ namespace BazyDanych
 				this.panelO.Visible = false;
 				this.panelK.Visible = false;
 				this.logowanieLabel.Text = "Zaloguj";
-				this.powiadomieniaLabel.Visible = false;
 				this.profilLabel.Visible = false;
 				isLogged = false;
 			}
@@ -115,7 +140,7 @@ namespace BazyDanych
 
         private void EdytujUser(int userId)
         {
-            var obj = new AddOrEditUserWindow(userId);
+            var obj = new AddOrEditUserWindow(this, userId);
             obj.Text = "Menedżer Floty - Edytuj Użytkownika";
             obj.buttonAddUser.Visible = false;
             obj.Show();
@@ -283,12 +308,6 @@ namespace BazyDanych
 			}
 		}
 
-		private void powiadomieniaLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-		{
-			NotificationsWindow obj = new NotificationsWindow();
-			obj.Show();
-		}
-
 		private void radioButton1_CheckedChanged(object sender, EventArgs e)
 		{
 			if (this.radioButton1.Checked == true)
@@ -435,6 +454,24 @@ namespace BazyDanych
             try
             {
                 User.AddUser(userDto);
+                klasaTestowauserBindingSource.Clear();
+                var userList = User.GetUserList();
+                foreach (var user in userList)
+                {
+                    klasaTestowauserBindingSource.Add(new KlasaTestowa_user(user.id, user.name, user.lastName, user.phone));
+                }
+
+            }
+            catch (MySql.Data.MySqlClient.MySqlException ex)
+            {
+                throw ex;
+            }
+        }
+
+        public void UpdateUser(UserDto userDto)
+        {
+            try
+            {
                 klasaTestowauserBindingSource.Clear();
                 var userList = User.GetUserList();
                 foreach (var user in userList)

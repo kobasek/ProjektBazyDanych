@@ -33,7 +33,6 @@
             this.panelS = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.profilLabel = new System.Windows.Forms.LinkLabel();
-            this.powiadomieniaLabel = new System.Windows.Forms.LinkLabel();
             this.logowanieLabel = new System.Windows.Forms.LinkLabel();
             this.panelM = new System.Windows.Forms.Panel();
             this.tableControlM = new System.Windows.Forms.TabControl();
@@ -116,8 +115,6 @@
             this.dataGridViewButtonColumn6 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.oKierowcy = new System.Windows.Forms.TabPage();
             this.oTabelaKierowcy = new System.Windows.Forms.DataGridView();
-            this.dataGridViewLinkColumn4 = new System.Windows.Forms.DataGridViewLinkColumn();
-            this.dataGridViewButtonColumn4 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panelK = new System.Windows.Forms.Panel();
             this.tableControlK = new System.Windows.Forms.TabControl();
             this.tabKPage1 = new System.Windows.Forms.TabPage();
@@ -157,10 +154,12 @@
             this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lastNameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.phoneDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewLinkColumn4 = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.dataGridViewButtonColumn4 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panelS.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelM.SuspendLayout();
@@ -196,7 +195,6 @@
             // 
             this.panelS.Controls.Add(this.pictureBox1);
             this.panelS.Controls.Add(this.profilLabel);
-            this.panelS.Controls.Add(this.powiadomieniaLabel);
             this.panelS.Controls.Add(this.logowanieLabel);
             this.panelS.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelS.Location = new System.Drawing.Point(0, 0);
@@ -217,24 +215,13 @@
             // profilLabel
             // 
             this.profilLabel.AutoSize = true;
-            this.profilLabel.Location = new System.Drawing.Point(710, 9);
+            this.profilLabel.Location = new System.Drawing.Point(793, 9);
             this.profilLabel.Name = "profilLabel";
             this.profilLabel.Size = new System.Drawing.Size(30, 13);
             this.profilLabel.TabIndex = 2;
             this.profilLabel.TabStop = true;
             this.profilLabel.Text = "Profil";
             this.profilLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.profilLabel_LinkClicked);
-            // 
-            // powiadomieniaLabel
-            // 
-            this.powiadomieniaLabel.AutoSize = true;
-            this.powiadomieniaLabel.Location = new System.Drawing.Point(746, 9);
-            this.powiadomieniaLabel.Name = "powiadomieniaLabel";
-            this.powiadomieniaLabel.Size = new System.Drawing.Size(78, 13);
-            this.powiadomieniaLabel.TabIndex = 1;
-            this.powiadomieniaLabel.TabStop = true;
-            this.powiadomieniaLabel.Text = "Powiadomienia";
-            this.powiadomieniaLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.powiadomieniaLabel_LinkClicked);
             // 
             // logowanieLabel
             // 
@@ -282,7 +269,7 @@
             // 
             // addButtonMPojazdy
             // 
-            this.addButtonMPojazdy.Location = new System.Drawing.Point(1068, 11);
+            this.addButtonMPojazdy.Location = new System.Drawing.Point(851, 7);
             this.addButtonMPojazdy.Name = "addButtonMPojazdy";
             this.addButtonMPojazdy.Size = new System.Drawing.Size(75, 23);
             this.addButtonMPojazdy.TabIndex = 3;
@@ -307,7 +294,7 @@
             this.tableCarsM.DataSource = this.klasaTestowaBindingSource;
             this.tableCarsM.Location = new System.Drawing.Point(6, 6);
             this.tableCarsM.Name = "tableCarsM";
-            this.tableCarsM.Size = new System.Drawing.Size(1056, 341);
+            this.tableCarsM.Size = new System.Drawing.Size(839, 341);
             this.tableCarsM.TabIndex = 0;
             this.tableCarsM.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -343,7 +330,7 @@
             // deleteButtonMPojazdy
             // 
             this.deleteButtonMPojazdy.Enabled = false;
-            this.deleteButtonMPojazdy.Location = new System.Drawing.Point(1068, 40);
+            this.deleteButtonMPojazdy.Location = new System.Drawing.Point(851, 36);
             this.deleteButtonMPojazdy.Name = "deleteButtonMPojazdy";
             this.deleteButtonMPojazdy.Size = new System.Drawing.Size(75, 23);
             this.deleteButtonMPojazdy.TabIndex = 2;
@@ -365,7 +352,7 @@
             // 
             // addButtonMKierowcy
             // 
-            this.addButtonMKierowcy.Location = new System.Drawing.Point(771, 8);
+            this.addButtonMKierowcy.Location = new System.Drawing.Point(852, 7);
             this.addButtonMKierowcy.Name = "addButtonMKierowcy";
             this.addButtonMKierowcy.Size = new System.Drawing.Size(75, 23);
             this.addButtonMKierowcy.TabIndex = 5;
@@ -376,7 +363,7 @@
             // deleteButtonMKierowcy
             // 
             this.deleteButtonMKierowcy.Enabled = false;
-            this.deleteButtonMKierowcy.Location = new System.Drawing.Point(771, 37);
+            this.deleteButtonMKierowcy.Location = new System.Drawing.Point(852, 36);
             this.deleteButtonMKierowcy.Name = "deleteButtonMKierowcy";
             this.deleteButtonMKierowcy.Size = new System.Drawing.Size(75, 23);
             this.deleteButtonMKierowcy.TabIndex = 4;
@@ -400,7 +387,7 @@
             this.tableDriversM.DataSource = this.klasaTestowauserBindingSource;
             this.tableDriversM.Location = new System.Drawing.Point(6, 6);
             this.tableDriversM.Name = "tableDriversM";
-            this.tableDriversM.Size = new System.Drawing.Size(744, 341);
+            this.tableDriversM.Size = new System.Drawing.Size(840, 341);
             this.tableDriversM.TabIndex = 1;
             this.tableDriversM.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.mTabelaKierowcy_CellContentClick);
             // 
@@ -1099,32 +1086,18 @@
             this.oTabelaKierowcy.AutoGenerateColumns = false;
             this.oTabelaKierowcy.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.oTabelaKierowcy.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn16,
-            this.dataGridViewTextBoxColumn17,
-            this.dataGridViewTextBoxColumn18,
-            this.dataGridViewTextBoxColumn19,
+            this.idDataGridViewTextBoxColumn1,
+            this.lastNameDataGridViewTextBoxColumn1,
+            this.nameDataGridViewTextBoxColumn1,
+            this.phoneDataGridViewTextBoxColumn1,
             this.dataGridViewLinkColumn4,
             this.dataGridViewButtonColumn4});
-            this.oTabelaKierowcy.DataSource = this.klasaTestowaBindingSource;
+            this.oTabelaKierowcy.DataSource = this.klasaTestowauserBindingSource;
             this.oTabelaKierowcy.Location = new System.Drawing.Point(6, 6);
             this.oTabelaKierowcy.Name = "oTabelaKierowcy";
             this.oTabelaKierowcy.Size = new System.Drawing.Size(744, 341);
             this.oTabelaKierowcy.TabIndex = 2;
             this.oTabelaKierowcy.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.oTabelaKierowcy_CellContentClick);
-            // 
-            // dataGridViewLinkColumn4
-            // 
-            this.dataGridViewLinkColumn4.DataPropertyName = "ShowCalendar";
-            this.dataGridViewLinkColumn4.HeaderText = "Terminarz";
-            this.dataGridViewLinkColumn4.Name = "dataGridViewLinkColumn4";
-            this.dataGridViewLinkColumn4.ReadOnly = true;
-            this.dataGridViewLinkColumn4.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewLinkColumn4.Text = "Wyświetl terminarz";
-            // 
-            // dataGridViewButtonColumn4
-            // 
-            this.dataGridViewButtonColumn4.HeaderText = "Szczegóły";
-            this.dataGridViewButtonColumn4.Name = "dataGridViewButtonColumn4";
             // 
             // panelK
             // 
@@ -1443,37 +1416,43 @@
             this.dataGridViewTextBoxColumn15.ReadOnly = true;
             this.dataGridViewTextBoxColumn15.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
-            // dataGridViewTextBoxColumn16
+            // idDataGridViewTextBoxColumn1
             // 
-            this.dataGridViewTextBoxColumn16.DataPropertyName = "NrPojazdu";
-            this.dataGridViewTextBoxColumn16.HeaderText = "Numer kierowcy";
-            this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
-            this.dataGridViewTextBoxColumn16.ReadOnly = true;
-            this.dataGridViewTextBoxColumn16.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.idDataGridViewTextBoxColumn1.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn1.HeaderText = "Numer kierowcy";
+            this.idDataGridViewTextBoxColumn1.Name = "idDataGridViewTextBoxColumn1";
             // 
-            // dataGridViewTextBoxColumn17
+            // lastNameDataGridViewTextBoxColumn1
             // 
-            this.dataGridViewTextBoxColumn17.DataPropertyName = "MarkaPojazdu";
-            this.dataGridViewTextBoxColumn17.HeaderText = "Nazwisko";
-            this.dataGridViewTextBoxColumn17.Name = "dataGridViewTextBoxColumn17";
-            this.dataGridViewTextBoxColumn17.ReadOnly = true;
-            this.dataGridViewTextBoxColumn17.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.lastNameDataGridViewTextBoxColumn1.DataPropertyName = "LastName";
+            this.lastNameDataGridViewTextBoxColumn1.HeaderText = "Nazwisko";
+            this.lastNameDataGridViewTextBoxColumn1.Name = "lastNameDataGridViewTextBoxColumn1";
             // 
-            // dataGridViewTextBoxColumn18
+            // nameDataGridViewTextBoxColumn1
             // 
-            this.dataGridViewTextBoxColumn18.DataPropertyName = "ModelPojazdu";
-            this.dataGridViewTextBoxColumn18.HeaderText = "Imie";
-            this.dataGridViewTextBoxColumn18.Name = "dataGridViewTextBoxColumn18";
-            this.dataGridViewTextBoxColumn18.ReadOnly = true;
-            this.dataGridViewTextBoxColumn18.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.nameDataGridViewTextBoxColumn1.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn1.HeaderText = "Imię";
+            this.nameDataGridViewTextBoxColumn1.Name = "nameDataGridViewTextBoxColumn1";
             // 
-            // dataGridViewTextBoxColumn19
+            // phoneDataGridViewTextBoxColumn1
             // 
-            this.dataGridViewTextBoxColumn19.DataPropertyName = "OpiekunPojazdu";
-            this.dataGridViewTextBoxColumn19.HeaderText = "Telefon";
-            this.dataGridViewTextBoxColumn19.Name = "dataGridViewTextBoxColumn19";
-            this.dataGridViewTextBoxColumn19.ReadOnly = true;
-            this.dataGridViewTextBoxColumn19.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.phoneDataGridViewTextBoxColumn1.DataPropertyName = "Phone";
+            this.phoneDataGridViewTextBoxColumn1.HeaderText = "Telefon";
+            this.phoneDataGridViewTextBoxColumn1.Name = "phoneDataGridViewTextBoxColumn1";
+            // 
+            // dataGridViewLinkColumn4
+            // 
+            this.dataGridViewLinkColumn4.DataPropertyName = "ShowCalendar";
+            this.dataGridViewLinkColumn4.HeaderText = "Terminarz";
+            this.dataGridViewLinkColumn4.Name = "dataGridViewLinkColumn4";
+            this.dataGridViewLinkColumn4.ReadOnly = true;
+            this.dataGridViewLinkColumn4.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewLinkColumn4.Text = "Wyświetl terminarz";
+            // 
+            // dataGridViewButtonColumn4
+            // 
+            this.dataGridViewButtonColumn4.HeaderText = "Szczegóły";
+            this.dataGridViewButtonColumn4.Name = "dataGridViewButtonColumn4";
             // 
             // MainWindow
             // 
@@ -1594,12 +1573,6 @@
         private System.Windows.Forms.DataGridViewLinkColumn dataGridViewLinkColumn5;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn16;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn17;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn18;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn19;
-        private System.Windows.Forms.DataGridViewLinkColumn dataGridViewLinkColumn4;
-        private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn4;
         private System.Windows.Forms.DataGridView kTabelaRezerwacje;
         private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn22;
@@ -1618,7 +1591,6 @@
         private System.Windows.Forms.DataGridViewLinkColumn Column5;
         private System.Windows.Forms.DataGridViewButtonColumn Edit;
         private System.Windows.Forms.LinkLabel profilLabel;
-        private System.Windows.Forms.LinkLabel powiadomieniaLabel;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TextBox textBox7;
@@ -1669,5 +1641,11 @@
         private System.Windows.Forms.DataGridViewButtonColumn Column2;
         private System.Windows.Forms.DataGridViewLinkColumn dataGridViewLinkColumn1;
         private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lastNameDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn phoneDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewLinkColumn dataGridViewLinkColumn4;
+        private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn4;
     }
 }

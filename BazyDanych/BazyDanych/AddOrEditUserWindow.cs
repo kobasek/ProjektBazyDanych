@@ -8,9 +8,10 @@ namespace BazyDanych
     {
         private User user;
 
-        public AddOrEditUserWindow(int userId)
+        public AddOrEditUserWindow(MainWindow mainWindow, int userId)
         {
             InitializeComponent();
+            main = mainWindow;
             EditInitialize(userId);
         }
 
@@ -230,9 +231,6 @@ namespace BazyDanych
                     userDto.Permissions = 'M';
                     break;
                 case 1:
-                    userDto.Permissions = 'O';
-                    break;
-                case 2:
                     userDto.Permissions = 'K';
                     break;
             }
@@ -579,9 +577,6 @@ namespace BazyDanych
                     userDto.Permissions = 'M';
                     break;
                 case 1:
-                    userDto.Permissions = 'O';
-                    break;
-                case 2:
                     userDto.Permissions = 'K';
                     break;
             }
@@ -635,6 +630,7 @@ namespace BazyDanych
                 try
                 {
                     User.UpdateUser(userDto);
+                    main.UpdateUser(userDto);
                     Close();
                 }
                 catch (MySql.Data.MySqlClient.MySqlException ex)

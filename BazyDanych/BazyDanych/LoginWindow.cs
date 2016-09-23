@@ -52,6 +52,7 @@ namespace BazyDanych
             else if (permission == 'M')
             {
                 obj.InitializeComponentMenadzer(id);
+          
                 this.Close();
             }
             else if (permission == 'O')

@@ -363,7 +363,6 @@
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Items.AddRange(new object[] {
             "Menadżer",
-            "Opiekun",
             "Kierowca"});
             this.comboBox2.Location = new System.Drawing.Point(140, 430);
             this.comboBox2.Name = "comboBox2";

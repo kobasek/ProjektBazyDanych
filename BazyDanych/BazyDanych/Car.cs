@@ -91,7 +91,51 @@ namespace BazyDanych
 			return list;
 		}
 
-		public static Car GetCarById(int id)
+        public static IList<Car> GetUserCarList(int userId)
+        {
+            var connectionString = Functions.GetConnectionString();
+            var list = new List<Car>();
+            var carDto = new CarDto();
+
+            try
+            {
+                var connection = new MySql.Data.MySqlClient.MySqlConnection { ConnectionString = connectionString };
+                connection.Open();
+
+                string query = "SELECT pojazd.* FROM pojazd LEFT JOIN opieka ON pojazd.id = opieka.pojazd_id WHERE opieka.uzytkownik_id = " + userId + " AND opieka.data_konca IS null";
+                var command = new MySqlCommand(query, connection);
+                var dataReader = command.ExecuteReader();
+
+                while (dataReader.Read())
+                {
+                    carDto.Id = dataReader.GetInt32(0);
+                    carDto.Vin = dataReader.GetString(1);
+                    carDto.EngineCapacity = dataReader.GetFloat(2);
+                    carDto.TypeOfBody = dataReader.GetString(3);
+                    carDto.RegistrationNumber = dataReader.GetString(4);
+                    carDto.TypeOfFuel = dataReader.GetChar(5);
+                    carDto.CostOfPurchase = dataReader.GetDecimal(6);
+                    carDto.ElectricWindows = dataReader.GetBoolean(7);
+                    carDto.Assistance = dataReader.GetBoolean(8);
+                    carDto.AirCondition = dataReader.GetBoolean(9);
+                    carDto.AutomaticGearBox = dataReader.GetBoolean(10);
+                    carDto.DateOfPurchase = dataReader.GetDateTime(11);
+                    carDto.DateOfScrapping = !dataReader.IsDBNull(12) ? dataReader.GetDateTime(12) : (DateTime?)null;
+                    carDto.ModelId = dataReader.GetInt32(13);
+
+                    var car = new Car(carDto);
+                    list.Add(car);
+                }
+                connection.Close();
+            }
+            catch (MySql.Data.MySqlClient.MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            return list;
+        }
+
+        public static Car GetCarById(int id)
 		{
 			var connectionString = Functions.GetConnectionString();
 			var list = new List<Car>();
