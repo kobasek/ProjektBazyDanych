@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace BazyDanych
+namespace Portal
 {
     public partial class ProfilWindow : Form
     {

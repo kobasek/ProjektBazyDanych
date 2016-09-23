@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 5.7.12, for Win64 (x86_64)
 --
--- Host: localhost    Database: projekt_bazy_danych
+-- Host: localhost    Database: projekt_pp
 -- ------------------------------------------------------
 -- Server version	5.7.15-log
 
@@ -16,27 +16,29 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `miejsce_serwisu`
+-- Table structure for table `kurs`
 --
 
-DROP TABLE IF EXISTS `miejsce_serwisu`;
+DROP TABLE IF EXISTS `kurs`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `miejsce_serwisu` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `adres` varchar(100) NOT NULL,
-  `nazwa_firmy` varchar(50) NOT NULL,
+CREATE TABLE `kurs` (
+  `id` int(11) NOT NULL,
+  `id_nauczyciel` int(11) NOT NULL,
+  `liczba_miejsc` int(11) NOT NULL,
+  `temat` varchar(45) NOT NULL,
+  `hasło` varchar(20) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `miejsce_serwisu`
+-- Dumping data for table `kurs`
 --
 
-LOCK TABLES `miejsce_serwisu` WRITE;
-/*!40000 ALTER TABLE `miejsce_serwisu` DISABLE KEYS */;
-/*!40000 ALTER TABLE `miejsce_serwisu` ENABLE KEYS */;
+LOCK TABLES `kurs` WRITE;
+/*!40000 ALTER TABLE `kurs` DISABLE KEYS */;
+/*!40000 ALTER TABLE `kurs` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -48,4 +50,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-09-23 13:49:36
+-- Dump completed on 2016-09-23 14:38:05

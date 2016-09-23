@@ -1,4 +1,4 @@
-﻿namespace BazyDanych
+﻿namespace Portal
 {
     partial class ProfilWindow
     {

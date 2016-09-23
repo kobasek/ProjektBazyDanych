@@ -4,23 +4,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BazyDanych
+namespace Portal
 {
-    class KlasaTestowa_order
+    class KlasaTestowa_kurs
     {
-        private int id;
-        private string keeper;
-        private string driver;
-        private string car;
+        private int nrKursu;
+        private string subject;
+        private int members;
+        private string teacher;
         private static string editButton = "Edytuj";
         private static string showCalendar = "Wyświetl";
 
-        public KlasaTestowa_order(int _id, string _keeper, string _driver, string _car)
+        public KlasaTestowa_kurs(int _nrKursu, string _subject, int _members, string _teacher)
         {
-            this.id = _id;
-            this.keeper = _keeper;
-            this.driver = _driver;
-            this.car = _car;
+            this.nrKursu = _nrKursu;
+            this.subject = _subject;
+            this.members = _members;
+            this.teacher = _teacher;
         }
 
         public string ShowCalendar
@@ -31,15 +31,15 @@ namespace BazyDanych
             }
         }
 
-        public int Id
+        public int NrKursu
         {
             get
             {
-                return id;
+                return nrKursu;
             }
             set
             {
-                id = value;
+                nrKursu = value;
             }
         }
 
@@ -49,41 +49,41 @@ namespace BazyDanych
             {
                 return editButton;
             }
-
+          
         }
-        public string Keeper
+        public string Subject
         {
             get
             {
-                return keeper;
+                return subject;
             }
             set
             {
-               keeper = value;
+                subject = value;
             }
         }
 
-        public string Car
+        public int Members
         {
             get
             {
-                return car;
+                return members;
             }
             set
             {
-               car = value;
+                members = value;
             }
         }
 
-        public string Driver
+        public string Teacher
         {
             get
             {
-                return driver;
+                return teacher;
             }
             set
             {
-                driver = value;
+                teacher = value;
             }
         }
     }

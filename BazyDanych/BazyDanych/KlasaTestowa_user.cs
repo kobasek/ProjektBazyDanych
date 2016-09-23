@@ -4,23 +4,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BazyDanych
+namespace Portal
 {
     class KlasaTestowa_user
     {
         private int id;
         private string name;
         private string lastName;
-        private string phone;
+        private string mail;
         private static string editButton = "Edytuj";
         private static string showCalendar = "Wyświetl";
 
-        public KlasaTestowa_user(int _id, string _name, string _lastName, string _phone)
+        public KlasaTestowa_user(int _id, string _name, string _lastName, string _mail)
         {
             this.id = _id;
             this.name = _name;
             this.lastName = _lastName;
-            this.phone = _phone;
+            this.mail = _mail;
         }
 
         public string ShowCalendar
@@ -75,15 +75,15 @@ namespace BazyDanych
             }
         }
 
-        public string Phone
+        public string Mail
         {
             get
             {
-                return phone;
+                return mail;
             }
             set
             {
-               phone = value;
+                mail = value;
             }
         }
     }

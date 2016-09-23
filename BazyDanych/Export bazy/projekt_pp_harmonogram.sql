@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 5.7.12, for Win64 (x86_64)
 --
--- Host: localhost    Database: projekt_bazy_danych
+-- Host: localhost    Database: projekt_pp
 -- ------------------------------------------------------
 -- Server version	5.7.15-log
 
@@ -16,32 +16,28 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `opieka`
+-- Table structure for table `harmonogram`
 --
 
-DROP TABLE IF EXISTS `opieka`;
+DROP TABLE IF EXISTS `harmonogram`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `opieka` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `data_poczatku` date NOT NULL,
-  `data_konca` date DEFAULT NULL,
-  `uzytkownik_id` int(11) NOT NULL,
-  `pojazd_id` int(11) NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `uzytkownik_id` (`uzytkownik_id`),
-  KEY `pojazd_id` (`pojazd_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+CREATE TABLE `harmonogram` (
+  `id` int(11) NOT NULL,
+  `id_kurs` int(11) NOT NULL,
+  `tresc` varchar(45) NOT NULL,
+  `data` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `opieka`
+-- Dumping data for table `harmonogram`
 --
 
-LOCK TABLES `opieka` WRITE;
-/*!40000 ALTER TABLE `opieka` DISABLE KEYS */;
-INSERT INTO `opieka` VALUES (1,'2016-09-22','2016-09-23',2,4),(2,'2016-09-22','2016-09-23',2,1),(3,'2016-09-23','2016-09-23',3,2),(4,'2016-09-23',NULL,2,1);
-/*!40000 ALTER TABLE `opieka` ENABLE KEYS */;
+LOCK TABLES `harmonogram` WRITE;
+/*!40000 ALTER TABLE `harmonogram` DISABLE KEYS */;
+/*!40000 ALTER TABLE `harmonogram` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -53,4 +49,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-09-23 13:49:35
+-- Dump completed on 2016-09-23 14:38:05

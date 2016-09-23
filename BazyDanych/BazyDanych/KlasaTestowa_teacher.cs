@@ -4,23 +4,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BazyDanych
+namespace Portal
 {
-    class KlasaTestowa_car
+    class KlasaTestowa_teacher
     {
-        private int nrPojazdu;
-        private string markaPojazdu;
-        private string modelPojazdu;
-        private string opiekunPojazdu;
+        private int id;
+        private string name;
+        private string lastName;
+        private string mail;
         private static string editButton = "Edytuj";
         private static string showCalendar = "Wyświetl";
 
-        public KlasaTestowa_car(int _nrPojazdu, string _markaPojazdu, string _modelPojazdu, string _opiekunPojazdu)
+        public KlasaTestowa_teacher(int _id, string _name, string _lastName, string _mail)
         {
-            this.nrPojazdu = _nrPojazdu;
-            this.markaPojazdu = _markaPojazdu;
-            this.modelPojazdu = _modelPojazdu;
-            this.opiekunPojazdu = _opiekunPojazdu;
+            this.id = _id;
+            this.name = _name;
+            this.lastName = _lastName;
+            this.mail = _mail;
         }
 
         public string ShowCalendar
@@ -31,15 +31,15 @@ namespace BazyDanych
             }
         }
 
-        public int NrPojazdu
+        public int Id
         {
             get
             {
-                return nrPojazdu;
+                return id;
             }
             set
             {
-                nrPojazdu = value;
+                id = value;
             }
         }
 
@@ -49,41 +49,41 @@ namespace BazyDanych
             {
                 return editButton;
             }
-          
+
         }
-        public string MarkaPojazdu
+        public string Name
         {
             get
             {
-                return markaPojazdu;
+                return name;
             }
             set
             {
-                markaPojazdu = value;
+                name = value;
             }
         }
 
-        public string ModelPojazdu
+        public string LastName
         {
             get
             {
-                return modelPojazdu;
+                return lastName;
             }
             set
             {
-                modelPojazdu = value;
+                lastName = value;
             }
         }
 
-        public string OpiekunPojazdu
+        public string Mail
         {
             get
             {
-                return opiekunPojazdu;
+                return mail;
             }
             set
             {
-                opiekunPojazdu = value;
+                mail = value;
             }
         }
     }

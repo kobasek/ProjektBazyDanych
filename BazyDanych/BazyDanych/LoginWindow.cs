@@ -5,7 +5,7 @@ using System.Linq;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 
-namespace BazyDanych
+namespace Portal
 {
     //Okienko odpowiedzialne za logowanie
     public partial class LoginWindow : Form
@@ -28,7 +28,7 @@ namespace BazyDanych
                 var connection = new MySql.Data.MySqlClient.MySqlConnection { ConnectionString = connectionString };
                 connection.Open();
 
-                string query = "SELECT id, uprawnienia FROM projekt_bazy_danych.uzytkownik WHERE uzytkownik.login = \"" + usernameTextBox.Text + "\" AND uzytkownik.haslo = \"" + passwordTextBox.Text+"\"";
+                string query = "SELECT id, uprawnienia FROM projekt_pp.uzytkownik WHERE uzytkownik.login = \"" + usernameTextBox.Text + "\" AND uzytkownik.haslo = \"" + passwordTextBox.Text+"\"";
                 var command = new MySqlCommand(query, connection);
                 var dataReader = command.ExecuteReader();
 
@@ -49,21 +49,21 @@ namespace BazyDanych
             {
                 MessageBox.Show("Podany login bądź hasło są błędne");
             }
-            else if (permission == 'M')
+            else if (permission == 'A')
             {
-                obj.InitializeComponentMenadzer(id);
+                obj.InitializeComponentAdmin(id);
           
                 this.Close();
             }
-            else if (permission == 'O')
+            else if (permission == 'N')
             {
-                obj.InitializeComponentOpieka(id);
+                obj.InitializeComponentTeacher(id);
                 this.Close();
             }
 
-            else if (permission == 'K')
+            else if (permission == 'S')
             {
-                obj.InitializeComponentKierowca(id);
+                obj.InitializeComponentStudent(id);
                 this.Close();
             }
         }
