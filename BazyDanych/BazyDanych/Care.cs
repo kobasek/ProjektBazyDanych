@@ -7,12 +7,12 @@ using MySql.Data.MySqlClient;
 
 namespace BazyDanych
 {
-    class Opieka
+    class Care
     {
-        public static int GetOpiekunID(int id)
+        public static int GetKeeperID(int id)
         {
             var connectionString = Functions.GetConnectionString();
-            int opiekunID = 0;
+            int keeperID = 0;
 
             try
             {
@@ -25,24 +25,24 @@ namespace BazyDanych
 
                 if (dataReader.Read())
                 {
-                    opiekunID = dataReader.GetInt32(0);
+                    keeperID = dataReader.GetInt32(0);
                     connection.Close();
-                    return opiekunID;
+                    return keeperID;
                 }
                 else
                 {
                     connection.Close();
-                    return opiekunID;
+                    return keeperID;
                 }
             }
             catch (MySql.Data.MySqlClient.MySqlException ex)
             {
                 MessageBox.Show(ex.Message);
             }
-            return opiekunID;
+            return keeperID;
         }
 
-        public static void AddOpieka(int userId, int carId, DateTime startDate)
+        public static void AddCare(int userId, int carId, DateTime startDate)
         {
             var connectionString = Functions.GetConnectionString();
 
@@ -71,7 +71,7 @@ namespace BazyDanych
             }
         }
 
-        public static void EndOpieka(int id)
+        public static void EndCare(int id)
         {
             var connectionString = Functions.GetConnectionString();
 
@@ -94,10 +94,10 @@ namespace BazyDanych
             }
         }
 
-        public static int GetOpieka(int userId, int carId)
+        public static int GetCare(int userId, int carId)
         {
             var connectionString = Functions.GetConnectionString();
-            int opiekunID = 0;
+            int keeperId = 0;
 
             try
             {
@@ -110,27 +110,27 @@ namespace BazyDanych
 
                 if (dataReader.Read())
                 {
-                    opiekunID = dataReader.GetInt32(0);
+                    keeperId = dataReader.GetInt32(0);
                     connection.Close();
-                    return opiekunID;
+                    return keeperId;
                 }
                 else
                 {
                     connection.Close();
-                    return opiekunID;
+                    return keeperId;
                 }
             }
             catch (MySql.Data.MySqlClient.MySqlException ex)
             {
                 MessageBox.Show(ex.Message);
             }
-            return opiekunID;
+            return keeperId;
         }
 
         public static int CheckIsKeeper(int userId)
         {
             var connectionString = Functions.GetConnectionString();
-            int opiekaID = 0;
+            int careId = 0;
 
             try
             {
@@ -143,21 +143,21 @@ namespace BazyDanych
 
                 if (dataReader.Read())
                 {
-                    opiekaID = dataReader.GetInt32(0);
+                    careId = dataReader.GetInt32(0);
                     connection.Close();
-                    return opiekaID;
+                    return careId;
                 }
                 else
                 {
                     connection.Close();
-                    return opiekaID;
+                    return careId;
                 }
             }
             catch (MySql.Data.MySqlClient.MySqlException ex)
             {
                 MessageBox.Show(ex.Message);
             }
-            return opiekaID;
+            return careId;
         }
     }
 }

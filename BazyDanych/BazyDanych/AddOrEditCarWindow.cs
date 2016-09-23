@@ -172,7 +172,7 @@ namespace BazyDanych
 				{
 					main.AddCarToDatabase(carDto);
                     User.SetKeeper(User.GetUserIdByName(pomtable[1], pomtable[0]));
-                    Opieka.AddOpieka(User.GetUserIdByName(pomtable[1], pomtable[0]), carDto.Id, DateTime.Now);
+                    Care.AddCare(User.GetUserIdByName(pomtable[1], pomtable[0]), carDto.Id, DateTime.Now);
                     Close();
 				}
 				catch (MySql.Data.MySqlClient.MySqlException ex)
@@ -279,7 +279,7 @@ namespace BazyDanych
 			comboBoxWspomaganie.Text = car.assistance ? "TAK" : "NIE";
 			comboBoxWspomaganie.Enabled = false;
 
-            currentKeeper = User.GetUserNameById(Opieka.GetOpiekunID(car.id));
+            currentKeeper = User.GetUserNameById(Care.GetKeeperID(car.id));
             comboBox1.Text = currentKeeper;
 
         }
@@ -335,25 +335,25 @@ namespace BazyDanych
                     if(comboBox1.SelectedItem== null)
                     {
                         string[] currentKeeperTable = currentKeeper.Split(' ');
-                        Opieka.EndOpieka(Opieka.GetOpieka(User.GetUserIdByName(currentKeeperTable[1], currentKeeperTable[0]), carDto.Id));
-                        if(Opieka.CheckIsKeeper(User.GetUserIdByName(currentKeeperTable[1], currentKeeperTable[0])) == 0)
+                        Care.EndCare(Care.GetCare(User.GetUserIdByName(currentKeeperTable[1], currentKeeperTable[0]), carDto.Id));
+                        if(Care.CheckIsKeeper(User.GetUserIdByName(currentKeeperTable[1], currentKeeperTable[0])) == 0)
                             User.SetDriver(User.GetUserIdByName(currentKeeperTable[1], currentKeeperTable[0]));
                     }
                     else if(currentKeeper == "")
                     {
                         string[] pomtable = comboBox1.SelectedItem.ToString().Split(' ');
                         User.SetKeeper(User.GetUserIdByName(pomtable[1], pomtable[0]));
-                        Opieka.AddOpieka(User.GetUserIdByName(pomtable[1], pomtable[0]), carDto.Id, DateTime.Now);
+                        Care.AddCare(User.GetUserIdByName(pomtable[1], pomtable[0]), carDto.Id, DateTime.Now);
                     }
                     else if(comboBox1.SelectedItem.ToString() != currentKeeper)
                     {
                         string[] currentKeeperTable =currentKeeper.Split(' ');
-                        Opieka.EndOpieka(Opieka.GetOpieka(User.GetUserIdByName(currentKeeperTable[1], currentKeeperTable[0]), carDto.Id));
-                        if (Opieka.CheckIsKeeper(User.GetUserIdByName(currentKeeperTable[1], currentKeeperTable[0])) == 0)
+                        Care.EndCare(Care.GetCare(User.GetUserIdByName(currentKeeperTable[1], currentKeeperTable[0]), carDto.Id));
+                        if (Care.CheckIsKeeper(User.GetUserIdByName(currentKeeperTable[1], currentKeeperTable[0])) == 0)
                             User.SetDriver(User.GetUserIdByName(currentKeeperTable[1], currentKeeperTable[0]));
                         string[] pomtable = comboBox1.SelectedItem.ToString().Split(' ');
                         User.SetKeeper(User.GetUserIdByName(pomtable[1], pomtable[0]));
-                        Opieka.AddOpieka(User.GetUserIdByName(pomtable[1], pomtable[0]), carDto.Id, DateTime.Now);
+                        Care.AddCare(User.GetUserIdByName(pomtable[1], pomtable[0]), carDto.Id, DateTime.Now);
                     }
                     main.UpdateCar(carDto);
                     Close();
