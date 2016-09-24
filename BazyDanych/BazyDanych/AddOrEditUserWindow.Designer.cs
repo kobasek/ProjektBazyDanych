@@ -282,6 +282,7 @@
             // 
             this.textBox8.Location = new System.Drawing.Point(140, 403);
             this.textBox8.Name = "textBox8";
+            this.textBox8.PasswordChar = '*';
             this.textBox8.Size = new System.Drawing.Size(121, 20);
             this.textBox8.TabIndex = 16;
             // 

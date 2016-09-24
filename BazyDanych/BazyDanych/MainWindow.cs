@@ -401,7 +401,7 @@ namespace BazyDanych
 
 		private void profilLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
 		{
-			ProfilWindow obj = new ProfilWindow();
+			ProfilWindow obj = new ProfilWindow(this, userID);
 			obj.Show();
 		}
 
