@@ -36,7 +36,7 @@ namespace BazyDanych
 			{
 				var model = Model.GetModelById(car.modelId);
 				var brand = Brand.GetBrandById(model.brandId);
-                string keeper = User.GetUserNameById(Opieka.GetOpiekunID(car.id));
+                string keeper = User.GetUserNameById(Care.GetKeeperID(car.id));
 				klasaTestowaBindingSource.Add(new KlasaTestowa_car(car.id, brand.name, model.name, keeper));
 			}
             var userList = User.GetUserList();
@@ -68,7 +68,7 @@ namespace BazyDanych
             {
                 var model = Model.GetModelById(car.modelId);
                 var brand = Brand.GetBrandById(model.brandId);
-                string keeper = User.GetUserNameById(Opieka.GetOpiekunID(car.id));
+                string keeper = User.GetUserNameById(Care.GetKeeperID(car.id));
                 klasaTestowaBindingSource.Add(new KlasaTestowa_car(car.id, brand.name, model.name, keeper));
             }
         }
@@ -86,7 +86,7 @@ namespace BazyDanych
             {
                 var model = Model.GetModelById(car.modelId);
                 var brand = Brand.GetBrandById(model.brandId);
-                string keeper = User.GetUserNameById(Opieka.GetOpiekunID(car.id));
+                string keeper = User.GetUserNameById(Care.GetKeeperID(car.id));
                 klasaTestowaBindingSource.Add(new KlasaTestowa_car(car.id, brand.name, model.name, keeper));
             }
         }
@@ -104,7 +104,7 @@ namespace BazyDanych
             {
                 var model = Model.GetModelById(car.modelId);
                 var brand = Brand.GetBrandById(model.brandId);
-                string keeper = User.GetUserNameById(Opieka.GetOpiekunID(car.id));
+                string keeper = User.GetUserNameById(Care.GetKeeperID(car.id));
                 klasaTestowaBindingSource.Add(new KlasaTestowa_car(car.id, brand.name, model.name, keeper));
             }
         }
@@ -416,7 +416,7 @@ namespace BazyDanych
 				{
 					var model = Model.GetModelById(car.modelId);
 					var brand = Brand.GetBrandById(model.brandId);
-                    string keeper = User.GetUserNameById(Opieka.GetOpiekunID(car.id));
+                    string keeper = User.GetUserNameById(Care.GetKeeperID(car.id));
                     klasaTestowaBindingSource.Add(new KlasaTestowa_car(car.id, brand.name, model.name, keeper));
 				}
 
@@ -437,7 +437,7 @@ namespace BazyDanych
                 {
                     var model = Model.GetModelById(car.modelId);
                     var brand = Brand.GetBrandById(model.brandId);
-                    string keeper = User.GetUserNameById(Opieka.GetOpiekunID(car.id));
+                    string keeper = User.GetUserNameById(Care.GetKeeperID(car.id));
                     klasaTestowaBindingSource.Add(new KlasaTestowa_car(car.id, brand.name, model.name, keeper));
                 }
 

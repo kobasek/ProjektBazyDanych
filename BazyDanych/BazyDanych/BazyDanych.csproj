@@ -75,6 +75,8 @@
       <DependentUpon>CarDetailsWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="CarDto.cs" />
+    <Compile Include="Catalog.cs" />
+    <Compile Include="CatalogDto.cs" />
     <Compile Include="ChangingPassword.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -104,7 +106,9 @@
     <Compile Include="AddOrEditCarWindow.Designer.cs">
       <DependentUpon>AddOrEditCarWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="Opieka.cs" />
+    <Compile Include="Care.cs" />
+    <Compile Include="Order.cs" />
+    <Compile Include="OrderDto.cs" />
     <Compile Include="ProfilWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -127,6 +131,16 @@
     <Compile Include="Model.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service.cs" />
+    <Compile Include="ServiceAction.cs" />
+    <Compile Include="ServiceActionDto.cs" />
+    <Compile Include="ServiceDto.cs" />
+    <Compile Include="ServicePlace.cs" />
+    <Compile Include="ServicePlaceDto.cs" />
+    <Compile Include="ServiceTemplate.cs" />
+    <Compile Include="ServiceTemplateDto.cs" />
+    <Compile Include="Template.cs" />
+    <Compile Include="TemplateDto.cs" />
     <Compile Include="User.cs" />
     <Compile Include="UserDto.cs" />
     <Compile Include="vehicleCondition.cs">
