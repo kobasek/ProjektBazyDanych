@@ -48,6 +48,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddOrEditServicePlaceWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddOrEditServicePlaceWindow.Designer.cs">
+      <DependentUpon>AddOrEditServicePlaceWindow.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddOrEditUserWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -75,6 +81,7 @@
       <DependentUpon>CarDetailsWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="CarDto.cs" />
+    <Compile Include="CareDto.cs" />
     <Compile Include="Catalog.cs" />
     <Compile Include="CatalogDto.cs" />
     <Compile Include="ChangingPassword.cs">
@@ -137,6 +144,7 @@
     <Compile Include="ServiceDto.cs" />
     <Compile Include="ServicePlace.cs" />
     <Compile Include="ServicePlaceDto.cs" />
+    <Compile Include="ServicePlaceTableElement.cs" />
     <Compile Include="ServiceTemplate.cs" />
     <Compile Include="ServiceTemplateDto.cs" />
     <Compile Include="Template.cs" />
@@ -149,6 +157,9 @@
     <Compile Include="vehicleCondition.Designer.cs">
       <DependentUpon>vehicleCondition.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AddOrEditServicePlaceWindow.resx">
+      <DependentUpon>AddOrEditServicePlaceWindow.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddOrEditUserWindow.resx">
       <DependentUpon>AddOrEditUserWindow.cs</DependentUpon>
     </EmbeddedResource>
@@ -194,8 +205,11 @@
     <EmbeddedResource Include="vehicleCondition.resx">
       <DependentUpon>vehicleCondition.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="ClassDiagram1.cd" />
     <None Include="Properties\DataSources\KlasaTestowa.datasource" />
+    <None Include="Properties\DataSources\KlasaTestowa_order.datasource" />
     <None Include="Properties\DataSources\KlasaTestowa_user.datasource" />
+    <None Include="Properties\DataSources\ServicePlaceTableElement.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

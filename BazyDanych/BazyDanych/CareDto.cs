@@ -6,10 +6,12 @@ using System.Threading.Tasks;
 
 namespace BazyDanych
 {
-    public class ServicePlaceDto
+    class CareDto
     {
         public int Id { get; set; }
-        public string Address { get; set; }
-        public string CompanyName { get; set; }
+        public DateTime StartDate { get; set; }
+        public DateTime EndDate { get; set; }
+        public int KeeperId { get; set; }
+        public int CarId { get; set; }
     }
 }

@@ -70,5 +70,37 @@ namespace BazyDanych
 
             return new Service();
         }
+        public void AddService(ServiceDto serviceToAdd)
+        {
+            var connectionString = Functions.GetConnectionString();
+
+            try
+            {
+                var connection = new MySql.Data.MySqlClient.MySqlConnection { ConnectionString = connectionString };
+                connection.Open();
+
+                string query = "INSERT INTO projekt_bazy_danych.pojazd VALUES(null, \"" +
+                                serviceToAdd.Cost.ToString("F").Replace(",", ".") +
+                                "\"," +
+                                serviceToAdd.ServiceDate +
+                                ",\"" +
+                                serviceToAdd.Comment +
+                                "\",\"" +
+                                serviceToAdd.ServicePlaceId +
+                                "\",'" +
+                                serviceToAdd.OrderId.ToString("F").Replace(",", ".") +
+                                ");";
+
+                var command = new MySqlCommand(query, connection);
+                command.ExecuteReader();
+                MessageBox.Show("Poprawnie dodano zlecenie");
+                connection.Close();
+            }
+            catch (MySql.Data.MySqlClient.MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+                throw ex;
+            }
+        }
     }
 }

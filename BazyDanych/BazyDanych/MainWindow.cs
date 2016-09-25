@@ -44,6 +44,7 @@ namespace BazyDanych
             {
                 klasaTestowauserBindingSource.Add(new KlasaTestowa_user(user.id, user.name, user.lastName, user.phone));
             }
+            UpdateServicePlace();
         }
 
         private void InitializeComponentStart()
@@ -168,6 +169,22 @@ namespace BazyDanych
             obj.Text = "Menedżer Floty - Szczegóły Użytkownika";
             obj.buttonAddUser.Visible = false;
             obj.button2.Visible = false;
+            obj.Show();
+        }
+
+        private void ShowAddServicePlaceWindow()
+        {
+            AddOrEditServicePlaceWindow obj = new AddOrEditServicePlaceWindow(this);
+            obj.Text = "Menedżer Floty - Dodaj Miejsce Serwisowe";
+            obj.approveButton.Visible = false;
+            obj.Show();
+        }
+
+        private void ShowEditServicePlaceWindow(int servicePlaceId)
+        {
+            AddOrEditServicePlaceWindow obj = new AddOrEditServicePlaceWindow(this, servicePlaceId);
+            obj.Text = "Menedżer Floty - Edytuj Miejsce Serwisowe";
+            obj.addButton.Visible = false;
             obj.Show();
         }
 
@@ -483,6 +500,64 @@ namespace BazyDanych
             catch (MySql.Data.MySqlClient.MySqlException ex)
             {
                 throw ex;
+            }
+        }
+
+        public void AddServicePlaceToDatabase(ServicePlaceDto servicePlaceDto)
+        {
+            try
+            {
+                ServicePlace.AddServicePlace(servicePlaceDto);
+                ServicePlacesBindingSource.Clear();
+                var servicePlacesList = ServicePlace.GetServicePlacesList();
+                foreach (var servicePlace in servicePlacesList)
+                {
+                    ServicePlacesBindingSource.Add(new ServicePlaceTableElement(servicePlace.id, servicePlace.address, servicePlace.companyName));
+                }
+            }
+            catch (MySql.Data.MySqlClient.MySqlException ex)
+            {
+                throw ex;
+            }
+        }
+
+        public void UpdateServicePlace()
+        {
+            try
+            {
+                ServicePlacesBindingSource.Clear();
+                var servicePlacesList = ServicePlace.GetServicePlacesList();
+                foreach (var servicePlace in servicePlacesList)
+                {
+                    ServicePlacesBindingSource.Add(new ServicePlaceTableElement(servicePlace.id, servicePlace.address, servicePlace.companyName));
+                }
+            }
+            catch (MySql.Data.MySqlClient.MySqlException ex)
+            {
+                throw ex;
+            }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            ShowAddServicePlaceWindow();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            //ShowEditServicePlaceWindow();
+        }
+
+        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 4)
+            {
+                var row = e.RowIndex;
+                var servicePlaceId = (int)tableServicePlacesM.Rows[row].Cells[1].Value;
+                AddOrEditServicePlaceWindow obj = new AddOrEditServicePlaceWindow(this, servicePlaceId);
+                obj.Text = "Menedżer Floty - Edytuj Miejsce Serwisu";
+                obj.addButton.Visible = false;
+                obj.Show();
             }
         }
     }

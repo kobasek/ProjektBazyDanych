@@ -9,6 +9,26 @@ namespace BazyDanych
 {
     class Care
     {
+        public int id;
+        public DateTime startDate;
+        public DateTime endDate;
+        public int keeperId;
+        public int carId;
+
+        public Care()
+        {
+
+        }
+
+        public Care(CareDto careDto)
+        {
+            id = careDto.Id;
+            startDate = careDto.StartDate;
+            endDate = careDto.EndDate;
+            keeperId = careDto.KeeperId;
+            carId = careDto.CarId;
+        }
+
         public static int GetKeeperID(int id)
         {
             var connectionString = Functions.GetConnectionString();
@@ -158,6 +178,45 @@ namespace BazyDanych
                 MessageBox.Show(ex.Message);
             }
             return careId;
+        }
+
+        public static Care GetCareByID(int id)
+        {
+            var connectionString = Functions.GetConnectionString();
+            var careDto = new CareDto();
+
+            try
+            {
+                var connection = new MySql.Data.MySqlClient.MySqlConnection { ConnectionString = connectionString };
+                connection.Open();
+
+                string query = "SELECT * FROM projekt_bazy_danych.opieka where opieka.id = " + id;
+                var command = new MySqlCommand(query, connection);
+                var dataReader = command.ExecuteReader();
+
+                if (dataReader.Read())
+                {
+                    careDto.Id = dataReader.GetInt32(0);
+                    careDto.StartDate = dataReader.GetDateTime(1);
+                    careDto.EndDate = dataReader.GetDateTime(2);
+                    careDto.KeeperId = dataReader.GetInt32(3);
+                    careDto.CarId = dataReader.GetInt32(4);
+
+                    connection.Close();
+                    return new Care(careDto);
+                }
+                else
+                {
+                    connection.Close();
+                    return new Care();
+                }
+            }
+            catch (MySql.Data.MySqlClient.MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+            return new Care();
         }
     }
 }
