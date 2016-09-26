@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BazyDanych
 {
-    class ServiceActionDto
+    public class ServiceActionDto
     {
         public int Id { get; set; }
         public string Name { get; set; }

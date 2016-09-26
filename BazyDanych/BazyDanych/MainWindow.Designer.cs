@@ -1408,6 +1408,7 @@
             this.addServiceActionButton.TabIndex = 12;
             this.addServiceActionButton.Text = "Dodaj";
             this.addServiceActionButton.UseVisualStyleBackColor = true;
+            this.addServiceActionButton.Click += new System.EventHandler(this.addServiceActionButton_Click);
             // 
             // ServiceActionsDataGridView
             // 
@@ -1428,6 +1429,7 @@
             this.ServiceActionsDataGridView.Name = "ServiceActionsDataGridView";
             this.ServiceActionsDataGridView.Size = new System.Drawing.Size(884, 341);
             this.ServiceActionsDataGridView.TabIndex = 10;
+            this.ServiceActionsDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ServiceActionsDataGridView_CellContentClick);
             // 
             // dataGridViewCheckBoxColumn9
             // 
@@ -1476,6 +1478,7 @@
             this.deleteServiceActionButton.TabIndex = 11;
             this.deleteServiceActionButton.Text = "Usuń";
             this.deleteServiceActionButton.UseVisualStyleBackColor = true;
+            this.deleteServiceActionButton.Click += new System.EventHandler(this.deleteServiceActionButton_Click);
             // 
             // servicesTabPage
             // 

@@ -53,6 +53,7 @@ namespace BazyDanych
             UpdateCare();
             UpdateOrder();
             UpdateService();
+            UpdateServiceAction();
         }
 
         private void InitializeComponentStart()
@@ -228,6 +229,22 @@ namespace BazyDanych
             obj.Show();
         }
 
+        private void ShowAddServiceActionWindow()
+        {
+            AddOrEditServiceActionWindow obj = new AddOrEditServiceActionWindow(this);
+            obj.Text = "Menedżer Floty - Dodaj czynność serwisową";
+            obj.acceptButton.Visible = false;
+            obj.Show();
+        }
+
+        private void ShowEditServiceActionWindow(int serviceActionId)
+        {
+            AddOrEditServiceActionWindow obj = new AddOrEditServiceActionWindow(this, serviceActionId);
+            obj.Text = "Menedżer Floty - Edytuj czynność serwisową";
+            obj.addButton.Visible = false;
+            obj.Show();
+        }
+
         private void ShowAddServiceWindow()
         {
             AddOrEditServiceWindow obj = new AddOrEditServiceWindow(this);
@@ -256,22 +273,6 @@ namespace BazyDanych
         {
             AddOrEditCareWindow obj = new AddOrEditCareWindow(this, careId);
             obj.Text = "Menedżer Floty - Edytuj opiekę";
-            obj.addButton.Visible = false;
-            obj.Show();
-        }
-
-        private void ShowAddServiceActionWindow()
-        {
-            AddOrEditServiceActionWindow obj = new AddOrEditServiceActionWindow(this);
-            obj.Text = "Menedżer Floty - Dodaj czynność serwisową";
-            obj.acceptButton.Visible = false;
-            obj.Show();
-        }
-
-        private void ShowEditServiceActionWindow(int serviceActionId)
-        {
-            AddOrEditServiceActionWindow obj = new AddOrEditServiceActionWindow(this, serviceActionId);
-            obj.Text = "Menedżer Floty - Edytuj czynność serwisową";
             obj.addButton.Visible = false;
             obj.Show();
         }
@@ -739,6 +740,24 @@ namespace BazyDanych
             }
         }
 
+        public void AddServiceActionToDatabase(ServiceActionDto serviceActionDto)
+        {
+            try
+            {
+                ServiceAction.AddServiceAction(serviceActionDto);
+                ServiceActionsBindingSource.Clear();
+                var serviceActionsList = ServiceAction.GetServiceActionsList();
+                foreach (var serviceAction in serviceActionsList)
+                {
+                    ServiceActionsBindingSource.Add(new ServiceActionTableElement(serviceAction.id, serviceAction.name, serviceAction.cost, serviceAction.catalogId, serviceAction.serviceId));
+                }
+            }
+            catch (MySql.Data.MySqlClient.MySqlException ex)
+            {
+                throw ex;
+            }
+        }
+
         public void AddServiceToDatabase(ServiceDto serviceDto)
         {
             try
@@ -802,6 +821,23 @@ namespace BazyDanych
                 foreach (var serviceTemplate in serviceTemplatesList)
                 {
                     TemplateServicesBindingSource.Add(new ServiceTemplateTableElement(serviceTemplate.id, serviceTemplate.name, serviceTemplate.kilometres, serviceTemplate.period, serviceTemplate.catalogId, serviceTemplate.templateId));
+                }
+            }
+            catch (MySql.Data.MySqlClient.MySqlException ex)
+            {
+                throw ex;
+            }
+        }
+
+        public void UpdateServiceAction()
+        {
+            try
+            {
+                ServiceActionsBindingSource.Clear();
+                var serviceActionsList = ServiceAction.GetServiceActionsList();
+                foreach (var serviceAction in serviceActionsList)
+                {
+                    ServiceActionsBindingSource.Add(new ServiceActionTableElement(serviceAction.id, serviceAction.name, serviceAction.cost, serviceAction.catalogId, serviceAction.serviceId));
                 }
             }
             catch (MySql.Data.MySqlClient.MySqlException ex)
@@ -1140,6 +1176,29 @@ namespace BazyDanych
                 var serviceId = (int)servicesDataGridView.Rows[row].Cells[1].Value;
                 AddOrEditServiceWindow obj = new AddOrEditServiceWindow(this, serviceId);
                 obj.Text = "Menedżer Floty - Edytuj Serwis";
+                obj.addButton.Visible = false;
+                obj.Show();
+            }
+        }
+
+        private void addServiceActionButton_Click(object sender, EventArgs e)
+        {
+            ShowAddServiceActionWindow();
+        }
+
+        private void deleteServiceActionButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ServiceActionsDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 7)
+            {
+                var row = e.RowIndex;
+                var serviceActionId = (int)ServiceActionsDataGridView.Rows[row].Cells[1].Value;
+                AddOrEditServiceActionWindow obj = new AddOrEditServiceActionWindow(this, serviceActionId);
+                obj.Text = "Menedżer Floty - Edytuj Czynność Serwisową";
                 obj.addButton.Visible = false;
                 obj.Show();
             }

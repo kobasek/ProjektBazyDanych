@@ -115,6 +115,7 @@
             this.addButton.TabIndex = 10;
             this.addButton.Text = "Dodaj";
             this.addButton.UseVisualStyleBackColor = true;
+            this.addButton.Click += new System.EventHandler(this.addButton_Click);
             // 
             // acceptButton
             // 
@@ -124,6 +125,7 @@
             this.acceptButton.TabIndex = 11;
             this.acceptButton.Text = "Zatwierdź";
             this.acceptButton.UseVisualStyleBackColor = true;
+            this.acceptButton.Click += new System.EventHandler(this.acceptButton_Click);
             // 
             // AddOrEditServiceActionWindow
             // 

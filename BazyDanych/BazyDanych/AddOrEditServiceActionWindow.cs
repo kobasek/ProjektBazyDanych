@@ -31,20 +31,20 @@ namespace BazyDanych
                 comboBoxItem.Value = catalog.id;
                 catalogComboBox.Items.Add(comboBoxItem);
             }
-            /*var servicesList = Service.GetServicesList();
-            foreach (var template in templatesList)
+            var servicesList = Service.GetServiceList();
+            foreach (var service in servicesList)
             {
                 var comboBoxItem = new ComboBoxItem();
-                comboBoxItem.Text = template.name;
-                comboBoxItem.Value = template.id;
-                templateComboBox.Items.Add(comboBoxItem);
-            }*/
+                comboBoxItem.Text = service.id + " " + ServicePlace.GetServicePlaceById(service.servicePlaceId).companyName;
+                comboBoxItem.Value = service.id;
+                serviceComboBox.Items.Add(comboBoxItem);
+            }
             this.mainWindow = mainWindow;
         }
 
-        public AddOrEditServiceActionWindow(MainWindow mainWindow, int serviceTemplateId)
+        public AddOrEditServiceActionWindow(MainWindow mainWindow, int serviceActionId)
         {
-            /*InitializeComponent();
+            InitializeComponent();
             var catalogsList = Catalog.GetCatalogsList();
             foreach (var catalog in catalogsList)
             {
@@ -53,21 +53,159 @@ namespace BazyDanych
                 comboBoxItem.Value = catalog.id;
                 catalogComboBox.Items.Add(comboBoxItem);
             }
-            var templatesList = Template.GetTemplatesList();
-            foreach (var template in templatesList)
+            var servicesList = Service.GetServiceList();
+            foreach (var service in servicesList)
             {
                 var comboBoxItem = new ComboBoxItem();
-                comboBoxItem.Text = template.name;
-                comboBoxItem.Value = template.id;
-                templateComboBox.Items.Add(comboBoxItem);
+                comboBoxItem.Text = service.id + " " + ServicePlace.GetServicePlaceById(service.servicePlaceId).companyName;
+                comboBoxItem.Value = service.id;
+                serviceComboBox.Items.Add(comboBoxItem);
             }
             this.mainWindow = mainWindow;
-            serviceTemplate = ServiceTemplate.GetServiceTemplateById(serviceTemplateId);
-            nameTextBox.Text = serviceTemplate.name;
-            KilometresNumericUpDown.Value = serviceTemplate.kilometres;
-            periodNumericUpDown.Value = serviceTemplate.period;
-            catalogComboBox.SelectedValue = serviceTemplate.catalogId;
-            templateComboBox.SelectedValue = serviceTemplate.templateId;*/
+            serviceAction = ServiceAction.GetServiceActionById(serviceActionId);
+            NameTextBox.Text = serviceAction.name;
+            costNumericUpDown.Value = serviceAction.cost;
+            catalogComboBox.SelectedValue = serviceAction.catalogId;
+            serviceComboBox.SelectedValue = serviceAction.serviceId;
+        }
+
+        private void addButton_Click(object sender, EventArgs e)
+        {
+            var errorNumber = 0;
+            var errorMessage = "";
+            var isError = false;
+            var serviceActionDto = new ServiceActionDto();
+
+            if (NameTextBox.Text != "")
+            {
+                serviceActionDto.Name = NameTextBox.Text;
+            }
+            else
+            {
+                isError = true;
+                errorNumber++;
+                errorMessage += errorNumber + ". Należy podać nazwę czynności serwisowej.\n";
+            }
+
+            if (costNumericUpDown.Value > 0)
+            {
+                serviceActionDto.Cost = (int)costNumericUpDown.Value;
+            }
+            else
+            {
+                isError = true;
+                errorNumber++;
+                errorMessage += errorNumber + ". Należy podać koszt większy od zera.\n";
+            }
+            if (catalogComboBox.SelectedItem != null)
+            {
+                serviceActionDto.CatalogId = (int)((ComboBoxItem)catalogComboBox.SelectedItem).Value;
+            }
+            else
+            {
+                isError = true;
+                errorNumber++;
+                errorMessage += errorNumber + ". Należy wybrać katalog.\n";
+            }
+            if (serviceComboBox.SelectedItem != null)
+            {
+                serviceActionDto.ServiceId = (int)((ComboBoxItem)serviceComboBox.SelectedItem).Value;
+            }
+            else
+            {
+                isError = true;
+                errorNumber++;
+                errorMessage += errorNumber + ". Należy wybrać serwis.\n";
+            }
+
+            if (isError)
+            {
+                MessageBox.Show(errorMessage);
+            }
+            else
+            {
+                try
+                {
+                    mainWindow.AddServiceActionToDatabase(serviceActionDto);
+                    Close();
+                }
+                catch (MySql.Data.MySqlClient.MySqlException ex)
+                {
+
+                    MessageBox.Show("Dodawanie czynności serwisowej nie powiodło się!");
+                }
+
+            }
+        }
+
+        private void acceptButton_Click(object sender, EventArgs e)
+        {
+            var serviceActionDto = new ServiceActionDto();
+            var isError = false;
+            var errorNumber = 0;
+            var errorMessage = "";
+
+            serviceActionDto.Id = serviceAction.id;
+
+            if (NameTextBox.Text != "")
+            {
+                serviceActionDto.Name = NameTextBox.Text;
+            }
+            else
+            {
+                isError = true;
+                errorNumber++;
+                errorMessage += errorNumber + ". Należy podać nazwę czynności serwisowej.\n";
+            }
+
+            if (costNumericUpDown.Value > 0)
+            {
+                serviceActionDto.Cost = (int)costNumericUpDown.Value;
+            }
+            else
+            {
+                isError = true;
+                errorNumber++;
+                errorMessage += errorNumber + ". Należy podać koszt większy od zera.\n";
+            }
+            if (catalogComboBox.SelectedItem != null)
+            {
+                serviceActionDto.CatalogId = (int)((ComboBoxItem)catalogComboBox.SelectedItem).Value;
+            }
+            else
+            {
+                isError = true;
+                errorNumber++;
+                errorMessage += errorNumber + ". Należy wybrać katalog.\n";
+            }
+            if (serviceComboBox.SelectedItem != null)
+            {
+                serviceActionDto.ServiceId = (int)((ComboBoxItem)serviceComboBox.SelectedItem).Value;
+            }
+            else
+            {
+                isError = true;
+                errorNumber++;
+                errorMessage += errorNumber + ". Należy wybrać serwis.\n";
+            }
+
+            if (isError)
+            {
+                MessageBox.Show(errorMessage);
+            }
+            else
+            {
+                try
+                {
+                    ServiceAction.UpdateServiceAction(serviceActionDto);
+                    mainWindow.UpdateServiceAction();
+                    Close();
+                }
+                catch (MySql.Data.MySqlClient.MySqlException ex)
+                {
+                    MessageBox.Show("Edytowanie czynności serwisowej nie powiodło się!");
+                }
+            }
         }
     }
 }
