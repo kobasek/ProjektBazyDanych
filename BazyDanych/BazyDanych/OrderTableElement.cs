@@ -24,7 +24,7 @@ namespace BazyDanych
         public int CareId { get; set; }
         public int UserId { get; set; }
 
-        public OrderTableElement(int id, DateTime plannedStartDate, DateTime plannedEndDate, DateTime actualStartDate, DateTime actualEndDate, int counterStatusBefore, int counterStatusAfter, string commentsBefore, char type, decimal cost, string cancellationReason, char state, int careId, int userId)
+        public OrderTableElement(int id, DateTime plannedStartDate, DateTime plannedEndDate, DateTime actualStartDate, DateTime actualEndDate, int counterStatusBefore, int counterStatusAfter, string commentsBefore, string commentsAfter, char type, decimal cost, string cancellationReason, char state, int careId, int userId)
         {
             Id = id;
             PlannedStartDate = plannedStartDate;
@@ -34,7 +34,7 @@ namespace BazyDanych
             CounterStatusBefore = counterStatusBefore;
             CounterStatusAfter = counterStatusAfter;
             CommentsBefore = commentsBefore;
-            CommentsAfter = CommentsAfter;
+            CommentsAfter = commentsAfter;
             Type = type;
             Cost = cost;
             CancellationReason = cancellationReason;

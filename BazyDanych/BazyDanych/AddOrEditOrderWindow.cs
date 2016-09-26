@@ -28,7 +28,7 @@ namespace BazyDanych
                 var comboBoxItem = new ComboBoxItem();
                 comboBoxItem.Text = car.id + " " + Brand.GetBrandById(Model.GetModelById(car.modelId).brandId).name + " " + Model.GetModelById(car.modelId).name;
                 comboBoxItem.Value = car.id;
-                carComboBox.Items.Add(comboBoxItem);
+                careComboBox.Items.Add(comboBoxItem);
             }
             var driversList = User.GetUserList();
             foreach (var driver in driversList)
@@ -38,6 +38,14 @@ namespace BazyDanych
                 comboBoxItem.Value = driver.id;
                 driverComboBox.Items.Add(comboBoxItem);
             }
+            orderTypeComboBox.Items.Add("1. Rodzaj");
+            orderTypeComboBox.Items.Add("2. Rodzaj");
+            orderTypeComboBox.Items.Add("3. Rodzaj");
+
+            orderStateComboBox.Items.Add("Aktywny");
+            orderStateComboBox.Items.Add("Zakończony");
+            orderStateComboBox.Items.Add("Odwołany");
+
             this.mainWindow = mainWindow;
         }
 
@@ -50,7 +58,7 @@ namespace BazyDanych
                 var comboBoxItem = new ComboBoxItem();
                 comboBoxItem.Text = car.id + " " + Brand.GetBrandById(Model.GetModelById(car.modelId).brandId).name + " " + Model.GetModelById(car.modelId).name;
                 comboBoxItem.Value = car.id;
-                carComboBox.Items.Add(comboBoxItem);
+                careComboBox.Items.Add(comboBoxItem);
             }
             var driversList = User.GetUserList();
             foreach (var driver in driversList)
@@ -60,6 +68,13 @@ namespace BazyDanych
                 comboBoxItem.Value = driver.id;
                 driverComboBox.Items.Add(comboBoxItem);
             }
+            orderTypeComboBox.Items.Add("1. Rodzaj");
+            orderTypeComboBox.Items.Add("2. Rodzaj");
+            orderTypeComboBox.Items.Add("3. Rodzaj");
+
+            orderStateComboBox.Items.Add("Aktywny");
+            orderStateComboBox.Items.Add("Zakończony");
+            orderStateComboBox.Items.Add("Odwołany");
             this.mainWindow = mainWindow;
             order = Order.GetOrderById(orderId);
             startDateDateTimePicker.Value = order.plannedStartDate;
@@ -75,70 +90,125 @@ namespace BazyDanych
             cancellationReasonRichTextBox.Text = order.cancellationReason;
             orderStateComboBox.SelectedItem = order.state;
             driverComboBox.SelectedItem = User.GetUserById(order.userId);
-            carComboBox.SelectedItem = Brand.GetBrandById(Model.GetModelById(Car.GetCarById(Care.GetCareByID(order.careId).carId).modelId).brandId) + " " + Model.GetModelById(Car.GetCarById(Care.GetCareByID(order.careId).carId).modelId).name;
+            careComboBox.SelectedItem = Brand.GetBrandById(Model.GetModelById(Car.GetCarById(Care.GetCareByID(order.careId).carId).modelId).brandId) + " " + Model.GetModelById(Car.GetCarById(Care.GetCareByID(order.careId).carId).modelId).name;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            /*var serviceTemplateDto = new ServiceTemplateDto();
+            var orderDto = new OrderDto();
             var isError = false;
             var errorNumber = 0;
             var errorMessage = "";
 
-            serviceTemplateDto.Id = serviceTemplate.id;
+            orderDto.Id = order.id;
 
-            if (nameTextBox.Text != "")
+            if (careComboBox.SelectedItem != null)
             {
-                serviceTemplateDto.Name = nameTextBox.Text;
+                orderDto.CareId = (int)((ComboBoxItem)careComboBox.SelectedItem).Value;
             }
             else
             {
                 isError = true;
                 errorNumber++;
-                errorMessage += errorNumber + ". Należy podać nazwę szablonu serwisowego.\n";
-            }
-
-            if (KilometresNumericUpDown.Value > 0)
-            {
-                serviceTemplateDto.Kilometres = (int)KilometresNumericUpDown.Value;
-            }
-            else
-            {
-                isError = true;
-                errorNumber++;
-                errorMessage += errorNumber + ". Należy podać liczbę kilometrów większą od zera.\n";
+                errorMessage += errorNumber + ". Należy wybrać opiekę.\n";
             }
 
-            if (periodNumericUpDown.Value > 0)
+            if (driverComboBox.SelectedItem != null)
             {
-                serviceTemplateDto.Period = (int)periodNumericUpDown.Value;
+                orderDto.UserId = (int)((ComboBoxItem)driverComboBox.SelectedItem).Value;
             }
             else
             {
                 isError = true;
                 errorNumber++;
-                errorMessage += errorNumber + ". Należy podać okres większy od zera.\n";
+                errorMessage += errorNumber + ". Należy wybrać kierowcę.\n";
             }
-            if (catalogComboBox.SelectedItem != null)
+
+            orderDto.PlannedStartDate = startDateDateTimePicker.Value;
+            orderDto.PlannedEndDate = endDateDateTimePicker.Value;
+            orderDto.ActualStartDate = actualStartDateDateTimePicker.Value;
+            orderDto.ActualEndDate = actualEndDateDateTimePicker.Value;
+
+            if (costNumericUpDown.Value > 0)
             {
-                serviceTemplateDto.CatalogId = (int)catalogComboBox.SelectedValue;
+                orderDto.Cost = costNumericUpDown.Value;
             }
             else
             {
                 isError = true;
                 errorNumber++;
-                errorMessage += errorNumber + ". Należy wybrać katalog.\n";
+                errorMessage += errorNumber + ". Należy podać koszt większy od zera.\n";
             }
-            if (templateComboBox.SelectedItem != null)
+
+            if (orderTypeComboBox.SelectedItem != null)
             {
-                serviceTemplateDto.TemplateId = (int)templateComboBox.SelectedValue;
+                switch (orderTypeComboBox.SelectedItem.ToString())
+                {
+                    case "1. Rodzaj":
+                        orderDto.Type = '1';
+                        break;
+                    case "2. Rodzaj":
+                        orderDto.Type = '2';
+                        break;
+                    case "3. Rodzaj":
+                        orderDto.Type = '3';
+                        break;
+                }
             }
             else
             {
                 isError = true;
                 errorNumber++;
-                errorMessage += errorNumber + ". Należy wybrać szablon.\n";
+                errorMessage += errorNumber + ". Należy wybrać rodzaj zlecenia.\n";
             }
+
+            if (counterStartStateNumericUpDown.Value > 0)
+            {
+                orderDto.CounterStatusBefore = (int)counterStartStateNumericUpDown.Value;
+            }
+            else
+            {
+                isError = true;
+                errorNumber++;
+                errorMessage += errorNumber + ". Należy podać początkowy stan licznika.\n";
+            }
+
+            if (counterEndDateNumericUpDown.Value > 0)
+            {
+                orderDto.CounterStatusAfter = (int)counterEndDateNumericUpDown.Value;
+            }
+            else
+            {
+                isError = true;
+                errorNumber++;
+                errorMessage += errorNumber + ". Należy podać końcowy stan licznika.\n";
+            }
+
+            if (orderStateComboBox.SelectedItem != null)
+            {
+                switch (orderStateComboBox.SelectedItem.ToString())
+                {
+                    case "Aktywny":
+                        orderDto.State = 'a';
+                        break;
+                    case "Zakończony":
+                        orderDto.State = 'z';
+                        break;
+                    case "Odwołany":
+                        orderDto.State = 'o';
+                        break;
+                }
+            }
+            else
+            {
+                isError = true;
+                errorNumber++;
+                errorMessage += errorNumber + ". Należy wybrać stan zlecenia.\n";
+            }
+
+            orderDto.CommentsAfter = endCommentsRichTextBox.Text;
+            orderDto.CommentsBefore = startCommentsRichTextBox.Text;
+            orderDto.CancellationReason = cancellationReasonRichTextBox.Text;
 
             if (isError)
             {
@@ -148,77 +218,131 @@ namespace BazyDanych
             {
                 try
                 {
-                    ServiceTemplate.UpdateServiceTemplate(serviceTemplateDto);
-                    mainWindow.UpdateServiceTemplate();
+                    Order.UpdateOrder(orderDto);
+                    mainWindow.UpdateOrder();
                     Close();
                 }
                 catch (MySql.Data.MySqlClient.MySqlException ex)
                 {
-
-                    MessageBox.Show("Edytowanie szablonu serwisowego nie powiodło się!");
+                    MessageBox.Show("Edytowanie zlecenia nie powiodło się!");
                 }
-            }*/
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            /*var errorNumber = 0;
+            var errorNumber = 0;
             var errorMessage = "";
             var isError = false;
-            var serviceTemplateDto = new ServiceTemplateDto();
+            var orderDto = new OrderDto();
 
-            if (nameTextBox.Text != "")
+            if (careComboBox.SelectedItem != null)
             {
-                serviceTemplateDto.Name = nameTextBox.Text;
+                orderDto.CareId = (int)((ComboBoxItem)careComboBox.SelectedItem).Value;
             }
             else
             {
                 isError = true;
                 errorNumber++;
-                errorMessage += errorNumber + ". Należy podać nazwę szablonu serwisowego.\n";
-            }
-
-            if (KilometresNumericUpDown.Value > 0)
-            {
-                serviceTemplateDto.Kilometres = (int)KilometresNumericUpDown.Value;
-            }
-            else
-            {
-                isError = true;
-                errorNumber++;
-                errorMessage += errorNumber + ". Należy podać liczbę kilometrów większą od zera.\n";
+                errorMessage += errorNumber + ". Należy wybrać opiekę.\n";
             }
 
-            if (periodNumericUpDown.Value > 0)
+            if (driverComboBox.SelectedItem != null)
             {
-                serviceTemplateDto.Period = (int)periodNumericUpDown.Value;
+                orderDto.UserId = (int)((ComboBoxItem)driverComboBox.SelectedItem).Value;
             }
             else
             {
                 isError = true;
                 errorNumber++;
-                errorMessage += errorNumber + ". Należy podać okres większy od zera.\n";
+                errorMessage += errorNumber + ". Należy wybrać kierowcę.\n";
             }
-            if (catalogComboBox.SelectedItem != null)
+
+            orderDto.PlannedStartDate = startDateDateTimePicker.Value;
+            orderDto.PlannedEndDate = endDateDateTimePicker.Value;
+            orderDto.ActualStartDate = actualStartDateDateTimePicker.Value;
+            orderDto.ActualEndDate = actualEndDateDateTimePicker.Value;
+
+            if (costNumericUpDown.Value > 0)
             {
-                serviceTemplateDto.CatalogId = (int)((ComboBoxItem)catalogComboBox.SelectedItem).Value;
+                orderDto.Cost = costNumericUpDown.Value;
             }
             else
             {
                 isError = true;
                 errorNumber++;
-                errorMessage += errorNumber + ". Należy wybrać katalog.\n";
+                errorMessage += errorNumber + ". Należy podać koszt większy od zera.\n";
             }
-            if (templateComboBox.SelectedItem != null)
+
+            if (orderTypeComboBox.SelectedItem != null)
             {
-                serviceTemplateDto.TemplateId = (int)((ComboBoxItem)templateComboBox.SelectedItem).Value;
+                switch (orderTypeComboBox.SelectedItem.ToString())
+                {
+                    case "1. Rodzaj":
+                        orderDto.Type = '1';
+                        break;
+                    case "2. Rodzaj":
+                        orderDto.Type = '2';
+                        break;
+                    case "3. Rodzaj":
+                        orderDto.Type = '3';
+                        break;
+                }
             }
             else
             {
                 isError = true;
                 errorNumber++;
-                errorMessage += errorNumber + ". Należy wybrać szablon.\n";
+                errorMessage += errorNumber + ". Należy wybrać rodzaj zlecenia.\n";
             }
+
+            if (counterStartStateNumericUpDown.Value > 0)
+            {
+                orderDto.CounterStatusBefore = (int)counterStartStateNumericUpDown.Value;
+            }
+            else
+            {
+                isError = true;
+                errorNumber++;
+                errorMessage += errorNumber + ". Należy podać początkowy stan licznika.\n";
+            }
+
+            if (counterEndDateNumericUpDown.Value > 0)
+            {
+                orderDto.CounterStatusAfter = (int)counterEndDateNumericUpDown.Value;
+            }
+            else
+            {
+                isError = true;
+                errorNumber++;
+                errorMessage += errorNumber + ". Należy podać końcowy stan licznika.\n";
+            }
+
+            if (orderStateComboBox.SelectedItem != null)
+            {
+                switch (orderStateComboBox.SelectedItem.ToString())
+                {
+                    case "Aktywny":
+                        orderDto.State = 'a';
+                        break;
+                    case "Zakończony":
+                        orderDto.State = 'z';
+                        break;
+                    case "Odwołany":
+                        orderDto.State = 'o';
+                        break;
+                }
+            }
+            else
+            {
+                isError = true;
+                errorNumber++;
+                errorMessage += errorNumber + ". Należy wybrać stan zlecenia.\n";
+            }
+
+            orderDto.CommentsAfter = endCommentsRichTextBox.Text;
+            orderDto.CommentsBefore = startCommentsRichTextBox.Text;
+            orderDto.CancellationReason = cancellationReasonRichTextBox.Text;
 
             if (isError)
             {
@@ -228,16 +352,16 @@ namespace BazyDanych
             {
                 try
                 {
-                    mainWindow.AddServiceTemplateToDatabase(serviceTemplateDto);
+                    mainWindow.AddOrderToDatabase(orderDto);
                     Close();
                 }
                 catch (MySql.Data.MySqlClient.MySqlException ex)
                 {
 
-                    MessageBox.Show("Dodawanie szablonu serwisowego nie powiodło się!");
+                    MessageBox.Show("Dodawanie zlecenia nie powiodło się!");
                 }
 
-            }*/
+            }
         }
 
         private void button3_Click(object sender, EventArgs e)

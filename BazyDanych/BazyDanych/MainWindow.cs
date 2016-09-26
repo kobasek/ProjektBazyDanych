@@ -50,6 +50,8 @@ namespace BazyDanych
             UpdateCatalog();
             UpdateBrand();
             UpdateModel();
+            UpdateCare();
+            UpdateOrder();
         }
 
         private void InitializeComponentStart()
@@ -225,6 +227,22 @@ namespace BazyDanych
             obj.Show();
         }
 
+        private void ShowAddCareWindow()
+        {
+            AddOrEditCareWindow obj = new AddOrEditCareWindow(this);
+            obj.Text = "Menedżer Floty - Dodaj opiekę";
+            obj.acceptButton.Visible = false;
+            obj.Show();
+        }
+
+        private void ShowEditCareWindow(int careId)
+        {
+            AddOrEditCareWindow obj = new AddOrEditCareWindow(this, careId);
+            obj.Text = "Menedżer Floty - Edytuj opiekę";
+            obj.addButton.Visible = false;
+            obj.Show();
+        }
+
         private void ShowAddServiceActionWindow()
         {
             AddOrEditServiceActionWindow obj = new AddOrEditServiceActionWindow(this);
@@ -353,18 +371,20 @@ namespace BazyDanych
 
 		private void mTabelaZlecenia_CellContentClick(object sender, DataGridViewCellEventArgs e)
 		{
-			if (e.ColumnIndex == 6)
+            if (e.ColumnIndex == 12)
 			{
-				AddOrEditOrderWindow obj = new AddOrEditOrderWindow();
-				obj.Text = "Menedżer Floty - Edytuj Zlecenie";
-				obj.addButton.Visible = false;
-				obj.Show();
-			}
+                var row = e.RowIndex;
+                var orderId = (int)ordersTableM.Rows[row].Cells[1].Value;
+                AddOrEditOrderWindow obj = new AddOrEditOrderWindow(this, orderId);
+                obj.Text = "Menedżer Floty - Edytuj Zlecenie";
+                obj.addButton.Visible = false;
+                obj.Show();
+            }
 		}
 
 		private void addButtonMZlecenia_Click(object sender, EventArgs e)
 		{
-			AddOrEditOrderWindow obj = new AddOrEditOrderWindow();
+			AddOrEditOrderWindow obj = new AddOrEditOrderWindow(this);
 			obj.Text = "Menedżer Floty - Dodaj Zlecenie";
 			obj.acceptButton.Visible = false;
 			obj.Show();
@@ -692,6 +712,42 @@ namespace BazyDanych
             }
         }
 
+        public void AddOrderToDatabase(OrderDto orderDto)
+        {
+            try
+            {
+                Order.AddOrder(orderDto);
+                OrdersBindingSource.Clear();
+                var ordersList = Order.GetOrderList();
+                foreach (var order in ordersList)
+                {
+                    OrdersBindingSource.Add(new OrderTableElement(order.id, order.plannedStartDate, order.plannedEndDate, order.actualStartDate, order.actualEndDate, order.counterStatusBefore, order.counterStatusAfter, order.commentsBefore, order.commentsAfter, order.type, order.cost, order.cancellationReason, order.state, order.careId, order.userId));
+                }
+            }
+            catch (MySql.Data.MySqlClient.MySqlException ex)
+            {
+                throw ex;
+            }
+        }
+
+        public void AddCareToDatabase(CareDto careDto)
+        {
+            try
+            {
+                Care.AddCare(careDto);
+                careBindingSource.Clear();
+                var careList = Care.GetCareList();
+                foreach (var care in careList)
+                {
+                    careBindingSource.Add(new CareTableElement(care.id, care.startDate, care.endDate, care.keeperId, care.carId));
+                }
+            }
+            catch (MySql.Data.MySqlClient.MySqlException ex)
+            {
+                throw ex;
+            }
+        }
+
         public void UpdateServiceTemplate()
         {
             try
@@ -701,6 +757,40 @@ namespace BazyDanych
                 foreach (var serviceTemplate in serviceTemplatesList)
                 {
                     TemplateServicesBindingSource.Add(new ServiceTemplateTableElement(serviceTemplate.id, serviceTemplate.name, serviceTemplate.kilometres, serviceTemplate.period, serviceTemplate.catalogId, serviceTemplate.templateId));
+                }
+            }
+            catch (MySql.Data.MySqlClient.MySqlException ex)
+            {
+                throw ex;
+            }
+        }
+
+        public void UpdateOrder()
+        {
+            try
+            {
+                OrdersBindingSource.Clear();
+                var ordersList = Order.GetOrderList();
+                foreach (var order in ordersList)
+                {
+                    OrdersBindingSource.Add(new OrderTableElement(order.id, order.plannedStartDate, order.plannedEndDate, order.actualStartDate, order.actualEndDate, order.counterStatusBefore, order.counterStatusAfter, order.commentsBefore, order.commentsAfter, order.type, order.cost, order.cancellationReason, order.state, order.careId, order.userId));
+                }
+            }
+            catch (MySql.Data.MySqlClient.MySqlException ex)
+            {
+                throw ex;
+            }
+        }
+
+        public void UpdateCare()
+        {
+            try
+            {
+                careBindingSource.Clear();
+                var careList = Care.GetCareList();
+                foreach (var care in careList)
+                {
+                    careBindingSource.Add(new CareTableElement(care.id, care.startDate, care.endDate, care.keeperId, care.carId));
                 }
             }
             catch (MySql.Data.MySqlClient.MySqlException ex)
@@ -940,6 +1030,34 @@ namespace BazyDanych
                 obj.addButton.Visible = false;
                 obj.Show();
             }
+        }
+
+        private void addCareButton_Click(object sender, EventArgs e)
+        {
+            ShowAddCareWindow();
+        }
+
+        private void deleteCareButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void careDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 7)
+            {
+                var row = e.RowIndex;
+                var careId = (int)careDataGridView.Rows[row].Cells[1].Value;
+                AddOrEditCareWindow obj = new AddOrEditCareWindow(this, careId);
+                obj.Text = "Menedżer Floty - Edytuj Opiekę";
+                obj.addButton.Visible = false;
+                obj.Show();
+            }
+        }
+
+        private void deleteButtonMOrder_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

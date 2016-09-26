@@ -54,6 +54,12 @@
     <Compile Include="AddOrEditBrandWindow.Designer.cs">
       <DependentUpon>AddOrEditBrandWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddOrEditCareWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddOrEditCareWindow.Designer.cs">
+      <DependentUpon>AddOrEditCareWindow.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddOrEditCatalogWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -126,6 +132,7 @@
     </Compile>
     <Compile Include="CarDto.cs" />
     <Compile Include="CareDto.cs" />
+    <Compile Include="CareTableElement.cs" />
     <Compile Include="Catalog.cs" />
     <Compile Include="CatalogDto.cs" />
     <Compile Include="CatalogTableElement.cs" />
@@ -216,6 +223,9 @@
     <EmbeddedResource Include="AddOrEditBrandWindow.resx">
       <DependentUpon>AddOrEditBrandWindow.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AddOrEditCareWindow.resx">
+      <DependentUpon>AddOrEditCareWindow.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddOrEditCatalogWindow.resx">
       <DependentUpon>AddOrEditCatalogWindow.cs</DependentUpon>
     </EmbeddedResource>
@@ -287,11 +297,13 @@
     </EmbeddedResource>
     <None Include="ClassDiagram1.cd" />
     <None Include="Properties\DataSources\BrandTableElement.datasource" />
+    <None Include="Properties\DataSources\CareTableElement.datasource" />
     <None Include="Properties\DataSources\CatalogTableElement.datasource" />
     <None Include="Properties\DataSources\KlasaTestowa.datasource" />
     <None Include="Properties\DataSources\KlasaTestowa_order.datasource" />
     <None Include="Properties\DataSources\KlasaTestowa_user.datasource" />
     <None Include="Properties\DataSources\ModelTableElement.datasource" />
+    <None Include="Properties\DataSources\OrderTableElement.datasource" />
     <None Include="Properties\DataSources\ServiceActionTableElement.datasource" />
     <None Include="Properties\DataSources\ServicePlaceTableElement.datasource" />
     <None Include="Properties\DataSources\ServiceTemplateTableElement.datasource" />

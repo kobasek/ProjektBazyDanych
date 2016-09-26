@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BazyDanych
 {
-    class OrderDto
+    public class OrderDto
     {
         public int Id { get; set; }
         public DateTime PlannedStartDate { get; set; }

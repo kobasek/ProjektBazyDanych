@@ -53,7 +53,7 @@
             this.endCommentsRichTextBox = new System.Windows.Forms.RichTextBox();
             this.cancellationReasonRichTextBox = new System.Windows.Forms.RichTextBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.carComboBox = new System.Windows.Forms.ComboBox();
+            this.careComboBox = new System.Windows.Forms.ComboBox();
             this.acceptButton = new System.Windows.Forms.Button();
             this.addButton = new System.Windows.Forms.Button();
             this.driverComboBox = new System.Windows.Forms.ComboBox();
@@ -280,17 +280,17 @@
             this.label13.AutoSize = true;
             this.label13.Location = new System.Drawing.Point(79, 22);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(58, 13);
+            this.label13.Size = new System.Drawing.Size(41, 13);
             this.label13.TabIndex = 26;
-            this.label13.Text = "Samochód";
+            this.label13.Text = "Opieka";
             // 
-            // carComboBox
+            // careComboBox
             // 
-            this.carComboBox.FormattingEnabled = true;
-            this.carComboBox.Location = new System.Drawing.Point(137, 22);
-            this.carComboBox.Name = "carComboBox";
-            this.carComboBox.Size = new System.Drawing.Size(121, 21);
-            this.carComboBox.TabIndex = 27;
+            this.careComboBox.FormattingEnabled = true;
+            this.careComboBox.Location = new System.Drawing.Point(137, 22);
+            this.careComboBox.Name = "careComboBox";
+            this.careComboBox.Size = new System.Drawing.Size(121, 21);
+            this.careComboBox.TabIndex = 27;
             // 
             // acceptButton
             // 
@@ -338,7 +338,7 @@
             this.Controls.Add(this.label14);
             this.Controls.Add(this.addButton);
             this.Controls.Add(this.acceptButton);
-            this.Controls.Add(this.carComboBox);
+            this.Controls.Add(this.careComboBox);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.cancellationReasonRichTextBox);
             this.Controls.Add(this.endCommentsRichTextBox);
@@ -400,7 +400,7 @@
         private System.Windows.Forms.RichTextBox endCommentsRichTextBox;
         private System.Windows.Forms.RichTextBox cancellationReasonRichTextBox;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.ComboBox carComboBox;
+        private System.Windows.Forms.ComboBox careComboBox;
         public System.Windows.Forms.Button acceptButton;
         public System.Windows.Forms.Button addButton;
         private System.Windows.Forms.ComboBox driverComboBox;

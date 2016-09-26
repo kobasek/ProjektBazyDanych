@@ -59,7 +59,7 @@ namespace BazyDanych
                 var connection = new MySql.Data.MySqlClient.MySqlConnection { ConnectionString = connectionString };
                 connection.Open();
 
-                string query = "SELECT * FROM projekt_bazy_danych.miejsce_serwisu where miejsce_serwisu.id = " + id;
+                string query = "SELECT * FROM projekt_bazy_danych.zlecenie where zlecenie.id = " + id;
                 var command = new MySqlCommand(query, connection);
                 var dataReader = command.ExecuteReader();
 
@@ -152,15 +152,20 @@ namespace BazyDanych
                 var connection = new MySql.Data.MySqlClient.MySqlConnection { ConnectionString = connectionString };
                 connection.Open();
 
-                string query = "INSERT INTO projekt_bazy_danych.zlecenie VALUES(null, " +
-                                orderDto.PlannedStartDate +
-                                ", " +
-                                orderDto.PlannedEndDate +
-                                ", " +
-                                orderDto.ActualStartDate +
-                                ", " +
-                                orderDto.ActualEndDate +
-                                ", " +
+                var plannedStartDate = orderDto.PlannedStartDate.ToString("yyyy.MM.dd");
+                var plannedEndDate = orderDto.PlannedEndDate.ToString("yyyy.MM.dd");
+                var actualStartDate = orderDto.ActualStartDate.ToString("yyyy.MM.dd");
+                var actualEndDate = orderDto.ActualEndDate.ToString("yyyy.MM.dd");
+
+                string query = "INSERT INTO projekt_bazy_danych.zlecenie VALUES(null, \"" +
+                                plannedStartDate +
+                                "\", \"" +
+                                plannedEndDate +
+                                "\", \"" +
+                                actualStartDate +
+                                "\", \"" +
+                                actualEndDate +
+                                "\", " +
                                 orderDto.CounterStatusBefore +
                                 ", " +
                                 orderDto.CounterStatusAfter +
@@ -168,15 +173,15 @@ namespace BazyDanych
                                 orderDto.CommentsBefore +
                                 "\", \"" +
                                 orderDto.CommentsAfter +
-                                "\", " +
+                                "\", '" +
                                 orderDto.Type +
-                                ", " +
+                                "', " +
                                 orderDto.Cost +
                                 ", \"" +
                                 orderDto.CancellationReason +
-                                "\", " +
+                                "\", '" +
                                 orderDto.State +
-                                ", " +
+                                "', " +
                                 orderDto.CareId +
                                 ", " +
                                 orderDto.UserId +
@@ -203,32 +208,37 @@ namespace BazyDanych
                 var connection = new MySql.Data.MySqlClient.MySqlConnection { ConnectionString = connectionString };
                 connection.Open();
 
-                string query = "UPDATE projekt_bazy_danych.serwis_szablon " +
+                var plannedStartDate = orderDto.PlannedStartDate.ToString("yyyy.MM.dd");
+                var plannedEndDate = orderDto.PlannedEndDate.ToString("yyyy.MM.dd");
+                var actualStartDate = orderDto.ActualStartDate.ToString("yyyy.MM.dd");
+                var actualEndDate = orderDto.ActualEndDate.ToString("yyyy.MM.dd");
+
+                string query = "UPDATE projekt_bazy_danych.zlecenie " +
                                 "SET planowana_data_rozpoczecia = \"" +
-                                orderDto.PlannedStartDate +
-                                "\",planowana_data_zakonczenia = " +
-                                orderDto.PlannedEndDate +
-                                ",faktyczna_data_rozpoczecia = " +
-                                orderDto.ActualStartDate +
-                                ",faktyczna_data_zakonczenia = " +
-                                orderDto.ActualEndDate +
-                                ",stan_licznika_przed = " +
+                                plannedStartDate +
+                                "\",planowana_data_zakonczenia = \"" +
+                                plannedEndDate +
+                                "\",faktyczna_data_rozpoczecia = \"" +
+                                actualStartDate +
+                                "\",faktyczna_data_zakonczenia = \"" +
+                                actualEndDate +
+                                "\",stan_licznika_przed = " +
                                 orderDto.CounterStatusBefore +
                                 ",stan_licznika_po = " +
                                 orderDto.CounterStatusAfter +
-                                ",uwagi_przed = " +
+                                ",uwagi_przed = \"" +
                                 orderDto.CommentsBefore +
-                                ",uwagi_po = " +
+                                "\",uwagi_po = \"" +
                                 orderDto.CommentsAfter +
-                                ",rodzaj_zlecenia = " +
+                                "\",rodzaj_zlecenia = '" +
                                 orderDto.Type +
-                                ",koszt = " +
+                                "',koszt = " +
                                 orderDto.Cost +
-                                ",powod_anulowania = " +
+                                ",powod_anulowania = \"" +
                                 orderDto.CancellationReason +
-                                ",stan_zlecenia = " +
+                                "\",stan_zlecenia = '" +
                                 orderDto.State +
-                                ",opieka_id = " +
+                                "',opieka_id = " +
                                 orderDto.CareId +
                                 ",uzytkownik_id = " +
                                 orderDto.UserId +

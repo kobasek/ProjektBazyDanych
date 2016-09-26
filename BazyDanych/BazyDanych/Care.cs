@@ -11,7 +11,7 @@ namespace BazyDanych
     {
         public int id;
         public DateTime startDate;
-        public DateTime endDate;
+        public DateTime? endDate;
         public int keeperId;
         public int carId;
 
@@ -82,6 +82,41 @@ namespace BazyDanych
                 var command = new MySqlCommand(query, connection);
                 command.ExecuteReader();
                 MessageBox.Show("Poprawnie przyznano opiekę");
+                connection.Close();
+            }
+            catch (MySql.Data.MySqlClient.MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+                throw ex;
+            }
+        }
+
+        public static void AddCare(CareDto careDto)
+        {
+            var connectionString = Functions.GetConnectionString();
+
+            try
+            {
+                var connection = new MySql.Data.MySqlClient.MySqlConnection { ConnectionString = connectionString };
+                connection.Open();
+
+                var startDate = careDto.StartDate.ToString("yyyy.MM.dd");
+                DateTime endDate = careDto.EndDate ?? DateTime.Now;
+                string endDateString = endDate.ToString("yyyy.MM.dd");
+
+                string query = "INSERT INTO projekt_bazy_danych.opieka VALUES(null, \"" +
+                    startDate +
+                                 "\", \"" +
+                                 endDateString +
+                                 "\", " +
+                                 careDto.KeeperId +
+                                 "," +
+                                 careDto.CarId +
+                                 ");";
+
+                var command = new MySqlCommand(query, connection);
+                command.ExecuteReader();
+                MessageBox.Show("Poprawnie dodano opiekę");
                 connection.Close();
             }
             catch (MySql.Data.MySqlClient.MySqlException ex)
@@ -217,6 +252,77 @@ namespace BazyDanych
             }
 
             return new Care();
+        }
+
+        public static IList<Care> GetCareList()
+        {
+            var connectionString = Functions.GetConnectionString();
+            var list = new List<Care>();
+            var careDto = new CareDto();
+
+            try
+            {
+                var connection = new MySql.Data.MySqlClient.MySqlConnection { ConnectionString = connectionString };
+                connection.Open();
+
+                const string query = "SELECT * FROM projekt_bazy_danych.opieka;";
+                var command = new MySqlCommand(query, connection);
+                var dataReader = command.ExecuteReader();
+
+                while (dataReader.Read())
+                {
+                    careDto.Id = dataReader.GetInt32(0);
+                    careDto.StartDate = dataReader.GetDateTime(1);
+                    careDto.EndDate = dataReader.IsDBNull(2) ? (DateTime?)null : dataReader.GetDateTime(2);
+                    careDto.KeeperId = dataReader.GetInt32(3);
+                    careDto.CarId = dataReader.GetInt32(4);
+
+                    var care = new Care(careDto);
+                    list.Add(care);
+                }
+                connection.Close();
+            }
+            catch (MySql.Data.MySqlClient.MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            return list;
+        }
+
+        public static void UpdateCare(CareDto careDto)
+        {
+            var connectionString = Functions.GetConnectionString();
+
+            try
+            {
+                var connection = new MySql.Data.MySqlClient.MySqlConnection { ConnectionString = connectionString };
+                connection.Open();
+                var startDate = careDto.StartDate.ToString("yyyy.MM.dd");
+                DateTime endDate = careDto.EndDate ?? DateTime.Now;
+                string endDateString = endDate.ToString("yyyy.MM.dd");
+
+                string query = "UPDATE projekt_bazy_danych.opieka " +
+                                "SET data_poczatku = \"" +
+                                startDate +
+                                "\",data_konca = \"" +
+                                endDateString +
+                                "\",uzytkownik_id = " +
+                                careDto.KeeperId +
+                                ",pojazd_id = " +
+                                careDto.CarId +
+                                " WHERE id = " +
+                                careDto.Id;
+
+                var command = new MySqlCommand(query, connection);
+                command.ExecuteReader();
+                MessageBox.Show("Poprawnie edytowano opiekę");
+                connection.Close();
+            }
+            catch (MySql.Data.MySqlClient.MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+                throw ex;
+            }
         }
     }
 }
