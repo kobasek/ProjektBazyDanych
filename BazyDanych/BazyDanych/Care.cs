@@ -182,6 +182,39 @@ namespace BazyDanych
             return keeperId;
         }
 
+        public static int GetCare(int carId)
+        {
+            var connectionString = Functions.GetConnectionString();
+            int careId = 0;
+
+            try
+            {
+                var connection = new MySql.Data.MySqlClient.MySqlConnection { ConnectionString = connectionString };
+                connection.Open();
+
+                string query = "SELECT id FROM projekt_bazy_danych.opieka where opieka.pojazd_id = " + carId + " AND opieka.data_konca IS null";
+                var command = new MySqlCommand(query, connection);
+                var dataReader = command.ExecuteReader();
+
+                if (dataReader.Read())
+                {
+                    careId = dataReader.GetInt32(0);
+                    connection.Close();
+                    return careId;
+                }
+                else
+                {
+                    connection.Close();
+                    return careId;
+                }
+            }
+            catch (MySql.Data.MySqlClient.MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            return careId;
+        }
+
         public static int CheckIsKeeper(int userId)
         {
             var connectionString = Functions.GetConnectionString();
@@ -266,6 +299,41 @@ namespace BazyDanych
                 connection.Open();
 
                 const string query = "SELECT * FROM projekt_bazy_danych.opieka;";
+                var command = new MySqlCommand(query, connection);
+                var dataReader = command.ExecuteReader();
+
+                while (dataReader.Read())
+                {
+                    careDto.Id = dataReader.GetInt32(0);
+                    careDto.StartDate = dataReader.GetDateTime(1);
+                    careDto.EndDate = dataReader.IsDBNull(2) ? (DateTime?)null : dataReader.GetDateTime(2);
+                    careDto.KeeperId = dataReader.GetInt32(3);
+                    careDto.CarId = dataReader.GetInt32(4);
+
+                    var care = new Care(careDto);
+                    list.Add(care);
+                }
+                connection.Close();
+            }
+            catch (MySql.Data.MySqlClient.MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            return list;
+        }
+
+        public static IList<Care> GetActiveCareList()
+        {
+            var connectionString = Functions.GetConnectionString();
+            var list = new List<Care>();
+            var careDto = new CareDto();
+
+            try
+            {
+                var connection = new MySql.Data.MySqlClient.MySqlConnection { ConnectionString = connectionString };
+                connection.Open();
+
+                const string query = "SELECT * FROM projekt_bazy_danych.opieka WHERE opieka.data_konca IS null";
                 var command = new MySqlCommand(query, connection);
                 var dataReader = command.ExecuteReader();
 

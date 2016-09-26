@@ -74,6 +74,17 @@ namespace BazyDanych
 
         private void FillPanels()
         {
+            var orderList = Order.GetOrderByCar(Care.GetCare(idCar));
+            var orderDays = new List<DateTime>();
+            foreach(var order in orderList)
+            {
+                DateTime pom = order.plannedStartDate;
+                while (pom <= order.plannedEndDate)
+                {
+                    orderDays.Add(pom);
+                    pom = pom.AddDays(1);
+                }
+            }
             var data = new DateTime(shownYear, shownMonth, 1);
             int firstLabelPom = firstLabel;
             int firstDayOfMonth = GetDayOfWeek(data.DayOfWeek.ToString());
@@ -81,6 +92,8 @@ namespace BazyDanych
             int labelCounter = 1;
             int labelCounterHigher = 1;
             int labelCounterSmaler;
+            int pomIndex = 1;
+            bool pomBool = false;
             if (shownMonth == 1)
                 labelCounterSmaler = DateTime.DaysInMonth(shownYear-1, 12)-firstDayOfMonth+1;   
             else
@@ -90,21 +103,46 @@ namespace BazyDanych
             {
                 if(i >= firstDayOfMonth && i < firstDayOfMonth + daysInMonth)
                 {
-                    var panelColour = this.Controls.OfType<Control>()
-                    .Where(panel => panel.TabIndex == i)
-                    .Select(panel =>
+                    var dateInMonth = new DateTime(shownYear, shownMonth, pomIndex);
+                    foreach (var day in orderDays)
                     {
-                        panel.BackColor = Color.Aquamarine;
-                        return panel;
-                    })
-                    .First();
+                        if(dateInMonth == day)
+                        {
+                            pomBool = true;
+                        }
+                    }
+                    if(pomBool == true)
+                    {
+                        var panelColour = this.Controls.OfType<Control>()
+                        .Where(panel => panel.TabIndex == i)
+                        .Select(panel =>
+                        {
+                            panel.BackColor = Color.Yellow;
+                            return panel;
+                        })
+                        .First();
+                    }
+                    else
+                    {
+                        var panelColour = this.Controls.OfType<Control>()
+                        .Where(panel => panel.TabIndex == i)
+                        .Select(panel =>
+                        {
+                            panel.BackColor = Color.Aquamarine;
+                            return panel;
+                        })
+                        .First();
+                    }
+                    
                     Label test = this.Controls.Find("Label" + (firstLabelPom + labelCounter-1).ToString(), true).FirstOrDefault() as Label;
                     test.Text = labelCounter.ToString();
                     labelCounter++;
+                    pomIndex++;
+                    pomBool = false;
                 }
-
                 else if(i < firstDayOfMonth)
                 {
+
                     var panelColour = this.Controls.OfType<Control>()
                     .Where(panel => panel.TabIndex == i)
                     .Select(panel => { panel.BackColor = Color.White; return panel; })
