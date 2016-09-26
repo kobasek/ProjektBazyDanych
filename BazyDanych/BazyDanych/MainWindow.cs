@@ -52,6 +52,7 @@ namespace BazyDanych
             UpdateModel();
             UpdateCare();
             UpdateOrder();
+            UpdateService();
         }
 
         private void InitializeComponentStart()
@@ -712,6 +713,24 @@ namespace BazyDanych
             }
         }
 
+        public void AddServiceToDatabase(ServiceDto serviceDto)
+        {
+            try
+            {
+                Service.AddService(serviceDto);
+                ServicesBindingSource.Clear();
+                var servicesList = Service.GetServiceList();
+                foreach (var service in servicesList)
+                {
+                    ServicesBindingSource.Add(new ServiceTableElement(service.id, service.cost, service.serviceDate, service.comment, service.servicePlaceId, service.orderId));
+                }
+            }
+            catch (MySql.Data.MySqlClient.MySqlException ex)
+            {
+                throw ex;
+            }
+        }
+
         public void AddOrderToDatabase(OrderDto orderDto)
         {
             try
@@ -757,6 +776,23 @@ namespace BazyDanych
                 foreach (var serviceTemplate in serviceTemplatesList)
                 {
                     TemplateServicesBindingSource.Add(new ServiceTemplateTableElement(serviceTemplate.id, serviceTemplate.name, serviceTemplate.kilometres, serviceTemplate.period, serviceTemplate.catalogId, serviceTemplate.templateId));
+                }
+            }
+            catch (MySql.Data.MySqlClient.MySqlException ex)
+            {
+                throw ex;
+            }
+        }
+
+        public void UpdateService()
+        {
+            try
+            {
+                ServicesBindingSource.Clear();
+                var servicesList = Service.GetServiceList();
+                foreach (var service in servicesList)
+                {
+                    TemplateServicesBindingSource.Add(new ServiceTableElement(service.id, service.cost, service.serviceDate, service.comment, service.servicePlaceId, service.orderId));
                 }
             }
             catch (MySql.Data.MySqlClient.MySqlException ex)

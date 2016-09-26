@@ -104,7 +104,7 @@
             this.servicePlaceComboBox.FormattingEnabled = true;
             this.servicePlaceComboBox.Location = new System.Drawing.Point(103, 17);
             this.servicePlaceComboBox.Name = "servicePlaceComboBox";
-            this.servicePlaceComboBox.Size = new System.Drawing.Size(121, 21);
+            this.servicePlaceComboBox.Size = new System.Drawing.Size(200, 21);
             this.servicePlaceComboBox.TabIndex = 7;
             // 
             // addButton
@@ -115,6 +115,7 @@
             this.addButton.TabIndex = 8;
             this.addButton.Text = "Dodaj";
             this.addButton.UseVisualStyleBackColor = true;
+            this.addButton.Click += new System.EventHandler(this.addButton_Click);
             // 
             // acceptButton
             // 
@@ -124,6 +125,7 @@
             this.acceptButton.TabIndex = 9;
             this.acceptButton.Text = "Zatwierdź";
             this.acceptButton.UseVisualStyleBackColor = true;
+            this.acceptButton.Click += new System.EventHandler(this.acceptButton_Click);
             // 
             // AddOrEditServiceWindow
             // 

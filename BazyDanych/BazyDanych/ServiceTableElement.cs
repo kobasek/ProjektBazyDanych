@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BazyDanych
 {
-    public class ServiceDto
+    class ServiceTableElement
     {
         public int Id { get; set; }
         public decimal Cost { get; set; }
@@ -14,5 +14,15 @@ namespace BazyDanych
         public string Comment { get; set; }
         public int ServicePlaceId { get; set; }
         public int OrderId { get; set; }
+
+        public ServiceTableElement(int id, decimal cost, DateTime serviceDate, string comment, int servicePlaceId, int orderId)
+        {
+            Id = id;
+            Cost = cost;
+            ServiceDate = serviceDate;
+            Comment = comment;
+            ServicePlaceId = servicePlaceId;
+            OrderId = orderId;
+        }
     }
 }
