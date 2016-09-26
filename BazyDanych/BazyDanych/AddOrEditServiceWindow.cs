@@ -31,6 +31,14 @@ namespace BazyDanych
                 comboBoxItem.Value = servicePlace.id;
                 servicePlaceComboBox.Items.Add(comboBoxItem);
             }
+            var ordersList = Order.GetOrderList();
+            foreach (var order in ordersList)
+            {
+                var comboBoxItem = new ComboBoxItem();
+                comboBoxItem.Text = order.id + " " + User.GetUserById(order.userId).name + " " + User.GetUserById(order.userId).lastName;
+                comboBoxItem.Value = order.id;
+                orderComboBox.Items.Add(comboBoxItem);
+            }
             this.mainWindow = mainWindow;
         }
 
@@ -44,6 +52,14 @@ namespace BazyDanych
                 comboBoxItem.Text = servicePlace.companyName + " " + servicePlace.address;
                 comboBoxItem.Value = servicePlace.id;
                 servicePlaceComboBox.Items.Add(comboBoxItem);
+            }
+            var ordersList = Order.GetOrderList();
+            foreach (var order in ordersList)
+            {
+                var comboBoxItem = new ComboBoxItem();
+                comboBoxItem.Text = order.id + " " + User.GetUserById(order.userId).name + " " + User.GetUserById(order.userId).lastName;
+                comboBoxItem.Value = order.id;
+                orderComboBox.Items.Add(comboBoxItem);
             }
             this.mainWindow = mainWindow;
             service = Service.GetServiceById(serviceId);
@@ -69,6 +85,17 @@ namespace BazyDanych
                 isError = true;
                 errorNumber++;
                 errorMessage += errorNumber + ". Należy wybrać miejsce serwisu.\n";
+            }
+
+            if (orderComboBox.SelectedItem != null)
+            {
+                serviceDto.OrderId = (int)((ComboBoxItem)orderComboBox.SelectedItem).Value;
+            }
+            else
+            {
+                isError = true;
+                errorNumber++;
+                errorMessage += errorNumber + ". Należy wybrać zlecenie.\n";
             }
 
             serviceDto.ServiceDate = serviceDateDateTimePicker.Value;
@@ -123,6 +150,17 @@ namespace BazyDanych
                 isError = true;
                 errorNumber++;
                 errorMessage += errorNumber + ". Należy wybrać miejsce serwisu.\n";
+            }
+
+            if (orderComboBox.SelectedItem != null)
+            {
+                serviceDto.OrderId = (int)((ComboBoxItem)orderComboBox.SelectedItem).Value;
+            }
+            else
+            {
+                isError = true;
+                errorNumber++;
+                errorMessage += errorNumber + ". Należy wybrać zlecenie.\n";
             }
 
             serviceDto.ServiceDate = serviceDateDateTimePicker.Value;
