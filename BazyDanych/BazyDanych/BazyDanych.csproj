@@ -200,6 +200,7 @@
     <Compile Include="ServicePlace.cs" />
     <Compile Include="ServicePlaceDto.cs" />
     <Compile Include="ServicePlaceTableElement.cs" />
+    <Compile Include="ServiceTableElement.cs" />
     <Compile Include="ServiceTemplate.cs" />
     <Compile Include="ServiceTemplateDto.cs" />
     <Compile Include="ServiceTemplateTableElement.cs" />
@@ -306,6 +307,7 @@
     <None Include="Properties\DataSources\OrderTableElement.datasource" />
     <None Include="Properties\DataSources\ServiceActionTableElement.datasource" />
     <None Include="Properties\DataSources\ServicePlaceTableElement.datasource" />
+    <None Include="Properties\DataSources\ServiceTableElement.datasource" />
     <None Include="Properties\DataSources\ServiceTemplateTableElement.datasource" />
     <None Include="Properties\DataSources\TemplateTableElement.datasource" />
     <None Include="Properties\Settings.settings">

@@ -52,6 +52,7 @@ namespace BazyDanych
             UpdateModel();
             UpdateCare();
             UpdateOrder();
+            UpdateService();
         }
 
         private void InitializeComponentStart()
@@ -223,6 +224,22 @@ namespace BazyDanych
         {
             AddOrEditServiceTemplateWindow obj = new AddOrEditServiceTemplateWindow(this, templateId);
             obj.Text = "Menedżer Floty - Edytuj szablon serwisowy";
+            obj.addButton.Visible = false;
+            obj.Show();
+        }
+
+        private void ShowAddServiceWindow()
+        {
+            AddOrEditServiceWindow obj = new AddOrEditServiceWindow(this);
+            obj.Text = "Menedżer Floty - Dodaj serwis";
+            obj.acceptButton.Visible = false;
+            obj.Show();
+        }
+
+        private void ShowEditServiceWindow(int serviceId)
+        {
+            AddOrEditServiceWindow obj = new AddOrEditServiceWindow(this, serviceId);
+            obj.Text = "Menedżer Floty - Edytuj serwis";
             obj.addButton.Visible = false;
             obj.Show();
         }
@@ -722,6 +739,24 @@ namespace BazyDanych
             }
         }
 
+        public void AddServiceToDatabase(ServiceDto serviceDto)
+        {
+            try
+            {
+                Service.AddService(serviceDto);
+                ServicesBindingSource.Clear();
+                var servicesList = Service.GetServiceList();
+                foreach (var service in servicesList)
+                {
+                    ServicesBindingSource.Add(new ServiceTableElement(service.id, service.cost, service.serviceDate, service.comment, service.servicePlaceId, service.orderId));
+                }
+            }
+            catch (MySql.Data.MySqlClient.MySqlException ex)
+            {
+                throw ex;
+            }
+        }
+
         public void AddOrderToDatabase(OrderDto orderDto)
         {
             try
@@ -767,6 +802,23 @@ namespace BazyDanych
                 foreach (var serviceTemplate in serviceTemplatesList)
                 {
                     TemplateServicesBindingSource.Add(new ServiceTemplateTableElement(serviceTemplate.id, serviceTemplate.name, serviceTemplate.kilometres, serviceTemplate.period, serviceTemplate.catalogId, serviceTemplate.templateId));
+                }
+            }
+            catch (MySql.Data.MySqlClient.MySqlException ex)
+            {
+                throw ex;
+            }
+        }
+
+        public void UpdateService()
+        {
+            try
+            {
+                ServicesBindingSource.Clear();
+                var servicesList = Service.GetServiceList();
+                foreach (var service in servicesList)
+                {
+                    ServicesBindingSource.Add(new ServiceTableElement(service.id, service.cost, service.serviceDate, service.comment, service.servicePlaceId, service.orderId));
                 }
             }
             catch (MySql.Data.MySqlClient.MySqlException ex)
@@ -1068,6 +1120,29 @@ namespace BazyDanych
         private void deleteButtonMOrder_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void addServiceButton_Click(object sender, EventArgs e)
+        {
+            ShowAddServiceWindow();
+        }
+
+        private void deleteServiceButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void servicesDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 7)
+            {
+                var row = e.RowIndex;
+                var serviceId = (int)servicesDataGridView.Rows[row].Cells[1].Value;
+                AddOrEditServiceWindow obj = new AddOrEditServiceWindow(this, serviceId);
+                obj.Text = "Menedżer Floty - Edytuj Serwis";
+                obj.addButton.Visible = false;
+                obj.Show();
+            }
         }
     }
 }

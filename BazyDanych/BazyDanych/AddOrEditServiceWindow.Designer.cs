@@ -38,13 +38,15 @@
             this.servicePlaceComboBox = new System.Windows.Forms.ComboBox();
             this.addButton = new System.Windows.Forms.Button();
             this.acceptButton = new System.Windows.Forms.Button();
+            this.orderComboBox = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.serviceCostNumericUpDown)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(16, 83);
+            this.label1.Location = new System.Drawing.Point(16, 138);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(33, 13);
             this.label1.TabIndex = 0;
@@ -53,7 +55,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(16, 53);
+            this.label2.Location = new System.Drawing.Point(16, 108);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(70, 13);
             this.label2.TabIndex = 1;
@@ -62,7 +64,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(16, 113);
+            this.label3.Location = new System.Drawing.Point(16, 168);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(57, 13);
             this.label3.TabIndex = 2;
@@ -79,21 +81,21 @@
             // 
             // serviceCostNumericUpDown
             // 
-            this.serviceCostNumericUpDown.Location = new System.Drawing.Point(103, 81);
+            this.serviceCostNumericUpDown.Location = new System.Drawing.Point(103, 136);
             this.serviceCostNumericUpDown.Name = "serviceCostNumericUpDown";
             this.serviceCostNumericUpDown.Size = new System.Drawing.Size(120, 20);
             this.serviceCostNumericUpDown.TabIndex = 4;
             // 
             // serviceDateDateTimePicker
             // 
-            this.serviceDateDateTimePicker.Location = new System.Drawing.Point(103, 47);
+            this.serviceDateDateTimePicker.Location = new System.Drawing.Point(103, 102);
             this.serviceDateDateTimePicker.Name = "serviceDateDateTimePicker";
             this.serviceDateDateTimePicker.Size = new System.Drawing.Size(200, 20);
             this.serviceDateDateTimePicker.TabIndex = 5;
             // 
             // commentRichTextBox
             // 
-            this.commentRichTextBox.Location = new System.Drawing.Point(103, 110);
+            this.commentRichTextBox.Location = new System.Drawing.Point(103, 165);
             this.commentRichTextBox.Name = "commentRichTextBox";
             this.commentRichTextBox.Size = new System.Drawing.Size(200, 86);
             this.commentRichTextBox.TabIndex = 6;
@@ -104,32 +106,53 @@
             this.servicePlaceComboBox.FormattingEnabled = true;
             this.servicePlaceComboBox.Location = new System.Drawing.Point(103, 17);
             this.servicePlaceComboBox.Name = "servicePlaceComboBox";
-            this.servicePlaceComboBox.Size = new System.Drawing.Size(121, 21);
+            this.servicePlaceComboBox.Size = new System.Drawing.Size(200, 21);
             this.servicePlaceComboBox.TabIndex = 7;
             // 
             // addButton
             // 
-            this.addButton.Location = new System.Drawing.Point(122, 213);
+            this.addButton.Location = new System.Drawing.Point(122, 268);
             this.addButton.Name = "addButton";
             this.addButton.Size = new System.Drawing.Size(75, 23);
             this.addButton.TabIndex = 8;
             this.addButton.Text = "Dodaj";
             this.addButton.UseVisualStyleBackColor = true;
+            this.addButton.Click += new System.EventHandler(this.addButton_Click);
             // 
             // acceptButton
             // 
-            this.acceptButton.Location = new System.Drawing.Point(122, 242);
+            this.acceptButton.Location = new System.Drawing.Point(122, 297);
             this.acceptButton.Name = "acceptButton";
             this.acceptButton.Size = new System.Drawing.Size(75, 23);
             this.acceptButton.TabIndex = 9;
             this.acceptButton.Text = "Zatwierdź";
             this.acceptButton.UseVisualStyleBackColor = true;
+            this.acceptButton.Click += new System.EventHandler(this.acceptButton_Click);
+            // 
+            // orderComboBox
+            // 
+            this.orderComboBox.FormattingEnabled = true;
+            this.orderComboBox.Location = new System.Drawing.Point(103, 58);
+            this.orderComboBox.Name = "orderComboBox";
+            this.orderComboBox.Size = new System.Drawing.Size(200, 21);
+            this.orderComboBox.TabIndex = 11;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(16, 61);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(48, 13);
+            this.label5.TabIndex = 10;
+            this.label5.Text = "Zlecenie";
             // 
             // AddOrEditServiceWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(328, 291);
+            this.ClientSize = new System.Drawing.Size(328, 347);
+            this.Controls.Add(this.orderComboBox);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.acceptButton);
             this.Controls.Add(this.addButton);
             this.Controls.Add(this.servicePlaceComboBox);
@@ -158,7 +181,9 @@
         private System.Windows.Forms.DateTimePicker serviceDateDateTimePicker;
         private System.Windows.Forms.RichTextBox commentRichTextBox;
         private System.Windows.Forms.ComboBox servicePlaceComboBox;
-        private System.Windows.Forms.Button addButton;
-        private System.Windows.Forms.Button acceptButton;
+        public System.Windows.Forms.Button addButton;
+        public System.Windows.Forms.Button acceptButton;
+        private System.Windows.Forms.ComboBox orderComboBox;
+        private System.Windows.Forms.Label label5;
     }
 }
