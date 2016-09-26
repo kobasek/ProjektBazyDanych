@@ -22,12 +22,12 @@ namespace BazyDanych
         public AddOrEditOrderWindow(MainWindow mainWindow)
         {
             InitializeComponent();
-            var carsList = Car.GetCarList();
-            foreach (var car in carsList)
+            var careList = Care.GetCareList();
+            foreach (var care in careList)
             {
                 var comboBoxItem = new ComboBoxItem();
-                comboBoxItem.Text = car.id + " " + Brand.GetBrandById(Model.GetModelById(car.modelId).brandId).name + " " + Model.GetModelById(car.modelId).name;
-                comboBoxItem.Value = car.id;
+                comboBoxItem.Text = care.id + " " + Brand.GetBrandById(Model.GetModelById(Car.GetCarById(care.carId).modelId).brandId).name + " " + Model.GetModelById(Car.GetCarById(care.carId).modelId).name;
+                comboBoxItem.Value = care.id;
                 careComboBox.Items.Add(comboBoxItem);
             }
             var driversList = User.GetUserList();
@@ -52,12 +52,12 @@ namespace BazyDanych
         public AddOrEditOrderWindow(MainWindow mainWindow, int orderId)
         {
             InitializeComponent();
-            var carsList = Car.GetCarList();
-            foreach (var car in carsList)
+            var careList = Care.GetCareList();
+            foreach (var care in careList)
             {
                 var comboBoxItem = new ComboBoxItem();
-                comboBoxItem.Text = car.id + " " + Brand.GetBrandById(Model.GetModelById(car.modelId).brandId).name + " " + Model.GetModelById(car.modelId).name;
-                comboBoxItem.Value = car.id;
+                comboBoxItem.Text = care.id + " " + Brand.GetBrandById(Model.GetModelById(Car.GetCarById(care.carId).modelId).brandId).name + " " + Model.GetModelById(Car.GetCarById(care.carId).modelId).name;
+                comboBoxItem.Value = care.id;
                 careComboBox.Items.Add(comboBoxItem);
             }
             var driversList = User.GetUserList();
