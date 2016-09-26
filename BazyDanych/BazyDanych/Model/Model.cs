@@ -99,7 +99,41 @@ namespace BazyDanych
 			return list;
 		}
 
-		public static List<Model> GetModelListForBrand(int brandId)
+        public static List<Model> GetModelsWithGivenTemplateIdList(int templateId)
+        {
+            var connectionString = Functions.GetConnectionString();
+            var list = new List<Model>();
+            var modelDto = new ModelDto();
+            try
+            {
+                var connection = new MySql.Data.MySqlClient.MySqlConnection { ConnectionString = connectionString };
+                connection.Open();
+
+                string query = "SELECT * FROM projekt_bazy_danych.model WHERE model.szablon_id = " + templateId + ";";
+                var command = new MySqlCommand(query, connection);
+                var dataReader = command.ExecuteReader();
+
+                while (dataReader.Read())
+                {
+                    modelDto.Id = dataReader.GetInt32(0);
+                    modelDto.Name = dataReader.GetString(1);
+                    modelDto.Category = dataReader.GetString(2);
+                    modelDto.BrandId = dataReader.GetInt32(3);
+                    modelDto.TemplateId = !dataReader.IsDBNull(4) ? dataReader.GetInt32(4) : (int?)null;
+
+                    var model = new Model(modelDto);
+                    list.Add(model);
+                }
+                connection.Close();
+            }
+            catch (MySql.Data.MySqlClient.MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            return list;
+        }
+
+        public static List<Model> GetModelListForBrand(int brandId)
 		{
 			var connectionString = Functions.GetConnectionString();
 			var list = new List<Model>();

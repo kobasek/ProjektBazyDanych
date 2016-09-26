@@ -48,94 +48,106 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddOrEditBrandWindow.cs">
+    <Compile Include="Brand\AddOrEditBrandWindow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddOrEditBrandWindow.Designer.cs">
+    <Compile Include="Brand\AddOrEditBrandWindow.Designer.cs">
       <DependentUpon>AddOrEditBrandWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="AddOrEditCareWindow.cs">
+    <Compile Include="Care\AddOrEditCareWindow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddOrEditCareWindow.Designer.cs">
+    <Compile Include="Care\AddOrEditCareWindow.Designer.cs">
       <DependentUpon>AddOrEditCareWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="AddOrEditCatalogWindow.cs">
+    <Compile Include="Catalog\AddOrEditCatalogWindow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddOrEditCatalogWindow.Designer.cs">
+    <Compile Include="Catalog\AddOrEditCatalogWindow.Designer.cs">
       <DependentUpon>AddOrEditCatalogWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="AddOrEditModelWindow.cs">
+    <Compile Include="Model\AddOrEditModelWindow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddOrEditModelWindow.Designer.cs">
+    <Compile Include="Model\AddOrEditModelWindow.Designer.cs">
       <DependentUpon>AddOrEditModelWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="AddOrEditServiceActionWindow.cs">
+    <Compile Include="ServiceAction\AddOrEditServiceActionWindow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddOrEditServiceActionWindow.Designer.cs">
+    <Compile Include="ServiceAction\AddOrEditServiceActionWindow.Designer.cs">
       <DependentUpon>AddOrEditServiceActionWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="AddOrEditServicePlaceWindow.cs">
+    <Compile Include="ServicePlace\AddOrEditServicePlaceWindow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddOrEditServicePlaceWindow.Designer.cs">
+    <Compile Include="ServicePlace\AddOrEditServicePlaceWindow.Designer.cs">
       <DependentUpon>AddOrEditServicePlaceWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="AddOrEditServiceTemplateWindow.cs">
+    <Compile Include="ServiceTemplate\AddOrEditServiceTemplateWindow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddOrEditServiceTemplateWindow.Designer.cs">
+    <Compile Include="ServiceTemplate\AddOrEditServiceTemplateWindow.Designer.cs">
       <DependentUpon>AddOrEditServiceTemplateWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="AddOrEditServiceWindow.cs">
+    <Compile Include="Service\AddOrEditServiceWindow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddOrEditServiceWindow.Designer.cs">
+    <Compile Include="Service\AddOrEditServiceWindow.Designer.cs">
       <DependentUpon>AddOrEditServiceWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="AddOrEditTemplateWindow.cs">
+    <Compile Include="Template\AddOrEditTemplateWindow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddOrEditTemplateWindow.Designer.cs">
+    <Compile Include="Template\AddOrEditTemplateWindow.Designer.cs">
       <DependentUpon>AddOrEditTemplateWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="AddOrEditUserWindow.cs">
+    <Compile Include="User\AddOrEditUserWindow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddOrEditUserWindow.Designer.cs">
+    <Compile Include="User\AddOrEditUserWindow.Designer.cs">
       <DependentUpon>AddOrEditUserWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="AddOrEditOrderWindow.cs">
+    <Compile Include="Order\AddOrEditOrderWindow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddOrEditOrderWindow.Designer.cs">
+    <Compile Include="Order\AddOrEditOrderWindow.Designer.cs">
       <DependentUpon>AddOrEditOrderWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="AddServiceWindow.cs">
+    <Compile Include="Service\AddServiceWindow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddServiceWindow.Designer.cs">
+    <Compile Include="Service\AddServiceWindow.Designer.cs">
       <DependentUpon>AddServiceWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="Brand.cs" />
-    <Compile Include="BrandDto.cs" />
-    <Compile Include="BrandTableElement.cs" />
-    <Compile Include="Car.cs" />
-    <Compile Include="CarDetailsWindow.cs">
+    <Compile Include="Brand\Brand.cs" />
+    <Compile Include="Brand\BrandDetailsWindow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CarDetailsWindow.Designer.cs">
+    <Compile Include="Brand\BrandDetailsWindow.Designer.cs">
+      <DependentUpon>BrandDetailsWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Brand\BrandDto.cs" />
+    <Compile Include="Brand\BrandTableElement.cs" />
+    <Compile Include="Car\Car.cs" />
+    <Compile Include="Car\CarDetailsWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Car\CarDetailsWindow.Designer.cs">
       <DependentUpon>CarDetailsWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="CarDto.cs" />
-    <Compile Include="CareDto.cs" />
-    <Compile Include="CareTableElement.cs" />
-    <Compile Include="Catalog.cs" />
-    <Compile Include="CatalogDto.cs" />
-    <Compile Include="CatalogTableElement.cs" />
+    <Compile Include="Car\CarDto.cs" />
+    <Compile Include="Care\CareDto.cs" />
+    <Compile Include="Care\CareTableElement.cs" />
+    <Compile Include="Catalog\Catalog.cs" />
+    <Compile Include="Catalog\CatalogDetailsWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Catalog\CatalogDetailsWindow.Designer.cs">
+      <DependentUpon>CatalogDetailsWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Catalog\CatalogDto.cs" />
+    <Compile Include="Catalog\CatalogTableElement.cs" />
     <Compile Include="ChangingPassword.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -144,8 +156,8 @@
     </Compile>
     <Compile Include="ComboBoxItem.cs" />
     <Compile Include="Functions.cs" />
-    <Compile Include="KlasaTestowa_order.cs" />
-    <Compile Include="KlasaTestowa_user.cs" />
+    <Compile Include="Order\KlasaTestowa_order.cs" />
+    <Compile Include="User\KlasaTestowa_user.cs" />
     <Compile Include="LoginWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -158,18 +170,18 @@
     <Compile Include="MainWindow.Designer.cs">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="ModelDto.cs" />
-    <Compile Include="AddOrEditCarWindow.cs">
+    <Compile Include="Model\ModelDto.cs" />
+    <Compile Include="Car\AddOrEditCarWindow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddOrEditCarWindow.Designer.cs">
+    <Compile Include="Car\AddOrEditCarWindow.Designer.cs">
       <DependentUpon>AddOrEditCarWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="Care.cs" />
-    <Compile Include="ModelTableElement.cs" />
-    <Compile Include="Order.cs" />
-    <Compile Include="OrderDto.cs" />
-    <Compile Include="OrderTableElement.cs" />
+    <Compile Include="Care\Care.cs" />
+    <Compile Include="Model\ModelTableElement.cs" />
+    <Compile Include="Order\Order.cs" />
+    <Compile Include="Order\OrderDto.cs" />
+    <Compile Include="Order\OrderTableElement.cs" />
     <Compile Include="ProfilWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -188,77 +200,83 @@
     <Compile Include="ScheduleWindow.Designer.cs">
       <DependentUpon>ScheduleWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="KlasaTestowa_car.cs" />
-    <Compile Include="Model.cs" />
+    <Compile Include="Car\KlasaTestowa_car.cs" />
+    <Compile Include="Model\Model.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Service.cs" />
-    <Compile Include="ServiceAction.cs" />
-    <Compile Include="ServiceActionDto.cs" />
-    <Compile Include="ServiceActionTableElement.cs" />
-    <Compile Include="ServiceDto.cs" />
-    <Compile Include="ServicePlace.cs" />
-    <Compile Include="ServicePlaceDto.cs" />
-    <Compile Include="ServicePlaceTableElement.cs" />
-    <Compile Include="ServiceTableElement.cs" />
-    <Compile Include="ServiceTemplate.cs" />
-    <Compile Include="ServiceTemplateDto.cs" />
-    <Compile Include="ServiceTemplateTableElement.cs" />
-    <Compile Include="Template.cs" />
-    <Compile Include="TemplateDetailsWindow.cs">
+    <Compile Include="Service\Service.cs" />
+    <Compile Include="ServiceAction\ServiceAction.cs" />
+    <Compile Include="ServiceAction\ServiceActionDto.cs" />
+    <Compile Include="ServiceAction\ServiceActionTableElement.cs" />
+    <Compile Include="Service\ServiceDto.cs" />
+    <Compile Include="ServicePlace\ServicePlace.cs" />
+    <Compile Include="ServicePlace\ServicePlaceDto.cs" />
+    <Compile Include="ServicePlace\ServicePlaceTableElement.cs" />
+    <Compile Include="Service\ServiceTableElement.cs" />
+    <Compile Include="ServiceTemplate\ServiceTemplate.cs" />
+    <Compile Include="ServiceTemplate\ServiceTemplateDto.cs" />
+    <Compile Include="ServiceTemplate\ServiceTemplateTableElement.cs" />
+    <Compile Include="Template\Template.cs" />
+    <Compile Include="Template\TemplateDetailsWindow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TemplateDetailsWindow.Designer.cs">
+    <Compile Include="Template\TemplateDetailsWindow.Designer.cs">
       <DependentUpon>TemplateDetailsWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="TemplateDto.cs" />
-    <Compile Include="TemplateTableElement.cs" />
-    <Compile Include="User.cs" />
-    <Compile Include="UserDto.cs" />
-    <Compile Include="vehicleCondition.cs">
+    <Compile Include="Template\TemplateDto.cs" />
+    <Compile Include="Template\TemplateTableElement.cs" />
+    <Compile Include="User\User.cs" />
+    <Compile Include="User\UserDto.cs" />
+    <Compile Include="Car\vehicleCondition.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="vehicleCondition.Designer.cs">
+    <Compile Include="Car\vehicleCondition.Designer.cs">
       <DependentUpon>vehicleCondition.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="AddOrEditBrandWindow.resx">
+    <EmbeddedResource Include="Brand\AddOrEditBrandWindow.resx">
       <DependentUpon>AddOrEditBrandWindow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AddOrEditCareWindow.resx">
+    <EmbeddedResource Include="Care\AddOrEditCareWindow.resx">
       <DependentUpon>AddOrEditCareWindow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AddOrEditCatalogWindow.resx">
+    <EmbeddedResource Include="Catalog\AddOrEditCatalogWindow.resx">
       <DependentUpon>AddOrEditCatalogWindow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AddOrEditModelWindow.resx">
+    <EmbeddedResource Include="Model\AddOrEditModelWindow.resx">
       <DependentUpon>AddOrEditModelWindow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AddOrEditServiceActionWindow.resx">
+    <EmbeddedResource Include="ServiceAction\AddOrEditServiceActionWindow.resx">
       <DependentUpon>AddOrEditServiceActionWindow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AddOrEditServicePlaceWindow.resx">
+    <EmbeddedResource Include="ServicePlace\AddOrEditServicePlaceWindow.resx">
       <DependentUpon>AddOrEditServicePlaceWindow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AddOrEditServiceTemplateWindow.resx">
+    <EmbeddedResource Include="ServiceTemplate\AddOrEditServiceTemplateWindow.resx">
       <DependentUpon>AddOrEditServiceTemplateWindow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AddOrEditServiceWindow.resx">
+    <EmbeddedResource Include="Service\AddOrEditServiceWindow.resx">
       <DependentUpon>AddOrEditServiceWindow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AddOrEditTemplateWindow.resx">
+    <EmbeddedResource Include="Template\AddOrEditTemplateWindow.resx">
       <DependentUpon>AddOrEditTemplateWindow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AddOrEditUserWindow.resx">
+    <EmbeddedResource Include="User\AddOrEditUserWindow.resx">
       <DependentUpon>AddOrEditUserWindow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AddOrEditOrderWindow.resx">
+    <EmbeddedResource Include="Order\AddOrEditOrderWindow.resx">
       <DependentUpon>AddOrEditOrderWindow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AddServiceWindow.resx">
+    <EmbeddedResource Include="Service\AddServiceWindow.resx">
       <DependentUpon>AddServiceWindow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CarDetailsWindow.resx">
+    <EmbeddedResource Include="Brand\BrandDetailsWindow.resx">
+      <DependentUpon>BrandDetailsWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Car\CarDetailsWindow.resx">
       <DependentUpon>CarDetailsWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Catalog\CatalogDetailsWindow.resx">
+      <DependentUpon>CatalogDetailsWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ChangingPassword.resx">
       <DependentUpon>ChangingPassword.cs</DependentUpon>
@@ -269,7 +287,7 @@
     <EmbeddedResource Include="MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AddOrEditCarWindow.resx">
+    <EmbeddedResource Include="Car\AddOrEditCarWindow.resx">
       <DependentUpon>AddOrEditCarWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ProfilWindow.resx">
@@ -290,10 +308,10 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="TemplateDetailsWindow.resx">
+    <EmbeddedResource Include="Template\TemplateDetailsWindow.resx">
       <DependentUpon>TemplateDetailsWindow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="vehicleCondition.resx">
+    <EmbeddedResource Include="Car\vehicleCondition.resx">
       <DependentUpon>vehicleCondition.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="ClassDiagram1.cd" />

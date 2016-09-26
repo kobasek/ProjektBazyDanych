@@ -17,10 +17,10 @@ namespace BazyDanych
         public int CounterStatusAfter { get; set; }
         public string CommentsBefore { get; set; }
         public string CommentsAfter { get; set; }
-        public char Type { get; set; }
+        public string Type { get; set; }
         public decimal Cost { get; set; }
         public string CancellationReason { get; set; }
-        public char State { get; set; }
+        public string State { get; set; }
         public int CareId { get; set; }
         public int UserId { get; set; }
 
@@ -35,10 +35,32 @@ namespace BazyDanych
             CounterStatusAfter = counterStatusAfter;
             CommentsBefore = commentsBefore;
             CommentsAfter = commentsAfter;
-            Type = type;
+            switch (type)
+            {
+                case '1':
+                    Type = "1. Rodzaj";
+                    break;
+                case '2':
+                    Type = "2. Rodzaj";
+                    break;
+                case '3':
+                    Type = "3. Rodzaj";
+                    break;
+            }
+            switch (state)
+            {
+                case 'a':
+                    State = "Aktywny";
+                    break;
+                case 'z':
+                    State = "Zakończony";
+                    break;
+                case 'o':
+                    State = "Odwołany";
+                    break;
+            }
             Cost = cost;
             CancellationReason = cancellationReason;
-            State = state;
             CareId = careId;
             UserId = userId;
         }

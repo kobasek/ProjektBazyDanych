@@ -1032,7 +1032,14 @@ namespace BazyDanych
 
         private void templatesDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == 4)
+            if (e.ColumnIndex == 3)
+            {
+                var row = e.RowIndex;
+                var templateId = (int)templatesDataGridView.Rows[row].Cells[1].Value;
+                TemplateDetailsWindow obj = new TemplateDetailsWindow(templateId);
+                obj.Show();
+            }
+            else if (e.ColumnIndex == 4)
             {
                 var row = e.RowIndex;
                 var templateId = (int)templatesDataGridView.Rows[row].Cells[1].Value;
@@ -1063,7 +1070,14 @@ namespace BazyDanych
 
         private void catalogsDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == 4)
+            if (e.ColumnIndex == 3)
+            {
+                var row = e.RowIndex;
+                var catalogId = (int)catalogsDataGridView.Rows[row].Cells[1].Value;
+                CatalogDetailsWindow obj = new CatalogDetailsWindow(catalogId);
+                obj.Show();
+            }
+            else if (e.ColumnIndex == 4)
             {
                 var row = e.RowIndex;
                 var catalogId = (int)catalogsDataGridView.Rows[row].Cells[1].Value;
@@ -1096,6 +1110,13 @@ namespace BazyDanych
 
         private void brandsDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (e.ColumnIndex == 3)
+            {
+                var row = e.RowIndex;
+                var brandId = (int)brandsDataGridView.Rows[row].Cells[1].Value;
+                BrandDetailsWindow obj = new BrandDetailsWindow(brandId);
+                obj.Show();
+            }
             if (e.ColumnIndex == 4)
             {
                 var row = e.RowIndex;

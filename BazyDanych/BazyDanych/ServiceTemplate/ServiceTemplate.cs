@@ -141,6 +141,78 @@ namespace BazyDanych
             return list;
         }
 
+        public static IList<ServiceTemplate> GetServiceTemplatesWithGivenTemplateIdList(int templateId)
+        {
+            var connectionString = Functions.GetConnectionString();
+            var list = new List<ServiceTemplate>();
+            var serviceTemplateDto = new ServiceTemplateDto();
+
+            try
+            {
+                var connection = new MySql.Data.MySqlClient.MySqlConnection { ConnectionString = connectionString };
+                connection.Open();
+
+                string query = "SELECT * FROM projekt_bazy_danych.serwis_szablon WHERE serwis_szablon.szablon_id = " + templateId + ";";
+                var command = new MySqlCommand(query, connection);
+                var dataReader = command.ExecuteReader();
+
+                while (dataReader.Read())
+                {
+                    serviceTemplateDto.Id = dataReader.GetInt32(0);
+                    serviceTemplateDto.Name = dataReader.GetString(1);
+                    serviceTemplateDto.Kilometres = dataReader.GetInt32(2);
+                    serviceTemplateDto.Period = dataReader.GetInt32(3);
+                    serviceTemplateDto.CatalogId = dataReader.GetInt32(4);
+                    serviceTemplateDto.TemplateId = dataReader.GetInt32(5);
+
+                    var serviceTemplate = new ServiceTemplate(serviceTemplateDto);
+                    list.Add(serviceTemplate);
+                }
+                connection.Close();
+            }
+            catch (MySql.Data.MySqlClient.MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            return list;
+        }
+
+        public static IList<ServiceTemplate> GetServiceTemplatesWithGivenCatalogIdList(int catalogId)
+        {
+            var connectionString = Functions.GetConnectionString();
+            var list = new List<ServiceTemplate>();
+            var serviceTemplateDto = new ServiceTemplateDto();
+
+            try
+            {
+                var connection = new MySql.Data.MySqlClient.MySqlConnection { ConnectionString = connectionString };
+                connection.Open();
+
+                string query = "SELECT * FROM projekt_bazy_danych.serwis_szablon WHERE serwis_szablon.katalog_id = " + catalogId + ";";
+                var command = new MySqlCommand(query, connection);
+                var dataReader = command.ExecuteReader();
+
+                while (dataReader.Read())
+                {
+                    serviceTemplateDto.Id = dataReader.GetInt32(0);
+                    serviceTemplateDto.Name = dataReader.GetString(1);
+                    serviceTemplateDto.Kilometres = dataReader.GetInt32(2);
+                    serviceTemplateDto.Period = dataReader.GetInt32(3);
+                    serviceTemplateDto.CatalogId = dataReader.GetInt32(4);
+                    serviceTemplateDto.TemplateId = dataReader.GetInt32(5);
+
+                    var serviceTemplate = new ServiceTemplate(serviceTemplateDto);
+                    list.Add(serviceTemplate);
+                }
+                connection.Close();
+            }
+            catch (MySql.Data.MySqlClient.MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            return list;
+        }
+
         public static void UpdateServiceTemplate(ServiceTemplateDto serviceTemplateDto)
         {
             var connectionString = Functions.GetConnectionString();
