@@ -141,12 +141,9 @@
             this.dataGridViewButtonColumn15 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.deleteServiceActionButton = new System.Windows.Forms.Button();
             this.servicesTabPage = new System.Windows.Forms.TabPage();
-            this.button15 = new System.Windows.Forms.Button();
-            this.dataGridView5 = new System.Windows.Forms.DataGridView();
-            this.dataGridViewCheckBoxColumn10 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.dataGridViewButtonColumn16 = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.dataGridViewButtonColumn17 = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.button16 = new System.Windows.Forms.Button();
+            this.addServiceButton = new System.Windows.Forms.Button();
+            this.servicesDataGridView = new System.Windows.Forms.DataGridView();
+            this.deleteServiceButton = new System.Windows.Forms.Button();
             this.modelsTabPage = new System.Windows.Forms.TabPage();
             this.addModelButton = new System.Windows.Forms.Button();
             this.modelsDataGridView = new System.Windows.Forms.DataGridView();
@@ -196,7 +193,21 @@
             this.dataGridViewButtonColumn7 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.dataGridViewLinkColumn6 = new System.Windows.Forms.DataGridViewLinkColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.ServicesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataGridViewCheckBoxColumn2 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.State = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Type = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CounterStatusBefore = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CounterStatusAfter = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PlannedStartDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PlannedEndDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ActualStartDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ActualEndDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewLinkColumn2 = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.dataGridViewButtonColumn2 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.dataGridViewCheckBoxColumn10 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dataGridViewButtonColumn16 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.dataGridViewButtonColumn17 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.nrPojazduDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.markaPojazduDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.modelPojazduDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -207,6 +218,7 @@
             this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.phoneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.klasaTestowauserBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.idDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.OrdersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.idDataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ServicePlacesBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -222,8 +234,12 @@
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ServiceActionsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idDataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.costDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.serviceDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.servicePlaceIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.orderIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ServicesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.idDataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.categoryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -255,19 +271,6 @@
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewCheckBoxColumn2 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.idDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.State = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Type = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CounterStatusBefore = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CounterStatusAfter = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PlannedStartDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PlannedEndDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ActualStartDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ActualEndDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewLinkColumn2 = new System.Windows.Forms.DataGridViewLinkColumn();
-            this.dataGridViewButtonColumn2 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panelS.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelM.SuspendLayout();
@@ -292,7 +295,7 @@
             this.ServiceActionsTabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ServiceActionsDataGridView)).BeginInit();
             this.servicesTabPage.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.servicesDataGridView)).BeginInit();
             this.modelsTabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.modelsDataGridView)).BeginInit();
             this.brandsTabPage.SuspendLayout();
@@ -313,7 +316,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.kTabelaZlecenia)).BeginInit();
             this.tabKPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kTabelaRezerwacje)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ServicesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.klasaTestowaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.klasaTestowauserBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.OrdersBindingSource)).BeginInit();
@@ -322,6 +324,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.TemplateServicesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CatalogsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ServiceActionsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ServicesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ModelsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BrandsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.careBindingSource)).BeginInit();
@@ -1476,9 +1479,9 @@
             // 
             // servicesTabPage
             // 
-            this.servicesTabPage.Controls.Add(this.button15);
-            this.servicesTabPage.Controls.Add(this.dataGridView5);
-            this.servicesTabPage.Controls.Add(this.button16);
+            this.servicesTabPage.Controls.Add(this.addServiceButton);
+            this.servicesTabPage.Controls.Add(this.servicesDataGridView);
+            this.servicesTabPage.Controls.Add(this.deleteServiceButton);
             this.servicesTabPage.Location = new System.Drawing.Point(4, 22);
             this.servicesTabPage.Name = "servicesTabPage";
             this.servicesTabPage.Padding = new System.Windows.Forms.Padding(3);
@@ -1487,61 +1490,47 @@
             this.servicesTabPage.Text = "Serwisy";
             this.servicesTabPage.UseVisualStyleBackColor = true;
             // 
-            // button15
+            // addServiceButton
             // 
-            this.button15.Location = new System.Drawing.Point(851, 8);
-            this.button15.Name = "button15";
-            this.button15.Size = new System.Drawing.Size(75, 23);
-            this.button15.TabIndex = 12;
-            this.button15.Text = "Dodaj";
-            this.button15.UseVisualStyleBackColor = true;
+            this.addServiceButton.Location = new System.Drawing.Point(851, 8);
+            this.addServiceButton.Name = "addServiceButton";
+            this.addServiceButton.Size = new System.Drawing.Size(75, 23);
+            this.addServiceButton.TabIndex = 12;
+            this.addServiceButton.Text = "Dodaj";
+            this.addServiceButton.UseVisualStyleBackColor = true;
+            this.addServiceButton.Click += new System.EventHandler(this.addServiceButton_Click);
             // 
-            // dataGridView5
+            // servicesDataGridView
             // 
-            this.dataGridView5.AllowUserToOrderColumns = true;
-            this.dataGridView5.AutoGenerateColumns = false;
-            this.dataGridView5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView5.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.servicesDataGridView.AllowUserToOrderColumns = true;
+            this.servicesDataGridView.AutoGenerateColumns = false;
+            this.servicesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.servicesDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewCheckBoxColumn10,
-            this.dataGridViewTextBoxColumn7,
-            this.dataGridViewTextBoxColumn8,
+            this.idDataGridViewTextBoxColumn9,
+            this.costDataGridViewTextBoxColumn,
+            this.serviceDateDataGridViewTextBoxColumn,
+            this.servicePlaceIdDataGridViewTextBoxColumn,
+            this.orderIdDataGridViewTextBoxColumn,
             this.dataGridViewButtonColumn16,
             this.dataGridViewButtonColumn17});
-            this.dataGridView5.DataSource = this.TemplatesBindingSource;
-            this.dataGridView5.Location = new System.Drawing.Point(6, 7);
-            this.dataGridView5.Name = "dataGridView5";
-            this.dataGridView5.Size = new System.Drawing.Size(839, 341);
-            this.dataGridView5.TabIndex = 10;
+            this.servicesDataGridView.DataSource = this.ServicesBindingSource;
+            this.servicesDataGridView.Location = new System.Drawing.Point(6, 7);
+            this.servicesDataGridView.Name = "servicesDataGridView";
+            this.servicesDataGridView.Size = new System.Drawing.Size(839, 341);
+            this.servicesDataGridView.TabIndex = 10;
+            this.servicesDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.servicesDataGridView_CellContentClick);
             // 
-            // dataGridViewCheckBoxColumn10
+            // deleteServiceButton
             // 
-            this.dataGridViewCheckBoxColumn10.HeaderText = "Zaznacz szablon";
-            this.dataGridViewCheckBoxColumn10.Name = "dataGridViewCheckBoxColumn10";
-            this.dataGridViewCheckBoxColumn10.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // dataGridViewButtonColumn16
-            // 
-            this.dataGridViewButtonColumn16.HeaderText = "Szczegóły";
-            this.dataGridViewButtonColumn16.Name = "dataGridViewButtonColumn16";
-            // 
-            // dataGridViewButtonColumn17
-            // 
-            this.dataGridViewButtonColumn17.DataPropertyName = "EditButton";
-            this.dataGridViewButtonColumn17.HeaderText = "Edycja";
-            this.dataGridViewButtonColumn17.Name = "dataGridViewButtonColumn17";
-            this.dataGridViewButtonColumn17.ReadOnly = true;
-            this.dataGridViewButtonColumn17.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewButtonColumn17.Text = "Edytuj";
-            // 
-            // button16
-            // 
-            this.button16.Enabled = false;
-            this.button16.Location = new System.Drawing.Point(851, 37);
-            this.button16.Name = "button16";
-            this.button16.Size = new System.Drawing.Size(75, 23);
-            this.button16.TabIndex = 11;
-            this.button16.Text = "Usuń";
-            this.button16.UseVisualStyleBackColor = true;
+            this.deleteServiceButton.Enabled = false;
+            this.deleteServiceButton.Location = new System.Drawing.Point(851, 37);
+            this.deleteServiceButton.Name = "deleteServiceButton";
+            this.deleteServiceButton.Size = new System.Drawing.Size(75, 23);
+            this.deleteServiceButton.TabIndex = 11;
+            this.deleteServiceButton.Text = "Usuń";
+            this.deleteServiceButton.UseVisualStyleBackColor = true;
+            this.deleteServiceButton.Click += new System.EventHandler(this.deleteServiceButton_Click);
             // 
             // modelsTabPage
             // 
@@ -2050,6 +2039,107 @@
             this.Column3.HeaderText = "Rezerwuj";
             this.Column3.Name = "Column3";
             // 
+            // dataGridViewCheckBoxColumn2
+            // 
+            this.dataGridViewCheckBoxColumn2.HeaderText = "Zaznacz zlecenie";
+            this.dataGridViewCheckBoxColumn2.Name = "dataGridViewCheckBoxColumn2";
+            this.dataGridViewCheckBoxColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewCheckBoxColumn2.Width = 65;
+            // 
+            // State
+            // 
+            this.State.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.State.DataPropertyName = "State";
+            this.State.HeaderText = "Stan";
+            this.State.Name = "State";
+            this.State.Width = 54;
+            // 
+            // dataGridViewTextBoxColumn14
+            // 
+            this.dataGridViewTextBoxColumn14.DataPropertyName = "Cost";
+            this.dataGridViewTextBoxColumn14.HeaderText = "Koszt";
+            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
+            // 
+            // Type
+            // 
+            this.Type.DataPropertyName = "Type";
+            this.Type.HeaderText = "Rodzaj";
+            this.Type.Name = "Type";
+            // 
+            // CounterStatusBefore
+            // 
+            this.CounterStatusBefore.DataPropertyName = "CounterStatusBefore";
+            this.CounterStatusBefore.HeaderText = "Stan licznika przed";
+            this.CounterStatusBefore.Name = "CounterStatusBefore";
+            // 
+            // CounterStatusAfter
+            // 
+            this.CounterStatusAfter.DataPropertyName = "CounterStatusAfter";
+            this.CounterStatusAfter.HeaderText = "Stan licznika po";
+            this.CounterStatusAfter.Name = "CounterStatusAfter";
+            // 
+            // PlannedStartDate
+            // 
+            this.PlannedStartDate.DataPropertyName = "PlannedStartDate";
+            this.PlannedStartDate.HeaderText = "Planowana data rozpoczęcia";
+            this.PlannedStartDate.Name = "PlannedStartDate";
+            // 
+            // PlannedEndDate
+            // 
+            this.PlannedEndDate.DataPropertyName = "PlannedEndDate";
+            this.PlannedEndDate.HeaderText = "Planowana data zakończenia";
+            this.PlannedEndDate.Name = "PlannedEndDate";
+            // 
+            // ActualStartDate
+            // 
+            this.ActualStartDate.DataPropertyName = "ActualStartDate";
+            this.ActualStartDate.HeaderText = "Rzeczywista data rozpoczęcia";
+            this.ActualStartDate.Name = "ActualStartDate";
+            // 
+            // ActualEndDate
+            // 
+            this.ActualEndDate.DataPropertyName = "ActualEndDate";
+            this.ActualEndDate.HeaderText = "Rzeczywista data zakończenia";
+            this.ActualEndDate.Name = "ActualEndDate";
+            // 
+            // dataGridViewLinkColumn2
+            // 
+            this.dataGridViewLinkColumn2.DataPropertyName = "ShowCalendar";
+            this.dataGridViewLinkColumn2.HeaderText = "Szczegóły";
+            this.dataGridViewLinkColumn2.Name = "dataGridViewLinkColumn2";
+            this.dataGridViewLinkColumn2.ReadOnly = true;
+            this.dataGridViewLinkColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewLinkColumn2.Text = "Wyświetl terminarz";
+            // 
+            // dataGridViewButtonColumn2
+            // 
+            this.dataGridViewButtonColumn2.DataPropertyName = "EditButton";
+            this.dataGridViewButtonColumn2.HeaderText = "Edycja zlecenia";
+            this.dataGridViewButtonColumn2.Name = "dataGridViewButtonColumn2";
+            this.dataGridViewButtonColumn2.ReadOnly = true;
+            this.dataGridViewButtonColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewButtonColumn2.Text = "Edytuj";
+            // 
+            // dataGridViewCheckBoxColumn10
+            // 
+            this.dataGridViewCheckBoxColumn10.HeaderText = "Zaznacz szablon";
+            this.dataGridViewCheckBoxColumn10.Name = "dataGridViewCheckBoxColumn10";
+            this.dataGridViewCheckBoxColumn10.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // dataGridViewButtonColumn16
+            // 
+            this.dataGridViewButtonColumn16.HeaderText = "Szczegóły";
+            this.dataGridViewButtonColumn16.Name = "dataGridViewButtonColumn16";
+            // 
+            // dataGridViewButtonColumn17
+            // 
+            this.dataGridViewButtonColumn17.DataPropertyName = "EditButton";
+            this.dataGridViewButtonColumn17.HeaderText = "Edycja";
+            this.dataGridViewButtonColumn17.Name = "dataGridViewButtonColumn17";
+            this.dataGridViewButtonColumn17.ReadOnly = true;
+            this.dataGridViewButtonColumn17.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewButtonColumn17.Text = "Edytuj";
+            // 
             // nrPojazduDataGridViewTextBoxColumn
             // 
             this.nrPojazduDataGridViewTextBoxColumn.DataPropertyName = "NrPojazdu";
@@ -2113,6 +2203,12 @@
             // klasaTestowauserBindingSource
             // 
             this.klasaTestowauserBindingSource.DataSource = typeof(BazyDanych.KlasaTestowa_user);
+            // 
+            // idDataGridViewTextBoxColumn3
+            // 
+            this.idDataGridViewTextBoxColumn3.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn3.HeaderText = "Numer zlecenia";
+            this.idDataGridViewTextBoxColumn3.Name = "idDataGridViewTextBoxColumn3";
             // 
             // OrdersBindingSource
             // 
@@ -2192,17 +2288,39 @@
             // 
             this.ServiceActionsBindingSource.DataSource = typeof(BazyDanych.ServiceActionTableElement);
             // 
-            // dataGridViewTextBoxColumn7
+            // idDataGridViewTextBoxColumn9
             // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "Id";
-            this.dataGridViewTextBoxColumn7.HeaderText = "Numer";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.idDataGridViewTextBoxColumn9.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn9.HeaderText = "Numer";
+            this.idDataGridViewTextBoxColumn9.Name = "idDataGridViewTextBoxColumn9";
             // 
-            // dataGridViewTextBoxColumn8
+            // costDataGridViewTextBoxColumn
             // 
-            this.dataGridViewTextBoxColumn8.DataPropertyName = "Name";
-            this.dataGridViewTextBoxColumn8.HeaderText = "Nazwa";
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.costDataGridViewTextBoxColumn.DataPropertyName = "Cost";
+            this.costDataGridViewTextBoxColumn.HeaderText = "Koszt";
+            this.costDataGridViewTextBoxColumn.Name = "costDataGridViewTextBoxColumn";
+            // 
+            // serviceDateDataGridViewTextBoxColumn
+            // 
+            this.serviceDateDataGridViewTextBoxColumn.DataPropertyName = "ServiceDate";
+            this.serviceDateDataGridViewTextBoxColumn.HeaderText = "Data serwisu";
+            this.serviceDateDataGridViewTextBoxColumn.Name = "serviceDateDataGridViewTextBoxColumn";
+            // 
+            // servicePlaceIdDataGridViewTextBoxColumn
+            // 
+            this.servicePlaceIdDataGridViewTextBoxColumn.DataPropertyName = "ServicePlaceId";
+            this.servicePlaceIdDataGridViewTextBoxColumn.HeaderText = "Numer miejsca serwisu";
+            this.servicePlaceIdDataGridViewTextBoxColumn.Name = "servicePlaceIdDataGridViewTextBoxColumn";
+            // 
+            // orderIdDataGridViewTextBoxColumn
+            // 
+            this.orderIdDataGridViewTextBoxColumn.DataPropertyName = "OrderId";
+            this.orderIdDataGridViewTextBoxColumn.HeaderText = "Numer zlecenia";
+            this.orderIdDataGridViewTextBoxColumn.Name = "orderIdDataGridViewTextBoxColumn";
+            // 
+            // ServicesBindingSource
+            // 
+            this.ServicesBindingSource.DataSource = typeof(BazyDanych.ServiceTableElement);
             // 
             // idDataGridViewTextBoxColumn7
             // 
@@ -2406,93 +2524,6 @@
             this.dataGridViewTextBoxColumn12.ReadOnly = true;
             this.dataGridViewTextBoxColumn12.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
-            // dataGridViewCheckBoxColumn2
-            // 
-            this.dataGridViewCheckBoxColumn2.HeaderText = "Zaznacz zlecenie";
-            this.dataGridViewCheckBoxColumn2.Name = "dataGridViewCheckBoxColumn2";
-            this.dataGridViewCheckBoxColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewCheckBoxColumn2.Width = 65;
-            // 
-            // idDataGridViewTextBoxColumn3
-            // 
-            this.idDataGridViewTextBoxColumn3.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn3.HeaderText = "Numer zlecenia";
-            this.idDataGridViewTextBoxColumn3.Name = "idDataGridViewTextBoxColumn3";
-            // 
-            // State
-            // 
-            this.State.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.State.DataPropertyName = "State";
-            this.State.HeaderText = "Stan";
-            this.State.Name = "State";
-            this.State.Width = 54;
-            // 
-            // dataGridViewTextBoxColumn14
-            // 
-            this.dataGridViewTextBoxColumn14.DataPropertyName = "Cost";
-            this.dataGridViewTextBoxColumn14.HeaderText = "Koszt";
-            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
-            // 
-            // Type
-            // 
-            this.Type.DataPropertyName = "Type";
-            this.Type.HeaderText = "Rodzaj";
-            this.Type.Name = "Type";
-            // 
-            // CounterStatusBefore
-            // 
-            this.CounterStatusBefore.DataPropertyName = "CounterStatusBefore";
-            this.CounterStatusBefore.HeaderText = "Stan licznika przed";
-            this.CounterStatusBefore.Name = "CounterStatusBefore";
-            // 
-            // CounterStatusAfter
-            // 
-            this.CounterStatusAfter.DataPropertyName = "CounterStatusAfter";
-            this.CounterStatusAfter.HeaderText = "Stan licznika po";
-            this.CounterStatusAfter.Name = "CounterStatusAfter";
-            // 
-            // PlannedStartDate
-            // 
-            this.PlannedStartDate.DataPropertyName = "PlannedStartDate";
-            this.PlannedStartDate.HeaderText = "Planowana data rozpoczęcia";
-            this.PlannedStartDate.Name = "PlannedStartDate";
-            // 
-            // PlannedEndDate
-            // 
-            this.PlannedEndDate.DataPropertyName = "PlannedEndDate";
-            this.PlannedEndDate.HeaderText = "Planowana data zakończenia";
-            this.PlannedEndDate.Name = "PlannedEndDate";
-            // 
-            // ActualStartDate
-            // 
-            this.ActualStartDate.DataPropertyName = "ActualStartDate";
-            this.ActualStartDate.HeaderText = "Rzeczywista data rozpoczęcia";
-            this.ActualStartDate.Name = "ActualStartDate";
-            // 
-            // ActualEndDate
-            // 
-            this.ActualEndDate.DataPropertyName = "ActualEndDate";
-            this.ActualEndDate.HeaderText = "Rzeczywista data zakończenia";
-            this.ActualEndDate.Name = "ActualEndDate";
-            // 
-            // dataGridViewLinkColumn2
-            // 
-            this.dataGridViewLinkColumn2.DataPropertyName = "ShowCalendar";
-            this.dataGridViewLinkColumn2.HeaderText = "Szczegóły";
-            this.dataGridViewLinkColumn2.Name = "dataGridViewLinkColumn2";
-            this.dataGridViewLinkColumn2.ReadOnly = true;
-            this.dataGridViewLinkColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewLinkColumn2.Text = "Wyświetl terminarz";
-            // 
-            // dataGridViewButtonColumn2
-            // 
-            this.dataGridViewButtonColumn2.DataPropertyName = "EditButton";
-            this.dataGridViewButtonColumn2.HeaderText = "Edycja zlecenia";
-            this.dataGridViewButtonColumn2.Name = "dataGridViewButtonColumn2";
-            this.dataGridViewButtonColumn2.ReadOnly = true;
-            this.dataGridViewButtonColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewButtonColumn2.Text = "Edytuj";
-            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2532,7 +2563,7 @@
             this.ServiceActionsTabPage.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ServiceActionsDataGridView)).EndInit();
             this.servicesTabPage.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.servicesDataGridView)).EndInit();
             this.modelsTabPage.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.modelsDataGridView)).EndInit();
             this.brandsTabPage.ResumeLayout(false);
@@ -2553,7 +2584,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.kTabelaZlecenia)).EndInit();
             this.tabKPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.kTabelaRezerwacje)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ServicesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.klasaTestowaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.klasaTestowauserBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.OrdersBindingSource)).EndInit();
@@ -2562,6 +2592,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.TemplateServicesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CatalogsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ServiceActionsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ServicesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ModelsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BrandsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.careBindingSource)).EndInit();
@@ -2731,14 +2762,9 @@
         private System.Windows.Forms.DataGridView ServiceActionsDataGridView;
         private System.Windows.Forms.Button deleteServiceActionButton;
         private System.Windows.Forms.TabPage servicesTabPage;
-        private System.Windows.Forms.Button button15;
-        private System.Windows.Forms.DataGridView dataGridView5;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn10;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
-        private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn16;
-        private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn17;
-        private System.Windows.Forms.Button button16;
+        private System.Windows.Forms.Button addServiceButton;
+        private System.Windows.Forms.DataGridView servicesDataGridView;
+        private System.Windows.Forms.Button deleteServiceButton;
         private System.Windows.Forms.TabPage modelsTabPage;
         private System.Windows.Forms.Button addModelButton;
         private System.Windows.Forms.DataGridView modelsDataGridView;
@@ -2822,5 +2848,13 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ActualEndDate;
         private System.Windows.Forms.DataGridViewLinkColumn dataGridViewLinkColumn2;
         private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn2;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn costDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn serviceDateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn servicePlaceIdDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn orderIdDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn16;
+        private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn17;
     }
 }

@@ -160,7 +160,7 @@
         private System.Windows.Forms.DateTimePicker serviceDateDateTimePicker;
         private System.Windows.Forms.RichTextBox commentRichTextBox;
         private System.Windows.Forms.ComboBox servicePlaceComboBox;
-        private System.Windows.Forms.Button addButton;
-        private System.Windows.Forms.Button acceptButton;
+        public System.Windows.Forms.Button addButton;
+        public System.Windows.Forms.Button acceptButton;
     }
 }

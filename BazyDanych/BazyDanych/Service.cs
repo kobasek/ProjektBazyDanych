@@ -81,10 +81,12 @@ namespace BazyDanych
                 var connection = new MySql.Data.MySqlClient.MySqlConnection { ConnectionString = connectionString };
                 connection.Open();
 
+                var serviceDate = serviceToAdd.ServiceDate.ToString("yyyy.MM.dd");
+
                 string query = "INSERT INTO projekt_bazy_danych.serwis VALUES(null, " +
                                 serviceToAdd.Cost.ToString("F").Replace(",", ".") +
                                 ",\"" +
-                                serviceToAdd.ServiceDate +
+                                serviceDate +
                                 "\",\"" +
                                 serviceToAdd.Comment +
                                 "\"," +
@@ -150,11 +152,13 @@ namespace BazyDanych
                 var connection = new MySql.Data.MySqlClient.MySqlConnection { ConnectionString = connectionString };
                 connection.Open();
 
+                var serviceDate = serviceDto.ServiceDate.ToString("yyyy.MM.dd");
+
                 string query = "UPDATE projekt_bazy_danych.serwis " +
                                 "SET koszt = " +
                                 serviceDto.Cost.ToString("F").Replace(",", ".") +
                                 ",data_serwisu = \"" +
-                                serviceDto.ServiceDate +
+                                serviceDate +
                                 "\",komentarz = \"" +
                                 serviceDto.Comment +
                                 "\",miejsce_serwisu_id = " +

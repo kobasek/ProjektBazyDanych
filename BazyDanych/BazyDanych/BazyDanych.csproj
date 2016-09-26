@@ -307,6 +307,7 @@
     <None Include="Properties\DataSources\OrderTableElement.datasource" />
     <None Include="Properties\DataSources\ServiceActionTableElement.datasource" />
     <None Include="Properties\DataSources\ServicePlaceTableElement.datasource" />
+    <None Include="Properties\DataSources\ServiceTableElement.datasource" />
     <None Include="Properties\DataSources\ServiceTemplateTableElement.datasource" />
     <None Include="Properties\DataSources\TemplateTableElement.datasource" />
     <None Include="Properties\Settings.settings">
