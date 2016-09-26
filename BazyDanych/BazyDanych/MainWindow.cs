@@ -45,6 +45,11 @@ namespace BazyDanych
                 klasaTestowauserBindingSource.Add(new KlasaTestowa_user(user.id, user.name, user.lastName, user.phone));
             }
             UpdateServicePlace();
+            UpdateServiceTemplate();
+            UpdateTemplate();
+            UpdateCatalog();
+            UpdateBrand();
+            UpdateModel();
         }
 
         private void InitializeComponentStart()
@@ -188,6 +193,102 @@ namespace BazyDanych
             obj.Show();
         }
 
+        private void ShowAddTemplateWindow()
+        {
+            AddOrEditTemplateWindow obj = new AddOrEditTemplateWindow(this);
+            obj.Text = "Menedżer Floty - Dodaj Szablon";
+            obj.acceptButton.Visible = false;
+            obj.Show();
+        }
+
+        private void ShowEditTemplateWindow(int templateId)
+        {
+            AddOrEditTemplateWindow obj = new AddOrEditTemplateWindow(this, templateId);
+            obj.Text = "Menedżer Floty - Edytuj Szablon";
+            obj.addButton.Visible = false;
+            obj.Show();
+        }
+
+        private void ShowAddServiceTemplateWindow()
+        {
+            AddOrEditServiceTemplateWindow obj = new AddOrEditServiceTemplateWindow(this);
+            obj.Text = "Menedżer Floty - Dodaj szablon serwisowy";
+            obj.acceptButton.Visible = false;
+            obj.Show();
+        }
+
+        private void ShowEditServiceTemplateWindow(int templateId)
+        {
+            AddOrEditServiceTemplateWindow obj = new AddOrEditServiceTemplateWindow(this, templateId);
+            obj.Text = "Menedżer Floty - Edytuj szablon serwisowy";
+            obj.addButton.Visible = false;
+            obj.Show();
+        }
+
+        private void ShowAddServiceActionWindow()
+        {
+            AddOrEditServiceActionWindow obj = new AddOrEditServiceActionWindow(this);
+            obj.Text = "Menedżer Floty - Dodaj czynność serwisową";
+            obj.acceptButton.Visible = false;
+            obj.Show();
+        }
+
+        private void ShowEditServiceActionWindow(int serviceActionId)
+        {
+            AddOrEditServiceActionWindow obj = new AddOrEditServiceActionWindow(this, serviceActionId);
+            obj.Text = "Menedżer Floty - Edytuj czynność serwisową";
+            obj.addButton.Visible = false;
+            obj.Show();
+        }
+
+        private void ShowAddCatalogWindow()
+        {
+            AddOrEditCatalogWindow obj = new AddOrEditCatalogWindow(this);
+            obj.Text = "Menedżer Floty - Dodaj Katalog";
+            obj.acceptButton.Visible = false;
+            obj.Show();
+        }
+
+        private void ShowEditCatalogWindow(int catalogId)
+        {
+            AddOrEditCatalogWindow obj = new AddOrEditCatalogWindow(this, catalogId);
+            obj.Text = "Menedżer Floty - Edytuj Katalog";
+            obj.addButton.Visible = false;
+            obj.Show();
+        }
+
+        private void ShowAddBrandWindow()
+        {
+            AddOrEditBrandWindow obj = new AddOrEditBrandWindow(this);
+            obj.Text = "Menedżer Floty - Dodaj Markę";
+            obj.acceptButton.Visible = false;
+            obj.Show();
+        }
+
+        private void ShowEditBrandWindow(int brandId)
+        {
+            AddOrEditBrandWindow obj = new AddOrEditBrandWindow(this, brandId);
+            obj.Text = "Menedżer Floty - Edytuj Markę";
+            obj.addButton.Visible = false;
+            obj.Show();
+        }
+
+        private void ShowAddModelWindow()
+        {
+            AddOrEditModelWindow obj = new AddOrEditModelWindow(this);
+            obj.Text = "Menedżer Floty - Dodaj model";
+            obj.acceptButton.Visible = false;
+            obj.Show();
+        }
+
+        private void ShowEditModelWindow(int modelId)
+        {
+            AddOrEditModelWindow obj = new AddOrEditModelWindow(this, modelId);
+            obj.Text = "Menedżer Floty - Edytuj model";
+            obj.addButton.Visible = false;
+            obj.Show();
+        }
+
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
 		{
 			if (e.ColumnIndex == 0)
@@ -238,7 +339,7 @@ namespace BazyDanych
 			if (e.ColumnIndex == 5)
 			{
 				AddOrEditOrderWindow obj = new AddOrEditOrderWindow();
-				obj.button2.Visible = false;
+				obj.addButton.Visible = false;
 				obj.Show();
 			}
 		}
@@ -246,7 +347,7 @@ namespace BazyDanych
 		private void button1_Click_1(object sender, EventArgs e)
 		{
 			AddOrEditOrderWindow obj = new AddOrEditOrderWindow();
-			obj.button1.Visible = false;
+			obj.acceptButton.Visible = false;
 			obj.Show();
 		}
 
@@ -256,7 +357,7 @@ namespace BazyDanych
 			{
 				AddOrEditOrderWindow obj = new AddOrEditOrderWindow();
 				obj.Text = "Menedżer Floty - Edytuj Zlecenie";
-				obj.button2.Visible = false;
+				obj.addButton.Visible = false;
 				obj.Show();
 			}
 		}
@@ -265,7 +366,7 @@ namespace BazyDanych
 		{
 			AddOrEditOrderWindow obj = new AddOrEditOrderWindow();
 			obj.Text = "Menedżer Floty - Dodaj Zlecenie";
-			obj.button1.Visible = false;
+			obj.acceptButton.Visible = false;
 			obj.Show();
 		}
 
@@ -538,6 +639,181 @@ namespace BazyDanych
             }
         }
 
+        public void AddTemplateToDatabase(TemplateDto templateDto)
+        {
+            try
+            {
+                Template.AddTemplate(templateDto);
+                TemplatesBindingSource.Clear();
+                var templatesList = Template.GetTemplatesList();
+                foreach (var template in templatesList)
+                {
+                    TemplatesBindingSource.Add(new TemplateTableElement(template.id, template.name));
+                }
+            }
+            catch (MySql.Data.MySqlClient.MySqlException ex)
+            {
+                throw ex;
+            }
+        }
+
+        public void UpdateTemplate()
+        {
+            try
+            {
+                TemplatesBindingSource.Clear();
+                var templatesList = Template.GetTemplatesList();
+                foreach (var template in templatesList)
+                {
+                    TemplatesBindingSource.Add(new TemplateTableElement(template.id, template.name));
+                }
+            }
+            catch (MySql.Data.MySqlClient.MySqlException ex)
+            {
+                throw ex;
+            }
+        }
+
+        public void AddServiceTemplateToDatabase(ServiceTemplateDto serviceTemplateDto)
+        {
+            try
+            {
+                ServiceTemplate.AddServiceTemplate(serviceTemplateDto);
+                TemplateServicesBindingSource.Clear();
+                var serviceTemplatesList = ServiceTemplate.GetServiceTemplatesList();
+                foreach (var serviceTemplate in serviceTemplatesList)
+                {
+                    TemplateServicesBindingSource.Add(new ServiceTemplateTableElement(serviceTemplate.id, serviceTemplate.name, serviceTemplate.kilometres, serviceTemplate.period, serviceTemplate.catalogId, serviceTemplate.templateId));
+                }
+            }
+            catch (MySql.Data.MySqlClient.MySqlException ex)
+            {
+                throw ex;
+            }
+        }
+
+        public void UpdateServiceTemplate()
+        {
+            try
+            {
+                TemplateServicesBindingSource.Clear();
+                var serviceTemplatesList = ServiceTemplate.GetServiceTemplatesList();
+                foreach (var serviceTemplate in serviceTemplatesList)
+                {
+                    TemplateServicesBindingSource.Add(new ServiceTemplateTableElement(serviceTemplate.id, serviceTemplate.name, serviceTemplate.kilometres, serviceTemplate.period, serviceTemplate.catalogId, serviceTemplate.templateId));
+                }
+            }
+            catch (MySql.Data.MySqlClient.MySqlException ex)
+            {
+                throw ex;
+            }
+        }
+
+        public void AddCatalogToDatabase(CatalogDto catalogDto)
+        {
+            try
+            {
+                Catalog.AddCatalog(catalogDto);
+                CatalogsBindingSource.Clear();
+                var catalogsList = Catalog.GetCatalogsList();
+                foreach (var catalog in catalogsList)
+                {
+                    CatalogsBindingSource.Add(new CatalogTableElement(catalog.id, catalog.name));
+                }
+            }
+            catch (MySql.Data.MySqlClient.MySqlException ex)
+            {
+                throw ex;
+            }
+        }
+
+        public void UpdateCatalog()
+        {
+            try
+            {
+                CatalogsBindingSource.Clear();
+                var catalogsList = Catalog.GetCatalogsList();
+                foreach (var catalog in catalogsList)
+                {
+                    CatalogsBindingSource.Add(new CatalogTableElement(catalog.id, catalog.name));
+                }
+            }
+            catch (MySql.Data.MySqlClient.MySqlException ex)
+            {
+                throw ex;
+            }
+        }
+
+        public void AddBrandToDatabase(BrandDto brandDto)
+        {
+            try
+            {
+                Brand.AddBrand(brandDto);
+                BrandsBindingSource.Clear();
+                var brandsList = Brand.GetBrandList();
+                foreach (var brand in brandsList)
+                {
+                    BrandsBindingSource.Add(new BrandTableElement(brand.name, brand.id));
+                }
+            }
+            catch (MySql.Data.MySqlClient.MySqlException ex)
+            {
+                throw ex;
+            }
+        }
+
+        public void UpdateBrand()
+        {
+            try
+            {
+                BrandsBindingSource.Clear();
+                var brandsList = Brand.GetBrandList();
+                foreach (var brand in brandsList)
+                {
+                    BrandsBindingSource.Add(new BrandTableElement(brand.name, brand.id));
+                }
+            }
+            catch (MySql.Data.MySqlClient.MySqlException ex)
+            {
+                throw ex;
+            }
+        }
+
+        public void AddModelToDatabase(ModelDto modelDto)
+        {
+            try
+            {
+                Model.AddModel(modelDto);
+                ModelsBindingSource.Clear();
+                var modelsList = Model.GetModelList();
+                foreach (var model in modelsList)
+                {
+                    ModelsBindingSource.Add(new ModelTableElement(model.id, model.name, model.category, model.brandId, model.templateId));
+                }
+            }
+            catch (MySql.Data.MySqlClient.MySqlException ex)
+            {
+                throw ex;
+            }
+        }
+
+        public void UpdateModel()
+        {
+            try
+            {
+                ModelsBindingSource.Clear();
+                var modelsList = Model.GetModelList();
+                foreach (var model in modelsList)
+                {
+                    ModelsBindingSource.Add(new ModelTableElement(model.id, model.name, model.category, model.brandId, model.templateId));
+                }
+            }
+            catch (MySql.Data.MySqlClient.MySqlException ex)
+            {
+                throw ex;
+            }
+        }
+
         private void button5_Click(object sender, EventArgs e)
         {
             ShowAddServicePlaceWindow();
@@ -556,6 +832,111 @@ namespace BazyDanych
                 var servicePlaceId = (int)tableServicePlacesM.Rows[row].Cells[1].Value;
                 AddOrEditServicePlaceWindow obj = new AddOrEditServicePlaceWindow(this, servicePlaceId);
                 obj.Text = "Menedżer Floty - Edytuj Miejsce Serwisu";
+                obj.addButton.Visible = false;
+                obj.Show();
+            }
+        }
+
+        private void addTemplateButton_Click(object sender, EventArgs e)
+        {
+            ShowAddTemplateWindow();
+        }
+
+        private void templatesDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 4)
+            {
+                var row = e.RowIndex;
+                var templateId = (int)templatesDataGridView.Rows[row].Cells[1].Value;
+                AddOrEditTemplateWindow obj = new AddOrEditTemplateWindow(this, templateId);
+                obj.Text = "Menedżer Floty - Edytuj Szablon";
+                obj.addButton.Visible = false;
+                obj.Show();
+            }
+        }
+
+        private void addServiceTemplateButton_Click(object sender, EventArgs e)
+        {
+            ShowAddServiceTemplateWindow();
+        }
+
+        private void ServiceTemplatesDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 8)
+            {
+                var row = e.RowIndex;
+                var templateId = (int)ServiceTemplatesDataGridView.Rows[row].Cells[1].Value;
+                AddOrEditServiceTemplateWindow obj = new AddOrEditServiceTemplateWindow(this, templateId);
+                obj.Text = "Menedżer Floty - Edytuj Szablon";
+                obj.addButton.Visible = false;
+                obj.Show();
+            }
+        }
+
+        private void catalogsDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 4)
+            {
+                var row = e.RowIndex;
+                var catalogId = (int)catalogsDataGridView.Rows[row].Cells[1].Value;
+                AddOrEditCatalogWindow obj = new AddOrEditCatalogWindow(this, catalogId);
+                obj.Text = "Menedżer Floty - Edytuj Katalog";
+                obj.addButton.Visible = false;
+                obj.Show();
+            }
+        }
+
+        private void AddCatalogButton_Click(object sender, EventArgs e)
+        {
+            ShowAddCatalogWindow();
+        }
+
+        private void deleteCatalogButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void addBrandButton_Click(object sender, EventArgs e)
+        {
+            ShowAddBrandWindow();
+        }
+
+        private void deleteBrandButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void brandsDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 4)
+            {
+                var row = e.RowIndex;
+                var brandId = (int)brandsDataGridView.Rows[row].Cells[1].Value;
+                AddOrEditBrandWindow obj = new AddOrEditBrandWindow(this, brandId);
+                obj.Text = "Menedżer Floty - Edytuj Markę";
+                obj.addButton.Visible = false;
+                obj.Show();
+            }
+        }
+
+        private void addModelButton_Click(object sender, EventArgs e)
+        {
+            ShowAddModelWindow();
+        }
+
+        private void deleteModelButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void modelsDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 7)
+            {
+                var row = e.RowIndex;
+                var modelId = (int)modelsDataGridView.Rows[row].Cells[1].Value;
+                AddOrEditModelWindow obj = new AddOrEditModelWindow(this, modelId);
+                obj.Text = "Menedżer Floty - Edytuj Model";
                 obj.addButton.Visible = false;
                 obj.Show();
             }

@@ -39,12 +39,12 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -151,6 +151,13 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Czynność serwisowa";
             // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(73, 17);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(187, 20);
+            this.textBox3.TabIndex = 4;
+            // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(92, 86);
@@ -192,13 +199,6 @@
             this.richTextBox1.Size = new System.Drawing.Size(263, 66);
             this.richTextBox1.TabIndex = 7;
             this.richTextBox1.Text = "";
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(73, 17);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(187, 20);
-            this.textBox3.TabIndex = 4;
             // 
             // AddServiceWindow
             // 

@@ -24,6 +24,7 @@ DROP TABLE IF EXISTS `serwis_szablon`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `serwis_szablon` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nazwa` varchar(45) DEFAULT NULL,
   `kilometry` int(11) DEFAULT NULL,
   `okres` int(11) DEFAULT NULL,
   `katalog_id` int(11) DEFAULT NULL,
@@ -31,7 +32,7 @@ CREATE TABLE `serwis_szablon` (
   PRIMARY KEY (`id`),
   KEY `katalog_id` (`katalog_id`),
   KEY `szablon_id` (`szablon_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -40,6 +41,7 @@ CREATE TABLE `serwis_szablon` (
 
 LOCK TABLES `serwis_szablon` WRITE;
 /*!40000 ALTER TABLE `serwis_szablon` DISABLE KEYS */;
+INSERT INTO `serwis_szablon` VALUES (1,'Szablonowy 1',100,90,1,1);
 /*!40000 ALTER TABLE `serwis_szablon` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -52,4 +54,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-09-22 22:05:17
+-- Dump completed on 2016-09-26  3:32:00

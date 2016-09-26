@@ -48,7 +48,7 @@ CREATE TABLE `pojazd` (
 
 LOCK TABLES `pojazd` WRITE;
 /*!40000 ALTER TABLE `pojazd` DISABLE KEYS */;
-INSERT INTO `pojazd` VALUES (1,'Caddy1Auto1234567',2,'Bus','SD13206','D',100000,'','','','','2016-04-25','2016-09-22',5),(2,'Caddy2Auto6789012',2,'Bus','','D',100000,'','','','','2016-07-25',NULL,5),(3,'Caddy3Auto9876543',2,'Bus','','D',100000,'','','','','2016-08-25',NULL,5),(4,'AudiA3VIN12345678',2,'','SG12345','B',50000,'','','','\0','2016-09-15','2016-09-22',7);
+INSERT INTO `pojazd` VALUES (1,'Caddy1Auto1234567',2,'Bus','SD13206','D',100000,'','','','','2016-04-25','2016-09-23',5),(2,'Caddy2Auto6789012',2,'Bus','SD13206','D',100000,'','','','','2016-07-25','2016-09-23',5),(3,'Caddy3Auto9876543',2,'Bus','','D',100000,'','','','','2016-08-25',NULL,5),(4,'AudiA3VIN12345678',2,'','SG12345','B',50000,'','','','\0','2016-09-15','2016-09-23',7);
 /*!40000 ALTER TABLE `pojazd` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -61,4 +61,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-09-22 22:05:15
+-- Dump completed on 2016-09-26  3:32:00

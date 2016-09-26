@@ -85,6 +85,58 @@ namespace BazyDanych
 				MessageBox.Show(ex.Message);
 			}
 			return list;
-		} 
-	}
+		}
+
+        public static void AddBrand(BrandDto brandDto)
+        {
+            var connectionString = Functions.GetConnectionString();
+
+            try
+            {
+                var connection = new MySql.Data.MySqlClient.MySqlConnection { ConnectionString = connectionString };
+                connection.Open();
+
+                string query = "INSERT INTO projekt_bazy_danych.marka VALUES(null, \"" +
+                                brandDto.name +
+                                "\");";
+
+                var command = new MySqlCommand(query, connection);
+                command.ExecuteReader();
+                MessageBox.Show("Poprawnie dodano markę");
+                connection.Close();
+            }
+            catch (MySql.Data.MySqlClient.MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+                throw ex;
+            }
+        }
+
+        public static void UpdateBrand(BrandDto brandDto)
+        {
+            var connectionString = Functions.GetConnectionString();
+
+            try
+            {
+                var connection = new MySql.Data.MySqlClient.MySqlConnection { ConnectionString = connectionString };
+                connection.Open();
+
+                string query = "UPDATE projekt_bazy_danych.marka " +
+                                "SET nazwa = \"" +
+                                brandDto.name +
+                                "\" WHERE id = " +
+                                brandDto.id;
+
+                var command = new MySqlCommand(query, connection);
+                command.ExecuteReader();
+                MessageBox.Show("Poprawnie edytowano markę");
+                connection.Close();
+            }
+            catch (MySql.Data.MySqlClient.MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+                throw ex;
+            }
+        }
+    }
 }

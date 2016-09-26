@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace BazyDanych
 {
-    class ServiceTemplateDto
+    public class ServiceTemplateDto
     {
         public int Id { get; set; }
+        public string Name { get; set; }
         public int Kilometres { get; set; }
         public int Period { get; set; }
         public int CatalogId { get; set; }

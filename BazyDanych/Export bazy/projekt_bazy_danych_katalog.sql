@@ -26,7 +26,7 @@ CREATE TABLE `katalog` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `nazwa` varchar(20) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -35,6 +35,7 @@ CREATE TABLE `katalog` (
 
 LOCK TABLES `katalog` WRITE;
 /*!40000 ALTER TABLE `katalog` DISABLE KEYS */;
+INSERT INTO `katalog` VALUES (1,'Katalog nr 1');
 /*!40000 ALTER TABLE `katalog` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -47,4 +48,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-09-22 22:05:17
+-- Dump completed on 2016-09-26  3:32:00

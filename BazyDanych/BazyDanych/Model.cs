@@ -132,5 +132,69 @@ namespace BazyDanych
 			}
 			return list;
 		}
-	}
+
+        public static void AddModel(ModelDto modelDto)
+        {
+            var connectionString = Functions.GetConnectionString();
+
+            try
+            {
+                var connection = new MySql.Data.MySqlClient.MySqlConnection { ConnectionString = connectionString };
+                connection.Open();
+
+                string query = "INSERT INTO projekt_bazy_danych.model VALUES(null, \"" +
+                                modelDto.Name +
+                                "\", \"" +
+                                modelDto.Category +
+                                "\", " +
+                                modelDto.BrandId +
+                                ", " +
+                                modelDto.TemplateId +
+                                ");";
+
+                var command = new MySqlCommand(query, connection);
+                command.ExecuteReader();
+                MessageBox.Show("Poprawnie dodano model");
+                connection.Close();
+            }
+            catch (MySql.Data.MySqlClient.MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+                throw ex;
+            }
+        }
+
+        public static void UpdateModel(ModelDto modelDto)
+        {
+            var connectionString = Functions.GetConnectionString();
+
+            try
+            {
+                var connection = new MySql.Data.MySqlClient.MySqlConnection { ConnectionString = connectionString };
+                connection.Open();
+
+                string query = "UPDATE projekt_bazy_danych.model " +
+                                "SET nazwa = \"" +
+                                modelDto.Name +
+                                "\",kategoria = \"" +
+                                modelDto.Category +
+                                "\",marka_id = " +
+                                modelDto.BrandId +
+                                ",szablon_id = " +
+                                modelDto.TemplateId +
+                                " WHERE id = " +
+                                modelDto.Id;
+
+                var command = new MySqlCommand(query, connection);
+                command.ExecuteReader();
+                MessageBox.Show("Poprawnie edytowano model");
+                connection.Close();
+            }
+            catch (MySql.Data.MySqlClient.MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+                throw ex;
+            }
+        }
+    }
 }

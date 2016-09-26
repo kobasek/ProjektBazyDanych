@@ -48,11 +48,53 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddOrEditBrandWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddOrEditBrandWindow.Designer.cs">
+      <DependentUpon>AddOrEditBrandWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddOrEditCatalogWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddOrEditCatalogWindow.Designer.cs">
+      <DependentUpon>AddOrEditCatalogWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddOrEditModelWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddOrEditModelWindow.Designer.cs">
+      <DependentUpon>AddOrEditModelWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddOrEditServiceActionWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddOrEditServiceActionWindow.Designer.cs">
+      <DependentUpon>AddOrEditServiceActionWindow.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddOrEditServicePlaceWindow.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="AddOrEditServicePlaceWindow.Designer.cs">
       <DependentUpon>AddOrEditServicePlaceWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddOrEditServiceTemplateWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddOrEditServiceTemplateWindow.Designer.cs">
+      <DependentUpon>AddOrEditServiceTemplateWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddOrEditServiceWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddOrEditServiceWindow.Designer.cs">
+      <DependentUpon>AddOrEditServiceWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddOrEditTemplateWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddOrEditTemplateWindow.Designer.cs">
+      <DependentUpon>AddOrEditTemplateWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="AddOrEditUserWindow.cs">
       <SubType>Form</SubType>
@@ -73,6 +115,8 @@
       <DependentUpon>AddServiceWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="Brand.cs" />
+    <Compile Include="BrandDto.cs" />
+    <Compile Include="BrandTableElement.cs" />
     <Compile Include="Car.cs" />
     <Compile Include="CarDetailsWindow.cs">
       <SubType>Form</SubType>
@@ -84,6 +128,7 @@
     <Compile Include="CareDto.cs" />
     <Compile Include="Catalog.cs" />
     <Compile Include="CatalogDto.cs" />
+    <Compile Include="CatalogTableElement.cs" />
     <Compile Include="ChangingPassword.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -114,8 +159,10 @@
       <DependentUpon>AddOrEditCarWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="Care.cs" />
+    <Compile Include="ModelTableElement.cs" />
     <Compile Include="Order.cs" />
     <Compile Include="OrderDto.cs" />
+    <Compile Include="OrderTableElement.cs" />
     <Compile Include="ProfilWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -141,14 +188,23 @@
     <Compile Include="Service.cs" />
     <Compile Include="ServiceAction.cs" />
     <Compile Include="ServiceActionDto.cs" />
+    <Compile Include="ServiceActionTableElement.cs" />
     <Compile Include="ServiceDto.cs" />
     <Compile Include="ServicePlace.cs" />
     <Compile Include="ServicePlaceDto.cs" />
     <Compile Include="ServicePlaceTableElement.cs" />
     <Compile Include="ServiceTemplate.cs" />
     <Compile Include="ServiceTemplateDto.cs" />
+    <Compile Include="ServiceTemplateTableElement.cs" />
     <Compile Include="Template.cs" />
+    <Compile Include="TemplateDetailsWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TemplateDetailsWindow.Designer.cs">
+      <DependentUpon>TemplateDetailsWindow.cs</DependentUpon>
+    </Compile>
     <Compile Include="TemplateDto.cs" />
+    <Compile Include="TemplateTableElement.cs" />
     <Compile Include="User.cs" />
     <Compile Include="UserDto.cs" />
     <Compile Include="vehicleCondition.cs">
@@ -157,8 +213,29 @@
     <Compile Include="vehicleCondition.Designer.cs">
       <DependentUpon>vehicleCondition.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AddOrEditBrandWindow.resx">
+      <DependentUpon>AddOrEditBrandWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddOrEditCatalogWindow.resx">
+      <DependentUpon>AddOrEditCatalogWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddOrEditModelWindow.resx">
+      <DependentUpon>AddOrEditModelWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddOrEditServiceActionWindow.resx">
+      <DependentUpon>AddOrEditServiceActionWindow.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddOrEditServicePlaceWindow.resx">
       <DependentUpon>AddOrEditServicePlaceWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddOrEditServiceTemplateWindow.resx">
+      <DependentUpon>AddOrEditServiceTemplateWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddOrEditServiceWindow.resx">
+      <DependentUpon>AddOrEditServiceWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddOrEditTemplateWindow.resx">
+      <DependentUpon>AddOrEditTemplateWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AddOrEditUserWindow.resx">
       <DependentUpon>AddOrEditUserWindow.cs</DependentUpon>
@@ -202,14 +279,23 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="TemplateDetailsWindow.resx">
+      <DependentUpon>TemplateDetailsWindow.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="vehicleCondition.resx">
       <DependentUpon>vehicleCondition.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="ClassDiagram1.cd" />
+    <None Include="Properties\DataSources\BrandTableElement.datasource" />
+    <None Include="Properties\DataSources\CatalogTableElement.datasource" />
     <None Include="Properties\DataSources\KlasaTestowa.datasource" />
     <None Include="Properties\DataSources\KlasaTestowa_order.datasource" />
     <None Include="Properties\DataSources\KlasaTestowa_user.datasource" />
+    <None Include="Properties\DataSources\ModelTableElement.datasource" />
+    <None Include="Properties\DataSources\ServiceActionTableElement.datasource" />
     <None Include="Properties\DataSources\ServicePlaceTableElement.datasource" />
+    <None Include="Properties\DataSources\ServiceTemplateTableElement.datasource" />
+    <None Include="Properties\DataSources\TemplateTableElement.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

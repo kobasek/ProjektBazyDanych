@@ -31,7 +31,7 @@ CREATE TABLE `model` (
   PRIMARY KEY (`id`),
   KEY `marka_id` (`marka_id`),
   KEY `szablon_id` (`szablon_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -40,7 +40,7 @@ CREATE TABLE `model` (
 
 LOCK TABLES `model` WRITE;
 /*!40000 ALTER TABLE `model` DISABLE KEYS */;
-INSERT INTO `model` VALUES (1,'Passat B3','B',1,NULL),(2,'Golf IV','B',1,NULL),(3,'Golf V','B',1,NULL),(4,'Polo','B',1,NULL),(5,'Caddy','B',1,NULL),(6,'Up','B',1,NULL),(7,'A3','B',2,NULL),(8,'A4','B',2,NULL),(9,'A5','B',2,NULL),(10,'A6','B',2,NULL),(11,'A7','B',2,NULL),(12,'A8','B',2,NULL),(13,'Klasa A','B',3,NULL),(14,'Klasa B','B',3,NULL),(15,'Klasa C','B',3,NULL),(16,'Klasa E','B',3,NULL),(17,'Klasa S','B',3,NULL),(18,'Klasa G','B',3,NULL);
+INSERT INTO `model` VALUES (1,'Passat B3','B',1,NULL),(2,'Golf IV','B',1,NULL),(3,'Golf V','B',1,NULL),(4,'Polo','B',1,NULL),(5,'Caddy','B',1,NULL),(6,'Up','B',1,NULL),(7,'A3','B',2,NULL),(8,'A4','B',2,NULL),(9,'A5','B',2,NULL),(10,'A6','B',2,NULL),(11,'A7','B',2,NULL),(12,'A8','B',2,NULL),(13,'Klasa A','B',3,NULL),(14,'Klasa B','B',3,NULL),(15,'Klasa C','B',3,NULL),(16,'Klasa E','B',3,NULL),(17,'Klasa S','B',3,NULL),(18,'Klasa G','B',3,NULL),(19,'Gallardo','',9,1),(20,'Murcielago','',9,2),(21,'Gallardo','B',9,2),(22,'sadf','BE',1,1);
 /*!40000 ALTER TABLE `model` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -53,4 +53,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-09-22 22:05:16
+-- Dump completed on 2016-09-26  3:32:00

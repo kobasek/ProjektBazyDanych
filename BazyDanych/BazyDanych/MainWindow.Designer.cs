@@ -108,6 +108,53 @@
             this.address = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewButtonColumn9 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.button6 = new System.Windows.Forms.Button();
+            this.TemplatesTabPage = new System.Windows.Forms.TabPage();
+            this.addTemplateButton = new System.Windows.Forms.Button();
+            this.templatesDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewCheckBoxColumn6 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.DetailsColumn = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.dataGridViewButtonColumn8 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.deleteTemplateButton = new System.Windows.Forms.Button();
+            this.ServiceTemplatesTabPage = new System.Windows.Forms.TabPage();
+            this.addServiceTemplateButton = new System.Windows.Forms.Button();
+            this.ServiceTemplatesDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewCheckBoxColumn7 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.Kilometres = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Period = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CatalogId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TemplateId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewButtonColumn10 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.dataGridViewButtonColumn11 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.DeleteServiceTemplateButton = new System.Windows.Forms.Button();
+            this.catalogsTabPage = new System.Windows.Forms.TabPage();
+            this.addCatalogButton = new System.Windows.Forms.Button();
+            this.catalogsDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewCheckBoxColumn8 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dataGridViewButtonColumn12 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.dataGridViewButtonColumn13 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.deleteCatalogButton = new System.Windows.Forms.Button();
+            this.ServiceActionsTabPage = new System.Windows.Forms.TabPage();
+            this.addServiceActionButton = new System.Windows.Forms.Button();
+            this.ServiceActionsDataGridView = new System.Windows.Forms.DataGridView();
+            this.deleteServiceActionButton = new System.Windows.Forms.Button();
+            this.servicesTabPage = new System.Windows.Forms.TabPage();
+            this.button15 = new System.Windows.Forms.Button();
+            this.dataGridView5 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewCheckBoxColumn10 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dataGridViewButtonColumn16 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.dataGridViewButtonColumn17 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.button16 = new System.Windows.Forms.Button();
+            this.modelsTabPage = new System.Windows.Forms.TabPage();
+            this.addModelButton = new System.Windows.Forms.Button();
+            this.modelsDataGridView = new System.Windows.Forms.DataGridView();
+            this.deleteModelButton = new System.Windows.Forms.Button();
+            this.brandsTabPage = new System.Windows.Forms.TabPage();
+            this.addBrandButton = new System.Windows.Forms.Button();
+            this.brandsDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewCheckBoxColumn12 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dataGridViewButtonColumn20 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.dataGridViewButtonColumn21 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.deleteBrandButton = new System.Windows.Forms.Button();
             this.panelO = new System.Windows.Forms.Panel();
             this.tableControlO = new System.Windows.Forms.TabControl();
             this.oZlecenia = new System.Windows.Forms.TabPage();
@@ -136,6 +183,11 @@
             this.dataGridViewButtonColumn7 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.dataGridViewLinkColumn6 = new System.Windows.Forms.DataGridViewLinkColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.ServiceActionsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ServicesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataGridViewCheckBoxColumn11 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dataGridViewButtonColumn18 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.dataGridViewButtonColumn19 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.nrPojazduDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.markaPojazduDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.modelPojazduDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -150,9 +202,29 @@
             this.keeperDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.driverDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.carDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.UsersBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.OrdersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.idDataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ServicePlacesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.idDataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TemplatesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TemplateServicesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CatalogsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idDataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.categoryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.brandIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.templateIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ModelsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.idDataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BrandsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewTextBoxColumn20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn23 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -172,6 +244,14 @@
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewCheckBoxColumn9 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cost = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ServiceId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewButtonColumn14 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.dataGridViewButtonColumn15 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panelS.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelM.SuspendLayout();
@@ -187,6 +267,20 @@
             this.panel1.SuspendLayout();
             this.servicePlacesTabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tableServicePlacesM)).BeginInit();
+            this.TemplatesTabPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.templatesDataGridView)).BeginInit();
+            this.ServiceTemplatesTabPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ServiceTemplatesDataGridView)).BeginInit();
+            this.catalogsTabPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.catalogsDataGridView)).BeginInit();
+            this.ServiceActionsTabPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ServiceActionsDataGridView)).BeginInit();
+            this.servicesTabPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
+            this.modelsTabPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.modelsDataGridView)).BeginInit();
+            this.brandsTabPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.brandsDataGridView)).BeginInit();
             this.panelO.SuspendLayout();
             this.tableControlO.SuspendLayout();
             this.oZlecenia.SuspendLayout();
@@ -201,10 +295,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.kTabelaZlecenia)).BeginInit();
             this.tabKPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kTabelaRezerwacje)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ServiceActionsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ServicesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.klasaTestowaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.klasaTestowauserBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.UsersBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.OrdersBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ServicePlacesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TemplatesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TemplateServicesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CatalogsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ModelsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BrandsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panelS
@@ -265,6 +366,13 @@
             this.tableControlM.Controls.Add(this.mZlecenia);
             this.tableControlM.Controls.Add(this.mFinanse);
             this.tableControlM.Controls.Add(this.servicePlacesTabPage);
+            this.tableControlM.Controls.Add(this.TemplatesTabPage);
+            this.tableControlM.Controls.Add(this.ServiceTemplatesTabPage);
+            this.tableControlM.Controls.Add(this.catalogsTabPage);
+            this.tableControlM.Controls.Add(this.ServiceActionsTabPage);
+            this.tableControlM.Controls.Add(this.servicesTabPage);
+            this.tableControlM.Controls.Add(this.modelsTabPage);
+            this.tableControlM.Controls.Add(this.brandsTabPage);
             this.tableControlM.Location = new System.Drawing.Point(12, 12);
             this.tableControlM.Name = "tableControlM";
             this.tableControlM.SelectedIndex = 0;
@@ -483,7 +591,7 @@
             this.carDataGridViewTextBoxColumn1,
             this.dataGridViewLinkColumn2,
             this.dataGridViewButtonColumn2});
-            this.mTabelaZlecenia.DataSource = this.UsersBindingSource;
+            this.mTabelaZlecenia.DataSource = this.OrdersBindingSource;
             this.mTabelaZlecenia.Location = new System.Drawing.Point(6, 6);
             this.mTabelaZlecenia.Name = "mTabelaZlecenia";
             this.mTabelaZlecenia.Size = new System.Drawing.Size(744, 341);
@@ -962,7 +1070,7 @@
             this.servicePlacesTabPage.Padding = new System.Windows.Forms.Padding(3);
             this.servicePlacesTabPage.Size = new System.Drawing.Size(1149, 374);
             this.servicePlacesTabPage.TabIndex = 4;
-            this.servicePlacesTabPage.Text = "Miejsca serwisowe";
+            this.servicePlacesTabPage.Text = "Miejsca serwisu";
             this.servicePlacesTabPage.UseVisualStyleBackColor = true;
             // 
             // button5
@@ -995,7 +1103,7 @@
             // 
             // dataGridViewCheckBoxColumn5
             // 
-            this.dataGridViewCheckBoxColumn5.HeaderText = "Zaznacz miejsce serwisowe";
+            this.dataGridViewCheckBoxColumn5.HeaderText = "Zaznacz miejsce serwisu";
             this.dataGridViewCheckBoxColumn5.Name = "dataGridViewCheckBoxColumn5";
             this.dataGridViewCheckBoxColumn5.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
@@ -1030,6 +1138,496 @@
             this.button6.Text = "Usuń";
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // TemplatesTabPage
+            // 
+            this.TemplatesTabPage.Controls.Add(this.addTemplateButton);
+            this.TemplatesTabPage.Controls.Add(this.templatesDataGridView);
+            this.TemplatesTabPage.Controls.Add(this.deleteTemplateButton);
+            this.TemplatesTabPage.Location = new System.Drawing.Point(4, 22);
+            this.TemplatesTabPage.Name = "TemplatesTabPage";
+            this.TemplatesTabPage.Padding = new System.Windows.Forms.Padding(3);
+            this.TemplatesTabPage.Size = new System.Drawing.Size(1149, 374);
+            this.TemplatesTabPage.TabIndex = 5;
+            this.TemplatesTabPage.Text = "Szablony";
+            this.TemplatesTabPage.UseVisualStyleBackColor = true;
+            // 
+            // addTemplateButton
+            // 
+            this.addTemplateButton.Location = new System.Drawing.Point(851, 7);
+            this.addTemplateButton.Name = "addTemplateButton";
+            this.addTemplateButton.Size = new System.Drawing.Size(75, 23);
+            this.addTemplateButton.TabIndex = 9;
+            this.addTemplateButton.Text = "Dodaj";
+            this.addTemplateButton.UseVisualStyleBackColor = true;
+            this.addTemplateButton.Click += new System.EventHandler(this.addTemplateButton_Click);
+            // 
+            // templatesDataGridView
+            // 
+            this.templatesDataGridView.AllowUserToOrderColumns = true;
+            this.templatesDataGridView.AutoGenerateColumns = false;
+            this.templatesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.templatesDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewCheckBoxColumn6,
+            this.idDataGridViewTextBoxColumn5,
+            this.nameDataGridViewTextBoxColumn2,
+            this.DetailsColumn,
+            this.dataGridViewButtonColumn8});
+            this.templatesDataGridView.DataSource = this.TemplatesBindingSource;
+            this.templatesDataGridView.Location = new System.Drawing.Point(6, 6);
+            this.templatesDataGridView.Name = "templatesDataGridView";
+            this.templatesDataGridView.Size = new System.Drawing.Size(839, 341);
+            this.templatesDataGridView.TabIndex = 7;
+            this.templatesDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.templatesDataGridView_CellContentClick);
+            // 
+            // dataGridViewCheckBoxColumn6
+            // 
+            this.dataGridViewCheckBoxColumn6.HeaderText = "Zaznacz szablon";
+            this.dataGridViewCheckBoxColumn6.Name = "dataGridViewCheckBoxColumn6";
+            this.dataGridViewCheckBoxColumn6.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // DetailsColumn
+            // 
+            this.DetailsColumn.HeaderText = "Szczegóły";
+            this.DetailsColumn.Name = "DetailsColumn";
+            // 
+            // dataGridViewButtonColumn8
+            // 
+            this.dataGridViewButtonColumn8.DataPropertyName = "EditButton";
+            this.dataGridViewButtonColumn8.HeaderText = "Edycja";
+            this.dataGridViewButtonColumn8.Name = "dataGridViewButtonColumn8";
+            this.dataGridViewButtonColumn8.ReadOnly = true;
+            this.dataGridViewButtonColumn8.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewButtonColumn8.Text = "Edytuj";
+            // 
+            // deleteTemplateButton
+            // 
+            this.deleteTemplateButton.Enabled = false;
+            this.deleteTemplateButton.Location = new System.Drawing.Point(851, 36);
+            this.deleteTemplateButton.Name = "deleteTemplateButton";
+            this.deleteTemplateButton.Size = new System.Drawing.Size(75, 23);
+            this.deleteTemplateButton.TabIndex = 8;
+            this.deleteTemplateButton.Text = "Usuń";
+            this.deleteTemplateButton.UseVisualStyleBackColor = true;
+            // 
+            // ServiceTemplatesTabPage
+            // 
+            this.ServiceTemplatesTabPage.Controls.Add(this.addServiceTemplateButton);
+            this.ServiceTemplatesTabPage.Controls.Add(this.ServiceTemplatesDataGridView);
+            this.ServiceTemplatesTabPage.Controls.Add(this.DeleteServiceTemplateButton);
+            this.ServiceTemplatesTabPage.Location = new System.Drawing.Point(4, 22);
+            this.ServiceTemplatesTabPage.Name = "ServiceTemplatesTabPage";
+            this.ServiceTemplatesTabPage.Padding = new System.Windows.Forms.Padding(3);
+            this.ServiceTemplatesTabPage.Size = new System.Drawing.Size(1149, 374);
+            this.ServiceTemplatesTabPage.TabIndex = 6;
+            this.ServiceTemplatesTabPage.Text = "Szablonowe serwisy";
+            this.ServiceTemplatesTabPage.UseVisualStyleBackColor = true;
+            // 
+            // addServiceTemplateButton
+            // 
+            this.addServiceTemplateButton.Location = new System.Drawing.Point(1068, 7);
+            this.addServiceTemplateButton.Name = "addServiceTemplateButton";
+            this.addServiceTemplateButton.Size = new System.Drawing.Size(75, 23);
+            this.addServiceTemplateButton.TabIndex = 12;
+            this.addServiceTemplateButton.Text = "Dodaj";
+            this.addServiceTemplateButton.UseVisualStyleBackColor = true;
+            this.addServiceTemplateButton.Click += new System.EventHandler(this.addServiceTemplateButton_Click);
+            // 
+            // ServiceTemplatesDataGridView
+            // 
+            this.ServiceTemplatesDataGridView.AllowUserToOrderColumns = true;
+            this.ServiceTemplatesDataGridView.AutoGenerateColumns = false;
+            this.ServiceTemplatesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ServiceTemplatesDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewCheckBoxColumn7,
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.Kilometres,
+            this.Period,
+            this.CatalogId,
+            this.TemplateId,
+            this.dataGridViewButtonColumn10,
+            this.dataGridViewButtonColumn11});
+            this.ServiceTemplatesDataGridView.DataSource = this.TemplateServicesBindingSource;
+            this.ServiceTemplatesDataGridView.Location = new System.Drawing.Point(6, 7);
+            this.ServiceTemplatesDataGridView.Name = "ServiceTemplatesDataGridView";
+            this.ServiceTemplatesDataGridView.Size = new System.Drawing.Size(1056, 341);
+            this.ServiceTemplatesDataGridView.TabIndex = 10;
+            this.ServiceTemplatesDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ServiceTemplatesDataGridView_CellContentClick);
+            // 
+            // dataGridViewCheckBoxColumn7
+            // 
+            this.dataGridViewCheckBoxColumn7.HeaderText = "Zaznacz szablonowy serwis";
+            this.dataGridViewCheckBoxColumn7.Name = "dataGridViewCheckBoxColumn7";
+            this.dataGridViewCheckBoxColumn7.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // Kilometres
+            // 
+            this.Kilometres.DataPropertyName = "Kilometres";
+            this.Kilometres.HeaderText = "Kilometry";
+            this.Kilometres.Name = "Kilometres";
+            // 
+            // Period
+            // 
+            this.Period.DataPropertyName = "Period";
+            this.Period.HeaderText = "Okres";
+            this.Period.Name = "Period";
+            // 
+            // CatalogId
+            // 
+            this.CatalogId.DataPropertyName = "CatalogId";
+            this.CatalogId.HeaderText = "Numer katalogu";
+            this.CatalogId.Name = "CatalogId";
+            // 
+            // TemplateId
+            // 
+            this.TemplateId.DataPropertyName = "TemplateId";
+            this.TemplateId.HeaderText = "Numer szablonu";
+            this.TemplateId.Name = "TemplateId";
+            // 
+            // dataGridViewButtonColumn10
+            // 
+            this.dataGridViewButtonColumn10.HeaderText = "Szczegóły";
+            this.dataGridViewButtonColumn10.Name = "dataGridViewButtonColumn10";
+            // 
+            // dataGridViewButtonColumn11
+            // 
+            this.dataGridViewButtonColumn11.DataPropertyName = "EditButton";
+            this.dataGridViewButtonColumn11.HeaderText = "Edycja";
+            this.dataGridViewButtonColumn11.Name = "dataGridViewButtonColumn11";
+            this.dataGridViewButtonColumn11.ReadOnly = true;
+            this.dataGridViewButtonColumn11.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewButtonColumn11.Text = "Edytuj";
+            // 
+            // DeleteServiceTemplateButton
+            // 
+            this.DeleteServiceTemplateButton.Enabled = false;
+            this.DeleteServiceTemplateButton.Location = new System.Drawing.Point(1068, 36);
+            this.DeleteServiceTemplateButton.Name = "DeleteServiceTemplateButton";
+            this.DeleteServiceTemplateButton.Size = new System.Drawing.Size(75, 23);
+            this.DeleteServiceTemplateButton.TabIndex = 11;
+            this.DeleteServiceTemplateButton.Text = "Usuń";
+            this.DeleteServiceTemplateButton.UseVisualStyleBackColor = true;
+            // 
+            // catalogsTabPage
+            // 
+            this.catalogsTabPage.Controls.Add(this.addCatalogButton);
+            this.catalogsTabPage.Controls.Add(this.catalogsDataGridView);
+            this.catalogsTabPage.Controls.Add(this.deleteCatalogButton);
+            this.catalogsTabPage.Location = new System.Drawing.Point(4, 22);
+            this.catalogsTabPage.Name = "catalogsTabPage";
+            this.catalogsTabPage.Padding = new System.Windows.Forms.Padding(3);
+            this.catalogsTabPage.Size = new System.Drawing.Size(1149, 374);
+            this.catalogsTabPage.TabIndex = 7;
+            this.catalogsTabPage.Text = "Katalogi";
+            this.catalogsTabPage.UseVisualStyleBackColor = true;
+            // 
+            // addCatalogButton
+            // 
+            this.addCatalogButton.Location = new System.Drawing.Point(851, 8);
+            this.addCatalogButton.Name = "addCatalogButton";
+            this.addCatalogButton.Size = new System.Drawing.Size(75, 23);
+            this.addCatalogButton.TabIndex = 12;
+            this.addCatalogButton.Text = "Dodaj";
+            this.addCatalogButton.UseVisualStyleBackColor = true;
+            this.addCatalogButton.Click += new System.EventHandler(this.AddCatalogButton_Click);
+            // 
+            // catalogsDataGridView
+            // 
+            this.catalogsDataGridView.AllowUserToOrderColumns = true;
+            this.catalogsDataGridView.AutoGenerateColumns = false;
+            this.catalogsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.catalogsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewCheckBoxColumn8,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewButtonColumn12,
+            this.dataGridViewButtonColumn13});
+            this.catalogsDataGridView.DataSource = this.CatalogsBindingSource;
+            this.catalogsDataGridView.Location = new System.Drawing.Point(6, 7);
+            this.catalogsDataGridView.Name = "catalogsDataGridView";
+            this.catalogsDataGridView.Size = new System.Drawing.Size(839, 341);
+            this.catalogsDataGridView.TabIndex = 10;
+            this.catalogsDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.catalogsDataGridView_CellContentClick);
+            // 
+            // dataGridViewCheckBoxColumn8
+            // 
+            this.dataGridViewCheckBoxColumn8.HeaderText = "Zaznacz katalog";
+            this.dataGridViewCheckBoxColumn8.Name = "dataGridViewCheckBoxColumn8";
+            this.dataGridViewCheckBoxColumn8.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // dataGridViewButtonColumn12
+            // 
+            this.dataGridViewButtonColumn12.HeaderText = "Szczegóły";
+            this.dataGridViewButtonColumn12.Name = "dataGridViewButtonColumn12";
+            // 
+            // dataGridViewButtonColumn13
+            // 
+            this.dataGridViewButtonColumn13.DataPropertyName = "EditButton";
+            this.dataGridViewButtonColumn13.HeaderText = "Edycja";
+            this.dataGridViewButtonColumn13.Name = "dataGridViewButtonColumn13";
+            this.dataGridViewButtonColumn13.ReadOnly = true;
+            this.dataGridViewButtonColumn13.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewButtonColumn13.Text = "Edytuj";
+            // 
+            // deleteCatalogButton
+            // 
+            this.deleteCatalogButton.Enabled = false;
+            this.deleteCatalogButton.Location = new System.Drawing.Point(851, 37);
+            this.deleteCatalogButton.Name = "deleteCatalogButton";
+            this.deleteCatalogButton.Size = new System.Drawing.Size(75, 23);
+            this.deleteCatalogButton.TabIndex = 11;
+            this.deleteCatalogButton.Text = "Usuń";
+            this.deleteCatalogButton.UseVisualStyleBackColor = true;
+            this.deleteCatalogButton.Click += new System.EventHandler(this.deleteCatalogButton_Click);
+            // 
+            // ServiceActionsTabPage
+            // 
+            this.ServiceActionsTabPage.Controls.Add(this.addServiceActionButton);
+            this.ServiceActionsTabPage.Controls.Add(this.ServiceActionsDataGridView);
+            this.ServiceActionsTabPage.Controls.Add(this.deleteServiceActionButton);
+            this.ServiceActionsTabPage.Location = new System.Drawing.Point(4, 22);
+            this.ServiceActionsTabPage.Name = "ServiceActionsTabPage";
+            this.ServiceActionsTabPage.Padding = new System.Windows.Forms.Padding(3);
+            this.ServiceActionsTabPage.Size = new System.Drawing.Size(1149, 374);
+            this.ServiceActionsTabPage.TabIndex = 8;
+            this.ServiceActionsTabPage.Text = "Czynności serwisowe";
+            this.ServiceActionsTabPage.UseVisualStyleBackColor = true;
+            // 
+            // addServiceActionButton
+            // 
+            this.addServiceActionButton.Location = new System.Drawing.Point(896, 7);
+            this.addServiceActionButton.Name = "addServiceActionButton";
+            this.addServiceActionButton.Size = new System.Drawing.Size(75, 23);
+            this.addServiceActionButton.TabIndex = 12;
+            this.addServiceActionButton.Text = "Dodaj";
+            this.addServiceActionButton.UseVisualStyleBackColor = true;
+            // 
+            // ServiceActionsDataGridView
+            // 
+            this.ServiceActionsDataGridView.AllowUserToOrderColumns = true;
+            this.ServiceActionsDataGridView.AutoGenerateColumns = false;
+            this.ServiceActionsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ServiceActionsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewCheckBoxColumn9,
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewTextBoxColumn6,
+            this.Cost,
+            this.dataGridViewTextBoxColumn13,
+            this.ServiceId,
+            this.dataGridViewButtonColumn14,
+            this.dataGridViewButtonColumn15});
+            this.ServiceActionsDataGridView.DataSource = this.ServiceActionsBindingSource;
+            this.ServiceActionsDataGridView.Location = new System.Drawing.Point(6, 7);
+            this.ServiceActionsDataGridView.Name = "ServiceActionsDataGridView";
+            this.ServiceActionsDataGridView.Size = new System.Drawing.Size(884, 341);
+            this.ServiceActionsDataGridView.TabIndex = 10;
+            // 
+            // deleteServiceActionButton
+            // 
+            this.deleteServiceActionButton.Enabled = false;
+            this.deleteServiceActionButton.Location = new System.Drawing.Point(896, 36);
+            this.deleteServiceActionButton.Name = "deleteServiceActionButton";
+            this.deleteServiceActionButton.Size = new System.Drawing.Size(75, 23);
+            this.deleteServiceActionButton.TabIndex = 11;
+            this.deleteServiceActionButton.Text = "Usuń";
+            this.deleteServiceActionButton.UseVisualStyleBackColor = true;
+            // 
+            // servicesTabPage
+            // 
+            this.servicesTabPage.Controls.Add(this.button15);
+            this.servicesTabPage.Controls.Add(this.dataGridView5);
+            this.servicesTabPage.Controls.Add(this.button16);
+            this.servicesTabPage.Location = new System.Drawing.Point(4, 22);
+            this.servicesTabPage.Name = "servicesTabPage";
+            this.servicesTabPage.Padding = new System.Windows.Forms.Padding(3);
+            this.servicesTabPage.Size = new System.Drawing.Size(1149, 374);
+            this.servicesTabPage.TabIndex = 9;
+            this.servicesTabPage.Text = "Serwisy";
+            this.servicesTabPage.UseVisualStyleBackColor = true;
+            // 
+            // button15
+            // 
+            this.button15.Location = new System.Drawing.Point(851, 8);
+            this.button15.Name = "button15";
+            this.button15.Size = new System.Drawing.Size(75, 23);
+            this.button15.TabIndex = 12;
+            this.button15.Text = "Dodaj";
+            this.button15.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView5
+            // 
+            this.dataGridView5.AllowUserToOrderColumns = true;
+            this.dataGridView5.AutoGenerateColumns = false;
+            this.dataGridView5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView5.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewCheckBoxColumn10,
+            this.dataGridViewTextBoxColumn7,
+            this.dataGridViewTextBoxColumn8,
+            this.dataGridViewButtonColumn16,
+            this.dataGridViewButtonColumn17});
+            this.dataGridView5.DataSource = this.TemplatesBindingSource;
+            this.dataGridView5.Location = new System.Drawing.Point(6, 7);
+            this.dataGridView5.Name = "dataGridView5";
+            this.dataGridView5.Size = new System.Drawing.Size(839, 341);
+            this.dataGridView5.TabIndex = 10;
+            // 
+            // dataGridViewCheckBoxColumn10
+            // 
+            this.dataGridViewCheckBoxColumn10.HeaderText = "Zaznacz szablon";
+            this.dataGridViewCheckBoxColumn10.Name = "dataGridViewCheckBoxColumn10";
+            this.dataGridViewCheckBoxColumn10.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // dataGridViewButtonColumn16
+            // 
+            this.dataGridViewButtonColumn16.HeaderText = "Szczegóły";
+            this.dataGridViewButtonColumn16.Name = "dataGridViewButtonColumn16";
+            // 
+            // dataGridViewButtonColumn17
+            // 
+            this.dataGridViewButtonColumn17.DataPropertyName = "EditButton";
+            this.dataGridViewButtonColumn17.HeaderText = "Edycja";
+            this.dataGridViewButtonColumn17.Name = "dataGridViewButtonColumn17";
+            this.dataGridViewButtonColumn17.ReadOnly = true;
+            this.dataGridViewButtonColumn17.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewButtonColumn17.Text = "Edytuj";
+            // 
+            // button16
+            // 
+            this.button16.Enabled = false;
+            this.button16.Location = new System.Drawing.Point(851, 37);
+            this.button16.Name = "button16";
+            this.button16.Size = new System.Drawing.Size(75, 23);
+            this.button16.TabIndex = 11;
+            this.button16.Text = "Usuń";
+            this.button16.UseVisualStyleBackColor = true;
+            // 
+            // modelsTabPage
+            // 
+            this.modelsTabPage.Controls.Add(this.addModelButton);
+            this.modelsTabPage.Controls.Add(this.modelsDataGridView);
+            this.modelsTabPage.Controls.Add(this.deleteModelButton);
+            this.modelsTabPage.Location = new System.Drawing.Point(4, 22);
+            this.modelsTabPage.Name = "modelsTabPage";
+            this.modelsTabPage.Padding = new System.Windows.Forms.Padding(3);
+            this.modelsTabPage.Size = new System.Drawing.Size(1149, 374);
+            this.modelsTabPage.TabIndex = 10;
+            this.modelsTabPage.Text = "Modele";
+            this.modelsTabPage.UseVisualStyleBackColor = true;
+            // 
+            // addModelButton
+            // 
+            this.addModelButton.Location = new System.Drawing.Point(923, 7);
+            this.addModelButton.Name = "addModelButton";
+            this.addModelButton.Size = new System.Drawing.Size(75, 23);
+            this.addModelButton.TabIndex = 12;
+            this.addModelButton.Text = "Dodaj";
+            this.addModelButton.UseVisualStyleBackColor = true;
+            this.addModelButton.Click += new System.EventHandler(this.addModelButton_Click);
+            // 
+            // modelsDataGridView
+            // 
+            this.modelsDataGridView.AllowUserToOrderColumns = true;
+            this.modelsDataGridView.AutoGenerateColumns = false;
+            this.modelsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.modelsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewCheckBoxColumn11,
+            this.idDataGridViewTextBoxColumn7,
+            this.nameDataGridViewTextBoxColumn4,
+            this.categoryDataGridViewTextBoxColumn,
+            this.brandIdDataGridViewTextBoxColumn,
+            this.templateIdDataGridViewTextBoxColumn,
+            this.dataGridViewButtonColumn18,
+            this.dataGridViewButtonColumn19});
+            this.modelsDataGridView.DataSource = this.ModelsBindingSource;
+            this.modelsDataGridView.Location = new System.Drawing.Point(6, 7);
+            this.modelsDataGridView.Name = "modelsDataGridView";
+            this.modelsDataGridView.Size = new System.Drawing.Size(885, 341);
+            this.modelsDataGridView.TabIndex = 10;
+            this.modelsDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.modelsDataGridView_CellContentClick);
+            // 
+            // deleteModelButton
+            // 
+            this.deleteModelButton.Enabled = false;
+            this.deleteModelButton.Location = new System.Drawing.Point(923, 36);
+            this.deleteModelButton.Name = "deleteModelButton";
+            this.deleteModelButton.Size = new System.Drawing.Size(75, 23);
+            this.deleteModelButton.TabIndex = 11;
+            this.deleteModelButton.Text = "Usuń";
+            this.deleteModelButton.UseVisualStyleBackColor = true;
+            this.deleteModelButton.Click += new System.EventHandler(this.deleteModelButton_Click);
+            // 
+            // brandsTabPage
+            // 
+            this.brandsTabPage.Controls.Add(this.addBrandButton);
+            this.brandsTabPage.Controls.Add(this.brandsDataGridView);
+            this.brandsTabPage.Controls.Add(this.deleteBrandButton);
+            this.brandsTabPage.Location = new System.Drawing.Point(4, 22);
+            this.brandsTabPage.Name = "brandsTabPage";
+            this.brandsTabPage.Padding = new System.Windows.Forms.Padding(3);
+            this.brandsTabPage.Size = new System.Drawing.Size(1149, 374);
+            this.brandsTabPage.TabIndex = 11;
+            this.brandsTabPage.Text = "Marki";
+            this.brandsTabPage.UseVisualStyleBackColor = true;
+            // 
+            // addBrandButton
+            // 
+            this.addBrandButton.Location = new System.Drawing.Point(851, 8);
+            this.addBrandButton.Name = "addBrandButton";
+            this.addBrandButton.Size = new System.Drawing.Size(75, 23);
+            this.addBrandButton.TabIndex = 12;
+            this.addBrandButton.Text = "Dodaj";
+            this.addBrandButton.UseVisualStyleBackColor = true;
+            this.addBrandButton.Click += new System.EventHandler(this.addBrandButton_Click);
+            // 
+            // brandsDataGridView
+            // 
+            this.brandsDataGridView.AllowUserToOrderColumns = true;
+            this.brandsDataGridView.AutoGenerateColumns = false;
+            this.brandsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.brandsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewCheckBoxColumn12,
+            this.idDataGridViewTextBoxColumn6,
+            this.nameDataGridViewTextBoxColumn3,
+            this.dataGridViewButtonColumn20,
+            this.dataGridViewButtonColumn21});
+            this.brandsDataGridView.DataSource = this.BrandsBindingSource;
+            this.brandsDataGridView.Location = new System.Drawing.Point(6, 7);
+            this.brandsDataGridView.Name = "brandsDataGridView";
+            this.brandsDataGridView.Size = new System.Drawing.Size(839, 341);
+            this.brandsDataGridView.TabIndex = 10;
+            this.brandsDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.brandsDataGridView_CellContentClick);
+            // 
+            // dataGridViewCheckBoxColumn12
+            // 
+            this.dataGridViewCheckBoxColumn12.HeaderText = "Zaznacz szablon";
+            this.dataGridViewCheckBoxColumn12.Name = "dataGridViewCheckBoxColumn12";
+            this.dataGridViewCheckBoxColumn12.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // dataGridViewButtonColumn20
+            // 
+            this.dataGridViewButtonColumn20.HeaderText = "Szczegóły";
+            this.dataGridViewButtonColumn20.Name = "dataGridViewButtonColumn20";
+            // 
+            // dataGridViewButtonColumn21
+            // 
+            this.dataGridViewButtonColumn21.DataPropertyName = "EditButton";
+            this.dataGridViewButtonColumn21.HeaderText = "Edycja";
+            this.dataGridViewButtonColumn21.Name = "dataGridViewButtonColumn21";
+            this.dataGridViewButtonColumn21.ReadOnly = true;
+            this.dataGridViewButtonColumn21.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewButtonColumn21.Text = "Edytuj";
+            // 
+            // deleteBrandButton
+            // 
+            this.deleteBrandButton.Enabled = false;
+            this.deleteBrandButton.Location = new System.Drawing.Point(851, 37);
+            this.deleteBrandButton.Name = "deleteBrandButton";
+            this.deleteBrandButton.Size = new System.Drawing.Size(75, 23);
+            this.deleteBrandButton.TabIndex = 11;
+            this.deleteBrandButton.Text = "Usuń";
+            this.deleteBrandButton.UseVisualStyleBackColor = true;
+            this.deleteBrandButton.Click += new System.EventHandler(this.deleteBrandButton_Click);
             // 
             // panelO
             // 
@@ -1095,7 +1693,7 @@
             this.carDataGridViewTextBoxColumn,
             this.dataGridViewButtonColumn5,
             this.dataGridViewButtonColumn6});
-            this.oTabelaZlecenia.DataSource = this.UsersBindingSource;
+            this.oTabelaZlecenia.DataSource = this.OrdersBindingSource;
             this.oTabelaZlecenia.Location = new System.Drawing.Point(6, 6);
             this.oTabelaZlecenia.Name = "oTabelaZlecenia";
             this.oTabelaZlecenia.Size = new System.Drawing.Size(744, 341);
@@ -1319,6 +1917,30 @@
             this.Column3.HeaderText = "Rezerwuj";
             this.Column3.Name = "Column3";
             // 
+            // ServiceActionsBindingSource
+            // 
+            this.ServiceActionsBindingSource.DataSource = typeof(BazyDanych.ServiceActionTableElement);
+            // 
+            // dataGridViewCheckBoxColumn11
+            // 
+            this.dataGridViewCheckBoxColumn11.HeaderText = "Zaznacz model";
+            this.dataGridViewCheckBoxColumn11.Name = "dataGridViewCheckBoxColumn11";
+            this.dataGridViewCheckBoxColumn11.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // dataGridViewButtonColumn18
+            // 
+            this.dataGridViewButtonColumn18.HeaderText = "Szczegóły";
+            this.dataGridViewButtonColumn18.Name = "dataGridViewButtonColumn18";
+            // 
+            // dataGridViewButtonColumn19
+            // 
+            this.dataGridViewButtonColumn19.DataPropertyName = "EditButton";
+            this.dataGridViewButtonColumn19.HeaderText = "Edycja";
+            this.dataGridViewButtonColumn19.Name = "dataGridViewButtonColumn19";
+            this.dataGridViewButtonColumn19.ReadOnly = true;
+            this.dataGridViewButtonColumn19.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewButtonColumn19.Text = "Edytuj";
+            // 
             // nrPojazduDataGridViewTextBoxColumn
             // 
             this.nrPojazduDataGridViewTextBoxColumn.DataPropertyName = "NrPojazdu";
@@ -1407,9 +2029,9 @@
             this.carDataGridViewTextBoxColumn1.HeaderText = "Samochód";
             this.carDataGridViewTextBoxColumn1.Name = "carDataGridViewTextBoxColumn1";
             // 
-            // UsersBindingSource
+            // OrdersBindingSource
             // 
-            this.UsersBindingSource.DataSource = typeof(BazyDanych.KlasaTestowa_order);
+            this.OrdersBindingSource.DataSource = typeof(BazyDanych.KlasaTestowa_order);
             // 
             // idDataGridViewTextBoxColumn4
             // 
@@ -1420,6 +2042,116 @@
             // ServicePlacesBindingSource
             // 
             this.ServicePlacesBindingSource.DataSource = typeof(BazyDanych.ServicePlaceTableElement);
+            // 
+            // idDataGridViewTextBoxColumn5
+            // 
+            this.idDataGridViewTextBoxColumn5.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn5.HeaderText = "Numer";
+            this.idDataGridViewTextBoxColumn5.Name = "idDataGridViewTextBoxColumn5";
+            // 
+            // nameDataGridViewTextBoxColumn2
+            // 
+            this.nameDataGridViewTextBoxColumn2.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn2.HeaderText = "Nazwa";
+            this.nameDataGridViewTextBoxColumn2.Name = "nameDataGridViewTextBoxColumn2";
+            // 
+            // TemplatesBindingSource
+            // 
+            this.TemplatesBindingSource.DataSource = typeof(BazyDanych.TemplateTableElement);
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "Id";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Numer";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "Name";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Nazwa";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            // 
+            // TemplateServicesBindingSource
+            // 
+            this.TemplateServicesBindingSource.DataSource = typeof(BazyDanych.ServiceTemplateTableElement);
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "Id";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Numer";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "Name";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Nazwa";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            // 
+            // CatalogsBindingSource
+            // 
+            this.CatalogsBindingSource.DataSource = typeof(BazyDanych.CatalogTableElement);
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "Id";
+            this.dataGridViewTextBoxColumn7.HeaderText = "Numer";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "Name";
+            this.dataGridViewTextBoxColumn8.HeaderText = "Nazwa";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            // 
+            // idDataGridViewTextBoxColumn7
+            // 
+            this.idDataGridViewTextBoxColumn7.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn7.HeaderText = "Numer modelu";
+            this.idDataGridViewTextBoxColumn7.Name = "idDataGridViewTextBoxColumn7";
+            // 
+            // nameDataGridViewTextBoxColumn4
+            // 
+            this.nameDataGridViewTextBoxColumn4.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn4.HeaderText = "Nazwa";
+            this.nameDataGridViewTextBoxColumn4.Name = "nameDataGridViewTextBoxColumn4";
+            // 
+            // categoryDataGridViewTextBoxColumn
+            // 
+            this.categoryDataGridViewTextBoxColumn.DataPropertyName = "Category";
+            this.categoryDataGridViewTextBoxColumn.HeaderText = "Kategoria";
+            this.categoryDataGridViewTextBoxColumn.Name = "categoryDataGridViewTextBoxColumn";
+            // 
+            // brandIdDataGridViewTextBoxColumn
+            // 
+            this.brandIdDataGridViewTextBoxColumn.DataPropertyName = "BrandId";
+            this.brandIdDataGridViewTextBoxColumn.HeaderText = "Numer marki";
+            this.brandIdDataGridViewTextBoxColumn.Name = "brandIdDataGridViewTextBoxColumn";
+            // 
+            // templateIdDataGridViewTextBoxColumn
+            // 
+            this.templateIdDataGridViewTextBoxColumn.DataPropertyName = "TemplateId";
+            this.templateIdDataGridViewTextBoxColumn.HeaderText = "Numer szablonu";
+            this.templateIdDataGridViewTextBoxColumn.Name = "templateIdDataGridViewTextBoxColumn";
+            // 
+            // ModelsBindingSource
+            // 
+            this.ModelsBindingSource.DataSource = typeof(BazyDanych.ModelTableElement);
+            // 
+            // idDataGridViewTextBoxColumn6
+            // 
+            this.idDataGridViewTextBoxColumn6.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn6.HeaderText = "Numer";
+            this.idDataGridViewTextBoxColumn6.Name = "idDataGridViewTextBoxColumn6";
+            // 
+            // nameDataGridViewTextBoxColumn3
+            // 
+            this.nameDataGridViewTextBoxColumn3.DataPropertyName = "name";
+            this.nameDataGridViewTextBoxColumn3.HeaderText = "Nazwa";
+            this.nameDataGridViewTextBoxColumn3.Name = "nameDataGridViewTextBoxColumn3";
+            // 
+            // BrandsBindingSource
+            // 
+            this.BrandsBindingSource.DataSource = typeof(BazyDanych.BrandTableElement);
             // 
             // dataGridViewTextBoxColumn20
             // 
@@ -1557,6 +2289,56 @@
             this.dataGridViewTextBoxColumn12.ReadOnly = true;
             this.dataGridViewTextBoxColumn12.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
+            // dataGridViewCheckBoxColumn9
+            // 
+            this.dataGridViewCheckBoxColumn9.HeaderText = "Zaznacz czynność serwisową";
+            this.dataGridViewCheckBoxColumn9.Name = "dataGridViewCheckBoxColumn9";
+            this.dataGridViewCheckBoxColumn9.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "Id";
+            this.dataGridViewTextBoxColumn5.HeaderText = "Numer";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "Name";
+            this.dataGridViewTextBoxColumn6.HeaderText = "Nazwa";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            // 
+            // Cost
+            // 
+            this.Cost.DataPropertyName = "Cost";
+            this.Cost.HeaderText = "Koszt";
+            this.Cost.Name = "Cost";
+            // 
+            // dataGridViewTextBoxColumn13
+            // 
+            this.dataGridViewTextBoxColumn13.DataPropertyName = "CatalogId";
+            this.dataGridViewTextBoxColumn13.HeaderText = "Numer katalogu";
+            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
+            // 
+            // ServiceId
+            // 
+            this.ServiceId.DataPropertyName = "ServiceId";
+            this.ServiceId.HeaderText = "Numer serwisu";
+            this.ServiceId.Name = "ServiceId";
+            // 
+            // dataGridViewButtonColumn14
+            // 
+            this.dataGridViewButtonColumn14.HeaderText = "Szczegóły";
+            this.dataGridViewButtonColumn14.Name = "dataGridViewButtonColumn14";
+            // 
+            // dataGridViewButtonColumn15
+            // 
+            this.dataGridViewButtonColumn15.DataPropertyName = "EditButton";
+            this.dataGridViewButtonColumn15.HeaderText = "Edycja";
+            this.dataGridViewButtonColumn15.Name = "dataGridViewButtonColumn15";
+            this.dataGridViewButtonColumn15.ReadOnly = true;
+            this.dataGridViewButtonColumn15.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewButtonColumn15.Text = "Edytuj";
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1587,6 +2369,20 @@
             this.panel1.PerformLayout();
             this.servicePlacesTabPage.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.tableServicePlacesM)).EndInit();
+            this.TemplatesTabPage.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.templatesDataGridView)).EndInit();
+            this.ServiceTemplatesTabPage.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.ServiceTemplatesDataGridView)).EndInit();
+            this.catalogsTabPage.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.catalogsDataGridView)).EndInit();
+            this.ServiceActionsTabPage.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.ServiceActionsDataGridView)).EndInit();
+            this.servicesTabPage.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).EndInit();
+            this.modelsTabPage.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.modelsDataGridView)).EndInit();
+            this.brandsTabPage.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.brandsDataGridView)).EndInit();
             this.panelO.ResumeLayout(false);
             this.tableControlO.ResumeLayout(false);
             this.oZlecenia.ResumeLayout(false);
@@ -1601,10 +2397,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.kTabelaZlecenia)).EndInit();
             this.tabKPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.kTabelaRezerwacje)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ServiceActionsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ServicesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.klasaTestowaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.klasaTestowauserBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.UsersBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.OrdersBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ServicePlacesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TemplatesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TemplateServicesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CatalogsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ModelsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BrandsBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1737,7 +2540,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn phoneDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewLinkColumn dataGridViewLinkColumn4;
         private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn4;
-        private System.Windows.Forms.BindingSource UsersBindingSource;
+        private System.Windows.Forms.BindingSource OrdersBindingSource;
         private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn keeperDataGridViewTextBoxColumn;
@@ -1757,14 +2560,94 @@
         private System.Windows.Forms.DataGridView tableServicePlacesM;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.BindingSource ServicePlacesBindingSource;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nrPojazduDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn markaPojazduDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn modelPojazduDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn opiekunPojazduDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn companyName;
         private System.Windows.Forms.DataGridViewTextBoxColumn address;
         private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn9;
+        private System.Windows.Forms.TabPage TemplatesTabPage;
+        private System.Windows.Forms.Button addTemplateButton;
+        private System.Windows.Forms.DataGridView templatesDataGridView;
+        private System.Windows.Forms.Button deleteTemplateButton;
+        private System.Windows.Forms.BindingSource TemplatesBindingSource;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewButtonColumn DetailsColumn;
+        private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn8;
+        private System.Windows.Forms.TabPage ServiceTemplatesTabPage;
+        private System.Windows.Forms.Button addServiceTemplateButton;
+        private System.Windows.Forms.DataGridView ServiceTemplatesDataGridView;
+        private System.Windows.Forms.Button DeleteServiceTemplateButton;
+        private System.Windows.Forms.TabPage catalogsTabPage;
+        private System.Windows.Forms.Button addCatalogButton;
+        private System.Windows.Forms.DataGridView catalogsDataGridView;
+        private System.Windows.Forms.Button deleteCatalogButton;
+        private System.Windows.Forms.TabPage ServiceActionsTabPage;
+        private System.Windows.Forms.Button addServiceActionButton;
+        private System.Windows.Forms.DataGridView ServiceActionsDataGridView;
+        private System.Windows.Forms.Button deleteServiceActionButton;
+        private System.Windows.Forms.TabPage servicesTabPage;
+        private System.Windows.Forms.Button button15;
+        private System.Windows.Forms.DataGridView dataGridView5;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn16;
+        private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn17;
+        private System.Windows.Forms.Button button16;
+        private System.Windows.Forms.TabPage modelsTabPage;
+        private System.Windows.Forms.Button addModelButton;
+        private System.Windows.Forms.DataGridView modelsDataGridView;
+        private System.Windows.Forms.Button deleteModelButton;
+        private System.Windows.Forms.TabPage brandsTabPage;
+        private System.Windows.Forms.Button addBrandButton;
+        private System.Windows.Forms.DataGridView brandsDataGridView;
+        private System.Windows.Forms.Button deleteBrandButton;
+        private System.Windows.Forms.BindingSource TemplateServicesBindingSource;
+        private System.Windows.Forms.BindingSource CatalogsBindingSource;
+        private System.Windows.Forms.BindingSource ServiceActionsBindingSource;
+        private System.Windows.Forms.BindingSource ServicesBindingSource;
+        private System.Windows.Forms.BindingSource ModelsBindingSource;
+        private System.Windows.Forms.BindingSource BrandsBindingSource;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Kilometres;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Period;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CatalogId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TemplateId;
+        private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn10;
+        private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn11;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn12;
+        private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn13;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn12;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn20;
+        private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn21;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nrPojazduDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn markaPojazduDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn modelPojazduDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn opiekunPojazduDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn11;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn categoryDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn brandIdDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn templateIdDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn18;
+        private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn19;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cost;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ServiceId;
+        private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn14;
+        private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn15;
     }
 }

@@ -49,7 +49,7 @@ namespace BazyDanych
             userId = orderDto.UserId;
         }
 
-        public Order GetOrderById(int id)
+        public static Order GetOrderById(int id)
         {
             var connectionString = Functions.GetConnectionString();
             var orderDto = new OrderDto();
@@ -141,6 +141,110 @@ namespace BazyDanych
                 MessageBox.Show(ex.Message);
             }
             return list;
+        }
+
+        public static void AddOrder(OrderDto orderDto)
+        {
+            var connectionString = Functions.GetConnectionString();
+
+            try
+            {
+                var connection = new MySql.Data.MySqlClient.MySqlConnection { ConnectionString = connectionString };
+                connection.Open();
+
+                string query = "INSERT INTO projekt_bazy_danych.zlecenie VALUES(null, " +
+                                orderDto.PlannedStartDate +
+                                ", " +
+                                orderDto.PlannedEndDate +
+                                ", " +
+                                orderDto.ActualStartDate +
+                                ", " +
+                                orderDto.ActualEndDate +
+                                ", " +
+                                orderDto.CounterStatusBefore +
+                                ", " +
+                                orderDto.CounterStatusAfter +
+                                ", \"" +
+                                orderDto.CommentsBefore +
+                                "\", \"" +
+                                orderDto.CommentsAfter +
+                                "\", " +
+                                orderDto.Type +
+                                ", " +
+                                orderDto.Cost +
+                                ", \"" +
+                                orderDto.CancellationReason +
+                                "\", " +
+                                orderDto.State +
+                                ", " +
+                                orderDto.CareId +
+                                ", " +
+                                orderDto.UserId +
+                                ");";
+
+                var command = new MySqlCommand(query, connection);
+                command.ExecuteReader();
+                MessageBox.Show("Poprawnie dodano zlecenie");
+                connection.Close();
+            }
+            catch (MySql.Data.MySqlClient.MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+                throw ex;
+            }
+        }
+
+        public static void UpdateOrder(OrderDto orderDto)
+        {
+            var connectionString = Functions.GetConnectionString();
+
+            try
+            {
+                var connection = new MySql.Data.MySqlClient.MySqlConnection { ConnectionString = connectionString };
+                connection.Open();
+
+                string query = "UPDATE projekt_bazy_danych.serwis_szablon " +
+                                "SET planowana_data_rozpoczecia = \"" +
+                                orderDto.PlannedStartDate +
+                                "\",planowana_data_zakonczenia = " +
+                                orderDto.PlannedEndDate +
+                                ",faktyczna_data_rozpoczecia = " +
+                                orderDto.ActualStartDate +
+                                ",faktyczna_data_zakonczenia = " +
+                                orderDto.ActualEndDate +
+                                ",stan_licznika_przed = " +
+                                orderDto.CounterStatusBefore +
+                                ",stan_licznika_po = " +
+                                orderDto.CounterStatusAfter +
+                                ",uwagi_przed = " +
+                                orderDto.CommentsBefore +
+                                ",uwagi_po = " +
+                                orderDto.CommentsAfter +
+                                ",rodzaj_zlecenia = " +
+                                orderDto.Type +
+                                ",koszt = " +
+                                orderDto.Cost +
+                                ",powod_anulowania = " +
+                                orderDto.CancellationReason +
+                                ",stan_zlecenia = " +
+                                orderDto.State +
+                                ",opieka_id = " +
+                                orderDto.CareId +
+                                ",uzytkownik_id = " +
+                                orderDto.UserId +
+                                " WHERE id = " +
+                                orderDto.Id;
+
+                var command = new MySqlCommand(query, connection);
+                command.ExecuteReader();
+                MessageBox.Show("Poprawnie edytowano zlecenie");
+                connection.Close();
+            }
+            catch (MySql.Data.MySqlClient.MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+                throw ex;
+            }
         }
     }
 }

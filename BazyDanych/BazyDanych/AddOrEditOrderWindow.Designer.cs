@@ -40,30 +40,27 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker4 = new System.Windows.Forms.DateTimePicker();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
-            this.richTextBox3 = new System.Windows.Forms.RichTextBox();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.startDateDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.endDateDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.actualStartDateDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.actualEndDateDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.costNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.orderTypeComboBox = new System.Windows.Forms.ComboBox();
+            this.counterStartStateNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.counterEndDateNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.orderStateComboBox = new System.Windows.Forms.ComboBox();
+            this.startCommentsRichTextBox = new System.Windows.Forms.RichTextBox();
+            this.endCommentsRichTextBox = new System.Windows.Forms.RichTextBox();
+            this.cancellationReasonRichTextBox = new System.Windows.Forms.RichTextBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.carComboBox = new System.Windows.Forms.ComboBox();
+            this.acceptButton = new System.Windows.Forms.Button();
+            this.addButton = new System.Windows.Forms.Button();
+            this.driverComboBox = new System.Windows.Forms.ComboBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.costNumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.counterStartStateNumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.counterEndDateNumericUpDown)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -174,109 +171,109 @@
             this.label12.TabIndex = 12;
             this.label12.Text = "Uwagi końcowe";
             // 
-            // dateTimePicker1
+            // startDateDateTimePicker
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(137, 66);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 13;
+            this.startDateDateTimePicker.Location = new System.Drawing.Point(137, 66);
+            this.startDateDateTimePicker.Name = "startDateDateTimePicker";
+            this.startDateDateTimePicker.Size = new System.Drawing.Size(200, 20);
+            this.startDateDateTimePicker.TabIndex = 13;
             // 
-            // dateTimePicker2
+            // endDateDateTimePicker
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(137, 92);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker2.TabIndex = 14;
+            this.endDateDateTimePicker.Location = new System.Drawing.Point(137, 92);
+            this.endDateDateTimePicker.Name = "endDateDateTimePicker";
+            this.endDateDateTimePicker.Size = new System.Drawing.Size(200, 20);
+            this.endDateDateTimePicker.TabIndex = 14;
             // 
-            // dateTimePicker3
+            // actualStartDateDateTimePicker
             // 
-            this.dateTimePicker3.Location = new System.Drawing.Point(497, 68);
-            this.dateTimePicker3.Name = "dateTimePicker3";
-            this.dateTimePicker3.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker3.TabIndex = 15;
+            this.actualStartDateDateTimePicker.Location = new System.Drawing.Point(497, 68);
+            this.actualStartDateDateTimePicker.Name = "actualStartDateDateTimePicker";
+            this.actualStartDateDateTimePicker.Size = new System.Drawing.Size(200, 20);
+            this.actualStartDateDateTimePicker.TabIndex = 15;
             // 
-            // dateTimePicker4
+            // actualEndDateDateTimePicker
             // 
-            this.dateTimePicker4.Location = new System.Drawing.Point(497, 97);
-            this.dateTimePicker4.Name = "dateTimePicker4";
-            this.dateTimePicker4.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker4.TabIndex = 16;
+            this.actualEndDateDateTimePicker.Location = new System.Drawing.Point(497, 97);
+            this.actualEndDateDateTimePicker.Name = "actualEndDateDateTimePicker";
+            this.actualEndDateDateTimePicker.Size = new System.Drawing.Size(200, 20);
+            this.actualEndDateDateTimePicker.TabIndex = 16;
             // 
-            // numericUpDown1
+            // costNumericUpDown
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(137, 135);
-            this.numericUpDown1.Maximum = new decimal(new int[] {
+            this.costNumericUpDown.Location = new System.Drawing.Point(137, 135);
+            this.costNumericUpDown.Maximum = new decimal(new int[] {
             1000000000,
             0,
             0,
             0});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(76, 20);
-            this.numericUpDown1.TabIndex = 17;
+            this.costNumericUpDown.Name = "costNumericUpDown";
+            this.costNumericUpDown.Size = new System.Drawing.Size(76, 20);
+            this.costNumericUpDown.TabIndex = 17;
             // 
-            // comboBox1
+            // orderTypeComboBox
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(137, 178);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 19;
+            this.orderTypeComboBox.FormattingEnabled = true;
+            this.orderTypeComboBox.Location = new System.Drawing.Point(137, 178);
+            this.orderTypeComboBox.Name = "orderTypeComboBox";
+            this.orderTypeComboBox.Size = new System.Drawing.Size(121, 21);
+            this.orderTypeComboBox.TabIndex = 19;
             // 
-            // numericUpDown2
+            // counterStartStateNumericUpDown
             // 
-            this.numericUpDown2.Location = new System.Drawing.Point(137, 221);
-            this.numericUpDown2.Maximum = new decimal(new int[] {
+            this.counterStartStateNumericUpDown.Location = new System.Drawing.Point(137, 221);
+            this.counterStartStateNumericUpDown.Maximum = new decimal(new int[] {
             1000000000,
             0,
             0,
             0});
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(76, 20);
-            this.numericUpDown2.TabIndex = 20;
+            this.counterStartStateNumericUpDown.Name = "counterStartStateNumericUpDown";
+            this.counterStartStateNumericUpDown.Size = new System.Drawing.Size(76, 20);
+            this.counterStartStateNumericUpDown.TabIndex = 20;
             // 
-            // numericUpDown3
+            // counterEndDateNumericUpDown
             // 
-            this.numericUpDown3.Location = new System.Drawing.Point(346, 223);
-            this.numericUpDown3.Maximum = new decimal(new int[] {
+            this.counterEndDateNumericUpDown.Location = new System.Drawing.Point(346, 223);
+            this.counterEndDateNumericUpDown.Maximum = new decimal(new int[] {
             1000000000,
             0,
             0,
             0});
-            this.numericUpDown3.Name = "numericUpDown3";
-            this.numericUpDown3.Size = new System.Drawing.Size(76, 20);
-            this.numericUpDown3.TabIndex = 21;
+            this.counterEndDateNumericUpDown.Name = "counterEndDateNumericUpDown";
+            this.counterEndDateNumericUpDown.Size = new System.Drawing.Size(76, 20);
+            this.counterEndDateNumericUpDown.TabIndex = 21;
             // 
-            // comboBox2
+            // orderStateComboBox
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(137, 265);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 21);
-            this.comboBox2.TabIndex = 22;
+            this.orderStateComboBox.FormattingEnabled = true;
+            this.orderStateComboBox.Location = new System.Drawing.Point(137, 265);
+            this.orderStateComboBox.Name = "orderStateComboBox";
+            this.orderStateComboBox.Size = new System.Drawing.Size(121, 21);
+            this.orderStateComboBox.TabIndex = 22;
             // 
-            // richTextBox2
+            // startCommentsRichTextBox
             // 
-            this.richTextBox2.Location = new System.Drawing.Point(137, 310);
-            this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(333, 59);
-            this.richTextBox2.TabIndex = 23;
-            this.richTextBox2.Text = "";
+            this.startCommentsRichTextBox.Location = new System.Drawing.Point(137, 310);
+            this.startCommentsRichTextBox.Name = "startCommentsRichTextBox";
+            this.startCommentsRichTextBox.Size = new System.Drawing.Size(333, 59);
+            this.startCommentsRichTextBox.TabIndex = 23;
+            this.startCommentsRichTextBox.Text = "";
             // 
-            // richTextBox3
+            // endCommentsRichTextBox
             // 
-            this.richTextBox3.Location = new System.Drawing.Point(137, 375);
-            this.richTextBox3.Name = "richTextBox3";
-            this.richTextBox3.Size = new System.Drawing.Size(333, 59);
-            this.richTextBox3.TabIndex = 24;
-            this.richTextBox3.Text = "";
+            this.endCommentsRichTextBox.Location = new System.Drawing.Point(137, 375);
+            this.endCommentsRichTextBox.Name = "endCommentsRichTextBox";
+            this.endCommentsRichTextBox.Size = new System.Drawing.Size(333, 59);
+            this.endCommentsRichTextBox.TabIndex = 24;
+            this.endCommentsRichTextBox.Text = "";
             // 
-            // richTextBox1
+            // cancellationReasonRichTextBox
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(137, 463);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(333, 59);
-            this.richTextBox1.TabIndex = 25;
-            this.richTextBox1.Text = "";
+            this.cancellationReasonRichTextBox.Location = new System.Drawing.Point(137, 463);
+            this.cancellationReasonRichTextBox.Name = "cancellationReasonRichTextBox";
+            this.cancellationReasonRichTextBox.Size = new System.Drawing.Size(333, 59);
+            this.cancellationReasonRichTextBox.TabIndex = 25;
+            this.cancellationReasonRichTextBox.Text = "";
             // 
             // label13
             // 
@@ -287,41 +284,41 @@
             this.label13.TabIndex = 26;
             this.label13.Text = "Samochód";
             // 
-            // comboBox3
+            // carComboBox
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(137, 22);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(121, 21);
-            this.comboBox3.TabIndex = 27;
+            this.carComboBox.FormattingEnabled = true;
+            this.carComboBox.Location = new System.Drawing.Point(137, 22);
+            this.carComboBox.Name = "carComboBox";
+            this.carComboBox.Size = new System.Drawing.Size(121, 21);
+            this.carComboBox.TabIndex = 27;
             // 
-            // button1
+            // acceptButton
             // 
-            this.button1.Location = new System.Drawing.Point(545, 265);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(95, 45);
-            this.button1.TabIndex = 28;
-            this.button1.Text = "Edytuj zlecenie";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.acceptButton.Location = new System.Drawing.Point(550, 375);
+            this.acceptButton.Name = "acceptButton";
+            this.acceptButton.Size = new System.Drawing.Size(95, 45);
+            this.acceptButton.TabIndex = 28;
+            this.acceptButton.Text = "Zatwierdź";
+            this.acceptButton.UseVisualStyleBackColor = true;
+            this.acceptButton.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
+            // addButton
             // 
-            this.button2.Location = new System.Drawing.Point(545, 324);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(95, 45);
-            this.button2.TabIndex = 29;
-            this.button2.Text = "Dodaj zlecenie";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.addButton.Location = new System.Drawing.Point(550, 434);
+            this.addButton.Name = "addButton";
+            this.addButton.Size = new System.Drawing.Size(95, 45);
+            this.addButton.TabIndex = 29;
+            this.addButton.Text = "Dodaj zlecenie";
+            this.addButton.UseVisualStyleBackColor = true;
+            this.addButton.Click += new System.EventHandler(this.button2_Click);
             // 
-            // comboBox4
+            // driverComboBox
             // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(360, 22);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(121, 21);
-            this.comboBox4.TabIndex = 31;
+            this.driverComboBox.FormattingEnabled = true;
+            this.driverComboBox.Location = new System.Drawing.Point(360, 22);
+            this.driverComboBox.Name = "driverComboBox";
+            this.driverComboBox.Size = new System.Drawing.Size(121, 21);
+            this.driverComboBox.TabIndex = 31;
             // 
             // label14
             // 
@@ -332,60 +329,29 @@
             this.label14.TabIndex = 30;
             this.label14.Text = "Kierowca";
             // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(545, 165);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(95, 45);
-            this.button3.TabIndex = 32;
-            this.button3.Text = "Dodaj serwis";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(545, 385);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(95, 45);
-            this.button4.TabIndex = 33;
-            this.button4.Text = "Zakończ zlecenie";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(545, 446);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(95, 45);
-            this.button5.TabIndex = 34;
-            this.button5.Text = "Anuluj zlecenie";
-            this.button5.UseVisualStyleBackColor = true;
-            // 
             // AddOrEditOrderWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(710, 541);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.comboBox4);
+            this.Controls.Add(this.driverComboBox);
             this.Controls.Add(this.label14);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.comboBox3);
+            this.Controls.Add(this.addButton);
+            this.Controls.Add(this.acceptButton);
+            this.Controls.Add(this.carComboBox);
             this.Controls.Add(this.label13);
-            this.Controls.Add(this.richTextBox1);
-            this.Controls.Add(this.richTextBox3);
-            this.Controls.Add(this.richTextBox2);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.numericUpDown3);
-            this.Controls.Add(this.numericUpDown2);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.numericUpDown1);
-            this.Controls.Add(this.dateTimePicker4);
-            this.Controls.Add(this.dateTimePicker3);
-            this.Controls.Add(this.dateTimePicker2);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.cancellationReasonRichTextBox);
+            this.Controls.Add(this.endCommentsRichTextBox);
+            this.Controls.Add(this.startCommentsRichTextBox);
+            this.Controls.Add(this.orderStateComboBox);
+            this.Controls.Add(this.counterEndDateNumericUpDown);
+            this.Controls.Add(this.counterStartStateNumericUpDown);
+            this.Controls.Add(this.orderTypeComboBox);
+            this.Controls.Add(this.costNumericUpDown);
+            this.Controls.Add(this.actualEndDateDateTimePicker);
+            this.Controls.Add(this.actualStartDateDateTimePicker);
+            this.Controls.Add(this.endDateDateTimePicker);
+            this.Controls.Add(this.startDateDateTimePicker);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
@@ -400,9 +366,9 @@
             this.Controls.Add(this.label2);
             this.Name = "AddOrEditOrderWindow";
             this.Text = "Menadżer Floty - Dodaj zlecenie";
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.costNumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.counterStartStateNumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.counterEndDateNumericUpDown)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -421,26 +387,23 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker3;
-        private System.Windows.Forms.DateTimePicker dateTimePicker4;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
-        private System.Windows.Forms.NumericUpDown numericUpDown3;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.RichTextBox richTextBox2;
-        private System.Windows.Forms.RichTextBox richTextBox3;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.DateTimePicker startDateDateTimePicker;
+        private System.Windows.Forms.DateTimePicker endDateDateTimePicker;
+        private System.Windows.Forms.DateTimePicker actualStartDateDateTimePicker;
+        private System.Windows.Forms.DateTimePicker actualEndDateDateTimePicker;
+        private System.Windows.Forms.NumericUpDown costNumericUpDown;
+        private System.Windows.Forms.ComboBox orderTypeComboBox;
+        private System.Windows.Forms.NumericUpDown counterStartStateNumericUpDown;
+        private System.Windows.Forms.NumericUpDown counterEndDateNumericUpDown;
+        private System.Windows.Forms.ComboBox orderStateComboBox;
+        private System.Windows.Forms.RichTextBox startCommentsRichTextBox;
+        private System.Windows.Forms.RichTextBox endCommentsRichTextBox;
+        private System.Windows.Forms.RichTextBox cancellationReasonRichTextBox;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.ComboBox comboBox3;
-        public System.Windows.Forms.Button button1;
-        public System.Windows.Forms.Button button2;
-        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.ComboBox carComboBox;
+        public System.Windows.Forms.Button acceptButton;
+        public System.Windows.Forms.Button addButton;
+        private System.Windows.Forms.ComboBox driverComboBox;
         private System.Windows.Forms.Label label14;
-        public System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
     }
 }

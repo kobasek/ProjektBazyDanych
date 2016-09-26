@@ -58,5 +58,89 @@ namespace BazyDanych
 
             return new Catalog();
         }
+
+        public static void AddCatalog(CatalogDto catalogDto)
+        {
+            var connectionString = Functions.GetConnectionString();
+
+            try
+            {
+                var connection = new MySql.Data.MySqlClient.MySqlConnection { ConnectionString = connectionString };
+                connection.Open();
+
+                string query = "INSERT INTO projekt_bazy_danych.katalog VALUES(null, \"" +
+                                catalogDto.Name +
+                                "\");";
+
+                var command = new MySqlCommand(query, connection);
+                command.ExecuteReader();
+                MessageBox.Show("Poprawnie dodano katalog");
+                connection.Close();
+            }
+            catch (MySql.Data.MySqlClient.MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+                throw ex;
+            }
+        }
+
+        public static IList<Catalog> GetCatalogsList()
+        {
+            var connectionString = Functions.GetConnectionString();
+            var list = new List<Catalog>();
+            var catalogDto = new CatalogDto();
+
+            try
+            {
+                var connection = new MySql.Data.MySqlClient.MySqlConnection { ConnectionString = connectionString };
+                connection.Open();
+
+                const string query = "SELECT * FROM projekt_bazy_danych.katalog;";
+                var command = new MySqlCommand(query, connection);
+                var dataReader = command.ExecuteReader();
+
+                while (dataReader.Read())
+                {
+                    catalogDto.Id = dataReader.GetInt32(0);
+                    catalogDto.Name = dataReader.GetString(1);
+
+                    var catalog = new Catalog(catalogDto);
+                    list.Add(catalog);
+                }
+                connection.Close();
+            }
+            catch (MySql.Data.MySqlClient.MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            return list;
+        }
+
+        public static void UpdateCatalog(CatalogDto catalogDto)
+        {
+            var connectionString = Functions.GetConnectionString();
+
+            try
+            {
+                var connection = new MySql.Data.MySqlClient.MySqlConnection { ConnectionString = connectionString };
+                connection.Open();
+
+                string query = "UPDATE projekt_bazy_danych.katalog " +
+                                "SET nazwa = \"" +
+                                catalogDto.Name +
+                                "\" WHERE id = " +
+                                catalogDto.Id;
+
+                var command = new MySqlCommand(query, connection);
+                command.ExecuteReader();
+                MessageBox.Show("Poprawnie edytowano katalog");
+                connection.Close();
+            }
+            catch (MySql.Data.MySqlClient.MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+                throw ex;
+            }
+        }
     }
 }
