@@ -41,7 +41,7 @@ CREATE TABLE `zlecenie` (
   PRIMARY KEY (`id`),
   KEY `uzytkownik_id` (`uzytkownik_id`),
   KEY `opieka_id` (`opieka_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -50,6 +50,7 @@ CREATE TABLE `zlecenie` (
 
 LOCK TABLES `zlecenie` WRITE;
 /*!40000 ALTER TABLE `zlecenie` DISABLE KEYS */;
+INSERT INTO `zlecenie` VALUES (1,'2016-09-26','2016-09-26','2016-09-26','2016-09-26',99666,100000,'','','1',2000,'','a',4,7),(2,'2016-10-02','2016-10-13','2016-09-26','2016-09-26',5000,6000,'','','2',30000,'','a',5,6),(3,'2016-09-27','2016-10-03','2016-09-26','2016-09-26',100000,100500,'','','3',500,'','a',4,4);
 /*!40000 ALTER TABLE `zlecenie` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -62,4 +63,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-09-26  3:32:00
+-- Dump completed on 2016-09-26 21:40:12

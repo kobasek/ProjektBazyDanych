@@ -22,7 +22,7 @@ namespace BazyDanych
         public AddOrEditOrderWindow(MainWindow mainWindow)
         {
             InitializeComponent();
-            var careList = Care.GetCareList();
+            var careList = Care.GetActiveCareList();
             foreach (var care in careList)
             {
                 var comboBoxItem = new ComboBoxItem();
@@ -52,7 +52,7 @@ namespace BazyDanych
         public AddOrEditOrderWindow(MainWindow mainWindow, int orderId)
         {
             InitializeComponent();
-            var careList = Care.GetCareList();
+            var careList = Care.GetActiveCareList();
             foreach (var care in careList)
             {
                 var comboBoxItem = new ComboBoxItem();
