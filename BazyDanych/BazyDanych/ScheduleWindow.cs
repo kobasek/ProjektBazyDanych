@@ -12,6 +12,7 @@ namespace BazyDanych
 {
     public partial class ScheduleWindow : Form
     {
+        private int idCar;
         string[] months;
         int shownMonth;
         int shownYear;
@@ -22,8 +23,9 @@ namespace BazyDanych
 
 
         //Terminarz
-        public ScheduleWindow()
+        public ScheduleWindow(int _idCar)
         {
+            this.idCar = _idCar;
             this.months = new string[12] { "Styczeń", "Luty", "Marzec", "Kwiecień", "Maj", "Czerwiec", "Lipiec", "Sierpień", "Wrzesień", "Październik", "Listopad", "Grudzień" };
             this.shownMonth = DateTime.Now.Month;
             this.shownYear = DateTime.Now.Year;

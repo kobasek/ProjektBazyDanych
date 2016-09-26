@@ -322,7 +322,9 @@ namespace BazyDanych
 			}
 			else if (e.ColumnIndex == 6)
 			{
-				ScheduleWindow obj = new ScheduleWindow();
+                var row = e.RowIndex;
+                var carId = (int)tableCarsM.Rows[row].Cells[1].Value;
+                ScheduleWindow obj = new ScheduleWindow(carId);
 				obj.Show();
 			}
 			else if (e.ColumnIndex == 5)
@@ -348,7 +350,9 @@ namespace BazyDanych
 			}
 			else if (e.ColumnIndex == 4)
 			{
-				ScheduleWindow obj = new ScheduleWindow();
+                var row = e.RowIndex;
+                var carId = (int)tableCarsM.Rows[row].Cells[1].Value;
+                ScheduleWindow obj = new ScheduleWindow(carId);
 				obj.Show();
 			}
 		}
@@ -402,7 +406,9 @@ namespace BazyDanych
 			}
 			else if (e.ColumnIndex == 6)
 			{
-				ScheduleWindow obj = new ScheduleWindow();
+                var row = e.RowIndex;
+                var carId = (int)tableCarsM.Rows[row].Cells[1].Value;
+                ScheduleWindow obj = new ScheduleWindow(carId);
 				obj.Show();
 			}
             else if (e.ColumnIndex == 5)
@@ -428,7 +434,9 @@ namespace BazyDanych
 			}
 			else if (e.ColumnIndex == 6)
 			{
-				ScheduleWindow obj = new ScheduleWindow();
+                var row = e.RowIndex;
+                var carId = (int)tableCarsM.Rows[row].Cells[1].Value;
+                ScheduleWindow obj = new ScheduleWindow(carId);
 				obj.Show();
 			}
 			else if (e.ColumnIndex == 7)
@@ -442,7 +450,9 @@ namespace BazyDanych
 		{
 			if (e.ColumnIndex == 4)
 			{
-				ScheduleWindow obj = new ScheduleWindow();
+                var row = e.RowIndex;
+                var carId = (int)tableCarsM.Rows[row].Cells[1].Value;
+                ScheduleWindow obj = new ScheduleWindow(carId);
 				obj.Show();
 			}
 		}
