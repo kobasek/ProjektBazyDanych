@@ -1216,6 +1216,7 @@
             // 
             // panel45
             // 
+            this.panel45.BackColor = System.Drawing.Color.Green;
             this.panel45.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel45.Location = new System.Drawing.Point(12, 737);
             this.panel45.Name = "panel45";

@@ -257,7 +257,7 @@ namespace BazyDanych
             }
         }
 
-        public static List<Order> GetOrderByCar(int idCar)
+        public static List<Order> GetOrderByCare(int idCare)
         {
             var connectionString = Functions.GetConnectionString();
             var list = new List<Order>();
@@ -268,7 +268,7 @@ namespace BazyDanych
                 var connection = new MySql.Data.MySqlClient.MySqlConnection { ConnectionString = connectionString };
                 connection.Open();
 
-                string query = "SELECT * FROM projekt_bazy_danych.zlecenie where zlecenie.opieka_id = " + idCar;
+                string query = "SELECT * FROM projekt_bazy_danych.zlecenie where zlecenie.opieka_id = " + idCare;
                 var command = new MySqlCommand(query, connection);
                 var dataReader = command.ExecuteReader();
 
@@ -294,6 +294,52 @@ namespace BazyDanych
                     list.Add(order);
                 }
                     connection.Close();
+            }
+            catch (MySql.Data.MySqlClient.MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+            return list;
+        }
+
+        public static List<Order> GetOrderByDriver(int idDriver)
+        {
+            var connectionString = Functions.GetConnectionString();
+            var list = new List<Order>();
+            var orderDto = new OrderDto();
+
+            try
+            {
+                var connection = new MySql.Data.MySqlClient.MySqlConnection { ConnectionString = connectionString };
+                connection.Open();
+
+                string query = "SELECT * FROM projekt_bazy_danych.zlecenie where zlecenie.uzytkownik_id = " + idDriver;
+                var command = new MySqlCommand(query, connection);
+                var dataReader = command.ExecuteReader();
+
+                while (dataReader.Read())
+                {
+                    orderDto.Id = dataReader.GetInt32(0);
+                    orderDto.PlannedStartDate = dataReader.GetDateTime(1);
+                    orderDto.PlannedEndDate = dataReader.GetDateTime(2);
+                    orderDto.ActualStartDate = dataReader.GetDateTime(3);
+                    orderDto.ActualEndDate = dataReader.GetDateTime(4);
+                    orderDto.CounterStatusBefore = dataReader.GetInt32(5);
+                    orderDto.CounterStatusAfter = dataReader.GetInt32(6);
+                    orderDto.CommentsBefore = dataReader.GetString(7);
+                    orderDto.CommentsAfter = dataReader.GetString(8);
+                    orderDto.Type = dataReader.GetChar(9);
+                    orderDto.Cost = dataReader.GetDecimal(10);
+                    orderDto.CancellationReason = dataReader.GetString(11);
+                    orderDto.State = dataReader.GetChar(12);
+                    orderDto.CareId = dataReader.GetInt32(13);
+                    orderDto.UserId = dataReader.GetInt32(14);
+
+                    var order = new Order(orderDto);
+                    list.Add(order);
+                }
+                connection.Close();
             }
             catch (MySql.Data.MySqlClient.MySqlException ex)
             {

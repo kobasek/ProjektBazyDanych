@@ -179,5 +179,42 @@ namespace BazyDanych
                 throw ex;
             }
         }
+
+        public static int GetIdServiceByOrder(int idOrder)
+        {
+            var connectionString = Functions.GetConnectionString();
+            int idService = 0;
+            var serviceDto = new ServiceDto();
+
+            try
+            {
+                var connection = new MySql.Data.MySqlClient.MySqlConnection { ConnectionString = connectionString };
+                connection.Open();
+
+                string query = "SELECT * FROM projekt_bazy_danych.serwis where serwis.zlecenie_id = " + idOrder;
+                var command = new MySqlCommand(query, connection);
+                var dataReader = command.ExecuteReader();
+
+                if (dataReader.Read())
+                {
+                    idService = dataReader.GetInt32(0);
+
+
+                    connection.Close();
+                    return idService;
+                }
+                else
+                {
+                    connection.Close();
+                    return idService;
+                }
+            }
+            catch (MySql.Data.MySqlClient.MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+            return idService;
+        }
     }
 }

@@ -12,7 +12,8 @@ namespace BazyDanych
 {
     public partial class ScheduleWindow : Form
     {
-        private int idCar;
+        private int id;
+        private char type;
         string[] months;
         int shownMonth;
         int shownYear;
@@ -23,9 +24,10 @@ namespace BazyDanych
 
 
         //Terminarz
-        public ScheduleWindow(int _idCar)
+        public ScheduleWindow(int _id, char _type)
         {
-            this.idCar = _idCar;
+            this.id = _id;
+            this.type = _type;
             this.months = new string[12] { "Styczeń", "Luty", "Marzec", "Kwiecień", "Maj", "Czerwiec", "Lipiec", "Sierpień", "Wrzesień", "Październik", "Listopad", "Grudzień" };
             this.shownMonth = DateTime.Now.Month;
             this.shownYear = DateTime.Now.Year;
@@ -74,8 +76,12 @@ namespace BazyDanych
 
         private void FillPanels()
         {
-            var orderList = Order.GetOrderByCar(Care.GetCare(idCar));
+
+            var orderList = Order.GetOrderByCare(Care.GetCarebyCar(id));
+            if (type == 'D')
+                orderList = Order.GetOrderByDriver(id);
             var orderDays = new List<DateTime>();
+            var ColorDays = new List<Color>();
             foreach(var order in orderList)
             {
                 DateTime pom = order.plannedStartDate;
@@ -83,6 +89,10 @@ namespace BazyDanych
                 {
                     orderDays.Add(pom);
                     pom = pom.AddDays(1);
+                    if (Service.GetIdServiceByOrder(order.id) == 0)
+                        ColorDays.Add(Color.Yellow);
+                    else
+                        ColorDays.Add(Color.Green);
                 }
             }
             var data = new DateTime(shownYear, shownMonth, 1);
@@ -94,6 +104,7 @@ namespace BazyDanych
             int labelCounterSmaler;
             int pomIndex = 1;
             bool pomBool = false;
+            int pomColor2 = 0;
             if (shownMonth == 1)
                 labelCounterSmaler = DateTime.DaysInMonth(shownYear-1, 12)-firstDayOfMonth+1;   
             else
@@ -104,23 +115,29 @@ namespace BazyDanych
                 if(i >= firstDayOfMonth && i < firstDayOfMonth + daysInMonth)
                 {
                     var dateInMonth = new DateTime(shownYear, shownMonth, pomIndex);
+                    int pomColor = 0;
                     foreach (var day in orderDays)
                     {
                         if(dateInMonth == day)
                         {
+                            pomColor2 = pomColor;
                             pomBool = true;
                         }
+                        pomColor++;
                     }
                     if(pomBool == true)
                     {
+                        Color dayColor = ColorDays[pomColor2];
                         var panelColour = this.Controls.OfType<Control>()
                         .Where(panel => panel.TabIndex == i)
                         .Select(panel =>
                         {
-                            panel.BackColor = Color.Yellow;
+                            panel.BackColor = dayColor;
                             return panel;
                         })
                         .First();
+                        
+
                     }
                     else
                     {
