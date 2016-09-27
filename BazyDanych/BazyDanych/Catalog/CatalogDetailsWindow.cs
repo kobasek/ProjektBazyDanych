@@ -48,19 +48,14 @@ namespace BazyDanych
 
         private void serviceActionsDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            /*if (e.ColumnIndex == 3)
+            if (e.ColumnIndex == 3)
             {
                 var row = e.RowIndex;
                 var serviceActionId = (int)serviceActionsDataGridView.Rows[row].Cells[0].Value;
-                int servicePlaceId = ServiceAction.GetServiceActionById(serviceActionId).serviceId;
-                AddOrEditServicePlaceWindow obj = new AddOrEditServicePlaceWindow(this, servicePlaceId);
-                obj.Text = "Menedżer Floty - Szczegóły miejsca serwisowego";
-                obj.addButton.Visible = false;
-                obj.approveButton.Visible = false;
-                obj.companyNameTextBox.ReadOnly = true;
-                obj.addressTextBox.ReadOnly = true;
+                int serviceId = ServiceAction.GetServiceActionById(serviceActionId).serviceId;
+                ServiceDetails obj = new ServiceDetails(serviceId);
                 obj.Show();
-            }*/
+            }
         }
     }
 }
