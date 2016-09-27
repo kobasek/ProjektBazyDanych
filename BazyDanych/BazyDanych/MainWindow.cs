@@ -776,17 +776,18 @@ namespace BazyDanych
             }
         }
 
-        public void AddOrderToDatabase(OrderDto orderDto)
+        public int AddOrderToDatabase(OrderDto orderDto)
         {
             try
             {
-                Order.AddOrder(orderDto);
+                int id = Order.AddOrder(orderDto);
                 OrdersBindingSource.Clear();
                 var ordersList = Order.GetOrderList();
                 foreach (var order in ordersList)
                 {
                     OrdersBindingSource.Add(new OrderTableElement(order.id, order.plannedStartDate, order.plannedEndDate, order.actualStartDate, order.actualEndDate, order.counterStatusBefore, order.counterStatusAfter, order.commentsBefore, order.commentsAfter, order.type, order.cost, order.cancellationReason, order.state, order.careId, order.userId));
                 }
+                return id;
             }
             catch (MySql.Data.MySqlClient.MySqlException ex)
             {

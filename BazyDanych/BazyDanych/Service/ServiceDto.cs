@@ -8,6 +8,8 @@ namespace BazyDanych
 {
     public class ServiceDto
     {
+        public List<ServiceActionDto> serviceActions = new List<ServiceActionDto>();
+
         public int Id { get; set; }
         public decimal Cost { get; set; }
         public DateTime ServiceDate { get; set; }

@@ -13,7 +13,9 @@ namespace BazyDanych
     public partial class AddOrEditServiceActionWindow : Form
     {
         private MainWindow mainWindow;
+        private AddOrEditServiceWindow addOrEditServiceWindow;
         private ServiceAction serviceAction;
+        private bool addToDatabase = true;
 
         public AddOrEditServiceActionWindow()
         {
@@ -40,6 +42,22 @@ namespace BazyDanych
                 serviceComboBox.Items.Add(comboBoxItem);
             }
             this.mainWindow = mainWindow;
+        }
+
+        public AddOrEditServiceActionWindow(AddOrEditServiceWindow addOrEditServiceWindow)
+        {
+            InitializeComponent();
+            addToDatabase = false;
+            var catalogsList = Catalog.GetCatalogsList();
+            foreach (var catalog in catalogsList)
+            {
+                var comboBoxItem = new ComboBoxItem();
+                comboBoxItem.Text = catalog.name;
+                comboBoxItem.Value = catalog.id;
+                catalogComboBox.Items.Add(comboBoxItem);
+            }
+            serviceComboBox.Visible = false;
+            this.addOrEditServiceWindow = addOrEditServiceWindow;
         }
 
         public AddOrEditServiceActionWindow(MainWindow mainWindow, int serviceActionId)
@@ -107,15 +125,18 @@ namespace BazyDanych
                 errorNumber++;
                 errorMessage += errorNumber + ". Należy wybrać katalog.\n";
             }
-            if (serviceComboBox.SelectedItem != null)
+            if (addToDatabase)
             {
-                serviceActionDto.ServiceId = (int)((ComboBoxItem)serviceComboBox.SelectedItem).Value;
-            }
-            else
-            {
-                isError = true;
-                errorNumber++;
-                errorMessage += errorNumber + ". Należy wybrać serwis.\n";
+                if (serviceComboBox.SelectedItem != null)
+                {
+                    serviceActionDto.ServiceId = (int)((ComboBoxItem)serviceComboBox.SelectedItem).Value;
+                }
+                else
+                {
+                    isError = true;
+                    errorNumber++;
+                    errorMessage += errorNumber + ". Należy wybrać serwis.\n";
+                }
             }
 
             if (isError)
@@ -124,17 +145,25 @@ namespace BazyDanych
             }
             else
             {
-                try
+                if (addToDatabase)
                 {
-                    mainWindow.AddServiceActionToDatabase(serviceActionDto);
+                    try
+                    {
+                        mainWindow.AddServiceActionToDatabase(serviceActionDto);
+                        Close();
+                    }
+                    catch (MySql.Data.MySqlClient.MySqlException ex)
+                    {
+
+                        MessageBox.Show("Dodawanie czynności serwisowej nie powiodło się!");
+                    }
+                }
+                else
+                {
+                    addOrEditServiceWindow.serviceActions.Add(serviceActionDto);
+                    addOrEditServiceWindow.UpdateServiceActionsGridView();
                     Close();
                 }
-                catch (MySql.Data.MySqlClient.MySqlException ex)
-                {
-
-                    MessageBox.Show("Dodawanie czynności serwisowej nie powiodło się!");
-                }
-
             }
         }
 

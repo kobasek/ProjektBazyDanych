@@ -12,8 +12,11 @@ namespace BazyDanych
 {
     public partial class AddOrEditServiceWindow : Form
     {
+        private AddOrEditOrderWindow addOrEditOrderWindow;
         private MainWindow mainWindow;
         private Service service;
+        private bool addToDatabase = true;
+        public List<ServiceActionDto> serviceActions = new List<ServiceActionDto>();
 
         public AddOrEditServiceWindow()
         {
@@ -40,6 +43,22 @@ namespace BazyDanych
                 orderComboBox.Items.Add(comboBoxItem);
             }
             this.mainWindow = mainWindow;
+        }
+
+        public AddOrEditServiceWindow(AddOrEditOrderWindow addOrEditOrderWindow)
+        {
+            InitializeComponent();
+            addToDatabase = false;
+            var servicePlacesList = ServicePlace.GetServicePlacesList();
+            foreach (var servicePlace in servicePlacesList)
+            {
+                var comboBoxItem = new ComboBoxItem();
+                comboBoxItem.Text = servicePlace.companyName + " " + servicePlace.address;
+                comboBoxItem.Value = servicePlace.id;
+                servicePlaceComboBox.Items.Add(comboBoxItem);
+            }
+            orderComboBox.Visible = false;
+            this.addOrEditOrderWindow = addOrEditOrderWindow;
         }
 
         public AddOrEditServiceWindow(MainWindow mainWindow, int serviceId)
@@ -87,15 +106,18 @@ namespace BazyDanych
                 errorMessage += errorNumber + ". Należy wybrać miejsce serwisu.\n";
             }
 
-            if (orderComboBox.SelectedItem != null)
+            if (addToDatabase)
             {
-                serviceDto.OrderId = (int)((ComboBoxItem)orderComboBox.SelectedItem).Value;
-            }
-            else
-            {
-                isError = true;
-                errorNumber++;
-                errorMessage += errorNumber + ". Należy wybrać zlecenie.\n";
+                if (orderComboBox.SelectedItem != null)
+                {
+                    serviceDto.OrderId = (int)((ComboBoxItem)orderComboBox.SelectedItem).Value;
+                }
+                else
+                {
+                    isError = true;
+                    errorNumber++;
+                    errorMessage += errorNumber + ". Należy wybrać zlecenie.\n";
+                }
             }
 
             serviceDto.ServiceDate = serviceDateDateTimePicker.Value;
@@ -119,16 +141,34 @@ namespace BazyDanych
             }
             else
             {
-                try
+                if (addToDatabase)
                 {
-                    mainWindow.AddServiceToDatabase(serviceDto);
+                    try
+                    {
+                        mainWindow.AddServiceToDatabase(serviceDto);
+                        Close();
+                    }
+                    catch (MySql.Data.MySqlClient.MySqlException ex)
+                    {
+                        MessageBox.Show("Dodawanie serwisu nie powiodło się!");
+                    }
+                }
+                else
+                {
+                    serviceDto.serviceActions = serviceActions;
+                    addOrEditOrderWindow.services.Add(serviceDto);
+                    addOrEditOrderWindow.UpdateServicesGridView();
                     Close();
                 }
-                catch (MySql.Data.MySqlClient.MySqlException ex)
-                {
-                    MessageBox.Show("Dodawanie serwisu nie powiodło się!");
-                }
+            }
+        }
 
+        public void UpdateServiceActionsGridView()
+        {
+            serviceActionsBindingSource.Clear();
+            foreach (var serviceAction in serviceActions)
+            {
+                serviceActionsBindingSource.Add(new ServiceActionTableElement(serviceAction.Id, serviceAction.Name, serviceAction.Cost, serviceAction.CatalogId, serviceAction.ServiceId));
             }
         }
 
@@ -196,6 +236,12 @@ namespace BazyDanych
                     MessageBox.Show("Edytowanie serwisu nie powiodło się!");
                 }
             }
+        }
+
+        private void addServiceActionButton_Click(object sender, EventArgs e)
+        {
+            AddOrEditServiceActionWindow obj = new AddOrEditServiceActionWindow(this);
+            obj.Show();
         }
     }
 }

@@ -15,6 +15,8 @@ namespace BazyDanych
         private MainWindow mainWindow;
         private Order order;
 
+        public List<ServiceDto> services = new List<ServiceDto>();
+
         public AddOrEditOrderWindow()
         {
             InitializeComponent();
@@ -91,6 +93,15 @@ namespace BazyDanych
             orderStateComboBox.SelectedItem = order.state;
             driverComboBox.SelectedItem = User.GetUserById(order.userId);
             careComboBox.SelectedItem = Brand.GetBrandById(Model.GetModelById(Car.GetCarById(Care.GetCareByID(order.careId).carId).modelId).brandId) + " " + Model.GetModelById(Car.GetCarById(Care.GetCareByID(order.careId).carId).modelId).name;
+        }
+
+        public void UpdateServicesGridView()
+        {
+            servicesBindingSource.Clear();
+            foreach (var service in services)
+            {
+                servicesBindingSource.Add(new ServiceTableElement(service.Id, service.Cost, service.ServiceDate, service.Comment, service.ServicePlaceId, service.OrderId));
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -352,7 +363,15 @@ namespace BazyDanych
             {
                 try
                 {
-                    mainWindow.AddOrderToDatabase(orderDto);
+                    int orderId = mainWindow.AddOrderToDatabase(orderDto);
+                    foreach (ServiceDto service in services)
+                    {
+                        service.OrderId = orderId;
+                        Service.AddServiceWithServiceActions(service);
+                    }
+                    mainWindow.UpdateOrder();
+                    mainWindow.UpdateService();
+                    mainWindow.UpdateServiceAction();
                     Close();
                 }
                 catch (MySql.Data.MySqlClient.MySqlException ex)
@@ -367,6 +386,12 @@ namespace BazyDanych
         private void button3_Click(object sender, EventArgs e)
         {
             AddServiceWindow obj = new AddServiceWindow();
+            obj.Show();
+        }
+
+        private void addServiceButton_Click(object sender, EventArgs e)
+        {
+            AddOrEditServiceWindow obj = new AddOrEditServiceWindow(this);
             obj.Show();
         }
     }

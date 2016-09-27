@@ -7,7 +7,7 @@ using MySql.Data.MySqlClient;
 
 namespace BazyDanych
 {
-    class Service
+    public class Service
     {
         public int id;
         public decimal cost;
@@ -98,6 +98,47 @@ namespace BazyDanych
                 var command = new MySqlCommand(query, connection);
                 command.ExecuteReader();
                 MessageBox.Show("Poprawnie dodano serwis");
+                connection.Close();
+            }
+            catch (MySql.Data.MySqlClient.MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+                throw ex;
+            }
+        }
+
+        public static void AddServiceWithServiceActions(ServiceDto serviceToAdd)
+        {
+            var connectionString = Functions.GetConnectionString();
+
+            try
+            {
+                var connection = new MySql.Data.MySqlClient.MySqlConnection { ConnectionString = connectionString };
+                connection.Open();
+
+                var serviceDate = serviceToAdd.ServiceDate.ToString("yyyy.MM.dd");
+
+                string query = "INSERT INTO projekt_bazy_danych.serwis VALUES(null, " +
+                                serviceToAdd.Cost.ToString("F").Replace(",", ".") +
+                                ",\"" +
+                                serviceDate +
+                                "\",\"" +
+                                serviceToAdd.Comment +
+                                "\"," +
+                                serviceToAdd.ServicePlaceId +
+                                "," +
+                                serviceToAdd.OrderId +
+                                ");";
+
+                var command = new MySqlCommand(query, connection);
+                command.ExecuteReader();
+                int serviceId = (int)command.LastInsertedId;
+                MessageBox.Show("Poprawnie dodano serwis");
+                foreach (ServiceActionDto serviceAction in serviceToAdd.serviceActions)
+                {
+                    serviceAction.ServiceId = serviceId;
+                    ServiceAction.AddServiceAction(serviceAction);
+                }
                 connection.Close();
             }
             catch (MySql.Data.MySqlClient.MySqlException ex)

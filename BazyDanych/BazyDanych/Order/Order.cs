@@ -143,7 +143,7 @@ namespace BazyDanych
             return list;
         }
 
-        public static void AddOrder(OrderDto orderDto)
+        public static int AddOrder(OrderDto orderDto)
         {
             var connectionString = Functions.GetConnectionString();
 
@@ -189,8 +189,10 @@ namespace BazyDanych
 
                 var command = new MySqlCommand(query, connection);
                 command.ExecuteReader();
+                int id = (int)command.LastInsertedId;
                 MessageBox.Show("Poprawnie dodano zlecenie");
                 connection.Close();
+                return id;
             }
             catch (MySql.Data.MySqlClient.MySqlException ex)
             {

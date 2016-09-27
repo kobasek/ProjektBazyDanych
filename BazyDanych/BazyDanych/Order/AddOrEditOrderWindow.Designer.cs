@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -58,9 +59,24 @@
             this.addButton = new System.Windows.Forms.Button();
             this.driverComboBox = new System.Windows.Forms.ComboBox();
             this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.servicesDataGridView = new System.Windows.Forms.DataGridView();
+            this.addServiceButton = new System.Windows.Forms.Button();
+            this.deleteServiceButton = new System.Windows.Forms.Button();
+            this.servicesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.costDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.serviceDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.commentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.servicePlaceIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.orderIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Details = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.costNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.counterStartStateNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.counterEndDateNumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.servicesDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.servicesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -294,7 +310,7 @@
             // 
             // acceptButton
             // 
-            this.acceptButton.Location = new System.Drawing.Point(550, 375);
+            this.acceptButton.Location = new System.Drawing.Point(1036, 477);
             this.acceptButton.Name = "acceptButton";
             this.acceptButton.Size = new System.Drawing.Size(95, 45);
             this.acceptButton.TabIndex = 28;
@@ -304,7 +320,7 @@
             // 
             // addButton
             // 
-            this.addButton.Location = new System.Drawing.Point(550, 434);
+            this.addButton.Location = new System.Drawing.Point(1137, 477);
             this.addButton.Name = "addButton";
             this.addButton.Size = new System.Drawing.Size(95, 45);
             this.addButton.TabIndex = 29;
@@ -329,11 +345,112 @@
             this.label14.TabIndex = 30;
             this.label14.Text = "Kierowca";
             // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(700, 22);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(43, 13);
+            this.label15.TabIndex = 32;
+            this.label15.Text = "Serwisy";
+            // 
+            // servicesDataGridView
+            // 
+            this.servicesDataGridView.AutoGenerateColumns = false;
+            this.servicesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.servicesDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn,
+            this.costDataGridViewTextBoxColumn,
+            this.serviceDateDataGridViewTextBoxColumn,
+            this.commentDataGridViewTextBoxColumn,
+            this.servicePlaceIdDataGridViewTextBoxColumn,
+            this.orderIdDataGridViewTextBoxColumn,
+            this.Details,
+            this.Edit});
+            this.servicesDataGridView.DataSource = this.servicesBindingSource;
+            this.servicesDataGridView.Location = new System.Drawing.Point(703, 38);
+            this.servicesDataGridView.Name = "servicesDataGridView";
+            this.servicesDataGridView.Size = new System.Drawing.Size(529, 396);
+            this.servicesDataGridView.TabIndex = 33;
+            // 
+            // addServiceButton
+            // 
+            this.addServiceButton.Location = new System.Drawing.Point(703, 440);
+            this.addServiceButton.Name = "addServiceButton";
+            this.addServiceButton.Size = new System.Drawing.Size(75, 23);
+            this.addServiceButton.TabIndex = 34;
+            this.addServiceButton.Text = "Dodaj";
+            this.addServiceButton.UseVisualStyleBackColor = true;
+            this.addServiceButton.Click += new System.EventHandler(this.addServiceButton_Click);
+            // 
+            // deleteServiceButton
+            // 
+            this.deleteServiceButton.Location = new System.Drawing.Point(784, 440);
+            this.deleteServiceButton.Name = "deleteServiceButton";
+            this.deleteServiceButton.Size = new System.Drawing.Size(75, 23);
+            this.deleteServiceButton.TabIndex = 35;
+            this.deleteServiceButton.Text = "Usuń";
+            this.deleteServiceButton.UseVisualStyleBackColor = true;
+            // 
+            // servicesBindingSource
+            // 
+            this.servicesBindingSource.DataSource = typeof(BazyDanych.ServiceTableElement);
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            // 
+            // costDataGridViewTextBoxColumn
+            // 
+            this.costDataGridViewTextBoxColumn.DataPropertyName = "Cost";
+            this.costDataGridViewTextBoxColumn.HeaderText = "Cost";
+            this.costDataGridViewTextBoxColumn.Name = "costDataGridViewTextBoxColumn";
+            // 
+            // serviceDateDataGridViewTextBoxColumn
+            // 
+            this.serviceDateDataGridViewTextBoxColumn.DataPropertyName = "ServiceDate";
+            this.serviceDateDataGridViewTextBoxColumn.HeaderText = "ServiceDate";
+            this.serviceDateDataGridViewTextBoxColumn.Name = "serviceDateDataGridViewTextBoxColumn";
+            // 
+            // commentDataGridViewTextBoxColumn
+            // 
+            this.commentDataGridViewTextBoxColumn.DataPropertyName = "Comment";
+            this.commentDataGridViewTextBoxColumn.HeaderText = "Comment";
+            this.commentDataGridViewTextBoxColumn.Name = "commentDataGridViewTextBoxColumn";
+            // 
+            // servicePlaceIdDataGridViewTextBoxColumn
+            // 
+            this.servicePlaceIdDataGridViewTextBoxColumn.DataPropertyName = "ServicePlaceId";
+            this.servicePlaceIdDataGridViewTextBoxColumn.HeaderText = "ServicePlaceId";
+            this.servicePlaceIdDataGridViewTextBoxColumn.Name = "servicePlaceIdDataGridViewTextBoxColumn";
+            // 
+            // orderIdDataGridViewTextBoxColumn
+            // 
+            this.orderIdDataGridViewTextBoxColumn.DataPropertyName = "OrderId";
+            this.orderIdDataGridViewTextBoxColumn.HeaderText = "OrderId";
+            this.orderIdDataGridViewTextBoxColumn.Name = "orderIdDataGridViewTextBoxColumn";
+            // 
+            // Details
+            // 
+            this.Details.HeaderText = "Szczegóły";
+            this.Details.Name = "Details";
+            // 
+            // Edit
+            // 
+            this.Edit.HeaderText = "Edytuj";
+            this.Edit.Name = "Edit";
+            // 
             // AddOrEditOrderWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(710, 541);
+            this.ClientSize = new System.Drawing.Size(1244, 541);
+            this.Controls.Add(this.deleteServiceButton);
+            this.Controls.Add(this.addServiceButton);
+            this.Controls.Add(this.servicesDataGridView);
+            this.Controls.Add(this.label15);
             this.Controls.Add(this.driverComboBox);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.addButton);
@@ -369,6 +486,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.costNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.counterStartStateNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.counterEndDateNumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.servicesDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.servicesBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -405,5 +524,18 @@
         public System.Windows.Forms.Button addButton;
         private System.Windows.Forms.ComboBox driverComboBox;
         private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.DataGridView servicesDataGridView;
+        private System.Windows.Forms.Button addServiceButton;
+        private System.Windows.Forms.Button deleteServiceButton;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn costDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn serviceDateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn commentDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn servicePlaceIdDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn orderIdDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Details;
+        private System.Windows.Forms.DataGridViewButtonColumn Edit;
+        private System.Windows.Forms.BindingSource servicesBindingSource;
     }
 }

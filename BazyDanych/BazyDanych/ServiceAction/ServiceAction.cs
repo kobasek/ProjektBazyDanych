@@ -7,7 +7,7 @@ using MySql.Data.MySqlClient;
 
 namespace BazyDanych
 {
-    class ServiceAction
+    public class ServiceAction
     {
         public int id;
         public string name;
