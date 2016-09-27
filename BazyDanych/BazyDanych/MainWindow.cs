@@ -1212,6 +1212,13 @@ namespace BazyDanych
                 obj.addressTextBox.ReadOnly = true;
                 obj.Show();
             }
+            else if (e.ColumnIndex == 6)
+            {
+                var row = e.RowIndex;
+                var serviceId = (int)servicesDataGridView.Rows[row].Cells[1].Value;
+                ServiceDetails obj = new ServiceDetails(serviceId);
+                obj.Show();
+            }
             else if (e.ColumnIndex == 7)
             {
                 var row = e.RowIndex;

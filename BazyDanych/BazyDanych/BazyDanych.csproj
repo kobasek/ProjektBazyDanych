@@ -78,6 +78,12 @@
     <Compile Include="ServiceAction\AddOrEditServiceActionWindow.Designer.cs">
       <DependentUpon>AddOrEditServiceActionWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="ServiceDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ServiceDetails.Designer.cs">
+      <DependentUpon>ServiceDetails.cs</DependentUpon>
+    </Compile>
     <Compile Include="ServicePlace\AddOrEditServicePlaceWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -247,6 +253,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ServiceAction\AddOrEditServiceActionWindow.resx">
       <DependentUpon>AddOrEditServiceActionWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ServiceDetails.resx">
+      <DependentUpon>ServiceDetails.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ServicePlace\AddOrEditServicePlaceWindow.resx">
       <DependentUpon>AddOrEditServicePlaceWindow.cs</DependentUpon>

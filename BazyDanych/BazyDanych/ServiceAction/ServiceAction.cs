@@ -170,6 +170,41 @@ namespace BazyDanych
             return list;
         }
 
+        public static IList<ServiceAction> GetServiceActionsWithGivenServiceIdList(int serviceId)
+        {
+            var connectionString = Functions.GetConnectionString();
+            var list = new List<ServiceAction>();
+            var serviceActionDto = new ServiceActionDto();
+
+            try
+            {
+                var connection = new MySql.Data.MySqlClient.MySqlConnection { ConnectionString = connectionString };
+                connection.Open();
+
+                string query = "SELECT * FROM projekt_bazy_danych.czynnosc_serwisowa WHERE czynnosc_serwisowa.serwis_id = " + serviceId + ";";
+                var command = new MySqlCommand(query, connection);
+                var dataReader = command.ExecuteReader();
+
+                while (dataReader.Read())
+                {
+                    serviceActionDto.Id = dataReader.GetInt32(0);
+                    serviceActionDto.Name = dataReader.GetString(1);
+                    serviceActionDto.Cost = dataReader.GetInt32(2);
+                    serviceActionDto.CatalogId = dataReader.GetInt32(3);
+                    serviceActionDto.ServiceId = dataReader.GetInt32(4);
+
+                    var serviceAction = new ServiceAction(serviceActionDto);
+                    list.Add(serviceAction);
+                }
+                connection.Close();
+            }
+            catch (MySql.Data.MySqlClient.MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            return list;
+        }
+
         public static void UpdateServiceAction(ServiceActionDto serviceActionDto)
         {
             var connectionString = Functions.GetConnectionString();
