@@ -13,14 +13,16 @@ namespace BazyDanych
         public string Category { get; set; }
         public int BrandId { get; set; }
         public int? TemplateId { get; set; }
+        public string BrandName { get; set; }
 
-        public ModelTableElement(int id, string name, string category, int brandId, int? templateId)
+    public ModelTableElement(int id, string name, string category, int brandId, int? templateId)
         {
             Id = id;
             Name = name;
             Category = category;
             BrandId = brandId;
             TemplateId = templateId;
+            BrandName = Brand.GetBrandById(brandId).name;
         }
     }
 }

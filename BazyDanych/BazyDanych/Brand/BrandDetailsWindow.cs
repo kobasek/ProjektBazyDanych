@@ -28,5 +28,25 @@ namespace BazyDanych
                 modelsBindingSource.Add(new ModelTableElement(model.id, model.name, model.category, model.brandId, model.templateId));
             }
         }
+
+        private void modelsDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 3)
+            {
+                var row = e.RowIndex;
+                var modelId = (int)modelsDataGridView.Rows[row].Cells[0].Value;
+                int? templateId = Model.GetModelById(modelId).templateId;
+                if (templateId != null)
+                {
+                    int templateIdFinal = (int)templateId;
+                    TemplateDetailsWindow obj = new TemplateDetailsWindow(templateIdFinal);
+                    obj.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Brak szablonu");
+                }
+            }
+        }
     }
 }

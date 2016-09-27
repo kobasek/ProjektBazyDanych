@@ -331,7 +331,14 @@ namespace BazyDanych
 			{
 				deleteButtonMPojazdy.Enabled = true;
 			}
-			else if (e.ColumnIndex == 7)
+            else if (e.ColumnIndex == 4)
+            {
+                var row = e.RowIndex;
+                var carId = (int)tableCarsM.Rows[row].Cells[1].Value;
+                int keeperId = Care.GetKeeperID(carId);
+                SzczegolyUser(keeperId);
+            }
+            else if (e.ColumnIndex == 7)
 			{
 				var row = e.RowIndex;
 				var carId = (int)tableCarsM.Rows[row].Cells[1].Value;
@@ -1192,7 +1199,20 @@ namespace BazyDanych
 
         private void servicesDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == 7)
+            if (e.ColumnIndex == 4)
+            {
+                var row = e.RowIndex;
+                var serviceId = (int)servicesDataGridView.Rows[row].Cells[1].Value;
+                int servicePlaceId = Service.GetServiceById(serviceId).servicePlaceId;
+                AddOrEditServicePlaceWindow obj = new AddOrEditServicePlaceWindow(this, servicePlaceId);
+                obj.Text = "Menedżer Floty - Szczegóły miejsca serwisowego";
+                obj.addButton.Visible = false;
+                obj.approveButton.Visible = false;
+                obj.companyNameTextBox.ReadOnly = true;
+                obj.addressTextBox.ReadOnly = true;
+                obj.Show();
+            }
+            else if (e.ColumnIndex == 7)
             {
                 var row = e.RowIndex;
                 var serviceId = (int)servicesDataGridView.Rows[row].Cells[1].Value;
@@ -1224,6 +1244,16 @@ namespace BazyDanych
                 obj.addButton.Visible = false;
                 obj.Show();
             }
+        }
+
+        private void tableControlO_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tableControlK_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

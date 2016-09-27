@@ -34,5 +34,33 @@ namespace BazyDanych
                 serviceActionsBindingSource.Add(new ServiceActionTableElement(serviceAction.id, serviceAction.name, serviceAction.cost, serviceAction.catalogId, serviceAction.serviceId));
             }
         }
+
+        private void serviceTemplatesDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 4)
+            {
+                var row = e.RowIndex;
+                var serviceTemplateId = (int)serviceTemplatesDataGridView.Rows[row].Cells[0].Value;
+                TemplateDetailsWindow obj = new TemplateDetailsWindow(ServiceTemplate.GetServiceTemplateById(serviceTemplateId).templateId);
+                obj.Show();
+            }
+        }
+
+        private void serviceActionsDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            /*if (e.ColumnIndex == 3)
+            {
+                var row = e.RowIndex;
+                var serviceActionId = (int)serviceActionsDataGridView.Rows[row].Cells[0].Value;
+                int servicePlaceId = ServiceAction.GetServiceActionById(serviceActionId).serviceId;
+                AddOrEditServicePlaceWindow obj = new AddOrEditServicePlaceWindow(this, servicePlaceId);
+                obj.Text = "Menedżer Floty - Szczegóły miejsca serwisowego";
+                obj.addButton.Visible = false;
+                obj.approveButton.Visible = false;
+                obj.companyNameTextBox.ReadOnly = true;
+                obj.addressTextBox.ReadOnly = true;
+                obj.Show();
+            }*/
+        }
     }
 }

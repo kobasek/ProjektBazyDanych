@@ -14,6 +14,8 @@ namespace BazyDanych
         public int Period { get; set; }
         public int CatalogId { get; set; }
         public int TemplateId { get; set; }
+        public string CatalogName { get; set; }
+        public string TemplateName { get; set; }
 
         public ServiceTemplateTableElement(int id, string name, int kilometres, int period, int catalogId, int templateId)
         {
@@ -23,6 +25,8 @@ namespace BazyDanych
             Period = period;
             CatalogId = catalogId;
             TemplateId = templateId;
+            CatalogName = Catalog.GetCatalogById(catalogId).name;
+            TemplateName = Template.GetTemplateById(templateId).name;
         }
     }
 }

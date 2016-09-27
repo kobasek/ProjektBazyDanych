@@ -14,6 +14,7 @@ namespace BazyDanych
         public string Comment { get; set; }
         public int ServicePlaceId { get; set; }
         public int OrderId { get; set; }
+        public string ServicePlaceName { get; set; }
 
         public ServiceTableElement(int id, decimal cost, DateTime serviceDate, string comment, int servicePlaceId, int orderId)
         {
@@ -23,6 +24,7 @@ namespace BazyDanych
             Comment = comment;
             ServicePlaceId = servicePlaceId;
             OrderId = orderId;
+            ServicePlaceName = ServicePlace.GetServicePlaceById(servicePlaceId).companyName;
         }
     }
 }

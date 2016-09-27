@@ -37,8 +37,7 @@
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.categoryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.brandIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.templateIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Template = new System.Windows.Forms.DataGridViewLinkColumn();
             ((System.ComponentModel.ISupportInitialize)(this.modelsDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.modelsBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -77,13 +76,13 @@
             this.idDataGridViewTextBoxColumn,
             this.nameDataGridViewTextBoxColumn,
             this.categoryDataGridViewTextBoxColumn,
-            this.brandIdDataGridViewTextBoxColumn,
-            this.templateIdDataGridViewTextBoxColumn});
+            this.Template});
             this.modelsDataGridView.DataSource = this.modelsBindingSource;
             this.modelsDataGridView.Location = new System.Drawing.Point(15, 83);
             this.modelsDataGridView.Name = "modelsDataGridView";
             this.modelsDataGridView.Size = new System.Drawing.Size(731, 229);
             this.modelsDataGridView.TabIndex = 3;
+            this.modelsDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.modelsDataGridView_CellContentClick);
             // 
             // modelsBindingSource
             // 
@@ -107,17 +106,12 @@
             this.categoryDataGridViewTextBoxColumn.HeaderText = "Category";
             this.categoryDataGridViewTextBoxColumn.Name = "categoryDataGridViewTextBoxColumn";
             // 
-            // brandIdDataGridViewTextBoxColumn
+            // Template
             // 
-            this.brandIdDataGridViewTextBoxColumn.DataPropertyName = "BrandId";
-            this.brandIdDataGridViewTextBoxColumn.HeaderText = "BrandId";
-            this.brandIdDataGridViewTextBoxColumn.Name = "brandIdDataGridViewTextBoxColumn";
-            // 
-            // templateIdDataGridViewTextBoxColumn
-            // 
-            this.templateIdDataGridViewTextBoxColumn.DataPropertyName = "TemplateId";
-            this.templateIdDataGridViewTextBoxColumn.HeaderText = "TemplateId";
-            this.templateIdDataGridViewTextBoxColumn.Name = "templateIdDataGridViewTextBoxColumn";
+            this.Template.HeaderText = "Szablon";
+            this.Template.Name = "Template";
+            this.Template.Text = "Zobacz szablon";
+            this.Template.UseColumnTextForLinkValue = true;
             // 
             // BrandDetailsWindow
             // 
@@ -147,7 +141,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn categoryDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn brandIdDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn templateIdDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewLinkColumn Template;
     }
 }
