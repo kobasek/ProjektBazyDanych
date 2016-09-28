@@ -403,7 +403,31 @@ namespace BazyDanych
 
 		private void mTabelaZlecenia_CellContentClick(object sender, DataGridViewCellEventArgs e)
 		{
-            if (e.ColumnIndex == 12)
+            if (e.ColumnIndex == 11)
+            {
+                var row = e.RowIndex;
+                var orderId = (int)ordersTableM.Rows[row].Cells[1].Value;
+                AddOrEditOrderWindow obj = new AddOrEditOrderWindow(this, orderId);
+                obj.Text = "Menedżer Floty - Szczegóły Zlecenia";
+                obj.addButton.Visible = false;
+                obj.acceptButton.Visible = false;
+                obj.addServiceButton.Visible = false;
+                obj.careComboBox.Enabled = false;
+                obj.driverComboBox.Enabled = false;
+                obj.startDateDateTimePicker.Enabled = false;
+                obj.endDateDateTimePicker.Enabled = false;
+                obj.actualStartDateDateTimePicker.Enabled = false;
+                obj.actualEndDateDateTimePicker.Enabled = false;
+                obj.costNumericUpDown.ReadOnly = true;
+                obj.orderTypeComboBox.Enabled = false;
+                obj.counterStartStateNumericUpDown.ReadOnly = true;
+                obj.counterEndDateNumericUpDown.ReadOnly = true;
+                obj.orderStateComboBox.Enabled = false;
+                obj.startCommentsRichTextBox.ReadOnly = true;
+                obj.endCommentsRichTextBox.ReadOnly = true;
+                obj.Show();
+            }
+            else if (e.ColumnIndex == 12)
 			{
                 var row = e.RowIndex;
                 var orderId = (int)ordersTableM.Rows[row].Cells[1].Value;

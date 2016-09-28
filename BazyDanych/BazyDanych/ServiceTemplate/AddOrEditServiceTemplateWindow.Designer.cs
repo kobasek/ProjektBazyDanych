@@ -90,6 +90,11 @@
             // KilometresNumericUpDown
             // 
             this.KilometresNumericUpDown.Location = new System.Drawing.Point(65, 44);
+            this.KilometresNumericUpDown.Maximum = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            0});
             this.KilometresNumericUpDown.Name = "KilometresNumericUpDown";
             this.KilometresNumericUpDown.Size = new System.Drawing.Size(120, 20);
             this.KilometresNumericUpDown.TabIndex = 5;
@@ -97,6 +102,11 @@
             // periodNumericUpDown
             // 
             this.periodNumericUpDown.Location = new System.Drawing.Point(65, 74);
+            this.periodNumericUpDown.Maximum = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            0});
             this.periodNumericUpDown.Name = "periodNumericUpDown";
             this.periodNumericUpDown.Size = new System.Drawing.Size(120, 20);
             this.periodNumericUpDown.TabIndex = 6;

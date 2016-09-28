@@ -61,13 +61,13 @@
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.servicesDataGridView = new System.Windows.Forms.DataGridView();
-            this.addServiceButton = new System.Windows.Forms.Button();
-            this.servicesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.costDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.serviceDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.commentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ServicePlaceName = new System.Windows.Forms.DataGridViewLinkColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.servicesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.addServiceButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.costNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.counterStartStateNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.counterEndDateNumericUpDown)).BeginInit();
@@ -262,6 +262,7 @@
             this.orderStateComboBox.Name = "orderStateComboBox";
             this.orderStateComboBox.Size = new System.Drawing.Size(121, 21);
             this.orderStateComboBox.TabIndex = 22;
+            this.orderStateComboBox.SelectedIndexChanged += new System.EventHandler(this.orderStateComboBox_SelectedIndexChanged);
             // 
             // startCommentsRichTextBox
             // 
@@ -290,7 +291,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(79, 22);
+            this.label13.Location = new System.Drawing.Point(79, 12);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(41, 13);
             this.label13.TabIndex = 26;
@@ -299,9 +300,9 @@
             // careComboBox
             // 
             this.careComboBox.FormattingEnabled = true;
-            this.careComboBox.Location = new System.Drawing.Point(137, 22);
+            this.careComboBox.Location = new System.Drawing.Point(137, 12);
             this.careComboBox.Name = "careComboBox";
-            this.careComboBox.Size = new System.Drawing.Size(121, 21);
+            this.careComboBox.Size = new System.Drawing.Size(296, 21);
             this.careComboBox.TabIndex = 27;
             // 
             // acceptButton
@@ -327,15 +328,15 @@
             // driverComboBox
             // 
             this.driverComboBox.FormattingEnabled = true;
-            this.driverComboBox.Location = new System.Drawing.Point(360, 22);
+            this.driverComboBox.Location = new System.Drawing.Point(137, 38);
             this.driverComboBox.Name = "driverComboBox";
-            this.driverComboBox.Size = new System.Drawing.Size(121, 21);
+            this.driverComboBox.Size = new System.Drawing.Size(274, 21);
             this.driverComboBox.TabIndex = 31;
             // 
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(302, 22);
+            this.label14.Location = new System.Drawing.Point(79, 38);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(51, 13);
             this.label14.TabIndex = 30;
@@ -367,20 +368,6 @@
             this.servicesDataGridView.TabIndex = 33;
             this.servicesDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.servicesDataGridView_CellContentClick);
             // 
-            // addServiceButton
-            // 
-            this.addServiceButton.Location = new System.Drawing.Point(703, 440);
-            this.addServiceButton.Name = "addServiceButton";
-            this.addServiceButton.Size = new System.Drawing.Size(75, 23);
-            this.addServiceButton.TabIndex = 34;
-            this.addServiceButton.Text = "Dodaj";
-            this.addServiceButton.UseVisualStyleBackColor = true;
-            this.addServiceButton.Click += new System.EventHandler(this.addServiceButton_Click);
-            // 
-            // servicesBindingSource
-            // 
-            this.servicesBindingSource.DataSource = typeof(BazyDanych.ServiceTableElement);
-            // 
             // costDataGridViewTextBoxColumn
             // 
             this.costDataGridViewTextBoxColumn.DataPropertyName = "Cost";
@@ -409,6 +396,20 @@
             // 
             this.Column1.HeaderText = "Szczegóły";
             this.Column1.Name = "Column1";
+            // 
+            // servicesBindingSource
+            // 
+            this.servicesBindingSource.DataSource = typeof(BazyDanych.ServiceTableElement);
+            // 
+            // addServiceButton
+            // 
+            this.addServiceButton.Location = new System.Drawing.Point(703, 440);
+            this.addServiceButton.Name = "addServiceButton";
+            this.addServiceButton.Size = new System.Drawing.Size(75, 23);
+            this.addServiceButton.TabIndex = 34;
+            this.addServiceButton.Text = "Dodaj";
+            this.addServiceButton.UseVisualStyleBackColor = true;
+            this.addServiceButton.Click += new System.EventHandler(this.addServiceButton_Click);
             // 
             // AddOrEditOrderWindow
             // 
@@ -473,23 +474,23 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.DateTimePicker startDateDateTimePicker;
-        private System.Windows.Forms.DateTimePicker endDateDateTimePicker;
-        private System.Windows.Forms.DateTimePicker actualStartDateDateTimePicker;
-        private System.Windows.Forms.DateTimePicker actualEndDateDateTimePicker;
-        private System.Windows.Forms.NumericUpDown costNumericUpDown;
-        private System.Windows.Forms.ComboBox orderTypeComboBox;
-        private System.Windows.Forms.NumericUpDown counterStartStateNumericUpDown;
-        private System.Windows.Forms.NumericUpDown counterEndDateNumericUpDown;
-        private System.Windows.Forms.ComboBox orderStateComboBox;
-        private System.Windows.Forms.RichTextBox startCommentsRichTextBox;
-        private System.Windows.Forms.RichTextBox endCommentsRichTextBox;
-        private System.Windows.Forms.RichTextBox cancellationReasonRichTextBox;
+        public System.Windows.Forms.DateTimePicker startDateDateTimePicker;
+        public System.Windows.Forms.DateTimePicker endDateDateTimePicker;
+        public System.Windows.Forms.DateTimePicker actualStartDateDateTimePicker;
+        public System.Windows.Forms.DateTimePicker actualEndDateDateTimePicker;
+        public System.Windows.Forms.NumericUpDown costNumericUpDown;
+        public System.Windows.Forms.ComboBox orderTypeComboBox;
+        public System.Windows.Forms.NumericUpDown counterStartStateNumericUpDown;
+        public System.Windows.Forms.NumericUpDown counterEndDateNumericUpDown;
+        public System.Windows.Forms.ComboBox orderStateComboBox;
+        public System.Windows.Forms.RichTextBox startCommentsRichTextBox;
+        public System.Windows.Forms.RichTextBox endCommentsRichTextBox;
+        public System.Windows.Forms.RichTextBox cancellationReasonRichTextBox;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.ComboBox careComboBox;
+        public System.Windows.Forms.ComboBox careComboBox;
         public System.Windows.Forms.Button acceptButton;
         public System.Windows.Forms.Button addButton;
-        private System.Windows.Forms.ComboBox driverComboBox;
+        public System.Windows.Forms.ComboBox driverComboBox;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.DataGridView servicesDataGridView;

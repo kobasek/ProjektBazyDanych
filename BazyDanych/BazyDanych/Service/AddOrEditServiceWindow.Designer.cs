@@ -43,11 +43,11 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.serviceActionsDataGridView = new System.Windows.Forms.DataGridView();
-            this.serviceActionsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.addServiceActionButton = new System.Windows.Forms.Button();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.costDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.serviceActionsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.serviceCostNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.serviceActionsDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.serviceActionsBindingSource)).BeginInit();
@@ -92,6 +92,11 @@
             // serviceCostNumericUpDown
             // 
             this.serviceCostNumericUpDown.Location = new System.Drawing.Point(103, 136);
+            this.serviceCostNumericUpDown.Maximum = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            0});
             this.serviceCostNumericUpDown.Name = "serviceCostNumericUpDown";
             this.serviceCostNumericUpDown.Size = new System.Drawing.Size(120, 20);
             this.serviceCostNumericUpDown.TabIndex = 4;
@@ -179,10 +184,6 @@
             this.serviceActionsDataGridView.Size = new System.Drawing.Size(564, 215);
             this.serviceActionsDataGridView.TabIndex = 13;
             // 
-            // serviceActionsBindingSource
-            // 
-            this.serviceActionsBindingSource.DataSource = typeof(BazyDanych.ServiceActionTableElement);
-            // 
             // addServiceActionButton
             // 
             this.addServiceActionButton.Location = new System.Drawing.Point(330, 257);
@@ -210,6 +211,10 @@
             this.costDataGridViewTextBoxColumn.DataPropertyName = "Cost";
             this.costDataGridViewTextBoxColumn.HeaderText = "Koszt";
             this.costDataGridViewTextBoxColumn.Name = "costDataGridViewTextBoxColumn";
+            // 
+            // serviceActionsBindingSource
+            // 
+            this.serviceActionsBindingSource.DataSource = typeof(BazyDanych.ServiceActionTableElement);
             // 
             // AddOrEditServiceWindow
             // 

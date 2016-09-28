@@ -87,6 +87,11 @@
             // costNumericUpDown
             // 
             this.costNumericUpDown.Location = new System.Drawing.Point(58, 46);
+            this.costNumericUpDown.Maximum = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            0});
             this.costNumericUpDown.Name = "costNumericUpDown";
             this.costNumericUpDown.Size = new System.Drawing.Size(115, 20);
             this.costNumericUpDown.TabIndex = 5;
