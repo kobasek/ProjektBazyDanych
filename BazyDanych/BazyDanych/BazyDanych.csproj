@@ -78,6 +78,8 @@
     <Compile Include="OrderDetailsWindow.Designer.cs">
       <DependentUpon>OrderDetailsWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reservation.cs" />
+    <Compile Include="ResevationDto.cs" />
     <Compile Include="ServiceAction\AddOrEditServiceActionWindow.cs">
       <SubType>Form</SubType>
     </Compile>

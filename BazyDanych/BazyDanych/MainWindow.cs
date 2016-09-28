@@ -110,6 +110,12 @@ namespace BazyDanych
             this.panelK.Visible = true;
 			this.profilLabel.Visible = true;
 			this.logowanieLabel.Text = "Wyloguj";
+            var orderList = Order.GetOrderByDriver(id);
+            OrdersBindingSource.Clear();
+            foreach (var order in orderList)
+            {
+                OrdersBindingSource.Add(new OrderTableElement(order.id, order.plannedStartDate, order.plannedEndDate, order.actualStartDate, order.actualEndDate, order.counterStatusBefore, order.counterStatusAfter, order.commentsBefore, order.commentsAfter, order.type, order.cost, order.cancellationReason, order.state, order.careId, order.userId));
+            }
             var carList = Car.GetCarList();
             klasaTestowaBindingSource.Clear();
             foreach (var car in carList)
@@ -145,8 +151,6 @@ namespace BazyDanych
 			var obj = new AddOrEditCarWindow(this, carId);
 			obj.Text = "Menedżer Floty - Edytuj pojazd";
 			obj.buttonDodajPojazd.Visible = false;
-			obj.buttonWczytajSzablon.Visible = false;
-			obj.buttonZapiszSzablon.Visible = false;
 			obj.Show();
 		}
 
@@ -372,9 +376,11 @@ namespace BazyDanych
 		{
 			if (e.ColumnIndex == 5)
 			{
-				CarDetailsWindow obj = new CarDetailsWindow();
-				obj.Show();
-			}
+                var row = e.RowIndex;
+                var carId = (int)tableCarsM.Rows[row].Cells[1].Value;
+                CarDetailsWindow obj = new CarDetailsWindow(carId);
+                obj.Show();
+            }
 			else if (e.ColumnIndex == 4)
 			{
                 var row = e.RowIndex;
@@ -382,7 +388,7 @@ namespace BazyDanych
                 ScheduleWindow obj = new ScheduleWindow(carId, 'C');
 				obj.Show();
 			}
-		}
+        }
 
 		private void oTabelaZlecenia_CellContentClick(object sender, DataGridViewCellEventArgs e)
 		{
@@ -461,17 +467,19 @@ namespace BazyDanych
 		{
 			if (e.ColumnIndex == 5)
 			{
-				CarDetailsWindow obj = new CarDetailsWindow();
-				obj.Show();
-			}
-			else if (e.ColumnIndex == 6)
+                var row = e.RowIndex;
+                var carId = (int)tableCarsM.Rows[row].Cells[1].Value;
+                CarDetailsWindow obj = new CarDetailsWindow(carId);
+                obj.Show();
+            }
+			else if (e.ColumnIndex == 4)
 			{
                 var row = e.RowIndex;
                 var carId = (int)tableCarsM.Rows[row].Cells[1].Value;
                 ScheduleWindow obj = new ScheduleWindow(carId, 'C');
 				obj.Show();
 			}
-			else if (e.ColumnIndex == 7)
+			else if (e.ColumnIndex == 6)
 			{
 				ReservationWindow obj = new ReservationWindow();
 				obj.Show();
@@ -490,9 +498,8 @@ namespace BazyDanych
             else if(e.ColumnIndex == 5)
             {
                 var row = e.RowIndex;
-                var carId = (int)oTabelaKierowcy.Rows[row].Cells[0].Value;
-                CarDetailsWindow obj = new CarDetailsWindow(carId);
-                obj.Show();
+                var userId = (int)oTabelaKierowcy.Rows[row].Cells[0].Value;
+                SzczegolyUser(userId);
             }
 		}
 
@@ -1346,6 +1353,11 @@ namespace BazyDanych
         }
 
         private void tableControlM_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void kTabelaZlecenia_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

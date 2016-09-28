@@ -239,16 +239,16 @@ namespace BazyDanych
 			{
 				var connection = new MySql.Data.MySqlClient.MySqlConnection { ConnectionString = connectionString };
 				connection.Open();
-				var dateOfScrapping = carDto.DateOfScrapping.HasValue ? carDto.DateOfScrapping.ToString() : "null";
+				var dateOfScrapping = carDto.DateOfScrapping.HasValue ? "\""+carDto.DateOfScrapping.ToString()+"\"" : "null";
 
 				string query = "UPDATE projekt_bazy_danych.pojazd " +
 								"SET nr_rejestracyjny = \"" +
 								carDto.RegistrationNumber +
 								"\",paliwo = '" +
 								carDto.TypeOfFuel +
-								"',data_zlomowania = \"" +
+								"',data_zlomowania = " +
 								dateOfScrapping +
-								"\" WHERE id = " +
+								" WHERE id = " +
 								carDto.Id;
 
 				var command = new MySqlCommand(query, connection);
