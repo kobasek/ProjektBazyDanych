@@ -28,7 +28,7 @@ namespace BazyDanych
             foreach (var care in careList)
             {
                 var comboBoxItem = new ComboBoxItem();
-                comboBoxItem.Text = care.id + " " + Brand.GetBrandById(Model.GetModelById(Car.GetCarById(care.carId).modelId).brandId).name + " " + Model.GetModelById(Car.GetCarById(care.carId).modelId).name;
+                comboBoxItem.Text = care.id + " " + User.GetUserById(care.keeperId).name + " " + User.GetUserById(care.keeperId).lastName + " " + User.GetUserById(care.keeperId).pesel + " " + Brand.GetBrandById(Model.GetModelById(Car.GetCarById(care.carId).modelId).brandId).name + " " + Model.GetModelById(Car.GetCarById(care.carId).modelId).name;
                 comboBoxItem.Value = care.id;
                 careComboBox.Items.Add(comboBoxItem);
             }
@@ -36,7 +36,7 @@ namespace BazyDanych
             foreach (var driver in driversList)
             {
                 var comboBoxItem = new ComboBoxItem();
-                comboBoxItem.Text = driver.name + " " + driver.lastName;
+                comboBoxItem.Text = driver.name + " " + driver.lastName + " " + driver.pesel;
                 comboBoxItem.Value = driver.id;
                 driverComboBox.Items.Add(comboBoxItem);
             }
@@ -48,6 +48,8 @@ namespace BazyDanych
             orderStateComboBox.Items.Add("Zakończony");
             orderStateComboBox.Items.Add("Odwołany");
 
+            orderStateComboBox.Text = "Aktywny";
+
             this.mainWindow = mainWindow;
         }
 
@@ -58,7 +60,7 @@ namespace BazyDanych
             foreach (var care in careList)
             {
                 var comboBoxItem = new ComboBoxItem();
-                comboBoxItem.Text = care.id + " " + Brand.GetBrandById(Model.GetModelById(Car.GetCarById(care.carId).modelId).brandId).name + " " + Model.GetModelById(Car.GetCarById(care.carId).modelId).name;
+                comboBoxItem.Text = care.id + " " + User.GetUserById(care.keeperId).name + " " + User.GetUserById(care.keeperId).lastName + " " + User.GetUserById(care.keeperId).pesel + " " + Brand.GetBrandById(Model.GetModelById(Car.GetCarById(care.carId).modelId).brandId).name + " " + Model.GetModelById(Car.GetCarById(care.carId).modelId).name;
                 comboBoxItem.Value = care.id;
                 careComboBox.Items.Add(comboBoxItem);
             }
@@ -66,7 +68,7 @@ namespace BazyDanych
             foreach (var driver in driversList)
             {
                 var comboBoxItem = new ComboBoxItem();
-                comboBoxItem.Text = driver.name + " " + driver.lastName;
+                comboBoxItem.Text = driver.name + " " + driver.lastName + " " + driver.pesel;
                 comboBoxItem.Value = driver.id;
                 driverComboBox.Items.Add(comboBoxItem);
             }
@@ -87,18 +89,46 @@ namespace BazyDanych
             order = Order.GetOrderById(orderId);
             startDateDateTimePicker.Value = order.plannedStartDate;
             endDateDateTimePicker.Value = order.plannedEndDate;
-            actualStartDateDateTimePicker.Value = order.actualStartDate;
-            actualEndDateDateTimePicker.Value = order.actualEndDate;
-            counterStartStateNumericUpDown.Value = order.counterStatusBefore;
-            counterEndDateNumericUpDown.Value = order.counterStatusAfter;
+            if (order.state == 'z')
+            {
+                actualStartDateDateTimePicker.Value = (DateTime)order.actualStartDate;
+                actualEndDateDateTimePicker.Value = (DateTime)order.actualEndDate;
+                counterStartStateNumericUpDown.Value = (int)order.counterStatusBefore;
+                counterEndDateNumericUpDown.Value = (int)order.counterStatusAfter;
+                costNumericUpDown.Value = (decimal)order.cost;
+            }
             startCommentsRichTextBox.Text = order.commentsBefore;
             endCommentsRichTextBox.Text = order.commentsAfter;
-            orderTypeComboBox.SelectedItem = order.type;
-            costNumericUpDown.Value = order.cost;
+            switch (order.type)
+            {
+                case '1':
+                    orderTypeComboBox.Text = "1. Rodzaj";
+                    break;
+                case '2':
+                    orderTypeComboBox.Text = "2. Rodzaj";
+                    break;
+                case '3':
+                    orderTypeComboBox.Text = "3. Rodzaj";
+                    break;
+
+            }
             cancellationReasonRichTextBox.Text = order.cancellationReason;
             orderStateComboBox.SelectedItem = order.state;
-            driverComboBox.SelectedItem = User.GetUserById(order.userId);
-            careComboBox.SelectedItem = Brand.GetBrandById(Model.GetModelById(Car.GetCarById(Care.GetCareByID(order.careId).carId).modelId).brandId) + " " + Model.GetModelById(Car.GetCarById(Care.GetCareByID(order.careId).carId).modelId).name;
+            switch (order.state)
+            {
+                case 'a':
+                    orderStateComboBox.Text = "Aktywny";
+                    break;
+                case 'z':
+                    orderStateComboBox.Text = "Zakończny";
+                    break;
+                case 'o':
+                    orderStateComboBox.Text = "Odwołany";
+                    break;
+            }
+            driverComboBox.Text = User.GetUserById(order.userId).name + " " + User.GetUserById(order.userId).lastName + " " + User.GetUserById(order.userId).pesel;
+            Care careItem = Care.GetCareByID(order.careId);
+            careComboBox.Text = careItem.id + " " + User.GetUserById(careItem.keeperId).name + " " + User.GetUserById(careItem.keeperId).lastName + " " + User.GetUserById(careItem.keeperId).pesel + " " + Brand.GetBrandById(Model.GetModelById(Car.GetCarById(careItem.carId).modelId).brandId).name + " " + Model.GetModelById(Car.GetCarById(careItem.carId).modelId).name;
         }
 
         public void UpdateServicesGridView()
@@ -143,19 +173,45 @@ namespace BazyDanych
 
             orderDto.PlannedStartDate = startDateDateTimePicker.Value;
             orderDto.PlannedEndDate = endDateDateTimePicker.Value;
-            orderDto.ActualStartDate = actualStartDateDateTimePicker.Value;
-            orderDto.ActualEndDate = actualEndDateDateTimePicker.Value;
+            if (orderStateComboBox.Text == "Zakończony")
+            {
+                orderDto.ActualStartDate = actualStartDateDateTimePicker.Value;
+                orderDto.ActualEndDate = actualEndDateDateTimePicker.Value;
+                if (costNumericUpDown.Value > 0)
+                {
+                    orderDto.Cost = costNumericUpDown.Value;
+                }
+                else
+                {
+                    isError = true;
+                    errorNumber++;
+                    errorMessage += errorNumber + ". Należy podać koszt większy od zera.\n";
+                }
+                if (counterStartStateNumericUpDown.Value > 0)
+                {
+                    orderDto.CounterStatusBefore = (int)counterStartStateNumericUpDown.Value;
+                }
+                else
+                {
+                    isError = true;
+                    errorNumber++;
+                    errorMessage += errorNumber + ". Należy podać początkowy stan licznika.\n";
+                }
 
-            if (costNumericUpDown.Value > 0)
-            {
-                orderDto.Cost = costNumericUpDown.Value;
+                if (counterEndDateNumericUpDown.Value > 0)
+                {
+                    orderDto.CounterStatusAfter = (int)counterEndDateNumericUpDown.Value;
+                }
+                else
+                {
+                    isError = true;
+                    errorNumber++;
+                    errorMessage += errorNumber + ". Należy podać końcowy stan licznika.\n";
+                }
             }
-            else
-            {
-                isError = true;
-                errorNumber++;
-                errorMessage += errorNumber + ". Należy podać koszt większy od zera.\n";
-            }
+            
+
+            
 
             if (orderTypeComboBox.SelectedItem != null)
             {
@@ -179,27 +235,7 @@ namespace BazyDanych
                 errorMessage += errorNumber + ". Należy wybrać rodzaj zlecenia.\n";
             }
 
-            if (counterStartStateNumericUpDown.Value > 0)
-            {
-                orderDto.CounterStatusBefore = (int)counterStartStateNumericUpDown.Value;
-            }
-            else
-            {
-                isError = true;
-                errorNumber++;
-                errorMessage += errorNumber + ". Należy podać początkowy stan licznika.\n";
-            }
-
-            if (counterEndDateNumericUpDown.Value > 0)
-            {
-                orderDto.CounterStatusAfter = (int)counterEndDateNumericUpDown.Value;
-            }
-            else
-            {
-                isError = true;
-                errorNumber++;
-                errorMessage += errorNumber + ". Należy podać końcowy stan licznika.\n";
-            }
+            
 
             if (orderStateComboBox.SelectedItem != null)
             {
@@ -275,21 +311,45 @@ namespace BazyDanych
                 errorMessage += errorNumber + ". Należy wybrać kierowcę.\n";
             }
 
+            if (orderStateComboBox.Text == "Zakończony")
+            {
+                orderDto.ActualStartDate = actualStartDateDateTimePicker.Value;
+                orderDto.ActualEndDate = actualEndDateDateTimePicker.Value;
+                if (costNumericUpDown.Value > 0)
+                {
+                    orderDto.Cost = costNumericUpDown.Value;
+                }
+                else
+                {
+                    isError = true;
+                    errorNumber++;
+                    errorMessage += errorNumber + ". Należy podać koszt większy od zera.\n";
+                }
+                if (counterStartStateNumericUpDown.Value > 0)
+                {
+                    orderDto.CounterStatusBefore = (int)counterStartStateNumericUpDown.Value;
+                }
+                else
+                {
+                    isError = true;
+                    errorNumber++;
+                    errorMessage += errorNumber + ". Należy podać początkowy stan licznika.\n";
+                }
+
+                if (counterEndDateNumericUpDown.Value > 0)
+                {
+                    orderDto.CounterStatusAfter = (int)counterEndDateNumericUpDown.Value;
+                }
+                else
+                {
+                    isError = true;
+                    errorNumber++;
+                    errorMessage += errorNumber + ". Należy podać końcowy stan licznika.\n";
+                }
+            }
+
             orderDto.PlannedStartDate = startDateDateTimePicker.Value;
             orderDto.PlannedEndDate = endDateDateTimePicker.Value;
-            orderDto.ActualStartDate = actualStartDateDateTimePicker.Value;
-            orderDto.ActualEndDate = actualEndDateDateTimePicker.Value;
-
-            if (costNumericUpDown.Value > 0)
-            {
-                orderDto.Cost = costNumericUpDown.Value;
-            }
-            else
-            {
-                isError = true;
-                errorNumber++;
-                errorMessage += errorNumber + ". Należy podać koszt większy od zera.\n";
-            }
 
             if (orderTypeComboBox.SelectedItem != null)
             {
@@ -311,28 +371,6 @@ namespace BazyDanych
                 isError = true;
                 errorNumber++;
                 errorMessage += errorNumber + ". Należy wybrać rodzaj zlecenia.\n";
-            }
-
-            if (counterStartStateNumericUpDown.Value > 0)
-            {
-                orderDto.CounterStatusBefore = (int)counterStartStateNumericUpDown.Value;
-            }
-            else
-            {
-                isError = true;
-                errorNumber++;
-                errorMessage += errorNumber + ". Należy podać początkowy stan licznika.\n";
-            }
-
-            if (counterEndDateNumericUpDown.Value > 0)
-            {
-                orderDto.CounterStatusAfter = (int)counterEndDateNumericUpDown.Value;
-            }
-            else
-            {
-                isError = true;
-                errorNumber++;
-                errorMessage += errorNumber + ". Należy podać końcowy stan licznika.\n";
             }
 
             if (orderStateComboBox.SelectedItem != null)
@@ -398,6 +436,7 @@ namespace BazyDanych
         private void addServiceButton_Click(object sender, EventArgs e)
         {
             AddOrEditServiceWindow obj = new AddOrEditServiceWindow(this);
+            obj.acceptButton.Visible = false;
             obj.Show();
         }
 
@@ -460,6 +499,41 @@ namespace BazyDanych
                     ServiceDetails obj = new ServiceDetails(serviceId);
                     obj.Show();
                 }
+            }
+        }
+
+        private void orderStateComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (orderStateComboBox.Text == "Aktywny" || orderStateComboBox.Text == "")
+            {
+                actualEndDateDateTimePicker.Enabled = false;
+                actualStartDateDateTimePicker.Enabled = false;
+                costNumericUpDown.Enabled = false;
+                counterStartStateNumericUpDown.Enabled = false;
+                counterEndDateNumericUpDown.Enabled = false;
+                endCommentsRichTextBox.Enabled = false;
+                cancellationReasonRichTextBox.Enabled = false;
+                cancellationReasonRichTextBox.Enabled = false;
+            }
+            else if (orderStateComboBox.Text == "Odwołany")
+            {
+                actualEndDateDateTimePicker.Enabled = false;
+                actualStartDateDateTimePicker.Enabled = false;
+                costNumericUpDown.Enabled = false;
+                counterStartStateNumericUpDown.Enabled = false;
+                counterEndDateNumericUpDown.Enabled = false;
+                endCommentsRichTextBox.Enabled = false;
+                cancellationReasonRichTextBox.Enabled = true;
+            }
+            else if (orderStateComboBox.Text == "Zakończony")
+            {
+                actualEndDateDateTimePicker.Enabled = true;
+                actualStartDateDateTimePicker.Enabled = true;
+                costNumericUpDown.Enabled = true;
+                counterStartStateNumericUpDown.Enabled = true;
+                counterEndDateNumericUpDown.Enabled = true;
+                endCommentsRichTextBox.Enabled = true;
+                cancellationReasonRichTextBox.Enabled = false;
             }
         }
     }

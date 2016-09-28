@@ -76,6 +76,7 @@ namespace BazyDanych
                     userDto.Name = dataReader.GetString(2);
                     userDto.LastName = dataReader.GetString(3);
                     userDto.Phone = dataReader.GetString(4);
+                    userDto.Pesel = dataReader.GetString(14);
 
                     var user = new User(userDto);
                     list.Add(user);
