@@ -32,6 +32,7 @@ namespace BazyDanych
 
             carList = Car.GetUserCarList(userID);
 
+            klasaTestowaBindingSource.Clear();
             foreach (var car in carList)
 			{
 				var model = Model.GetModelById(car.modelId);
@@ -40,6 +41,7 @@ namespace BazyDanych
 				klasaTestowaBindingSource.Add(new KlasaTestowa_car(car.id, brand.name, model.name, keeper));
 			}
             var userList = User.GetUserList();
+            klasaTestowauserBindingSource.Clear();
             foreach (var user in userList)
             {
                 klasaTestowauserBindingSource.Add(new KlasaTestowa_user(user.id, user.name, user.lastName, user.phone));
@@ -73,7 +75,7 @@ namespace BazyDanych
 			this.profilLabel.Visible = true;
 			this.logowanieLabel.Text = "Wyloguj";
             var carList = Car.GetCarList();
-
+            klasaTestowaBindingSource.Clear();
             foreach (var car in carList)
             {
                 var model = Model.GetModelById(car.modelId);
@@ -91,7 +93,7 @@ namespace BazyDanych
 			this.profilLabel.Visible = true;
 			this.logowanieLabel.Text = "Wyloguj";
             var carList = Car.GetUserCarList(userID);
-
+            klasaTestowaBindingSource.Clear();
             foreach (var car in carList)
             {
                 var model = Model.GetModelById(car.modelId);
@@ -109,7 +111,7 @@ namespace BazyDanych
 			this.profilLabel.Visible = true;
 			this.logowanieLabel.Text = "Wyloguj";
             var carList = Car.GetCarList();
-
+            klasaTestowaBindingSource.Clear();
             foreach (var car in carList)
             {
                 var model = Model.GetModelById(car.modelId);
@@ -258,6 +260,7 @@ namespace BazyDanych
             AddOrEditServiceWindow obj = new AddOrEditServiceWindow(this, serviceId);
             obj.Text = "Menedżer Floty - Edytuj serwis";
             obj.addButton.Visible = false;
+            obj.addServiceActionButton.Visible = false;
             obj.Show();
         }
 
@@ -407,6 +410,7 @@ namespace BazyDanych
                 AddOrEditOrderWindow obj = new AddOrEditOrderWindow(this, orderId);
                 obj.Text = "Menedżer Floty - Edytuj Zlecenie";
                 obj.addButton.Visible = false;
+                obj.addServiceButton.Visible = false;
                 obj.Show();
             }
 		}
@@ -1065,7 +1069,23 @@ namespace BazyDanych
 
         private void ServiceTemplatesDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == 8)
+            if (e.ColumnIndex == 5)
+            {
+                var row = e.RowIndex;
+                var serviceTemplateId = (int)ServiceTemplatesDataGridView.Rows[row].Cells[1].Value;
+                int catalogId = ServiceTemplate.GetServiceTemplateById(serviceTemplateId).catalogId;
+                CatalogDetailsWindow obj = new CatalogDetailsWindow(catalogId);
+                obj.Show();
+            }
+            else if (e.ColumnIndex == 6)
+            {
+                var row = e.RowIndex;
+                var serviceTemplateId = (int)ServiceTemplatesDataGridView.Rows[row].Cells[1].Value;
+                int templateId = ServiceTemplate.GetServiceTemplateById(serviceTemplateId).templateId;
+                TemplateDetailsWindow obj = new TemplateDetailsWindow(templateId);
+                obj.Show();
+            }
+            else if (e.ColumnIndex == 8)
             {
                 var row = e.RowIndex;
                 var templateId = (int)ServiceTemplatesDataGridView.Rows[row].Cells[1].Value;
@@ -1148,7 +1168,26 @@ namespace BazyDanych
 
         private void modelsDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == 7)
+            if (e.ColumnIndex == 4)
+            {
+                var row = e.RowIndex;
+                var modelId = (int)modelsDataGridView.Rows[row].Cells[1].Value;
+                int brandId = Model.GetModelById(modelId).brandId;
+                BrandDetailsWindow obj = new BrandDetailsWindow(brandId);
+                obj.Show();
+            }
+            else if (e.ColumnIndex == 5)
+            {
+                var row = e.RowIndex;
+                var modelId = (int)modelsDataGridView.Rows[row].Cells[1].Value;
+                if (Model.GetModelById(modelId).templateId != null)
+                {
+                    int templateId = (int)Model.GetModelById(modelId).templateId;
+                    TemplateDetailsWindow obj = new TemplateDetailsWindow(templateId);
+                    obj.Show();
+                }
+            }
+            else if (e.ColumnIndex == 6)
             {
                 var row = e.RowIndex;
                 var modelId = (int)modelsDataGridView.Rows[row].Cells[1].Value;
@@ -1171,7 +1210,22 @@ namespace BazyDanych
 
         private void careDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == 7)
+            if (e.ColumnIndex == 4)
+            {
+                var row = e.RowIndex;
+                var careId = (int)careDataGridView.Rows[row].Cells[1].Value;
+                int userId = Care.GetCareByID(careId).keeperId;
+                SzczegolyUser(userId);
+            }
+            else if (e.ColumnIndex == 5)
+            {
+                var row = e.RowIndex;
+                var careId = (int)careDataGridView.Rows[row].Cells[1].Value;
+                int carId = Care.GetCareByID(careId).carId;
+                CarDetailsWindow obj = new CarDetailsWindow(carId);
+                obj.Show();
+            }
+            else if (e.ColumnIndex == 7)
             {
                 var row = e.RowIndex;
                 var careId = (int)careDataGridView.Rows[row].Cells[1].Value;
@@ -1226,6 +1280,7 @@ namespace BazyDanych
                 AddOrEditServiceWindow obj = new AddOrEditServiceWindow(this, serviceId);
                 obj.Text = "Menedżer Floty - Edytuj Serwis";
                 obj.addButton.Visible = false;
+                obj.addServiceActionButton.Visible = false;
                 obj.Show();
             }
         }
@@ -1242,7 +1297,23 @@ namespace BazyDanych
 
         private void ServiceActionsDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == 7)
+            if (e.ColumnIndex == 4)
+            {
+                var row = e.RowIndex;
+                var serviceActionId = (int)ServiceActionsDataGridView.Rows[row].Cells[1].Value;
+                int catalogId = ServiceAction.GetServiceActionById(serviceActionId).catalogId;
+                CatalogDetailsWindow obj = new CatalogDetailsWindow(catalogId);
+                obj.Show();
+            }
+            else if (e.ColumnIndex == 5)
+            {
+                var row = e.RowIndex;
+                var serviceActionId = (int)ServiceActionsDataGridView.Rows[row].Cells[1].Value;
+                int serviceId = ServiceAction.GetServiceActionById(serviceActionId).serviceId;
+                ServiceDetails obj = new ServiceDetails(serviceId);
+                obj.Show();
+            }
+            else if (e.ColumnIndex == 7)
             {
                 var row = e.RowIndex;
                 var serviceActionId = (int)ServiceActionsDataGridView.Rows[row].Cells[1].Value;
@@ -1259,6 +1330,11 @@ namespace BazyDanych
         }
 
         private void tableControlK_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tableControlM_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

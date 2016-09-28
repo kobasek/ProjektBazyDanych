@@ -14,8 +14,9 @@ namespace BazyDanych
         public int BrandId { get; set; }
         public int? TemplateId { get; set; }
         public string BrandName { get; set; }
+        public string TemplateName { get; set; }
 
-    public ModelTableElement(int id, string name, string category, int brandId, int? templateId)
+        public ModelTableElement(int id, string name, string category, int brandId, int? templateId)
         {
             Id = id;
             Name = name;
@@ -23,6 +24,14 @@ namespace BazyDanych
             BrandId = brandId;
             TemplateId = templateId;
             BrandName = Brand.GetBrandById(brandId).name;
+            if (templateId != null)
+            {
+                TemplateName = Template.GetTemplateById((int)templateId).name;
+            }
+            else
+            {
+                TemplateName = "Brak szablonu";
+            }
         }
     }
 }

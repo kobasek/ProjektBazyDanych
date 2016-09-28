@@ -299,7 +299,7 @@ namespace BazyDanych
                 {
                     careDto.Id = dataReader.GetInt32(0);
                     careDto.StartDate = dataReader.GetDateTime(1);
-                    careDto.EndDate = dataReader.GetDateTime(2);
+                    careDto.EndDate = dataReader.IsDBNull(2) ? dataReader.GetDateTime(1) : dataReader.GetDateTime(2);
                     careDto.KeeperId = dataReader.GetInt32(3);
                     careDto.CarId = dataReader.GetInt32(4);
 

@@ -78,6 +78,12 @@ namespace BazyDanych
             orderStateComboBox.Items.Add("Zakończony");
             orderStateComboBox.Items.Add("Odwołany");
             this.mainWindow = mainWindow;
+            IList<Service> services = Service.GetServiceListWithGivenOrderId(orderId);
+            servicesBindingSource.Clear();
+            foreach (Service service in services)
+            {
+                servicesBindingSource.Add(new ServiceTableElement(service.id, service.cost, service.serviceDate, service.comment, service.servicePlaceId, service.orderId));
+            }
             order = Order.GetOrderById(orderId);
             startDateDateTimePicker.Value = order.plannedStartDate;
             endDateDateTimePicker.Value = order.plannedEndDate;
@@ -393,6 +399,68 @@ namespace BazyDanych
         {
             AddOrEditServiceWindow obj = new AddOrEditServiceWindow(this);
             obj.Show();
+        }
+
+        private void servicesDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 3)
+            {
+                if (addButton.Visible)
+                {
+                    var row = e.RowIndex;
+                    AddOrEditServicePlaceWindow obj = new AddOrEditServicePlaceWindow(mainWindow, services[row].ServicePlaceId);
+                    obj.addButton.Visible = false;
+                    obj.approveButton.Visible = false;
+                    obj.companyNameTextBox.ReadOnly = true;
+                    obj.addressTextBox.ReadOnly = true;
+                    obj.Text = "Menedżer Floty - Szczegóły miejsca serwisowego";
+                    obj.Show();
+                }
+                else
+                {
+                    var row = e.RowIndex;
+                    ServiceTableElement serviceTableElement = (ServiceTableElement)servicesBindingSource.List[row];
+                    var serviced = serviceTableElement.Id;
+                    int servicePlaceId = Service.GetServiceById(serviced).servicePlaceId;
+                    ServicePlace servicePlace = ServicePlace.GetServicePlaceById(servicePlaceId);
+                    AddOrEditServicePlaceWindow obj = new AddOrEditServicePlaceWindow();
+                    obj.companyNameTextBox.Text = servicePlace.companyName;
+                    obj.addressTextBox.Text = servicePlace.address;
+                    obj.addButton.Visible = false;
+                    obj.approveButton.Visible = false;
+                    obj.companyNameTextBox.ReadOnly = true;
+                    obj.addressTextBox.ReadOnly = true;
+                    obj.Show();
+                }
+            }
+            if (e.ColumnIndex == 4)
+            {
+                if (addButton.Visible)
+                {
+                    var row = e.RowIndex;
+                    ServiceDetails obj = new ServiceDetails();
+                    ServiceDto service = services[row];
+                    obj.placeTextBox.Text = ServicePlace.GetServicePlaceById(service.ServicePlaceId).companyName + " " + ServicePlace.GetServicePlaceById(service.ServicePlaceId).address;
+                    obj.DateDateTimePicker.Value = service.ServiceDate;
+                    obj.costTextBox.Text = service.Cost.ToString();
+                    obj.commentRichTextBox.Text = service.Comment;
+                    obj.serviceActionsBindingSource.Clear();
+                    List<ServiceActionDto> serviceActionsList = service.serviceActions;
+                    foreach (ServiceActionDto serviceActionDto in serviceActionsList)
+                    {
+                        obj.serviceActionsBindingSource.Add(new ServiceActionTableElement(serviceActionDto.Id, serviceActionDto.Name, serviceActionDto.Cost, serviceActionDto.CatalogId, serviceActionDto.ServiceId));
+                    }
+                    obj.Show();
+                }
+                else
+                {
+                    var row = e.RowIndex;
+                    ServiceTableElement serviceTableElement = (ServiceTableElement)servicesBindingSource.List[row];
+                    var serviceId = serviceTableElement.Id;
+                    ServiceDetails obj = new ServiceDetails(serviceId);
+                    obj.Show();
+                }
+            }
         }
     }
 }

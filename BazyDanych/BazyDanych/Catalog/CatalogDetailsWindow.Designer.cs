@@ -33,23 +33,23 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.serviceTemplatesDataGridView = new System.Windows.Forms.DataGridView();
+            this.serviceTemplatesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.serviceActionsDataGridView = new System.Windows.Forms.DataGridView();
-            this.nameTextBox = new System.Windows.Forms.TextBox();
-            this.TemplateName = new System.Windows.Forms.DataGridViewLinkColumn();
             this.serviceActionsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.nameTextBox = new System.Windows.Forms.TextBox();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.kilometresDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.periodDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.serviceTemplatesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.TemplateName = new System.Windows.Forms.DataGridViewLinkColumn();
             this.idDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.costDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ServiceNameColumn = new System.Windows.Forms.DataGridViewLinkColumn();
             ((System.ComponentModel.ISupportInitialize)(this.serviceTemplatesDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.serviceTemplatesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.serviceActionsDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.serviceActionsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.serviceTemplatesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -96,6 +96,10 @@
             this.serviceTemplatesDataGridView.TabIndex = 3;
             this.serviceTemplatesDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.serviceTemplatesDataGridView_CellContentClick);
             // 
+            // serviceTemplatesBindingSource
+            // 
+            this.serviceTemplatesBindingSource.DataSource = typeof(BazyDanych.ServiceTemplateTableElement);
+            // 
             // serviceActionsDataGridView
             // 
             this.serviceActionsDataGridView.AutoGenerateColumns = false;
@@ -112,6 +116,10 @@
             this.serviceActionsDataGridView.TabIndex = 4;
             this.serviceActionsDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.serviceActionsDataGridView_CellContentClick);
             // 
+            // serviceActionsBindingSource
+            // 
+            this.serviceActionsBindingSource.DataSource = typeof(BazyDanych.ServiceActionTableElement);
+            // 
             // nameTextBox
             // 
             this.nameTextBox.Location = new System.Drawing.Point(58, 21);
@@ -119,16 +127,6 @@
             this.nameTextBox.ReadOnly = true;
             this.nameTextBox.Size = new System.Drawing.Size(231, 20);
             this.nameTextBox.TabIndex = 5;
-            // 
-            // TemplateName
-            // 
-            this.TemplateName.DataPropertyName = "TemplateName";
-            this.TemplateName.HeaderText = "Szablon";
-            this.TemplateName.Name = "TemplateName";
-            // 
-            // serviceActionsBindingSource
-            // 
-            this.serviceActionsBindingSource.DataSource = typeof(BazyDanych.ServiceActionTableElement);
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -139,24 +137,26 @@
             // nameDataGridViewTextBoxColumn
             // 
             this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Nazwa";
             this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
             // 
             // kilometresDataGridViewTextBoxColumn
             // 
             this.kilometresDataGridViewTextBoxColumn.DataPropertyName = "Kilometres";
-            this.kilometresDataGridViewTextBoxColumn.HeaderText = "Kilometres";
+            this.kilometresDataGridViewTextBoxColumn.HeaderText = "Kilometry";
             this.kilometresDataGridViewTextBoxColumn.Name = "kilometresDataGridViewTextBoxColumn";
             // 
             // periodDataGridViewTextBoxColumn
             // 
             this.periodDataGridViewTextBoxColumn.DataPropertyName = "Period";
-            this.periodDataGridViewTextBoxColumn.HeaderText = "Period";
+            this.periodDataGridViewTextBoxColumn.HeaderText = "Okres";
             this.periodDataGridViewTextBoxColumn.Name = "periodDataGridViewTextBoxColumn";
             // 
-            // serviceTemplatesBindingSource
+            // TemplateName
             // 
-            this.serviceTemplatesBindingSource.DataSource = typeof(BazyDanych.ServiceTemplateTableElement);
+            this.TemplateName.DataPropertyName = "TemplateName";
+            this.TemplateName.HeaderText = "Szablon";
+            this.TemplateName.Name = "TemplateName";
             // 
             // idDataGridViewTextBoxColumn1
             // 
@@ -166,13 +166,13 @@
             // 
             // nameDataGridViewTextBoxColumn1
             // 
-            this.nameDataGridViewTextBoxColumn1.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn1.DataPropertyName = "Nazwa";
             this.nameDataGridViewTextBoxColumn1.HeaderText = "Name";
             this.nameDataGridViewTextBoxColumn1.Name = "nameDataGridViewTextBoxColumn1";
             // 
             // costDataGridViewTextBoxColumn
             // 
-            this.costDataGridViewTextBoxColumn.DataPropertyName = "Cost";
+            this.costDataGridViewTextBoxColumn.DataPropertyName = "Koszt";
             this.costDataGridViewTextBoxColumn.HeaderText = "Cost";
             this.costDataGridViewTextBoxColumn.Name = "costDataGridViewTextBoxColumn";
             // 
@@ -196,9 +196,9 @@
             this.Name = "CatalogDetailsWindow";
             this.Text = "CatalogDetailsWindow";
             ((System.ComponentModel.ISupportInitialize)(this.serviceTemplatesDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.serviceTemplatesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.serviceActionsDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.serviceActionsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.serviceTemplatesBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

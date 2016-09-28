@@ -39,6 +39,11 @@
             this.mPojazdy = new System.Windows.Forms.TabPage();
             this.addButtonMPojazdy = new System.Windows.Forms.Button();
             this.tableCarsM = new System.Windows.Forms.DataGridView();
+            this.Column6 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.KeeperColumn = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
             this.deleteButtonMPojazdy = new System.Windows.Forms.Button();
             this.mKierowcy = new System.Windows.Forms.TabPage();
             this.addButtonMKierowcy = new System.Windows.Forms.Button();
@@ -123,13 +128,6 @@
             this.ServiceTemplatesTabPage = new System.Windows.Forms.TabPage();
             this.addServiceTemplateButton = new System.Windows.Forms.Button();
             this.ServiceTemplatesDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewCheckBoxColumn7 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.Kilometres = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Period = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CatalogId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TemplateId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewButtonColumn10 = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.dataGridViewButtonColumn11 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.DeleteServiceTemplateButton = new System.Windows.Forms.Button();
             this.catalogsTabPage = new System.Windows.Forms.TabPage();
             this.addCatalogButton = new System.Windows.Forms.Button();
@@ -141,23 +139,18 @@
             this.ServiceActionsTabPage = new System.Windows.Forms.TabPage();
             this.addServiceActionButton = new System.Windows.Forms.Button();
             this.ServiceActionsDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewCheckBoxColumn9 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.Cost = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ServiceId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewButtonColumn14 = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.dataGridViewButtonColumn15 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.deleteServiceActionButton = new System.Windows.Forms.Button();
             this.servicesTabPage = new System.Windows.Forms.TabPage();
             this.addServiceButton = new System.Windows.Forms.Button();
             this.servicesDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewCheckBoxColumn10 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.ServicePlaceNameColumn = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.dataGridViewButtonColumn16 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.dataGridViewButtonColumn17 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.deleteServiceButton = new System.Windows.Forms.Button();
             this.modelsTabPage = new System.Windows.Forms.TabPage();
             this.addModelButton = new System.Windows.Forms.Button();
             this.modelsDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewCheckBoxColumn11 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.dataGridViewButtonColumn18 = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.dataGridViewButtonColumn19 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.deleteModelButton = new System.Windows.Forms.Button();
             this.brandsTabPage = new System.Windows.Forms.TabPage();
             this.addBrandButton = new System.Windows.Forms.Button();
@@ -169,9 +162,6 @@
             this.careTabPage = new System.Windows.Forms.TabPage();
             this.addCareButton = new System.Windows.Forms.Button();
             this.careDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewCheckBoxColumn13 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.dataGridViewButtonColumn22 = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.dataGridViewButtonColumn23 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.deleteCareButton = new System.Windows.Forms.Button();
             this.panelO = new System.Windows.Forms.Panel();
             this.tableControlO = new System.Windows.Forms.TabControl();
@@ -201,15 +191,23 @@
             this.dataGridViewButtonColumn7 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.dataGridViewLinkColumn6 = new System.Windows.Forms.DataGridViewLinkColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.KeeperColumn = new System.Windows.Forms.DataGridViewLinkColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewLinkColumn();
-            this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.dataGridViewCheckBoxColumn10 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.ServicePlaceNameColumn = new System.Windows.Forms.DataGridViewLinkColumn();
-            this.dataGridViewButtonColumn16 = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.dataGridViewButtonColumn17 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.dataGridViewCheckBoxColumn9 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.Cost = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CatalogName = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.ServiceName = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.dataGridViewButtonColumn14 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.dataGridViewButtonColumn15 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.dataGridViewCheckBoxColumn11 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.BrandName = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.TemplateName = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.dataGridViewButtonColumn19 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.dataGridViewCheckBoxColumn7 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.Kilometres = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Period = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewLinkColumn7 = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.dataGridViewLinkColumn8 = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.dataGridViewButtonColumn10 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.dataGridViewButtonColumn11 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.nrPojazduDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.markaPojazduDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.modelPojazduDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -243,17 +241,10 @@
             this.idDataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.categoryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.brandIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.templateIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ModelsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.idDataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BrandsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.idDataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.startDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.endDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.keeperIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.carIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.careBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewTextBoxColumn20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -271,6 +262,14 @@
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewCheckBoxColumn13 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.idDataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.startDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.endDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.KeeperName = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.CarName = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.dataGridViewButtonColumn22 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.dataGridViewButtonColumn23 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panelS.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelM.SuspendLayout();
@@ -401,6 +400,7 @@
             this.tableControlM.SelectedIndex = 0;
             this.tableControlM.Size = new System.Drawing.Size(1157, 400);
             this.tableControlM.TabIndex = 0;
+            this.tableControlM.SelectedIndexChanged += new System.EventHandler(this.tableControlM_SelectedIndexChanged);
             // 
             // mPojazdy
             // 
@@ -445,6 +445,41 @@
             this.tableCarsM.Size = new System.Drawing.Size(839, 341);
             this.tableCarsM.TabIndex = 0;
             this.tableCarsM.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "Zaznacz pojazd";
+            this.Column6.Name = "Column6";
+            this.Column6.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // KeeperColumn
+            // 
+            this.KeeperColumn.DataPropertyName = "OpiekunPojazdu";
+            this.KeeperColumn.HeaderText = "Opiekun pojazdu";
+            this.KeeperColumn.Name = "KeeperColumn";
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Szczegóły";
+            this.Column1.Name = "Column1";
+            // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "ShowCalendar";
+            this.Column5.HeaderText = "Terminarz";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            this.Column5.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Column5.Text = "Wyświetl terminarz";
+            // 
+            // Edit
+            // 
+            this.Edit.DataPropertyName = "EditButton";
+            this.Edit.HeaderText = "Edycja pojazdu";
+            this.Edit.Name = "Edit";
+            this.Edit.ReadOnly = true;
+            this.Edit.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Edit.Text = "Edytuj";
             // 
             // deleteButtonMPojazdy
             // 
@@ -1302,8 +1337,8 @@
             this.dataGridViewTextBoxColumn2,
             this.Kilometres,
             this.Period,
-            this.CatalogId,
-            this.TemplateId,
+            this.dataGridViewLinkColumn7,
+            this.dataGridViewLinkColumn8,
             this.dataGridViewButtonColumn10,
             this.dataGridViewButtonColumn11});
             this.ServiceTemplatesDataGridView.DataSource = this.TemplateServicesBindingSource;
@@ -1312,50 +1347,6 @@
             this.ServiceTemplatesDataGridView.Size = new System.Drawing.Size(1056, 341);
             this.ServiceTemplatesDataGridView.TabIndex = 10;
             this.ServiceTemplatesDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ServiceTemplatesDataGridView_CellContentClick);
-            // 
-            // dataGridViewCheckBoxColumn7
-            // 
-            this.dataGridViewCheckBoxColumn7.HeaderText = "Zaznacz szablonowy serwis";
-            this.dataGridViewCheckBoxColumn7.Name = "dataGridViewCheckBoxColumn7";
-            this.dataGridViewCheckBoxColumn7.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // Kilometres
-            // 
-            this.Kilometres.DataPropertyName = "Kilometres";
-            this.Kilometres.HeaderText = "Kilometry";
-            this.Kilometres.Name = "Kilometres";
-            // 
-            // Period
-            // 
-            this.Period.DataPropertyName = "Period";
-            this.Period.HeaderText = "Okres";
-            this.Period.Name = "Period";
-            // 
-            // CatalogId
-            // 
-            this.CatalogId.DataPropertyName = "CatalogId";
-            this.CatalogId.HeaderText = "Numer katalogu";
-            this.CatalogId.Name = "CatalogId";
-            // 
-            // TemplateId
-            // 
-            this.TemplateId.DataPropertyName = "TemplateId";
-            this.TemplateId.HeaderText = "Numer szablonu";
-            this.TemplateId.Name = "TemplateId";
-            // 
-            // dataGridViewButtonColumn10
-            // 
-            this.dataGridViewButtonColumn10.HeaderText = "Szczegóły";
-            this.dataGridViewButtonColumn10.Name = "dataGridViewButtonColumn10";
-            // 
-            // dataGridViewButtonColumn11
-            // 
-            this.dataGridViewButtonColumn11.DataPropertyName = "EditButton";
-            this.dataGridViewButtonColumn11.HeaderText = "Edycja";
-            this.dataGridViewButtonColumn11.Name = "dataGridViewButtonColumn11";
-            this.dataGridViewButtonColumn11.ReadOnly = true;
-            this.dataGridViewButtonColumn11.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewButtonColumn11.Text = "Edytuj";
             // 
             // DeleteServiceTemplateButton
             // 
@@ -1472,8 +1463,8 @@
             this.dataGridViewTextBoxColumn5,
             this.dataGridViewTextBoxColumn6,
             this.Cost,
-            this.dataGridViewTextBoxColumn13,
-            this.ServiceId,
+            this.CatalogName,
+            this.ServiceName,
             this.dataGridViewButtonColumn14,
             this.dataGridViewButtonColumn15});
             this.ServiceActionsDataGridView.DataSource = this.ServiceActionsBindingSource;
@@ -1482,44 +1473,6 @@
             this.ServiceActionsDataGridView.Size = new System.Drawing.Size(884, 341);
             this.ServiceActionsDataGridView.TabIndex = 10;
             this.ServiceActionsDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ServiceActionsDataGridView_CellContentClick);
-            // 
-            // dataGridViewCheckBoxColumn9
-            // 
-            this.dataGridViewCheckBoxColumn9.HeaderText = "Zaznacz czynność serwisową";
-            this.dataGridViewCheckBoxColumn9.Name = "dataGridViewCheckBoxColumn9";
-            this.dataGridViewCheckBoxColumn9.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // Cost
-            // 
-            this.Cost.DataPropertyName = "Cost";
-            this.Cost.HeaderText = "Koszt";
-            this.Cost.Name = "Cost";
-            // 
-            // dataGridViewTextBoxColumn13
-            // 
-            this.dataGridViewTextBoxColumn13.DataPropertyName = "CatalogId";
-            this.dataGridViewTextBoxColumn13.HeaderText = "Numer katalogu";
-            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
-            // 
-            // ServiceId
-            // 
-            this.ServiceId.DataPropertyName = "ServiceId";
-            this.ServiceId.HeaderText = "Numer serwisu";
-            this.ServiceId.Name = "ServiceId";
-            // 
-            // dataGridViewButtonColumn14
-            // 
-            this.dataGridViewButtonColumn14.HeaderText = "Szczegóły";
-            this.dataGridViewButtonColumn14.Name = "dataGridViewButtonColumn14";
-            // 
-            // dataGridViewButtonColumn15
-            // 
-            this.dataGridViewButtonColumn15.DataPropertyName = "EditButton";
-            this.dataGridViewButtonColumn15.HeaderText = "Edycja";
-            this.dataGridViewButtonColumn15.Name = "dataGridViewButtonColumn15";
-            this.dataGridViewButtonColumn15.ReadOnly = true;
-            this.dataGridViewButtonColumn15.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewButtonColumn15.Text = "Edytuj";
             // 
             // deleteServiceActionButton
             // 
@@ -1576,6 +1529,32 @@
             this.servicesDataGridView.TabIndex = 10;
             this.servicesDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.servicesDataGridView_CellContentClick);
             // 
+            // dataGridViewCheckBoxColumn10
+            // 
+            this.dataGridViewCheckBoxColumn10.HeaderText = "Zaznacz szablon";
+            this.dataGridViewCheckBoxColumn10.Name = "dataGridViewCheckBoxColumn10";
+            this.dataGridViewCheckBoxColumn10.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // ServicePlaceNameColumn
+            // 
+            this.ServicePlaceNameColumn.DataPropertyName = "ServicePlaceName";
+            this.ServicePlaceNameColumn.HeaderText = "Miejsce serwisu";
+            this.ServicePlaceNameColumn.Name = "ServicePlaceNameColumn";
+            // 
+            // dataGridViewButtonColumn16
+            // 
+            this.dataGridViewButtonColumn16.HeaderText = "Szczegóły";
+            this.dataGridViewButtonColumn16.Name = "dataGridViewButtonColumn16";
+            // 
+            // dataGridViewButtonColumn17
+            // 
+            this.dataGridViewButtonColumn17.DataPropertyName = "EditButton";
+            this.dataGridViewButtonColumn17.HeaderText = "Edycja";
+            this.dataGridViewButtonColumn17.Name = "dataGridViewButtonColumn17";
+            this.dataGridViewButtonColumn17.ReadOnly = true;
+            this.dataGridViewButtonColumn17.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewButtonColumn17.Text = "Edytuj";
+            // 
             // deleteServiceButton
             // 
             this.deleteServiceButton.Enabled = false;
@@ -1620,9 +1599,8 @@
             this.idDataGridViewTextBoxColumn7,
             this.nameDataGridViewTextBoxColumn4,
             this.categoryDataGridViewTextBoxColumn,
-            this.brandIdDataGridViewTextBoxColumn,
-            this.templateIdDataGridViewTextBoxColumn,
-            this.dataGridViewButtonColumn18,
+            this.BrandName,
+            this.TemplateName,
             this.dataGridViewButtonColumn19});
             this.modelsDataGridView.DataSource = this.ModelsBindingSource;
             this.modelsDataGridView.Location = new System.Drawing.Point(6, 7);
@@ -1630,26 +1608,6 @@
             this.modelsDataGridView.Size = new System.Drawing.Size(885, 341);
             this.modelsDataGridView.TabIndex = 10;
             this.modelsDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.modelsDataGridView_CellContentClick);
-            // 
-            // dataGridViewCheckBoxColumn11
-            // 
-            this.dataGridViewCheckBoxColumn11.HeaderText = "Zaznacz model";
-            this.dataGridViewCheckBoxColumn11.Name = "dataGridViewCheckBoxColumn11";
-            this.dataGridViewCheckBoxColumn11.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // dataGridViewButtonColumn18
-            // 
-            this.dataGridViewButtonColumn18.HeaderText = "Szczegóły";
-            this.dataGridViewButtonColumn18.Name = "dataGridViewButtonColumn18";
-            // 
-            // dataGridViewButtonColumn19
-            // 
-            this.dataGridViewButtonColumn19.DataPropertyName = "EditButton";
-            this.dataGridViewButtonColumn19.HeaderText = "Edycja";
-            this.dataGridViewButtonColumn19.Name = "dataGridViewButtonColumn19";
-            this.dataGridViewButtonColumn19.ReadOnly = true;
-            this.dataGridViewButtonColumn19.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewButtonColumn19.Text = "Edytuj";
             // 
             // deleteModelButton
             // 
@@ -1767,8 +1725,8 @@
             this.idDataGridViewTextBoxColumn8,
             this.startDateDataGridViewTextBoxColumn,
             this.endDateDataGridViewTextBoxColumn,
-            this.keeperIdDataGridViewTextBoxColumn,
-            this.carIdDataGridViewTextBoxColumn,
+            this.KeeperName,
+            this.CarName,
             this.dataGridViewButtonColumn22,
             this.dataGridViewButtonColumn23});
             this.careDataGridView.DataSource = this.careBindingSource;
@@ -1777,26 +1735,6 @@
             this.careDataGridView.Size = new System.Drawing.Size(839, 341);
             this.careDataGridView.TabIndex = 13;
             this.careDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.careDataGridView_CellContentClick);
-            // 
-            // dataGridViewCheckBoxColumn13
-            // 
-            this.dataGridViewCheckBoxColumn13.HeaderText = "Zaznacz";
-            this.dataGridViewCheckBoxColumn13.Name = "dataGridViewCheckBoxColumn13";
-            this.dataGridViewCheckBoxColumn13.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // dataGridViewButtonColumn22
-            // 
-            this.dataGridViewButtonColumn22.HeaderText = "Szczegóły";
-            this.dataGridViewButtonColumn22.Name = "dataGridViewButtonColumn22";
-            // 
-            // dataGridViewButtonColumn23
-            // 
-            this.dataGridViewButtonColumn23.DataPropertyName = "EditButton";
-            this.dataGridViewButtonColumn23.HeaderText = "Edycja";
-            this.dataGridViewButtonColumn23.Name = "dataGridViewButtonColumn23";
-            this.dataGridViewButtonColumn23.ReadOnly = true;
-            this.dataGridViewButtonColumn23.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewButtonColumn23.Text = "Edytuj";
             // 
             // deleteCareButton
             // 
@@ -2096,66 +2034,114 @@
             this.Column3.HeaderText = "Rezerwuj";
             this.Column3.Name = "Column3";
             // 
-            // Column6
+            // dataGridViewCheckBoxColumn9
             // 
-            this.Column6.HeaderText = "Zaznacz pojazd";
-            this.Column6.Name = "Column6";
-            this.Column6.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewCheckBoxColumn9.HeaderText = "Zaznacz czynność serwisową";
+            this.dataGridViewCheckBoxColumn9.Name = "dataGridViewCheckBoxColumn9";
+            this.dataGridViewCheckBoxColumn9.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
-            // KeeperColumn
+            // Cost
             // 
-            this.KeeperColumn.DataPropertyName = "OpiekunPojazdu";
-            this.KeeperColumn.HeaderText = "Opiekun pojazdu";
-            this.KeeperColumn.Name = "KeeperColumn";
+            this.Cost.DataPropertyName = "Cost";
+            this.Cost.HeaderText = "Koszt";
+            this.Cost.Name = "Cost";
             // 
-            // Column1
+            // CatalogName
             // 
-            this.Column1.HeaderText = "Szczegóły";
-            this.Column1.Name = "Column1";
+            this.CatalogName.DataPropertyName = "CatalogName";
+            this.CatalogName.HeaderText = "Katalog";
+            this.CatalogName.Name = "CatalogName";
             // 
-            // Column5
+            // ServiceName
             // 
-            this.Column5.DataPropertyName = "ShowCalendar";
-            this.Column5.HeaderText = "Terminarz";
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            this.Column5.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Column5.Text = "Wyświetl terminarz";
+            this.ServiceName.DataPropertyName = "ServiceName";
+            this.ServiceName.HeaderText = "Serwis";
+            this.ServiceName.Name = "ServiceName";
             // 
-            // Edit
+            // dataGridViewButtonColumn14
             // 
-            this.Edit.DataPropertyName = "EditButton";
-            this.Edit.HeaderText = "Edycja pojazdu";
-            this.Edit.Name = "Edit";
-            this.Edit.ReadOnly = true;
-            this.Edit.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Edit.Text = "Edytuj";
+            this.dataGridViewButtonColumn14.HeaderText = "Szczegóły";
+            this.dataGridViewButtonColumn14.Name = "dataGridViewButtonColumn14";
             // 
-            // dataGridViewCheckBoxColumn10
+            // dataGridViewButtonColumn15
             // 
-            this.dataGridViewCheckBoxColumn10.HeaderText = "Zaznacz szablon";
-            this.dataGridViewCheckBoxColumn10.Name = "dataGridViewCheckBoxColumn10";
-            this.dataGridViewCheckBoxColumn10.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewButtonColumn15.DataPropertyName = "EditButton";
+            this.dataGridViewButtonColumn15.HeaderText = "Edycja";
+            this.dataGridViewButtonColumn15.Name = "dataGridViewButtonColumn15";
+            this.dataGridViewButtonColumn15.ReadOnly = true;
+            this.dataGridViewButtonColumn15.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewButtonColumn15.Text = "Edytuj";
             // 
-            // ServicePlaceNameColumn
+            // dataGridViewCheckBoxColumn11
             // 
-            this.ServicePlaceNameColumn.DataPropertyName = "ServicePlaceName";
-            this.ServicePlaceNameColumn.HeaderText = "Miejsce serwisu";
-            this.ServicePlaceNameColumn.Name = "ServicePlaceNameColumn";
+            this.dataGridViewCheckBoxColumn11.HeaderText = "Zaznacz model";
+            this.dataGridViewCheckBoxColumn11.Name = "dataGridViewCheckBoxColumn11";
+            this.dataGridViewCheckBoxColumn11.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
-            // dataGridViewButtonColumn16
+            // BrandName
             // 
-            this.dataGridViewButtonColumn16.HeaderText = "Szczegóły";
-            this.dataGridViewButtonColumn16.Name = "dataGridViewButtonColumn16";
+            this.BrandName.DataPropertyName = "BrandName";
+            this.BrandName.HeaderText = "Marka";
+            this.BrandName.Name = "BrandName";
             // 
-            // dataGridViewButtonColumn17
+            // TemplateName
             // 
-            this.dataGridViewButtonColumn17.DataPropertyName = "EditButton";
-            this.dataGridViewButtonColumn17.HeaderText = "Edycja";
-            this.dataGridViewButtonColumn17.Name = "dataGridViewButtonColumn17";
-            this.dataGridViewButtonColumn17.ReadOnly = true;
-            this.dataGridViewButtonColumn17.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewButtonColumn17.Text = "Edytuj";
+            this.TemplateName.DataPropertyName = "TemplateName";
+            this.TemplateName.HeaderText = "Szablon";
+            this.TemplateName.Name = "TemplateName";
+            // 
+            // dataGridViewButtonColumn19
+            // 
+            this.dataGridViewButtonColumn19.DataPropertyName = "EditButton";
+            this.dataGridViewButtonColumn19.HeaderText = "Edycja";
+            this.dataGridViewButtonColumn19.Name = "dataGridViewButtonColumn19";
+            this.dataGridViewButtonColumn19.ReadOnly = true;
+            this.dataGridViewButtonColumn19.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewButtonColumn19.Text = "Edytuj";
+            // 
+            // dataGridViewCheckBoxColumn7
+            // 
+            this.dataGridViewCheckBoxColumn7.HeaderText = "Zaznacz szablonowy serwis";
+            this.dataGridViewCheckBoxColumn7.Name = "dataGridViewCheckBoxColumn7";
+            this.dataGridViewCheckBoxColumn7.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // Kilometres
+            // 
+            this.Kilometres.DataPropertyName = "Kilometres";
+            this.Kilometres.HeaderText = "Kilometry";
+            this.Kilometres.Name = "Kilometres";
+            // 
+            // Period
+            // 
+            this.Period.DataPropertyName = "Period";
+            this.Period.HeaderText = "Okres";
+            this.Period.Name = "Period";
+            // 
+            // dataGridViewLinkColumn7
+            // 
+            this.dataGridViewLinkColumn7.DataPropertyName = "CatalogName";
+            this.dataGridViewLinkColumn7.HeaderText = "Katalog";
+            this.dataGridViewLinkColumn7.Name = "dataGridViewLinkColumn7";
+            // 
+            // dataGridViewLinkColumn8
+            // 
+            this.dataGridViewLinkColumn8.DataPropertyName = "TemplateName";
+            this.dataGridViewLinkColumn8.HeaderText = "Szablon";
+            this.dataGridViewLinkColumn8.Name = "dataGridViewLinkColumn8";
+            // 
+            // dataGridViewButtonColumn10
+            // 
+            this.dataGridViewButtonColumn10.HeaderText = "Szczegóły";
+            this.dataGridViewButtonColumn10.Name = "dataGridViewButtonColumn10";
+            // 
+            // dataGridViewButtonColumn11
+            // 
+            this.dataGridViewButtonColumn11.DataPropertyName = "EditButton";
+            this.dataGridViewButtonColumn11.HeaderText = "Edycja";
+            this.dataGridViewButtonColumn11.Name = "dataGridViewButtonColumn11";
+            this.dataGridViewButtonColumn11.ReadOnly = true;
+            this.dataGridViewButtonColumn11.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewButtonColumn11.Text = "Edytuj";
             // 
             // nrPojazduDataGridViewTextBoxColumn
             // 
@@ -2343,18 +2329,6 @@
             this.categoryDataGridViewTextBoxColumn.HeaderText = "Kategoria";
             this.categoryDataGridViewTextBoxColumn.Name = "categoryDataGridViewTextBoxColumn";
             // 
-            // brandIdDataGridViewTextBoxColumn
-            // 
-            this.brandIdDataGridViewTextBoxColumn.DataPropertyName = "BrandId";
-            this.brandIdDataGridViewTextBoxColumn.HeaderText = "Numer marki";
-            this.brandIdDataGridViewTextBoxColumn.Name = "brandIdDataGridViewTextBoxColumn";
-            // 
-            // templateIdDataGridViewTextBoxColumn
-            // 
-            this.templateIdDataGridViewTextBoxColumn.DataPropertyName = "TemplateId";
-            this.templateIdDataGridViewTextBoxColumn.HeaderText = "Numer szablonu";
-            this.templateIdDataGridViewTextBoxColumn.Name = "templateIdDataGridViewTextBoxColumn";
-            // 
             // ModelsBindingSource
             // 
             this.ModelsBindingSource.DataSource = typeof(BazyDanych.ModelTableElement);
@@ -2374,36 +2348,6 @@
             // BrandsBindingSource
             // 
             this.BrandsBindingSource.DataSource = typeof(BazyDanych.BrandTableElement);
-            // 
-            // idDataGridViewTextBoxColumn8
-            // 
-            this.idDataGridViewTextBoxColumn8.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn8.HeaderText = "Numer";
-            this.idDataGridViewTextBoxColumn8.Name = "idDataGridViewTextBoxColumn8";
-            // 
-            // startDateDataGridViewTextBoxColumn
-            // 
-            this.startDateDataGridViewTextBoxColumn.DataPropertyName = "StartDate";
-            this.startDateDataGridViewTextBoxColumn.HeaderText = "Data początkowa";
-            this.startDateDataGridViewTextBoxColumn.Name = "startDateDataGridViewTextBoxColumn";
-            // 
-            // endDateDataGridViewTextBoxColumn
-            // 
-            this.endDateDataGridViewTextBoxColumn.DataPropertyName = "EndDate";
-            this.endDateDataGridViewTextBoxColumn.HeaderText = "Data końcowa";
-            this.endDateDataGridViewTextBoxColumn.Name = "endDateDataGridViewTextBoxColumn";
-            // 
-            // keeperIdDataGridViewTextBoxColumn
-            // 
-            this.keeperIdDataGridViewTextBoxColumn.DataPropertyName = "KeeperId";
-            this.keeperIdDataGridViewTextBoxColumn.HeaderText = "Opiekun";
-            this.keeperIdDataGridViewTextBoxColumn.Name = "keeperIdDataGridViewTextBoxColumn";
-            // 
-            // carIdDataGridViewTextBoxColumn
-            // 
-            this.carIdDataGridViewTextBoxColumn.DataPropertyName = "CarId";
-            this.carIdDataGridViewTextBoxColumn.HeaderText = "Pojazd";
-            this.carIdDataGridViewTextBoxColumn.Name = "carIdDataGridViewTextBoxColumn";
             // 
             // careBindingSource
             // 
@@ -2526,6 +2470,56 @@
             this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
             this.dataGridViewTextBoxColumn12.ReadOnly = true;
             this.dataGridViewTextBoxColumn12.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // dataGridViewCheckBoxColumn13
+            // 
+            this.dataGridViewCheckBoxColumn13.HeaderText = "Zaznacz";
+            this.dataGridViewCheckBoxColumn13.Name = "dataGridViewCheckBoxColumn13";
+            this.dataGridViewCheckBoxColumn13.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // idDataGridViewTextBoxColumn8
+            // 
+            this.idDataGridViewTextBoxColumn8.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn8.HeaderText = "Numer";
+            this.idDataGridViewTextBoxColumn8.Name = "idDataGridViewTextBoxColumn8";
+            // 
+            // startDateDataGridViewTextBoxColumn
+            // 
+            this.startDateDataGridViewTextBoxColumn.DataPropertyName = "StartDate";
+            this.startDateDataGridViewTextBoxColumn.HeaderText = "Data początkowa";
+            this.startDateDataGridViewTextBoxColumn.Name = "startDateDataGridViewTextBoxColumn";
+            // 
+            // endDateDataGridViewTextBoxColumn
+            // 
+            this.endDateDataGridViewTextBoxColumn.DataPropertyName = "EndDate";
+            this.endDateDataGridViewTextBoxColumn.HeaderText = "Data końcowa";
+            this.endDateDataGridViewTextBoxColumn.Name = "endDateDataGridViewTextBoxColumn";
+            // 
+            // KeeperName
+            // 
+            this.KeeperName.DataPropertyName = "KeeperName";
+            this.KeeperName.HeaderText = "Opiekun";
+            this.KeeperName.Name = "KeeperName";
+            // 
+            // CarName
+            // 
+            this.CarName.DataPropertyName = "CarName";
+            this.CarName.HeaderText = "Samochód";
+            this.CarName.Name = "CarName";
+            // 
+            // dataGridViewButtonColumn22
+            // 
+            this.dataGridViewButtonColumn22.HeaderText = "Szczegóły";
+            this.dataGridViewButtonColumn22.Name = "dataGridViewButtonColumn22";
+            // 
+            // dataGridViewButtonColumn23
+            // 
+            this.dataGridViewButtonColumn23.DataPropertyName = "EditButton";
+            this.dataGridViewButtonColumn23.HeaderText = "Edycja";
+            this.dataGridViewButtonColumn23.Name = "dataGridViewButtonColumn23";
+            this.dataGridViewButtonColumn23.ReadOnly = true;
+            this.dataGridViewButtonColumn23.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewButtonColumn23.Text = "Edytuj";
             // 
             // MainWindow
             // 
@@ -2782,15 +2776,6 @@
         private System.Windows.Forms.BindingSource ServicesBindingSource;
         private System.Windows.Forms.BindingSource ModelsBindingSource;
         private System.Windows.Forms.BindingSource BrandsBindingSource;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Kilometres;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Period;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CatalogId;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TemplateId;
-        private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn10;
-        private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn11;
         private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn8;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
@@ -2801,35 +2786,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn20;
         private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn21;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn11;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn categoryDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn brandIdDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn templateIdDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn18;
-        private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn19;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Cost;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ServiceId;
-        private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn14;
-        private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn15;
         private System.Windows.Forms.TabPage careTabPage;
         private System.Windows.Forms.Button addCareButton;
         private System.Windows.Forms.DataGridView careDataGridView;
         private System.Windows.Forms.Button deleteCareButton;
         private System.Windows.Forms.BindingSource careBindingSource;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn13;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn startDateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn endDateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn keeperIdDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn carIdDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn22;
-        private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn23;
         private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn State;
@@ -2859,5 +2820,37 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn orderIdDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn16;
         private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn17;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cost;
+        private System.Windows.Forms.DataGridViewLinkColumn CatalogName;
+        private System.Windows.Forms.DataGridViewLinkColumn ServiceName;
+        private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn14;
+        private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn15;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn11;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn categoryDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewLinkColumn BrandName;
+        private System.Windows.Forms.DataGridViewLinkColumn TemplateName;
+        private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn19;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Kilometres;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Period;
+        private System.Windows.Forms.DataGridViewLinkColumn dataGridViewLinkColumn7;
+        private System.Windows.Forms.DataGridViewLinkColumn dataGridViewLinkColumn8;
+        private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn10;
+        private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn11;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn13;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn startDateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn endDateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewLinkColumn KeeperName;
+        private System.Windows.Forms.DataGridViewLinkColumn CarName;
+        private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn22;
+        private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn23;
     }
 }

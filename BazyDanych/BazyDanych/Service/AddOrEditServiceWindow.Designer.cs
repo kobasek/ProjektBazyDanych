@@ -43,14 +43,11 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.serviceActionsDataGridView = new System.Windows.Forms.DataGridView();
-            this.addServiceActionButton = new System.Windows.Forms.Button();
-            this.deleteServiceActionButton = new System.Windows.Forms.Button();
             this.serviceActionsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.addServiceActionButton = new System.Windows.Forms.Button();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.costDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.catalogIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.serviceIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.serviceCostNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.serviceActionsDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.serviceActionsBindingSource)).BeginInit();
@@ -175,14 +172,16 @@
             this.serviceActionsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn,
             this.nameDataGridViewTextBoxColumn,
-            this.costDataGridViewTextBoxColumn,
-            this.catalogIdDataGridViewTextBoxColumn,
-            this.serviceIdDataGridViewTextBoxColumn});
+            this.costDataGridViewTextBoxColumn});
             this.serviceActionsDataGridView.DataSource = this.serviceActionsBindingSource;
             this.serviceActionsDataGridView.Location = new System.Drawing.Point(330, 36);
             this.serviceActionsDataGridView.Name = "serviceActionsDataGridView";
             this.serviceActionsDataGridView.Size = new System.Drawing.Size(564, 215);
             this.serviceActionsDataGridView.TabIndex = 13;
+            // 
+            // serviceActionsBindingSource
+            // 
+            this.serviceActionsBindingSource.DataSource = typeof(BazyDanych.ServiceActionTableElement);
             // 
             // addServiceActionButton
             // 
@@ -194,19 +193,6 @@
             this.addServiceActionButton.UseVisualStyleBackColor = true;
             this.addServiceActionButton.Click += new System.EventHandler(this.addServiceActionButton_Click);
             // 
-            // deleteServiceActionButton
-            // 
-            this.deleteServiceActionButton.Location = new System.Drawing.Point(411, 257);
-            this.deleteServiceActionButton.Name = "deleteServiceActionButton";
-            this.deleteServiceActionButton.Size = new System.Drawing.Size(75, 23);
-            this.deleteServiceActionButton.TabIndex = 15;
-            this.deleteServiceActionButton.Text = "Usuń";
-            this.deleteServiceActionButton.UseVisualStyleBackColor = true;
-            // 
-            // serviceActionsBindingSource
-            // 
-            this.serviceActionsBindingSource.DataSource = typeof(BazyDanych.ServiceActionTableElement);
-            // 
             // idDataGridViewTextBoxColumn
             // 
             this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
@@ -216,33 +202,20 @@
             // nameDataGridViewTextBoxColumn
             // 
             this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Nazwa";
             this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
             // 
             // costDataGridViewTextBoxColumn
             // 
             this.costDataGridViewTextBoxColumn.DataPropertyName = "Cost";
-            this.costDataGridViewTextBoxColumn.HeaderText = "Cost";
+            this.costDataGridViewTextBoxColumn.HeaderText = "Koszt";
             this.costDataGridViewTextBoxColumn.Name = "costDataGridViewTextBoxColumn";
-            // 
-            // catalogIdDataGridViewTextBoxColumn
-            // 
-            this.catalogIdDataGridViewTextBoxColumn.DataPropertyName = "CatalogId";
-            this.catalogIdDataGridViewTextBoxColumn.HeaderText = "CatalogId";
-            this.catalogIdDataGridViewTextBoxColumn.Name = "catalogIdDataGridViewTextBoxColumn";
-            // 
-            // serviceIdDataGridViewTextBoxColumn
-            // 
-            this.serviceIdDataGridViewTextBoxColumn.DataPropertyName = "ServiceId";
-            this.serviceIdDataGridViewTextBoxColumn.HeaderText = "ServiceId";
-            this.serviceIdDataGridViewTextBoxColumn.Name = "serviceIdDataGridViewTextBoxColumn";
             // 
             // AddOrEditServiceWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(906, 362);
-            this.Controls.Add(this.deleteServiceActionButton);
             this.Controls.Add(this.addServiceActionButton);
             this.Controls.Add(this.serviceActionsDataGridView);
             this.Controls.Add(this.label6);
@@ -284,13 +257,10 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DataGridView serviceActionsDataGridView;
-        private System.Windows.Forms.Button addServiceActionButton;
-        private System.Windows.Forms.Button deleteServiceActionButton;
+        public System.Windows.Forms.Button addServiceActionButton;
         private System.Windows.Forms.BindingSource serviceActionsBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn costDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn catalogIdDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn serviceIdDataGridViewTextBoxColumn;
     }
 }
