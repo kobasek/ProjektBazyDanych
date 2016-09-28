@@ -372,13 +372,15 @@ namespace BazyDanych
 		{
 			if (e.ColumnIndex == 5)
 			{
-				CarDetailsWindow obj = new CarDetailsWindow();
+                var row = e.RowIndex;
+                var carId = (int)oTabelaPojazdy.Rows[row].Cells[0].Value;
+                CarDetailsWindow obj = new CarDetailsWindow(carId);
 				obj.Show();
 			}
 			else if (e.ColumnIndex == 4)
 			{
                 var row = e.RowIndex;
-                var carId = (int)tableCarsM.Rows[row].Cells[1].Value;
+                var carId = (int)oTabelaPojazdy.Rows[row].Cells[0].Value;
                 ScheduleWindow obj = new ScheduleWindow(carId, 'C');
 				obj.Show();
 			}
@@ -386,16 +388,7 @@ namespace BazyDanych
 
 		private void oTabelaZlecenia_CellContentClick(object sender, DataGridViewCellEventArgs e)
 		{
-			if (e.ColumnIndex == 2)
-			{
-                var row = e.RowIndex;
-                var orderId = (int)oTabelaZlecenia.Rows[row].Cells[1].Value;
-                AddOrEditOrderWindow obj = new AddOrEditOrderWindow(this, orderId);
-                obj.Text = "Menedżer Floty - Edytuj Zlecenie";
-                obj.addButton.Visible = false;
-                obj.addServiceButton.Visible = false;
-                obj.Show();
-            }
+			
 		}
 
 		private void button1_Click_1(object sender, EventArgs e)
@@ -490,9 +483,8 @@ namespace BazyDanych
             else if(e.ColumnIndex == 5)
             {
                 var row = e.RowIndex;
-                var carId = (int)oTabelaKierowcy.Rows[row].Cells[0].Value;
-                CarDetailsWindow obj = new CarDetailsWindow(carId);
-                obj.Show();
+                var userId = (int)oTabelaKierowcy.Rows[row].Cells[0].Value;
+                SzczegolyUser(userId);
             }
 		}
 
@@ -1348,6 +1340,38 @@ namespace BazyDanych
         private void tableControlM_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void ordersDataGridViewO_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 11)
+            {
+                var row = e.RowIndex;
+                var orderId = (int)ordersDataGridViewO.Rows[row].Cells[1].Value;
+                AddOrEditOrderWindow obj = new AddOrEditOrderWindow(this, orderId);
+                obj.Text = "Menedżer Floty - Edytuj Zlecenie";
+                obj.addButton.Visible = false;
+                obj.addServiceButton.Visible = false;
+                obj.Show();
+            }
+            else if (e.ColumnIndex == 11)
+            {
+                var row = e.RowIndex;
+                var orderId = (int)ordersDataGridViewO.Rows[row].Cells[1].Value;
+                AddOrEditOrderWindow obj = new AddOrEditOrderWindow(this, orderId);
+                obj.Text = "Menedżer Floty - Edytuj Zlecenie";
+                obj.addButton.Visible = false;
+                obj.addServiceButton.Visible = false;
+                obj.Show();
+            }
+        }
+
+        private void addOrderO_Click(object sender, EventArgs e)
+        {
+            AddOrEditOrderWindow obj = new AddOrEditOrderWindow(this);
+            obj.Text = "Menedżer Floty - Dodaj Zlecenie";
+            obj.acceptButton.Visible = false;
+            obj.Show();
         }
     }
 }

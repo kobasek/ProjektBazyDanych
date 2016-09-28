@@ -120,7 +120,7 @@ namespace BazyDanych
                     orderStateComboBox.Text = "Aktywny";
                     break;
                 case 'z':
-                    orderStateComboBox.Text = "Zakończny";
+                    orderStateComboBox.Text = "Zakończony";
                     break;
                 case 'o':
                     orderStateComboBox.Text = "Odwołany";
