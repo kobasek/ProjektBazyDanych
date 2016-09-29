@@ -1340,7 +1340,7 @@ namespace BazyDanych
         }
 
         /// <summary>
-        /// 
+        /// Event Handler dla tabeli zawierającej miejsca serwisu
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -1358,7 +1358,7 @@ namespace BazyDanych
         }
 
         /// <summary>
-        /// 
+        /// Event Handler dla przycisku dodaj szablon
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -1368,7 +1368,7 @@ namespace BazyDanych
         }
 
         /// <summary>
-        /// 
+        /// Event Handler dla tabeli zawierającej szablony
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -1393,7 +1393,7 @@ namespace BazyDanych
         }
 
         /// <summary>
-        /// 
+        /// Event Handler dla przycisku dodaj szablon serwisowy
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -1403,7 +1403,7 @@ namespace BazyDanych
         }
 
         /// <summary>
-        /// 
+        /// Event Handler dla tabeli zawierającej szablony serwisowe
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -1437,7 +1437,7 @@ namespace BazyDanych
         }
 
         /// <summary>
-        /// 
+        /// Event Handler dla tabeli zawierającej katalogi
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -1462,7 +1462,7 @@ namespace BazyDanych
         }
 
         /// <summary>
-        /// 
+        /// Event Handler dla przycisku dodaj katalog
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -1471,18 +1471,9 @@ namespace BazyDanych
             ShowAddCatalogWindow();
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void deleteCatalogButton_Click(object sender, EventArgs e)
-        {
-
-        }
 
         /// <summary>
-        /// 
+        /// Event Handler dla przycisku dodaj markę
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -1491,18 +1482,9 @@ namespace BazyDanych
             ShowAddBrandWindow();
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void deleteBrandButton_Click(object sender, EventArgs e)
-        {
-
-        }
 
         /// <summary>
-        /// 
+        /// Event Handler dla tabeli zawierającej marki
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -1527,7 +1509,7 @@ namespace BazyDanych
         }
 
         /// <summary>
-        /// 
+        /// Event Handler dla przycisku dodaj model
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -1537,17 +1519,7 @@ namespace BazyDanych
         }
 
         /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void deleteModelButton_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        /// <summary>
-        /// 
+        /// Event Handler dla tabeli zawierającej modele
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -1584,7 +1556,7 @@ namespace BazyDanych
         }
 
         /// <summary>
-        /// 
+        /// Event Handler dla przycisku dodaj opiekę
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -1594,17 +1566,7 @@ namespace BazyDanych
         }
 
         /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void deleteCareButton_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        /// <summary>
-        /// 
+        /// Event Handler dla tabeli zawierającej opieki
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -1638,7 +1600,7 @@ namespace BazyDanych
 
 
         /// <summary>
-        /// 
+        /// Event Handler dla przycisku dodaj serwis
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -1649,7 +1611,7 @@ namespace BazyDanych
 
 
         /// <summary>
-        /// 
+        /// Event Handler dla tabeli zawierającej serwisy
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -1688,7 +1650,7 @@ namespace BazyDanych
         }
 
         /// <summary>
-        /// 
+        /// Event Handler dla przycisku dodaj czynność serwisową
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -1698,7 +1660,7 @@ namespace BazyDanych
         }
 
         /// <summary>
-        /// 
+        /// Event Handler dla tabeli zawierającej czynności serwisowe
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>

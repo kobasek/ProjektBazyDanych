@@ -1589,7 +1589,6 @@
             this.deleteCatalogButton.TabIndex = 11;
             this.deleteCatalogButton.Text = "Usuń";
             this.deleteCatalogButton.UseVisualStyleBackColor = true;
-            this.deleteCatalogButton.Click += new System.EventHandler(this.deleteCatalogButton_Click);
             // 
             // ServiceActionsTabPage
             // 
@@ -1908,7 +1907,6 @@
             this.deleteModelButton.TabIndex = 11;
             this.deleteModelButton.Text = "Usuń";
             this.deleteModelButton.UseVisualStyleBackColor = true;
-            this.deleteModelButton.Click += new System.EventHandler(this.deleteModelButton_Click);
             // 
             // brandsTabPage
             // 
@@ -1996,7 +1994,6 @@
             this.deleteBrandButton.TabIndex = 11;
             this.deleteBrandButton.Text = "Usuń";
             this.deleteBrandButton.UseVisualStyleBackColor = true;
-            this.deleteBrandButton.Click += new System.EventHandler(this.deleteBrandButton_Click);
             // 
             // careTabPage
             // 
@@ -2105,7 +2102,6 @@
             this.deleteCareButton.TabIndex = 14;
             this.deleteCareButton.Text = "Usuń";
             this.deleteCareButton.UseVisualStyleBackColor = true;
-            this.deleteCareButton.Click += new System.EventHandler(this.deleteCareButton_Click);
             // 
             // panelO
             // 

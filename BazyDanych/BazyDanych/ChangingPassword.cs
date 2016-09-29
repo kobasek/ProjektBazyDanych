@@ -7,6 +7,7 @@ using MySql.Data.MySqlClient;
 
 namespace BazyDanych
 {
+
     public partial class ChangingPassword : Form
     {
         private User user;

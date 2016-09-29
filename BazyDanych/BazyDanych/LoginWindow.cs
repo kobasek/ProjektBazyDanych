@@ -7,19 +7,30 @@ using MySql.Data.MySqlClient;
 
 namespace BazyDanych
 {
-    //Okienko odpowiedzialne za logowanie
+    /// <summary>
+    /// Klasa formularza odpowiedzialnego za logowanie do systemu
+    /// </summary>
     public partial class LoginWindow : Form
     {
         private MainWindow obj;
         private int id;
         private char permission;
+
+        /// <summary>
+        /// Jednoargumentowy konstruktor klasy formularza odpowiedzialnego za logowanie do systemu
+        /// </summary>
+        /// <param name="obj">Uchwyt do głównego okna programu</param>
         public LoginWindow(MainWindow obj)
         {
             this.obj = obj;
             InitializeComponent();
         }
 
-        //m - menadżer, o - opiekun, k - kierowca
+        /// <summary>
+        /// Event handler dla przycisku zaloguj
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void loginButton_Click(object sender, EventArgs e)
         {
             var connectionString = Functions.GetConnectionString();
