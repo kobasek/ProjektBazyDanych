@@ -6,6 +6,9 @@ using System.Windows.Forms;
 
 namespace BazyDanych
 {
+    /// <summary>
+    /// Klasa inicjalizująca aplikację
+    /// </summary>
     static class Program
     {
         /// <summary>

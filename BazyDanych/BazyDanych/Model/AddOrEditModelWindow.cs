@@ -150,7 +150,7 @@ namespace BazyDanych
                 }
                 #pragma warning disable 0168
                 catch (MySql.Data.MySqlClient.MySqlException ex)
-                #pragma warning disable 0168
+                #pragma warning restore 0168
                 {
 
                     MessageBox.Show("Dodawanie modelu nie powiodło się!");
@@ -222,7 +222,9 @@ namespace BazyDanych
                     mainWindow.UpdateModel();
                     Close();
                 }
+                #pragma warning disable 0168
                 catch (MySql.Data.MySqlClient.MySqlException ex)
+                #pragma warning restore 0168
                 {
 
                     MessageBox.Show("Edytowanie modelu nie powiodło się!");

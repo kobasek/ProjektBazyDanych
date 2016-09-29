@@ -10,6 +10,9 @@ using System.Windows.Forms;
 
 namespace BazyDanych
 {
+    /// <summary>
+    /// Klasa formularza wyświatlającego terminarz
+    /// </summary>
     public partial class ScheduleWindow : Form
     {
         private int id;
@@ -20,10 +23,14 @@ namespace BazyDanych
         int firstPanelIndex = 0;
         int lastPanelIndex = 41;
         int firstLabel = 10;
-        
 
 
-        //Terminarz
+
+        /// <summary>
+        /// Dwuparametrowy konstruktor klasy formularza wyświatlającego terminarz
+        /// </summary>
+        /// <param name="_id">ID kierowcy bądź samochodu dla którego terminarz ma być wygenerowany</param>
+        /// <param name="_type">Pole określające, czy terminarz wyświetlany jest dla kierowcy (D) czy dla samochodu (C)</param>
         public ScheduleWindow(int _id, char _type)
         {
             this.id = _id;
@@ -38,13 +45,21 @@ namespace BazyDanych
 
 
         }
-
+        /// <summary>
+        /// Metoda ustawiająca nagłówek dla terminarza
+        /// </summary>
+        /// <param name="month">Wyświetlany miesiąc</param>
+        /// <param name="year">Wyświetlany rok</param>
         private void SetTopPanel(int month, int year)
         {
             this.label8.Text = months[month-1];
             this.label9.Text = year.ToString();
         }
-
+        /// <summary>
+        /// Event Handler dla przycisku przełączającego miesiąc na kolejny
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
         {
             shownMonth += 1;
@@ -55,7 +70,11 @@ namespace BazyDanych
             }
             UpdateScheduleWindow();
         }
-
+        /// <summary>
+        /// Event Handler dla przycisku przełączającego miesiąc na poprzedni
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button2_Click(object sender, EventArgs e)
         {
             shownMonth -= 1;
@@ -66,14 +85,18 @@ namespace BazyDanych
             }
             UpdateScheduleWindow();
         }
-
+        /// <summary>
+        /// Aktualizacja terminarzu po zmianie miesiąca
+        /// </summary>
         private void UpdateScheduleWindow()
         {
 
             SetTopPanel(shownMonth, shownYear);
             FillPanels();
         }
-
+        /// <summary>
+        /// Metoda wypełniająca terminarz. Na podstawie ID kierowcy bądź samochodu pobierane są informacje o przypisanych zleceniach i usługach serwisowych. Pobierane są ich okresy i na ich podstawie wypełniane są poszczególne pola terminarza.
+        /// </summary>
         private void FillPanels()
         {
 
@@ -182,7 +205,11 @@ namespace BazyDanych
                 }
             }      
         }
-
+        /// <summary>
+        /// Na podstawie podanego dnia tygodnia zwracany jest jego index
+        /// </summary>
+        /// <param name="day"></param>
+        /// <returns></returns>
         private int GetDayOfWeek(string day)
         {
             int pom = 9;

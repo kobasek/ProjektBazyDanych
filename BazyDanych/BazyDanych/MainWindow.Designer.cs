@@ -405,7 +405,6 @@
             this.tableControlM.SelectedIndex = 0;
             this.tableControlM.Size = new System.Drawing.Size(1157, 400);
             this.tableControlM.TabIndex = 0;
-            this.tableControlM.SelectedIndexChanged += new System.EventHandler(this.tableControlM_SelectedIndexChanged);
             // 
             // mPojazdy
             // 
@@ -667,7 +666,6 @@
             this.deleteButtonMOrder.TabIndex = 4;
             this.deleteButtonMOrder.Text = "Usuń";
             this.deleteButtonMOrder.UseVisualStyleBackColor = true;
-            this.deleteButtonMOrder.Click += new System.EventHandler(this.deleteButtonMOrder_Click);
             // 
             // ordersTableM
             // 
@@ -1700,7 +1698,6 @@
             this.deleteServiceActionButton.TabIndex = 11;
             this.deleteServiceActionButton.Text = "Usuń";
             this.deleteServiceActionButton.UseVisualStyleBackColor = true;
-            this.deleteServiceActionButton.Click += new System.EventHandler(this.deleteServiceActionButton_Click);
             // 
             // servicesTabPage
             // 
@@ -1809,7 +1806,6 @@
             this.deleteServiceButton.TabIndex = 11;
             this.deleteServiceButton.Text = "Usuń";
             this.deleteServiceButton.UseVisualStyleBackColor = true;
-            this.deleteServiceButton.Click += new System.EventHandler(this.deleteServiceButton_Click);
             // 
             // modelsTabPage
             // 
@@ -2129,7 +2125,6 @@
             this.tableControlO.SelectedIndex = 0;
             this.tableControlO.Size = new System.Drawing.Size(1160, 400);
             this.tableControlO.TabIndex = 0;
-            this.tableControlO.SelectedIndexChanged += new System.EventHandler(this.tableControlO_SelectedIndexChanged);
             // 
             // oZlecenia
             // 
@@ -2351,7 +2346,6 @@
             this.tableControlK.SelectedIndex = 0;
             this.tableControlK.Size = new System.Drawing.Size(1157, 400);
             this.tableControlK.TabIndex = 3;
-            this.tableControlK.SelectedIndexChanged += new System.EventHandler(this.tableControlK_SelectedIndexChanged);
             // 
             // tabKPage1
             // 
@@ -2383,7 +2377,6 @@
             this.kTabelaZlecenia.Name = "kTabelaZlecenia";
             this.kTabelaZlecenia.Size = new System.Drawing.Size(1137, 341);
             this.kTabelaZlecenia.TabIndex = 2;
-            this.kTabelaZlecenia.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.kTabelaZlecenia_CellContentClick);
             // 
             // idDataGridViewTextBoxColumn10
             // 
@@ -2531,10 +2524,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1184, 461);
-            this.Controls.Add(this.panelS);
-            this.Controls.Add(this.panelK);
-            this.Controls.Add(this.panelO);
             this.Controls.Add(this.panelM);
+            this.Controls.Add(this.panelK);
+            this.Controls.Add(this.panelS);
+            this.Controls.Add(this.panelO);
             this.HelpButton = true;
             this.MaximizeBox = false;
             this.MinimizeBox = false;

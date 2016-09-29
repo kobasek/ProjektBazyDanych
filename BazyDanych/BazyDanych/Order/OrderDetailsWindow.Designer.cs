@@ -30,6 +30,15 @@
         {
             this.components = new System.ComponentModel.Container();
             this.servicesDataGridView = new System.Windows.Forms.DataGridView();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.costDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.serviceDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.commentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.servicePlaceNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Details = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EditColumn = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.servicesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label15 = new System.Windows.Forms.Label();
             this.driverComboBox = new System.Windows.Forms.ComboBox();
             this.label14 = new System.Windows.Forms.Label();
@@ -59,20 +68,11 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.servicesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.costDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.serviceDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.commentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.servicePlaceNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Details = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EditColumn = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.servicesDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.servicesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.counterEndDateNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.counterStartStateNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.costNumericUpDown)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.servicesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // servicesDataGridView
@@ -93,6 +93,55 @@
             this.servicesDataGridView.Name = "servicesDataGridView";
             this.servicesDataGridView.Size = new System.Drawing.Size(733, 396);
             this.servicesDataGridView.TabIndex = 67;
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Numer";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            // 
+            // costDataGridViewTextBoxColumn
+            // 
+            this.costDataGridViewTextBoxColumn.DataPropertyName = "Cost";
+            this.costDataGridViewTextBoxColumn.HeaderText = "Koszt";
+            this.costDataGridViewTextBoxColumn.Name = "costDataGridViewTextBoxColumn";
+            // 
+            // serviceDateDataGridViewTextBoxColumn
+            // 
+            this.serviceDateDataGridViewTextBoxColumn.DataPropertyName = "ServiceDate";
+            this.serviceDateDataGridViewTextBoxColumn.HeaderText = "Data";
+            this.serviceDateDataGridViewTextBoxColumn.Name = "serviceDateDataGridViewTextBoxColumn";
+            // 
+            // commentDataGridViewTextBoxColumn
+            // 
+            this.commentDataGridViewTextBoxColumn.DataPropertyName = "Comment";
+            this.commentDataGridViewTextBoxColumn.HeaderText = "Komentarz";
+            this.commentDataGridViewTextBoxColumn.Name = "commentDataGridViewTextBoxColumn";
+            // 
+            // servicePlaceNameDataGridViewTextBoxColumn
+            // 
+            this.servicePlaceNameDataGridViewTextBoxColumn.DataPropertyName = "ServicePlaceName";
+            this.servicePlaceNameDataGridViewTextBoxColumn.HeaderText = "Miejsce serwisu";
+            this.servicePlaceNameDataGridViewTextBoxColumn.Name = "servicePlaceNameDataGridViewTextBoxColumn";
+            // 
+            // Details
+            // 
+            this.Details.HeaderText = "Szczegóły";
+            this.Details.Name = "Details";
+            // 
+            // EditColumn
+            // 
+            this.EditColumn.HeaderText = "Szczegóły";
+            this.EditColumn.Name = "EditColumn";
+            // 
+            // Edit
+            // 
+            this.Edit.HeaderText = "Edytuj";
+            this.Edit.Name = "Edit";
+            // 
+            // servicesBindingSource
+            // 
+            this.servicesBindingSource.DataSource = typeof(BazyDanych.ServiceTableElement);
             // 
             // label15
             // 
@@ -349,55 +398,6 @@
             this.label2.TabIndex = 36;
             this.label2.Text = "Data zakończenia";
             // 
-            // servicesBindingSource
-            // 
-            this.servicesBindingSource.DataSource = typeof(BazyDanych.ServiceTableElement);
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Numer";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            // 
-            // costDataGridViewTextBoxColumn
-            // 
-            this.costDataGridViewTextBoxColumn.DataPropertyName = "Cost";
-            this.costDataGridViewTextBoxColumn.HeaderText = "Koszt";
-            this.costDataGridViewTextBoxColumn.Name = "costDataGridViewTextBoxColumn";
-            // 
-            // serviceDateDataGridViewTextBoxColumn
-            // 
-            this.serviceDateDataGridViewTextBoxColumn.DataPropertyName = "ServiceDate";
-            this.serviceDateDataGridViewTextBoxColumn.HeaderText = "Data";
-            this.serviceDateDataGridViewTextBoxColumn.Name = "serviceDateDataGridViewTextBoxColumn";
-            // 
-            // commentDataGridViewTextBoxColumn
-            // 
-            this.commentDataGridViewTextBoxColumn.DataPropertyName = "Comment";
-            this.commentDataGridViewTextBoxColumn.HeaderText = "Komentarz";
-            this.commentDataGridViewTextBoxColumn.Name = "commentDataGridViewTextBoxColumn";
-            // 
-            // servicePlaceNameDataGridViewTextBoxColumn
-            // 
-            this.servicePlaceNameDataGridViewTextBoxColumn.DataPropertyName = "ServicePlaceName";
-            this.servicePlaceNameDataGridViewTextBoxColumn.HeaderText = "Miejsce serwisu";
-            this.servicePlaceNameDataGridViewTextBoxColumn.Name = "servicePlaceNameDataGridViewTextBoxColumn";
-            // 
-            // Details
-            // 
-            this.Details.HeaderText = "Szczegóły";
-            this.Details.Name = "Details";
-            // 
-            // EditColumn
-            // 
-            this.EditColumn.HeaderText = "Szczegóły";
-            this.EditColumn.Name = "EditColumn";
-            // 
-            // Edit
-            // 
-            this.Edit.HeaderText = "Edytuj";
-            this.Edit.Name = "Edit";
-            // 
             // OrderDetailsWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -436,10 +436,10 @@
             this.Name = "OrderDetailsWindow";
             this.Text = "OrderDetailsWindow";
             ((System.ComponentModel.ISupportInitialize)(this.servicesDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.servicesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.counterEndDateNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.counterStartStateNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.costNumericUpDown)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.servicesBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -11,11 +11,17 @@ using System.Windows.Forms;
 namespace BazyDanych
 {
 
-	//Okienko główne
+	/// <summary>
+    /// Klasa formularza zawierającego główne okno aplikacji
+    /// </summary>
 	public partial class MainWindow : Form
 	{
 		private bool isLogged;
         private int userID;
+
+        /// <summary>
+        /// Bezparametrowy konstruktor klasy formularza zawierającego główne okno aplikacji
+        /// </summary>
 		public MainWindow()
 		{
 			InitializeComponent();
@@ -24,7 +30,11 @@ namespace BazyDanych
 			profilLabel.Visible = false;
 		}
 
-
+        /// <summary>
+        /// Metoda ładujące dane do tabel przy tworzeniu się okna
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
 		private void Form2_Load(object sender, EventArgs e)
 		{
             var carList = Car.GetCarList();
@@ -57,6 +67,9 @@ namespace BazyDanych
             UpdateServiceAction();
         }
 
+        /// <summary>
+        /// Metoda inicjalizująca wygląd okna głównego po starcie programu
+        /// </summary>
         private void InitializeComponentStart()
 		{
 			this.panelS.Visible = true;
@@ -65,7 +78,10 @@ namespace BazyDanych
 			this.panelO.Visible = false;
 			this.panelK.Visible = false;
 		}
-
+        /// <summary>
+        /// Metoda ustawiająca wygląd okna głównego po zalogowaniu jako manager
+        /// </summary>
+        /// <param name="id">ID zalogowanego użytkownika</param>
 		public void InitializeComponentMenadzer(int id)
 		{
             userID = id;
@@ -83,6 +99,10 @@ namespace BazyDanych
             }
         }
 
+        /// <summary>
+        /// Metoda ustawiająca wygląd okna głównego po zalogowaniu jako piekun
+        /// </summary>
+        /// <param name="id">ID zalogowanego użytkownika</param>
 		public void InitializeComponentOpieka(int id)
 		{
             userID = id;
@@ -100,6 +120,10 @@ namespace BazyDanych
             }
         }
 
+        /// <summary>
+        /// Metoda ustawiająca wygląd okna głównego po zalogowaniu jako kierowca
+        /// </summary>
+        /// <param name="id">ID zalogowanego użytkownika</param>
 		public void InitializeComponentKierowca(int id)
 		{
             userID = id;
@@ -123,6 +147,11 @@ namespace BazyDanych
             }
         }
 
+        /// <summary>
+        /// Event Handler dla przycisku "Zaloguj"
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
 		private void zalogujSLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
 		{
 			if (!isLogged)
@@ -142,6 +171,10 @@ namespace BazyDanych
 			}
 		}
 
+        /// <summary>
+        /// Metoda inicjalizująca edycję pojazdu
+        /// </summary>
+        /// <param name="carId">ID pojazdu do edycji</param>
 		private void EdytujAuto(int carId)
 		{
 			var obj = new AddOrEditCarWindow(this, carId);
@@ -150,6 +183,10 @@ namespace BazyDanych
 			obj.Show();
 		}
 
+        /// <summary>
+        /// Metoda inicjalizująca edycję użytkownika
+        /// </summary>
+        /// <param name="userId">ID użytkownika do edycji</param>
         private void EdytujUser(int userId)
         {
             var obj = new AddOrEditUserWindow(this, userId);
@@ -158,6 +195,9 @@ namespace BazyDanych
             obj.Show();
         }
 
+        /// <summary>
+        /// Metoda inicjalizująca dodanie nowego pojazdu
+        /// </summary>
         private void DodajAuto()
 		{
 			var obj = new AddOrEditCarWindow(this);
@@ -166,6 +206,9 @@ namespace BazyDanych
 			obj.Show();
 		}
 
+        /// <summary>
+        /// Metoda inicjalizująca dodanie nowego użytkownika
+        /// </summary>
         private void DodajUser()
         {
             AddOrEditUserWindow obj = new AddOrEditUserWindow(this);
@@ -174,6 +217,10 @@ namespace BazyDanych
             obj.Show();
         }
 
+        /// <summary>
+        /// Metoda inicjalizująca wyświetlenie szczegółów kierowcy
+        /// </summary>
+        /// <param name="userId">ID kierowcy, któego szczegóły mają być wyświetlone</param>
         private void SzczegolyUser(int userId)
         {
             var obj = new AddOrEditUserWindow(userId, "sz");
@@ -183,6 +230,9 @@ namespace BazyDanych
             obj.Show();
         }
 
+        /// <summary>
+        /// Metoda inicjalizująca dodanie nowego miejsca serwisowego
+        /// </summary>
         private void ShowAddServicePlaceWindow()
         {
             AddOrEditServicePlaceWindow obj = new AddOrEditServicePlaceWindow(this);
@@ -191,6 +241,10 @@ namespace BazyDanych
             obj.Show();
         }
 
+        /// <summary>
+        /// Metoda inicjalizująca edycję miejsca serwisowego
+        /// </summary>
+        /// <param name="servicePlaceId">ID miejsca serwisowego, które ma być edytowane</param>
         private void ShowEditServicePlaceWindow(int servicePlaceId)
         {
             AddOrEditServicePlaceWindow obj = new AddOrEditServicePlaceWindow(this, servicePlaceId);
@@ -199,6 +253,9 @@ namespace BazyDanych
             obj.Show();
         }
 
+        /// <summary>
+        /// Metoda inicjalizująca dodanie nowego szablonu
+        /// </summary>
         private void ShowAddTemplateWindow()
         {
             AddOrEditTemplateWindow obj = new AddOrEditTemplateWindow(this);
@@ -207,6 +264,10 @@ namespace BazyDanych
             obj.Show();
         }
 
+        /// <summary>
+        /// Metoda inicjalizująca edycję szablonu
+        /// </summary>
+        /// <param name="templateId">ID szablonu, który ma być edytowany</param>
         private void ShowEditTemplateWindow(int templateId)
         {
             AddOrEditTemplateWindow obj = new AddOrEditTemplateWindow(this, templateId);
@@ -215,6 +276,9 @@ namespace BazyDanych
             obj.Show();
         }
 
+        /// <summary>
+        /// Metoda inicjalizująca dodanie nowego szablonu serwisowego
+        /// </summary>
         private void ShowAddServiceTemplateWindow()
         {
             AddOrEditServiceTemplateWindow obj = new AddOrEditServiceTemplateWindow(this);
@@ -223,6 +287,10 @@ namespace BazyDanych
             obj.Show();
         }
 
+        /// <summary>
+        /// Metoda inicjalizująca edycję szablonu serwisowego
+        /// </summary>
+        /// <param name="templateId">ID szablonu serwisowego, który ma być edytowany</param>
         private void ShowEditServiceTemplateWindow(int templateId)
         {
             AddOrEditServiceTemplateWindow obj = new AddOrEditServiceTemplateWindow(this, templateId);
@@ -231,6 +299,9 @@ namespace BazyDanych
             obj.Show();
         }
 
+        /// <summary>
+        /// Metoda inicjalizująca dodanie nowej czynności serwisowej
+        /// </summary>
         private void ShowAddServiceActionWindow()
         {
             AddOrEditServiceActionWindow obj = new AddOrEditServiceActionWindow(this);
@@ -239,6 +310,10 @@ namespace BazyDanych
             obj.Show();
         }
 
+        /// <summary>
+        /// Metoda inicjalizująca edycję czynności serwisowej
+        /// </summary>
+        /// <param name="serviceActionId">ID czynności serwisowej, która ma być edytowana</param>
         private void ShowEditServiceActionWindow(int serviceActionId)
         {
             AddOrEditServiceActionWindow obj = new AddOrEditServiceActionWindow(this, serviceActionId);
@@ -247,6 +322,9 @@ namespace BazyDanych
             obj.Show();
         }
 
+        /// <summary>
+        /// Metoda inicjalizująca dodanie nowego serwisu
+        /// </summary>
         private void ShowAddServiceWindow()
         {
             AddOrEditServiceWindow obj = new AddOrEditServiceWindow(this);
@@ -255,6 +333,10 @@ namespace BazyDanych
             obj.Show();
         }
 
+        /// <summary>
+        /// Metoda inicjalizująca edycję serwisu
+        /// </summary>
+        /// <param name="serviceId">ID serwisu, który ma być edytowany</param>
         private void ShowEditServiceWindow(int serviceId)
         {
             AddOrEditServiceWindow obj = new AddOrEditServiceWindow(this, serviceId);
@@ -264,6 +346,9 @@ namespace BazyDanych
             obj.Show();
         }
 
+        /// <summary>
+        /// Metoda inicjalizująca dodanie nowej opieki
+        /// </summary>
         private void ShowAddCareWindow()
         {
             AddOrEditCareWindow obj = new AddOrEditCareWindow(this);
@@ -272,6 +357,10 @@ namespace BazyDanych
             obj.Show();
         }
 
+        /// <summary>
+        /// Metoda inicjalizująca edycję opieki
+        /// </summary>
+        /// <param name="careId">ID opieki, któa ma być edytowana</param>
         private void ShowEditCareWindow(int careId)
         {
             AddOrEditCareWindow obj = new AddOrEditCareWindow(this, careId);
@@ -280,6 +369,9 @@ namespace BazyDanych
             obj.Show();
         }
 
+        /// <summary>
+        /// Metoda inicjalizująca dodanie nowego katalogu
+        /// </summary>
         private void ShowAddCatalogWindow()
         {
             AddOrEditCatalogWindow obj = new AddOrEditCatalogWindow(this);
@@ -288,6 +380,10 @@ namespace BazyDanych
             obj.Show();
         }
 
+        /// <summary>
+        /// Metoda inicjalizująca edycją katalogu
+        /// </summary>
+        /// <param name="catalogId">ID katalogu, który ma być edytowany</param>
         private void ShowEditCatalogWindow(int catalogId)
         {
             AddOrEditCatalogWindow obj = new AddOrEditCatalogWindow(this, catalogId);
@@ -296,6 +392,9 @@ namespace BazyDanych
             obj.Show();
         }
 
+        /// <summary>
+        /// Metoda inicjalizująca dodanie nowej marki
+        /// </summary>
         private void ShowAddBrandWindow()
         {
             AddOrEditBrandWindow obj = new AddOrEditBrandWindow(this);
@@ -304,6 +403,10 @@ namespace BazyDanych
             obj.Show();
         }
 
+        /// <summary>
+        /// Metoda inicjalizująca edycję marki
+        /// </summary>
+        /// <param name="brandId">ID marki, któa ma być edytowana</param>
         private void ShowEditBrandWindow(int brandId)
         {
             AddOrEditBrandWindow obj = new AddOrEditBrandWindow(this, brandId);
@@ -312,6 +415,9 @@ namespace BazyDanych
             obj.Show();
         }
 
+        /// <summary>
+        /// Metoda inicjalizująca dodanie nowego modelu
+        /// </summary>
         private void ShowAddModelWindow()
         {
             AddOrEditModelWindow obj = new AddOrEditModelWindow(this);
@@ -320,6 +426,10 @@ namespace BazyDanych
             obj.Show();
         }
 
+        /// <summary>
+        /// Metoda inicjalizująca edycję modelu
+        /// </summary>
+        /// <param name="modelId">ID modelu, który ma być edytowany</param>
         private void ShowEditModelWindow(int modelId)
         {
             AddOrEditModelWindow obj = new AddOrEditModelWindow(this, modelId);
@@ -328,6 +438,11 @@ namespace BazyDanych
             obj.Show();
         }
 
+        /// <summary>
+        /// Event handler dla tabeli zawierającej listę wszystkich pojazdów, wyświetlanej, gdy zalogowany użytkownik jest administratorem
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
 		{
 			if (e.ColumnIndex == 0)
@@ -363,11 +478,21 @@ namespace BazyDanych
 			}
 		}
 
+        /// <summary>
+        /// Event Handler dla przycisku dodaj auto, przy tabeli zawierającej listę wszystkich pojazdów, wyświetlanej, gdy użytkowni jest zalogowany jako administrator
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
 		private void button1_Click(object sender, EventArgs e)
 		{
 			DodajAuto();
 		}
 
+        /// <summary>
+        /// Event Handler dla tabeli zawierającej listę aut, nad którą dany uzytkownik pełni opiekę
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
 		private void oTabelaPojazdy_CellContentClick(object sender, DataGridViewCellEventArgs e)
 		{
 			if (e.ColumnIndex == 5)
@@ -386,6 +511,11 @@ namespace BazyDanych
 			}
         }
 
+        /// <summary>
+        /// Event Handler dla tabeli zawierającej listę zleceń, które obejmują auta znajdujące się pod opieką danego użytkownika
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
 		private void oTabelaZlecenia_CellContentClick(object sender, DataGridViewCellEventArgs e)
 		{
 			if (e.ColumnIndex == 2)
@@ -400,6 +530,11 @@ namespace BazyDanych
             }
 		}
 
+        /// <summary>
+        /// Event Handler dla przycisku dodaj zlecenie, przy tabeli zawierającej listę zleceń, które obejmują auta znajdujące się pod opieką danego użytkownika
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
 		private void button1_Click_1(object sender, EventArgs e)
 		{
 			AddOrEditOrderWindow obj = new AddOrEditOrderWindow();
@@ -407,6 +542,11 @@ namespace BazyDanych
 			obj.Show();
 		}
 
+        /// <summary>
+        /// Event Handler dla tabeli zawierającej listę wszystkich zleceń, wyświetlanej, gdy użytkownik zalogowany jest jako administrator
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
 		private void mTabelaZlecenia_CellContentClick(object sender, DataGridViewCellEventArgs e)
 		{
             if (e.ColumnIndex == 11)
@@ -421,6 +561,11 @@ namespace BazyDanych
             }
 		}
 
+        /// <summary>
+        /// Event Handler dla przycisku dodaj zlecenie, przy tabeli zawierającej listę wszystkich zleceń, wyświetlanej, gdy użytkownik zalogowany jest jako administrator
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
 		private void addButtonMZlecenia_Click(object sender, EventArgs e)
 		{
 			AddOrEditOrderWindow obj = new AddOrEditOrderWindow(this);
@@ -429,6 +574,11 @@ namespace BazyDanych
 			obj.Show();
 		}
 
+        /// <summary>
+        /// Event Handler dla tabeli zawierającej listę wszystkich kierowców, wyświetlanej, gdy użytkownik zalogowany jest jako administrator
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
 		private void mTabelaKierowcy_CellContentClick(object sender, DataGridViewCellEventArgs e)
 		{
 			if (e.ColumnIndex == 7)
@@ -454,11 +604,21 @@ namespace BazyDanych
 
         }
 
+        /// <summary>
+        /// Event Handler dla przycisku dodaj kierowcę, przy tabeli zawierającej listę wszystkich kierowców, wyświetlanej, gdy użytkownik zalogowany jest jako administrator
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
 		private void addButtonMKierowcy_Click(object sender, EventArgs e)
 		{
             DodajUser();
 		}
 
+        /// <summary>
+        /// Event Handler dla tabeli zawierającej listę wszystkich pojazdów, które można zarezerwować, wyświetlanej, gdy użytkownik zalogowany jest jako kierowca
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
 		private void kTabelaRezerwacje_CellContentClick(object sender, DataGridViewCellEventArgs e)
 		{
 			if (e.ColumnIndex == 5)
@@ -482,6 +642,11 @@ namespace BazyDanych
 			}
 		}
 
+        /// <summary>
+        /// Event Handler dla tabeli zawierającej listę wszystkich kierowców, wyświetlanej, gdy użytkownik zalogowany jest jako opiekun
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
 		private void oTabelaKierowcy_CellContentClick(object sender, DataGridViewCellEventArgs e)
 		{
 			if (e.ColumnIndex == 4)
@@ -499,6 +664,11 @@ namespace BazyDanych
             }
 		}
 
+        /// <summary>
+        /// Event Handler dla radiobuttona odpowiadającego marce w tabeli z kosztami
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
 		private void radioButton1_CheckedChanged(object sender, EventArgs e)
 		{
 			if (this.radioButton1.Checked == true)
@@ -509,6 +679,11 @@ namespace BazyDanych
 			}
 		}
 
+        /// <summary>
+        /// Event Handler dla radiobuttona odpowiadającego modelowi w tabeli z kosztami
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
 		private void radioButton2_CheckedChanged(object sender, EventArgs e)
 		{
 			if (this.radioButton2.Checked == true)
@@ -519,6 +694,11 @@ namespace BazyDanych
 			}
 		}
 
+        /// <summary>
+        /// Event Handler dla radiobuttona odpowiadającego pojedyńczemu pojazdowi w tabeli z kosztami
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
 		private void radioButton3_CheckedChanged(object sender, EventArgs e)
 		{
 			if (this.radioButton3.Checked == true)
@@ -529,6 +709,11 @@ namespace BazyDanych
 			}
 		}
 
+        /// <summary>
+        /// Event Handler dla comboboxa ustawiającego zakres dat dla generowania kosztów pojazdów
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
 		private void comboBox4_SelectedIndexChanged(object sender, EventArgs e)
 		{
 			if (this.comboBox4.SelectedIndex == 5)
@@ -547,6 +732,11 @@ namespace BazyDanych
 			}
 		}
 
+        /// <summary>
+        /// Event Handler dla przycisku generuj koszty pojazdów
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
 		private void button3_Click(object sender, EventArgs e)
 		{
 			double value = 50;
@@ -555,6 +745,11 @@ namespace BazyDanych
 			this.textBox2.Text = servisValue.ToString() + " zł";
 		}
 
+        /// <summary>
+        /// Event Handler dla comboboxa ustawiającego zakres dat dla generowania kosztów kierowców
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
 		private void comboBox5_SelectedIndexChanged(object sender, EventArgs e)
 		{
 			if (this.comboBox5.SelectedIndex == 5)
@@ -573,6 +768,11 @@ namespace BazyDanych
 			}
 		}
 
+        /// <summary>
+        ///  Event Handler dla przycisku generuj koszty kierowców
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
 		private void button4_Click(object sender, EventArgs e)
 		{
 			double businessKilimetersValue = 50;
@@ -590,12 +790,21 @@ namespace BazyDanych
 			this.textBox7.Text = privateValue.ToString() + " zł";
 		}
 
+        /// <summary>
+        ///  Event Handler dla przycisku Profil
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
 		private void profilLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
 		{
 			ProfilWindow obj = new ProfilWindow(this, userID);
 			obj.Show();
 		}
 
+        /// <summary>
+        /// Metoda dodająca nowy pojazd do bazdy danych i listy wyświetlanych pojazdów
+        /// </summary>
+        /// <param name="carDto">Obiekt reprezentujący pojazd, który ma zostać dodany do bazy</param>
 		public void AddCarToDatabase(CarDto carDto)
 		{
 			try
@@ -618,6 +827,10 @@ namespace BazyDanych
 			}
 		}
 
+        /// <summary>
+        /// Metoda aktualizująca pojazd w liście wyświetlanych pojazdów
+        /// </summary>
+        /// <param name="carDto">Obiekt reprezentując nowe dane pojazdu</param>
         public void UpdateCar(CarDto carDto)
         {
             try
@@ -639,7 +852,10 @@ namespace BazyDanych
             }
         }
 
-
+        /// <summary>
+        /// Metoda dodająca nowego kierowcy do bazdy danych i listy wyświetlanych kierowców
+        /// </summary>
+        /// <param name="userDto">Obiekt reprezentujący kierowcę, który ma zostać dodany do bazy</param>
         public void AddUserToDatabase(UserDto userDto)
         {
             try
@@ -659,6 +875,10 @@ namespace BazyDanych
             }
         }
 
+        /// <summary>
+        /// Metoda aktualizująca kierowcę w liście wyświetlanych kierowców
+        /// </summary>
+        /// <param name="userDto"></param>
         public void UpdateUser(UserDto userDto)
         {
             try
@@ -677,6 +897,10 @@ namespace BazyDanych
             }
         }
 
+        /// <summary>
+        /// Metoda dodająca nowe miejsce serwisu do bazdy danych i listy wyświetlanych miejsc serwisowych
+        /// </summary>
+        /// <param name="servicePlaceDto">Obiekt reprezentujący miejsce serwisu, które ma zostać dodany do bazy</param>
         public void AddServicePlaceToDatabase(ServicePlaceDto servicePlaceDto)
         {
             try
@@ -695,6 +919,9 @@ namespace BazyDanych
             }
         }
 
+        /// <summary>
+        /// Metoda aktualizująca miejsce serwisu w liście wyświetlanych miejsc serwisowych
+        /// </summary>
         public void UpdateServicePlace()
         {
             try
@@ -712,6 +939,10 @@ namespace BazyDanych
             }
         }
 
+        /// <summary>
+        /// Metoda dodająca nowy szablon do bazdy danych i listy wyświetlanych szablonów
+        /// </summary>
+        /// <param name="templateDto">Obiekt reprezentujący szablon, który ma zostać dodany do bazy</param>
         public void AddTemplateToDatabase(TemplateDto templateDto)
         {
             try
@@ -730,6 +961,9 @@ namespace BazyDanych
             }
         }
 
+        /// <summary>
+        /// Metoda aktualizująca szablon w liście wyświetlanych szablonów
+        /// </summary>
         public void UpdateTemplate()
         {
             try
@@ -747,6 +981,10 @@ namespace BazyDanych
             }
         }
 
+        /// <summary>
+        /// Metoda dodająca nowy szablon serwisowy do bazdy danych i listy wyświetlanych szablonów serwisowych
+        /// </summary>
+        /// <param name="serviceTemplateDto">Obiekt reprezentujący szablon serwisowy, który ma zostać dodany do bazy</param>
         public void AddServiceTemplateToDatabase(ServiceTemplateDto serviceTemplateDto)
         {
             try
@@ -765,6 +1003,10 @@ namespace BazyDanych
             }
         }
 
+        /// <summary>
+        /// Metoda dodająca nową czynność serwisową do bazdy danych i listy wyświetlanych czynności serwisowych
+        /// </summary>
+        /// <param name="serviceActionDto">Obiekt reprezentujący czynność serwisową, która ma zostać dodana do bazy</param>
         public void AddServiceActionToDatabase(ServiceActionDto serviceActionDto)
         {
             try
@@ -783,6 +1025,10 @@ namespace BazyDanych
             }
         }
 
+        /// <summary>
+        /// Metoda dodająca nowy serwis do bazdy danych i listy wyświetlanych serwisów
+        /// </summary>
+        /// <param name="serviceDto">Obiekt reprezentujący serwis, który ma zostać dodany do bazy</param>
         public void AddServiceToDatabase(ServiceDto serviceDto)
         {
             try
@@ -801,6 +1047,11 @@ namespace BazyDanych
             }
         }
 
+        /// <summary>
+        /// Metoda dodająca nowe zlecenie do bazdy danych i listy wyświetlanych zleceń
+        /// </summary>
+        /// <param name="orderDto">Obiekt reprezentujący zlecenie, które ma zostać dodane do bazy</param>
+        /// <returns></returns>
         public int AddOrderToDatabase(OrderDto orderDto)
         {
             try
@@ -820,6 +1071,10 @@ namespace BazyDanych
             }
         }
 
+        /// <summary>
+        /// Metoda dodająca nową opiekę do bazdy danych i listy wyświetlanych opiek
+        /// </summary>
+        /// <param name="careDto">Obiekt reprezentujący opiekę, która ma zostać dodana do bazy</param>
         public void AddCareToDatabase(CareDto careDto)
         {
             try
@@ -838,6 +1093,9 @@ namespace BazyDanych
             }
         }
 
+        /// <summary>
+        /// Metoda aktualizująca szablon serwisowy w liście wyświetlanych szablonów serwisowych
+        /// </summary>
         public void UpdateServiceTemplate()
         {
             try
@@ -855,6 +1113,9 @@ namespace BazyDanych
             }
         }
 
+        /// <summary>
+        /// Metoda aktualizująca czynność serwisową w liście wyświetlanych czynności serwisowych
+        /// </summary>
         public void UpdateServiceAction()
         {
             try
@@ -872,6 +1133,9 @@ namespace BazyDanych
             }
         }
 
+        /// <summary>
+        /// Metoda aktualizująca serwis w liście wyświetlanych serwisów
+        /// </summary>
         public void UpdateService()
         {
             try
@@ -889,6 +1153,9 @@ namespace BazyDanych
             }
         }
 
+        /// <summary>
+        /// Metoda aktualizująca zlecenie w liście wyświetlanych zleceń
+        /// </summary>
         public void UpdateOrder()
         {
             try
@@ -906,6 +1173,9 @@ namespace BazyDanych
             }
         }
 
+        /// <summary>
+        /// Metoda aktualizująca opiekę w liście wyświetlanych opiek
+        /// </summary>
         public void UpdateCare()
         {
             try
@@ -923,6 +1193,10 @@ namespace BazyDanych
             }
         }
 
+        /// <summary>
+        /// Metoda dodająca nowy katalog do bazdy danych i listy wyświetlanych katalogów
+        /// </summary>
+        /// <param name="catalogDto">Obiekt reprezentujący katalog, który ma zostać dodany do bazy</param>
         public void AddCatalogToDatabase(CatalogDto catalogDto)
         {
             try
@@ -941,6 +1215,9 @@ namespace BazyDanych
             }
         }
 
+        /// <summary>
+        /// Metoda aktualizująca katalog w liście wyświetlanych katalogów
+        /// </summary>
         public void UpdateCatalog()
         {
             try
@@ -958,6 +1235,10 @@ namespace BazyDanych
             }
         }
 
+        /// <summary>
+        /// Metoda dodająca nową markę do bazdy danych i listy wyświetlanych marek
+        /// </summary>
+        /// <param name="brandDto">Obiekt reprezentujący markę, która ma zostać dodaa do bazy</param>
         public void AddBrandToDatabase(BrandDto brandDto)
         {
             try
@@ -976,6 +1257,9 @@ namespace BazyDanych
             }
         }
 
+        /// <summary>
+        /// Metoda aktualizująca markę w liście wyświetlanych marek
+        /// </summary>
         public void UpdateBrand()
         {
             try
@@ -993,6 +1277,10 @@ namespace BazyDanych
             }
         }
 
+        /// <summary>
+        /// Metoda dodająca nowy model do bazdy danych i listy wyświetlanych modeli
+        /// </summary>
+        /// <param name="modelDto">Obiekt reprezentujący model, który ma zostać dodany do bazy</param>
         public void AddModelToDatabase(ModelDto modelDto)
         {
             try
@@ -1011,6 +1299,9 @@ namespace BazyDanych
             }
         }
 
+        /// <summary>
+        /// Metoda aktualizująca model w liście wyświetlanych modeli
+        /// </summary>
         public void UpdateModel()
         {
             try
@@ -1028,16 +1319,31 @@ namespace BazyDanych
             }
         }
 
+        /// <summary>
+        /// Event Handler dla przycisku dodaj miejsce serwisowe
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button5_Click(object sender, EventArgs e)
         {
             ShowAddServicePlaceWindow();
         }
 
+        /// <summary>
+        /// Event Handler dla przycisku edytuj miejsce serwisowe
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button6_Click(object sender, EventArgs e)
         {
             //ShowEditServicePlaceWindow();
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
             if (e.ColumnIndex == 4)
@@ -1051,11 +1357,21 @@ namespace BazyDanych
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void addTemplateButton_Click(object sender, EventArgs e)
         {
             ShowAddTemplateWindow();
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void templatesDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.ColumnIndex == 3)
@@ -1076,11 +1392,21 @@ namespace BazyDanych
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void addServiceTemplateButton_Click(object sender, EventArgs e)
         {
             ShowAddServiceTemplateWindow();
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ServiceTemplatesDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.ColumnIndex == 5)
@@ -1110,6 +1436,11 @@ namespace BazyDanych
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void catalogsDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.ColumnIndex == 3)
@@ -1130,26 +1461,51 @@ namespace BazyDanych
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void AddCatalogButton_Click(object sender, EventArgs e)
         {
             ShowAddCatalogWindow();
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void deleteCatalogButton_Click(object sender, EventArgs e)
         {
 
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void addBrandButton_Click(object sender, EventArgs e)
         {
             ShowAddBrandWindow();
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void deleteBrandButton_Click(object sender, EventArgs e)
         {
 
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void brandsDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.ColumnIndex == 3)
@@ -1170,16 +1526,31 @@ namespace BazyDanych
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void addModelButton_Click(object sender, EventArgs e)
         {
             ShowAddModelWindow();
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void deleteModelButton_Click(object sender, EventArgs e)
         {
 
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void modelsDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.ColumnIndex == 4)
@@ -1212,16 +1583,31 @@ namespace BazyDanych
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void addCareButton_Click(object sender, EventArgs e)
         {
             ShowAddCareWindow();
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void deleteCareButton_Click(object sender, EventArgs e)
         {
 
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void careDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.ColumnIndex == 4)
@@ -1250,21 +1636,23 @@ namespace BazyDanych
             }
         }
 
-        private void deleteButtonMOrder_Click(object sender, EventArgs e)
-        {
 
-        }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void addServiceButton_Click(object sender, EventArgs e)
         {
             ShowAddServiceWindow();
         }
 
-        private void deleteServiceButton_Click(object sender, EventArgs e)
-        {
 
-        }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void servicesDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.ColumnIndex == 4)
@@ -1299,16 +1687,21 @@ namespace BazyDanych
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void addServiceActionButton_Click(object sender, EventArgs e)
         {
             ShowAddServiceActionWindow();
         }
 
-        private void deleteServiceActionButton_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ServiceActionsDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.ColumnIndex == 4)
@@ -1336,26 +1729,6 @@ namespace BazyDanych
                 obj.addButton.Visible = false;
                 obj.Show();
             }
-        }
-
-        private void tableControlO_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tableControlK_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tableControlM_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void kTabelaZlecenia_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
     }
 }

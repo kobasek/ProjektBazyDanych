@@ -10,13 +10,23 @@ using System.Windows.Forms;
 
 namespace BazyDanych
 {
+    /// <summary>
+    /// Klasa formularza wyświatlającego wybór daty rezerwecja pojazu
+    /// </summary>
     public partial class ReservationWindow : Form
     {
+        /// <summary>
+        /// Bezparametrowy konstruktor klasy formularza wyświatlającego wybór daty rezerwecja pojazu
+        /// </summary>
         public ReservationWindow()
         {
             InitializeComponent();
         }
-
+        /// <summary>
+        /// Event Handler dla przycisku akceptacji wyboru daty rezerwacji pojazdu
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();

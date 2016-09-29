@@ -10,13 +10,22 @@ using System.Windows.Forms;
 
 namespace BazyDanych
 {
+    /// <summary>
+    /// Klasa formularza wyświetlająca szczegóły zlecenia
+    /// </summary>
     public partial class OrderDetailsWindow : Form
     {
+        /// <summary>
+        /// Bezparametrowy konstrukor klasy formularza wyświetlająca szczegóły zlecenia
+        /// </summary>
         public OrderDetailsWindow()
         {
             InitializeComponent();
         }
-
+        /// <summary>
+        /// Jednoparametrowy konstruktor klasy formularza wyświetlająca szczegóły zlecenia
+        /// </summary>
+        /// <param name="orderId">ID zlecenia, któego szczegóły mają być wyświetlone</param>
         public OrderDetailsWindow(int orderId)
         {
             /*InitializeComponent();

@@ -9,8 +9,15 @@ using System.Windows.Forms;
 
 namespace BazyDanych
 {
+    /// <summary>
+    /// Klasa zawirająca często używane metody
+    /// </summary>
 	class Functions
 	{
+        /// <summary>
+        /// Metoda zwracająca łańcuch znakowy zawierający dane do łączenia z bazą danych
+        /// </summary>
+        /// <returns></returns>
 		public static string GetConnectionString()
 		{
 			return "server=127.0.0.1;uid=root;" +

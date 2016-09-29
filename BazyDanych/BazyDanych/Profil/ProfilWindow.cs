@@ -10,10 +10,18 @@ using System.Windows.Forms;
 
 namespace BazyDanych
 {
+    /// <summary>
+    /// Klasa formularza wyświatlającego okno profilu użytkownika
+    /// </summary>
     public partial class ProfilWindow : Form
     {
         private User user;
         private int id;
+        /// <summary>
+        /// Dwuparametrowy konstruktor klasy formularza wyświatlającego okno profilu użytkownika
+        /// </summary>
+        /// <param name="mainWindow">Uchwyt do okna głównego aplikacji</param>
+        /// <param name="userID">ID użytkownika, którego profil jest wyświetlany</param>
         public ProfilWindow(MainWindow mainWindow, int userID)
         {
             InitializeComponent();
@@ -21,12 +29,17 @@ namespace BazyDanych
             id = userID;
             EditProfileInitialize(userID);
         }
-
+        /// <summary>
+        /// Bezparametrowy konstruktor klasy formularza wyświatlającego okno profilu użytkownika
+        /// </summary>
         public ProfilWindow()
         {
             InitializeComponent();
         }
-
+        /// <summary>
+        /// Funkcja inicjalizująca pola formularza wyświatlającego okno profilu użytkownika
+        /// </summary>
+        /// <param name="userID">ID użytkownika, którego profil jest wyświetlany</param>
         public void EditProfileInitialize(int userID)
         {
             user = User.GetUserById(userID);
@@ -41,17 +54,32 @@ namespace BazyDanych
             dateTimePicker1.Value = user.dateOfBirth;
         }
 
+        /// <summary>
+        /// Event Handler dla przycisku włączającego okno zmiany hasła
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button2_Click(object sender, EventArgs e)
         {
             ChangingPassword obj = new ChangingPassword(id);
             obj.Show();
         }
 
+        /// <summary>
+        /// Event Handler dla przycisku zamykającego okno profilu użytkownika
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button3_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
+        /// <summary>
+        /// Event Handler dla przycisku akceptującego zmianę danych profilowych. Po walidacji danych, jeśli wszystko jest poprawne następuje aktualizacja bazy danych, oraz listy użytkowników wyświetlanej w głównym okni programu
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
         {
             var userDto = new UserDto();

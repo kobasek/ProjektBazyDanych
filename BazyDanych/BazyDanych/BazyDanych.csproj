@@ -22,6 +22,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\BazyDanych.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -72,10 +73,10 @@
     <Compile Include="Model\AddOrEditModelWindow.Designer.cs">
       <DependentUpon>AddOrEditModelWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="OrderDetailsWindow.cs">
+    <Compile Include="Order\OrderDetailsWindow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="OrderDetailsWindow.Designer.cs">
+    <Compile Include="Order\OrderDetailsWindow.Designer.cs">
       <DependentUpon>OrderDetailsWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="ServiceAction\AddOrEditServiceActionWindow.cs">
@@ -84,10 +85,10 @@
     <Compile Include="ServiceAction\AddOrEditServiceActionWindow.Designer.cs">
       <DependentUpon>AddOrEditServiceActionWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="ServiceDetails.cs">
+    <Compile Include="Service\ServiceDetails.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ServiceDetails.Designer.cs">
+    <Compile Include="Service\ServiceDetails.Designer.cs">
       <DependentUpon>ServiceDetails.cs</DependentUpon>
     </Compile>
     <Compile Include="ServicePlace\AddOrEditServicePlaceWindow.cs">
@@ -194,10 +195,10 @@
     <Compile Include="Order\Order.cs" />
     <Compile Include="Order\OrderDto.cs" />
     <Compile Include="Order\OrderTableElement.cs" />
-    <Compile Include="ProfilWindow.cs">
+    <Compile Include="Profil\ProfilWindow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ProfilWindow.Designer.cs">
+    <Compile Include="Profil\ProfilWindow.Designer.cs">
       <DependentUpon>ProfilWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="ReservationWindow.cs">
@@ -257,13 +258,13 @@
     <EmbeddedResource Include="Model\AddOrEditModelWindow.resx">
       <DependentUpon>AddOrEditModelWindow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="OrderDetailsWindow.resx">
+    <EmbeddedResource Include="Order\OrderDetailsWindow.resx">
       <DependentUpon>OrderDetailsWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ServiceAction\AddOrEditServiceActionWindow.resx">
       <DependentUpon>AddOrEditServiceActionWindow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ServiceDetails.resx">
+    <EmbeddedResource Include="Service\ServiceDetails.resx">
       <DependentUpon>ServiceDetails.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ServicePlace\AddOrEditServicePlaceWindow.resx">
@@ -308,7 +309,7 @@
     <EmbeddedResource Include="Car\AddOrEditCarWindow.resx">
       <DependentUpon>AddOrEditCarWindow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ProfilWindow.resx">
+    <EmbeddedResource Include="Profil\ProfilWindow.resx">
       <DependentUpon>ProfilWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ReservationWindow.resx">

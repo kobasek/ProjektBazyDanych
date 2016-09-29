@@ -12,15 +12,21 @@ namespace BazyDanych
 {
 
     /// <summary>
-    /// Formularz wyświetlający szczegóły serwisu
+    /// Klasa formularza wyświatlającego szczegóły serwisu
     /// </summary>
     public partial class ServiceDetails : Form
     {
+        /// <summary>
+        /// Bezparametrowy konstruktor klasy formularza wyświetlającego szczegół serwisu
+        /// </summary>
         public ServiceDetails()
         {
             InitializeComponent();
         }
-
+        /// <summary>
+        /// Jednoparametrowy konstruktor klasy formularza wyświetlającego szczegół serwisu
+        /// </summary>
+        /// <param name="serviceId">ID serwisu, którego szczegóły chcemy wyświetlić</param>
         public ServiceDetails(int serviceId)
         {
             InitializeComponent();
@@ -36,7 +42,11 @@ namespace BazyDanych
                 serviceActionsBindingSource.Add(new ServiceActionTableElement(serviceAction.id, serviceAction.name, serviceAction.cost, serviceAction.catalogId, serviceAction.serviceId));
             }
         }
-
+        /// <summary>
+        /// Event Handler łapiący kliknięcie w tabelę czynności serwisowych
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void serviceActionsDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
