@@ -7,20 +7,53 @@ using MySql.Data.MySqlClient;
 
 namespace BazyDanych
 {
+    /// <summary>
+    /// Klasa reprezentujący szablon serwisowy
+    /// </summary>
     class ServiceTemplate
     {
+        /// <summary>
+        /// Id szablonu serwisowego
+        /// </summary>
         public int id;
+
+        /// <summary>
+        /// nazwa szablonu serwisowego
+        /// </summary>
         public string name;
+
+        /// <summary>
+        /// ilość kilometrów
+        /// </summary>
         public int kilometres;
+
+        /// <summary>
+        /// okres
+        /// </summary>
         public int period;
+
+        /// <summary>
+        /// Id katalogu, do któego należy szablon serwisowy
+        /// </summary>
         public int catalogId;
+
+        /// <summary>
+        /// ID szablonu, do któego należy szablon serwisowy
+        /// </summary>
         public int templateId;
 
+        /// <summary>
+        /// Bezparametrowy konstruktor klasy szablonu serwisowego
+        /// </summary>
         public ServiceTemplate()
         {
 
         }
 
+        /// <summary>
+        /// Jednoparametrowy konstruktor klasy szablonu serwisowego
+        /// </summary>
+        /// <param name="serviceTemplateDto">Obiekt reprezentujący szablon serwisowy</param>
         public ServiceTemplate(ServiceTemplateDto serviceTemplateDto)
         {
             id = serviceTemplateDto.Id;
@@ -31,7 +64,11 @@ namespace BazyDanych
             templateId = serviceTemplateDto.TemplateId;
         }
 
-
+        /// <summary>
+        /// Metoda pobierająca szablon serwisowy z bazy
+        /// </summary>
+        /// <param name="id">ID szablonu serwisowego, który chcemy pobrać</param>
+        /// <returns>Obiekt przechowujący dane pobranego szablonu</returns>
         public static ServiceTemplate GetServiceTemplateById(int id)
         {
             var connectionString = Functions.GetConnectionString();
@@ -72,6 +109,10 @@ namespace BazyDanych
             return new ServiceTemplate();
         }
 
+        /// <summary>
+        /// Metoda dodająca szablon serwisowy do bazy
+        /// </summary>
+        /// <param name="serviceTemplateDto">Obiekt reprezentujący szablon serwisowy, który ma być dodany do bazy</param>
         public static void AddServiceTemplate(ServiceTemplateDto serviceTemplateDto)
         {
             var connectionString = Functions.GetConnectionString();
@@ -105,6 +146,10 @@ namespace BazyDanych
             }
         }
 
+        /// <summary>
+        /// Metoda pobierająca listę szablonów serwisowych z bazy
+        /// </summary>
+        /// <returns>Lista szablonów serwisowych</returns>
         public static IList<ServiceTemplate> GetServiceTemplatesList()
         {
             var connectionString = Functions.GetConnectionString();
@@ -141,6 +186,11 @@ namespace BazyDanych
             return list;
         }
 
+        /// <summary>
+        /// Metoda pobierający z bazy szablony serwisowe należące do konkretnego szablonu
+        /// </summary>
+        /// <param name="templateId">Id szablonu</param>
+        /// <returns>Lista szablonów serwisowych</returns>
         public static IList<ServiceTemplate> GetServiceTemplatesWithGivenTemplateIdList(int templateId)
         {
             var connectionString = Functions.GetConnectionString();
@@ -177,6 +227,11 @@ namespace BazyDanych
             return list;
         }
 
+        /// <summary>
+        /// Metoda pobierający z bazy szablony serwisowe należące do konkretnego katalogu
+        /// </summary>
+        /// <param name="catalogId">ID katalogu</param>
+        /// <returns></returns>
         public static IList<ServiceTemplate> GetServiceTemplatesWithGivenCatalogIdList(int catalogId)
         {
             var connectionString = Functions.GetConnectionString();
@@ -213,6 +268,10 @@ namespace BazyDanych
             return list;
         }
 
+        /// <summary>
+        /// Aktualizacja szablonu serwisowego w bazie
+        /// </summary>
+        /// <param name="serviceTemplateDto">Obiekt reprezentujący zaktualizowany szablon serwisowy</param>
         public static void UpdateServiceTemplate(ServiceTemplateDto serviceTemplateDto)
         {
             var connectionString = Functions.GetConnectionString();

@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace BazyDanych
 {
+    /// <summary>
+    /// Pomocnicza klasa służąca do wypełniania tabeli z szablonami serwisowymi
+    /// </summary>
     class ServiceTemplateTableElement
     {
         public int Id { get; set; }

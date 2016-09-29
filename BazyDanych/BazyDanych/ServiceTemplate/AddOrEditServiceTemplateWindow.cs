@@ -10,15 +10,26 @@ using System.Windows.Forms;
 
 namespace BazyDanych
 {
+    /// <summary>
+    /// Klasa formularza wyświetlającego okno dodawania/edycji szablonów serwisowych
+    /// </summary>
     public partial class AddOrEditServiceTemplateWindow : Form
     {
         private MainWindow mainWindow;
         private ServiceTemplate serviceTemplate;
 
+        /// <summary>
+        /// Bezparametrowy konstruktor klasy formularza wyświatlającego okno dodawania/edycji szablonów serwisowych
+        /// </summary>
         public AddOrEditServiceTemplateWindow()
         {
             InitializeComponent();
         }
+
+        /// <summary>
+        /// Jednoparametrowy konstruktor klasy formularza wyświatlającego okno dodawania/edycji szablonów serwisowych
+        /// </summary>
+        /// <param name="mainWindow">Uchwyt do głównego okna aplikacji</param>
         public AddOrEditServiceTemplateWindow(MainWindow mainWindow)
         {
             InitializeComponent();
@@ -41,6 +52,12 @@ namespace BazyDanych
             this.mainWindow = mainWindow;
         }
 
+        /// <summary>
+        /// Dwuparametrowy konstruktor klasy formularza wyświatlającego okno dodawania/edycji szablonów serwisowych
+        /// </summary>
+        /// <param name="mainWindow">Uchwyt do głównego okna aplikacji</param>
+        /// <param name="serviceTemplateId">
+        /// id szablonu serwisowego, który ma być edytowany</param>
         public AddOrEditServiceTemplateWindow(MainWindow mainWindow, int serviceTemplateId)
         {
             InitializeComponent();
@@ -69,6 +86,11 @@ namespace BazyDanych
             templateComboBox.SelectedValue = serviceTemplate.templateId;
         }
 
+        /// <summary>
+        /// Event Handler przycisku potwierdzającego dodanie szablonu serwisowego
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void addButton_Click_1(object sender, EventArgs e)
         {
             var errorNumber = 0;
@@ -151,6 +173,11 @@ namespace BazyDanych
             }
         }
 
+        /// <summary>
+        /// Event Handler potwierdzający edycję szablonu serwisowego
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void acceptButton_Click_1(object sender, EventArgs e)
         {
             var serviceTemplateDto = new ServiceTemplateDto();
