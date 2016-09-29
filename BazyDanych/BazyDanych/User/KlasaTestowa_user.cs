@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace BazyDanych
 {
+    /// <summary>
+    /// Klasa pomocnicza służąca do wypełniania tabeli z listą użytkowników
+    /// </summary>
     class KlasaTestowa_user
     {
         private int id;

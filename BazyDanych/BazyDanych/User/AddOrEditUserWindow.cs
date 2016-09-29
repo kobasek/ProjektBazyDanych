@@ -4,10 +4,18 @@ using System.Windows.Forms;
 
 namespace BazyDanych
 {
+    /// <summary>
+    /// Klasa formularza wyświetlającego okno dodawania/edycji kierowcy
+    /// </summary>
     public partial class AddOrEditUserWindow : Form
     {
         private User user;
 
+        /// <summary>
+        /// Dwuparametrowy konstruktor klasy formularza wyświetlającego okno dodawania/edycji kierowcy
+        /// </summary>
+        /// <param name="mainWindow">Uchwyt do głównego okna programu</param>
+        /// <param name="userId">ID kierowcy, którego dane mają być edytowane</param>
         public AddOrEditUserWindow(MainWindow mainWindow, int userId)
         {
             InitializeComponent();
@@ -15,23 +23,40 @@ namespace BazyDanych
             EditInitialize(userId);
         }
 
+        /// <summary>
+        /// Dwuparametrowy konstruktor klasy formularza wyświetlającego okno szczegółów kierowcy
+        /// </summary>
+        /// <param name="userId">ID kierowcy, którego dane mają być edytowane</param>
+        /// <param name="pom">Zmienna pomocnicza, informująca, że okno ma zostać wyświetlone w trybie widoku szczegółów kierowcy</param>
         public AddOrEditUserWindow(int userId, string pom)
         {
             InitializeComponent();
             SzczegolyInitialize(userId);
         }
 
+        /// <summary>
+        /// Jednoparametrowy konstruktor klasy formularza wyświetlającego okno dodawania/edycji kierowcy
+        /// </summary>
+        /// <param name="mainWindow">Uchwyt do głównego okna programu<</param>
         public AddOrEditUserWindow(MainWindow mainWindow)
         {
             InitializeComponent();
             main = mainWindow;
         }
 
+        /// <summary>
+        /// Bezparametrowy konstruktor klasy formularza wyświetlającego okno dodawania/edycji kierowcy
+        /// </summary>
         public AddOrEditUserWindow()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Event Handler do przycisku potwierdzającego dodanie nowego kierowcy
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void buttonAddUser_Click(object sender, EventArgs e)
         {
             var errorNumber = 0;
@@ -255,6 +280,10 @@ namespace BazyDanych
             }
         }
 
+        /// <summary>
+        /// Metoda inicjalizująca pola formularza przed edycją danych kierowcy
+        /// </summary>
+        /// <param name="userId">ID kierowcy, któego dane mają być edytowane</param>
         public void EditInitialize(int userId)
         {
             user = User.GetUserById(userId);
@@ -357,6 +386,10 @@ namespace BazyDanych
 
         }
 
+        /// <summary>
+        /// Metoda inicjalizująca pola formularza przed wyświetleniem szczegółów kierowcy
+        /// </summary>
+        /// <param name="userId"></param>
         public void SzczegolyInitialize(int userId)
         {
             user = User.GetUserById(userId);
@@ -464,6 +497,11 @@ namespace BazyDanych
 
         }
 
+        /// <summary>
+        /// Event Handler przycisku potwierdzającego edycję danych kierowcy
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button2_Click(object sender, EventArgs e)
         {
             var userDto = new UserDto();

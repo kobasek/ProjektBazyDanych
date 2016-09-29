@@ -7,16 +7,28 @@ using MySql.Data.MySqlClient;
 
 namespace BazyDanych
 {
-
+    /// <summary>
+    /// Klasa formularza wyświetlającego okno do zmiany hasła
+    /// </summary>
     public partial class ChangingPassword : Form
     {
         private User user;
+        
+        /// <summary>
+        /// Jednoargumentowy konstruktor klasy formularza wyświetlającego okno do zmiany hasła
+        /// </summary>
+        /// <param name="userID"></param>
         public ChangingPassword(int userID)
         {
             user = User.GetUserById(userID);
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Event Handler przycisku potwierdzającego zmianę hasła
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
         {
             var connectionString = Functions.GetConnectionString();
@@ -56,6 +68,11 @@ namespace BazyDanych
             this.Close();
         }
 
+        /// <summary>
+        /// Event handler przycisku anuluj w oknie zmiany hasła
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();

@@ -7,27 +7,105 @@ using MySql.Data.MySqlClient;
 
 namespace BazyDanych
 {
+    /// <summary>
+    /// Klasa przechowywująca informacje o użytkowniku
+    /// </summary>
     class User
     {
+        /// <summary>
+        /// ID użytkownika
+        /// </summary>
         public int id;
+
+        /// <summary>
+        /// Prawa dostępu użytkownika
+        /// </summary>
         public char permissions;
+
+        /// <summary>
+        /// Imię użytkownika
+        /// </summary>
         public string name;
+
+        /// <summary>
+        /// Nazwisko użytkownika
+        /// </summary>
         public string lastName;
+
+        /// <summary>
+        /// Telefon użytkownika
+        /// </summary>
         public string phone;
+
+        /// <summary>
+        /// Miasto, w którym mieszka użytkownik
+        /// </summary>
         public string city;
+
+        /// <summary>
+        /// Ulica, na której mieszka użytkownik
+        /// </summary>
         public string street;
+
+        /// <summary>
+        /// Kod pocztowy użytkownika
+        /// </summary>
         public string zipCode;
+
+        /// <summary>
+        /// Nr budynku, w którym mieszka użytkownik
+        /// </summary>
         public int buildingNumber;
+
+        /// <summary>
+        /// Nr mieszkania, w któym mieszka użytkownik
+        /// </summary>
         public int? apartmentNumber;
+
+        /// <summary>
+        /// Miejsce urodzenia użytkownika
+        /// </summary>
         public string birthplace;
+
+        /// <summary>
+        /// Data urodzenia użytkownika
+        /// </summary>
         public DateTime dateOfBirth;
+
+        /// <summary>
+        /// Płeć użytkownika
+        /// </summary>
         public char gender;
+
+        /// <summary>
+        /// Nr dowodu osobistego użytkownika
+        /// </summary>
         public string identityCardNumber;
+
+        /// <summary>
+        /// Pesel użytkownika
+        /// </summary>
         public string pesel;
+
+        /// <summary>
+        /// Nr prawa jazdy użytkownika
+        /// </summary>
         public string driversLicense;
+
+        /// <summary>
+        /// Login użytkownika
+        /// </summary>
         public string login;
+
+        /// <summary>
+        /// Hasło użytkownika
+        /// </summary>
         public string password;
 
+        /// <summary>
+        /// Jednoargumentowy konstruktor klasy zawierającej informacje o użytkowniku
+        /// </summary>
+        /// <param name="userDto">Obiekt reprezentujący użytkownika</param>
         public User(UserDto userDto)
         {
             id = userDto.Id;
@@ -51,11 +129,18 @@ namespace BazyDanych
             phone = userDto.Phone;
         }
 
+        /// <summary>
+        /// Bezargumentowy konstruktor klasy zawierającej informacje o użytkowniku
+        /// </summary>
         public User()
         {
         }
 
-        public static IList<User> GetUserList(char permissions = 'a')
+        /// <summary>
+        /// Metoda pobierająca listę użytkowników z bazy
+        /// </summary>
+        /// <returns>Lista użytkowników z bazy</returns>
+        public static IList<User> GetUserList()
         {
             var connectionString = Functions.GetConnectionString();
             var list = new List<User>();
@@ -90,6 +175,11 @@ namespace BazyDanych
             return list;
         }
 
+        /// <summary>
+        /// Metoda pobierająca dane użytkownika
+        /// </summary>
+        /// <param name="id">ID użytkownika, któego dane chcemy pobrać</param>
+        /// <returns>Dane użytkownika o podanym w parametrze ID</returns>
         public static User GetUserById(int id)
         {
             var connectionString = Functions.GetConnectionString();
@@ -143,6 +233,10 @@ namespace BazyDanych
             return new User();
         }
 
+        /// <summary>
+        /// Zapis danych użytkownika do bazy
+        /// </summary>
+        /// <param name="userDto">Obiekt reprezentujący dane użytkownika</param>
         public static void AddUser(UserDto userDto)
         {
             var connectionString = Functions.GetConnectionString();
@@ -200,6 +294,10 @@ namespace BazyDanych
             }
         }
 
+        /// <summary>
+        /// Aktualizacja danych użytkownika w bazie
+        /// </summary>
+        /// <param name="userDto">Obiekt reprezentujący zaktualizowane dane użytkownika do zapisania w bazie</param>
         public static void UpdateUser(UserDto userDto)
         {
             var connectionString = Functions.GetConnectionString();
@@ -253,6 +351,10 @@ namespace BazyDanych
             }
         }
 
+        /// <summary>
+        /// Funkcja pobierająca listę imion i nazwisk użytkowników z bazy
+        /// </summary>
+        /// <returns>Lista imion i nazwisk uzytkowników z bazy w formacie: 'Nazwisko Imię'</returns>
         public static IList<string> GetUsersNameList()
         {
             var connectionString = Functions.GetConnectionString();
@@ -282,6 +384,10 @@ namespace BazyDanych
             return list;
         }
 
+        /// <summary>
+        /// Metoda zwracająca listę opiekunów z bazy
+        /// </summary>
+        /// <returns>Lista opiekunów</returns>
         public static IList<string> GetKeeperNameList()
         {
             var connectionString = Functions.GetConnectionString();
@@ -311,6 +417,11 @@ namespace BazyDanych
             return list;
         }
 
+        /// <summary>
+        /// Metoda pobierająca imię i nazwisko konkretnego użytkownika z bazy
+        /// </summary>
+        /// <param name="id">ID użytkownika, którego imienia i nazwiska potrzebujemy</param>
+        /// <returns>Imię i nazwisko użytkownika w formacie: 'Nazwisko Imię'</returns>
         public static string GetUserNameById(int id)
         {
             var connectionString = Functions.GetConnectionString();
@@ -345,6 +456,12 @@ namespace BazyDanych
             return name;
         }
 
+        /// <summary>
+        /// Metoda zwracająca ID użytkownika na podstawie jego danych
+        /// </summary>
+        /// <param name="name">Imię użytkownika</param>
+        /// <param name="lastName">Nazwisko użytkownika</param>
+        /// <returns>ID użytkownika</returns>
         public static int GetUserIdByName(string name, string lastName)
         {
             var connectionString = Functions.GetConnectionString();
@@ -378,6 +495,10 @@ namespace BazyDanych
             return id;
         }
 
+        /// <summary>
+        /// Metoda nadająca użytkownikowi prawa opiekuna
+        /// </summary>
+        /// <param name="id">ID użytkownika, któremu chcemy nadac prawa</param>
         public static void SetKeeper(int id)
         {
             var connectionString = Functions.GetConnectionString();
@@ -403,6 +524,10 @@ namespace BazyDanych
             }
         }
 
+        /// <summary>
+        /// Metoda użytkownikowi prawa kierowcy
+        /// </summary>
+        /// <param name="id">ID użytkownika, któremu chcemy nadać prawa</param>
         public static void SetDriver(int id)
         {
             var connectionString = Functions.GetConnectionString();
@@ -428,6 +553,11 @@ namespace BazyDanych
             }
         }
 
+        /// <summary>
+        /// Metoda sprawdzająca zgodność loginu z hasłem w bazie
+        /// </summary>
+        /// <param name="id">ID użytkownika, którego hasło chcemy sprawdzić</param>
+        /// <param name="password">HAsło do sprawdzenia</param>
         public static void ChangeUserPassword(int id, string password)
         {
             var connectionString = Functions.GetConnectionString();
