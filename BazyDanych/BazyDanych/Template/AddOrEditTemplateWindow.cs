@@ -63,9 +63,10 @@ namespace BazyDanych
                     mainWindow.AddTemplateToDatabase(templateDto);
                     Close();
                 }
+                #pragma warning disable 0168
                 catch (MySql.Data.MySqlClient.MySqlException ex)
+                #pragma warning restore 0168
                 {
-
                     MessageBox.Show("Dodawanie szablonu nie powiodło się!");
                 }
             }
@@ -103,7 +104,9 @@ namespace BazyDanych
                     mainWindow.UpdateTemplate();
                     Close();
                 }
+                #pragma warning disable 0168
                 catch (MySql.Data.MySqlClient.MySqlException ex)
+                #pragma warning restore 0168
                 {
 
                     MessageBox.Show("Edytowanie pojazdu nie powiodło się!");

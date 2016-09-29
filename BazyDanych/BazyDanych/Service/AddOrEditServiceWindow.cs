@@ -148,7 +148,9 @@ namespace BazyDanych
                         mainWindow.AddServiceToDatabase(serviceDto);
                         Close();
                     }
+                    #pragma warning disable 0168
                     catch (MySql.Data.MySqlClient.MySqlException ex)
+                    #pragma warning restore 0168
                     {
                         MessageBox.Show("Dodawanie serwisu nie powiodło się!");
                     }
@@ -230,7 +232,9 @@ namespace BazyDanych
                     mainWindow.UpdateService();
                     Close();
                 }
+                #pragma warning disable 0168
                 catch (MySql.Data.MySqlClient.MySqlException ex)
+                #pragma warning restore 0168
                 {
 
                     MessageBox.Show("Edytowanie serwisu nie powiodło się!");

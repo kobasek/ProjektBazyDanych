@@ -10,6 +10,10 @@ using System.Windows.Forms;
 
 namespace BazyDanych
 {
+
+    /// <summary>
+    /// Formularz wyświetlający szczegóły serwisu
+    /// </summary>
     public partial class ServiceDetails : Form
     {
         public ServiceDetails()

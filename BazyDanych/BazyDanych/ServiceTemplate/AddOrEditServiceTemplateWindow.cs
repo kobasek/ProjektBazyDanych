@@ -140,7 +140,9 @@ namespace BazyDanych
                     mainWindow.AddServiceTemplateToDatabase(serviceTemplateDto);
                     Close();
                 }
+                #pragma warning disable 0168
                 catch (MySql.Data.MySqlClient.MySqlException ex)
+                #pragma warning restore 0168
                 {
 
                     MessageBox.Show("Dodawanie szablonu serwisowego nie powiodło się!");
@@ -223,7 +225,9 @@ namespace BazyDanych
                     mainWindow.UpdateServiceTemplate();
                     Close();
                 }
+                #pragma warning disable 0168
                 catch (MySql.Data.MySqlClient.MySqlException ex)
+                #pragma warning restore 0168
                 {
 
                     MessageBox.Show("Edytowanie szablonu serwisowego nie powiodło się!");

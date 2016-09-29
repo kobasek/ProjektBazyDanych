@@ -63,7 +63,9 @@ namespace BazyDanych
                     mainWindow.AddBrandToDatabase(brandDto);
                     Close();
                 }
+                #pragma warning disable 0168
                 catch (MySql.Data.MySqlClient.MySqlException ex)
+                #pragma warning restore 0168
                 {
 
                     MessageBox.Show("Dodawanie marki nie powiodło się!");
@@ -103,7 +105,9 @@ namespace BazyDanych
                     mainWindow.UpdateBrand();
                     Close();
                 }
+                #pragma warning disable 0168
                 catch (MySql.Data.MySqlClient.MySqlException ex)
+                #pragma warning restore 0168
                 {
                     MessageBox.Show("Edytowanie marki nie powiodło się!");
                 }

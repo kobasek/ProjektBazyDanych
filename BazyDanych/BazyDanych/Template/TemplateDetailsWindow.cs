@@ -12,7 +12,6 @@ namespace BazyDanych
 {
     public partial class TemplateDetailsWindow : Form
     {
-        private int? templateId;
 
         public TemplateDetailsWindow()
         {

@@ -63,7 +63,9 @@ namespace BazyDanych
                     mainWindow.AddCatalogToDatabase(catallogDto);
                     Close();
                 }
+                #pragma warning disable 0168
                 catch (MySql.Data.MySqlClient.MySqlException ex)
+                #pragma warning restore 0168
                 {
 
                     MessageBox.Show("Dodawanie katalogu nie powiodło się!");
@@ -103,7 +105,9 @@ namespace BazyDanych
                     mainWindow.UpdateCatalog();
                     Close();
                 }
+                #pragma warning disable 0168
                 catch (MySql.Data.MySqlClient.MySqlException ex)
+                #pragma warning disable 0168
                 {
 
                     MessageBox.Show("Edytowanie katalogu nie powiodło się!");

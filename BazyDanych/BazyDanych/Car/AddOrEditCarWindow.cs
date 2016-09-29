@@ -175,10 +175,12 @@ namespace BazyDanych
                     Care.AddCare(User.GetUserIdByName(pomtable[1], pomtable[0]), carDto.Id, DateTime.Now);
                     Close();
 				}
-				catch (MySql.Data.MySqlClient.MySqlException ex)
-				{
+                #pragma warning disable 0168
+                catch (MySql.Data.MySqlClient.MySqlException ex)
+                #pragma warning disable 0168
+                {
 
-					MessageBox.Show("Dodawanie pojazdu nie powiodło się!");
+                    MessageBox.Show("Dodawanie pojazdu nie powiodło się!");
 				}
 				
 			}

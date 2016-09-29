@@ -75,7 +75,9 @@ namespace BazyDanych
                     mainWindow.AddServicePlaceToDatabase(servicePlaceDto);
                     Close();
                 }
+                #pragma warning disable 0168
                 catch (MySql.Data.MySqlClient.MySqlException ex)
+                #pragma warning restore 0168
                 {
 
                     MessageBox.Show("Dodawanie miejsca serwisowego nie powiodło się!");
@@ -126,7 +128,9 @@ namespace BazyDanych
                     mainWindow.UpdateServicePlace();
                     Close();
                 }
+                #pragma warning disable 0168
                 catch (MySql.Data.MySqlClient.MySqlException ex)
+                #pragma warning restore 0168
                 {
 
                     MessageBox.Show("Edytowanie pojazdu nie powiodło się!");

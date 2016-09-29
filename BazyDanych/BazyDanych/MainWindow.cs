@@ -15,7 +15,6 @@ namespace BazyDanych
 	public partial class MainWindow : Form
 	{
 		private bool isLogged;
-        private char permission;
         private int userID;
 		public MainWindow()
 		{
@@ -69,7 +68,6 @@ namespace BazyDanych
 
 		public void InitializeComponentMenadzer(int id)
 		{
-            permission = 'M';
             userID = id;
 			this.panelM.Visible = true;
 			this.profilLabel.Visible = true;
@@ -87,7 +85,6 @@ namespace BazyDanych
 
 		public void InitializeComponentOpieka(int id)
 		{
-            permission = 'O';
             userID = id;
             this.panelO.Visible = true;
 			this.profilLabel.Visible = true;
@@ -105,7 +102,6 @@ namespace BazyDanych
 
 		public void InitializeComponentKierowca(int id)
 		{
-            permission = 'K';
             userID = id;
             this.panelK.Visible = true;
 			this.profilLabel.Visible = true;

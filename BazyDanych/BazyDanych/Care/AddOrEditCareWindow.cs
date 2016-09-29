@@ -110,7 +110,9 @@ namespace BazyDanych
                     mainWindow.AddCareToDatabase(careDto);
                     Close();
                 }
+                #pragma warning disable 0168
                 catch (MySql.Data.MySqlClient.MySqlException ex)
+                #pragma warning restore 0168
                 {
                     MessageBox.Show("Dodawanie opieki nie powiodło się!");
                 }
@@ -161,7 +163,9 @@ namespace BazyDanych
                     mainWindow.UpdateCare();
                     Close();
                 }
+                #pragma warning disable 0168
                 catch (MySql.Data.MySqlClient.MySqlException ex)
+                #pragma warning restore 0168
                 {
 
                     MessageBox.Show("Edytowanie opieki nie powiodło się!");

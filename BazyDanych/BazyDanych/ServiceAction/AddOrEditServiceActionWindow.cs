@@ -152,7 +152,9 @@ namespace BazyDanych
                         mainWindow.AddServiceActionToDatabase(serviceActionDto);
                         Close();
                     }
+                    #pragma warning disable 0168
                     catch (MySql.Data.MySqlClient.MySqlException ex)
+                    #pragma warning restore 0168
                     {
 
                         MessageBox.Show("Dodawanie czynności serwisowej nie powiodło się!");
@@ -230,7 +232,9 @@ namespace BazyDanych
                     mainWindow.UpdateServiceAction();
                     Close();
                 }
+                #pragma warning disable 0168
                 catch (MySql.Data.MySqlClient.MySqlException ex)
+                #pragma warning disable 0168
                 {
                     MessageBox.Show("Edytowanie czynności serwisowej nie powiodło się!");
                 }
