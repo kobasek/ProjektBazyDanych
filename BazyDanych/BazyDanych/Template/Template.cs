@@ -7,22 +7,44 @@ using MySql.Data.MySqlClient;
 
 namespace BazyDanych
 {
+    /// <summary>
+    /// Klasa przechowująca informacje o szablonie
+    /// </summary>
     class Template
     {
+        /// <summary>
+        /// ID szablonu
+        /// </summary>
         public int id;
+
+        /// <summary>
+        /// Nazwa szablonu
+        /// </summary>
         public string name;
 
+        /// <summary>
+        /// Bezparametrowy konstruktor klasy szablon
+        /// </summary>
         public Template()
         {
 
         }
 
+        /// <summary>
+        /// Jednoparametrowy konstruktor klasy szablon
+        /// </summary>
+        /// <param name="templateDto">Obiekt reprezentujący informacje o szablonie</param>
         public Template(TemplateDto templateDto)
         {
             id = templateDto.Id;
             name = templateDto.Name;
         }
 
+        /// <summary>
+        /// Metoda zwracająca szablon z bazy
+        /// </summary>
+        /// <param name="id">ID szablonu, który chcemy pobrać z bazy</param>
+        /// <returns>Obiekt reprezentujący pobrany z bazy szablon</returns>
         public static Template GetTemplateById(int id)
         {
             var connectionString = Functions.GetConnectionString();
@@ -59,6 +81,10 @@ namespace BazyDanych
             return new Template();
         }
 
+        /// <summary>
+        /// Metoda dodająca szablon do bazy
+        /// </summary>
+        /// <param name="templateDto">Obiekt reprezentujący szablon, któy chcemy dodac do bazy</param>
         public static void AddTemplate(TemplateDto templateDto)
         {
             var connectionString = Functions.GetConnectionString();
@@ -84,6 +110,10 @@ namespace BazyDanych
             }
         }
 
+        /// <summary>
+        /// Metoda pobierająca listę szablonów z bazy
+        /// </summary>
+        /// <returns>Lista szablonów</returns>
         public static IList<Template> GetTemplatesList()
         {
             var connectionString = Functions.GetConnectionString();
@@ -116,6 +146,10 @@ namespace BazyDanych
             return list;
         }
 
+        /// <summary>
+        /// Metoda aktualizująca szablon w bazie
+        /// </summary>
+        /// <param name="templateDto">Obiekt reprezentujący zaktualizowany szablon</param>
         public static void UpdateTemplate(TemplateDto templateDto)
         {
             var connectionString = Functions.GetConnectionString();

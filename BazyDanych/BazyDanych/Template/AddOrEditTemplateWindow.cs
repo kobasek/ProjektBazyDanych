@@ -10,22 +10,37 @@ using System.Windows.Forms;
 
 namespace BazyDanych
 {
+    /// <summary>
+    /// Klasa formularza wyświetlającego okno dodawania/edycji szablonu
+    /// </summary>
     public partial class AddOrEditTemplateWindow : Form
     {
         private MainWindow mainWindow;
         private Template template;
 
+        /// <summary>
+        /// Bezparametrowy konstruktor klasy formularza wyświatlającego okno dodawania/edycji szablonu
+        /// </summary>
         public AddOrEditTemplateWindow()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Jednoparametrowy konstruktor klasy formularza wyświatlającego okno dodawania/edycji szablonu
+        /// </summary>
+        /// <param name="mainWindow">Uchwyt do głównego okna programu</param>
         public AddOrEditTemplateWindow(MainWindow mainWindow)
         {
             InitializeComponent();
             this.mainWindow = mainWindow;
         }
 
+        /// <summary>
+        /// Dwuparametrowy konstruktor klasy formularza wyświatlającego okno dodawania/edycji szablonu
+        /// </summary>
+        /// <param name="mainWindow">Uchwyt do głównego okna programu</param>
+        /// <param name="templateId">ID szablonu, który chcemy edytować</param>
         public AddOrEditTemplateWindow(MainWindow mainWindow, int templateId)
         {
             InitializeComponent();
@@ -34,6 +49,11 @@ namespace BazyDanych
             nameTextBox.Text = template.name;
         }
 
+        /// <summary>
+        /// Event Handler przycisku potwierdzającego dodanie szablonu
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void addButton_Click(object sender, EventArgs e)
         {
             var errorNumber = 0;
@@ -72,6 +92,11 @@ namespace BazyDanych
             }
         }
 
+        /// <summary>
+        /// Event Handler przycisku potwierdzającego edycję szablonu
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void acceptButton_Click(object sender, EventArgs e)
         {
             var templateDto = new TemplateDto();
@@ -109,7 +134,7 @@ namespace BazyDanych
                 #pragma warning restore 0168
                 {
 
-                    MessageBox.Show("Edytowanie pojazdu nie powiodło się!");
+                    MessageBox.Show("Edytowanie szablonu nie powiodło się!");
                 }
             }
         }

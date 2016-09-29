@@ -10,14 +10,23 @@ using System.Windows.Forms;
 
 namespace BazyDanych
 {
+    /// <summary>
+    /// Klasa formularza wyświetlającego okno ze szczegółami szablonu
+    /// </summary>
     public partial class TemplateDetailsWindow : Form
     {
-
+        /// <summary>
+        /// Bez parametrowy konstruktor klasy formularza wyświatlającego okno szczegółów szablonu
+        /// </summary>
         public TemplateDetailsWindow()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Jednoparametrowy konstruktor klasy formularza wyświatlającego okno szczegóły szablonu
+        /// </summary>
+        /// <param name="templateID">ID szablonu, którego szczegóły chcemy wyświetlić</param>
         public TemplateDetailsWindow(int templateID)
         {
             InitializeComponent();
@@ -36,6 +45,11 @@ namespace BazyDanych
             }
         }
 
+        /// <summary>
+        /// Event Handler tabeli zawierającej listę modeli
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void modelsDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.ColumnIndex == 1)
@@ -47,6 +61,11 @@ namespace BazyDanych
             }
         }
 
+        /// <summary>
+        /// Event Handler tabeli zawierającej listę serwisów
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void servicesDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.ColumnIndex == 4)
