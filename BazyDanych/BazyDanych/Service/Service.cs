@@ -7,20 +7,53 @@ using MySql.Data.MySqlClient;
 
 namespace BazyDanych
 {
+    /// <summary>
+    /// Klasa reprezentująca serwis
+    /// </summary>
     public class Service
     {
+        /// <summary>
+        /// ID serwisu
+        /// </summary>
         public int id;
+
+        /// <summary>
+        /// Koszt serwisu
+        /// </summary>
         public decimal cost;
+
+        /// <summary>
+        /// Data serwisu
+        /// </summary>
         public DateTime serviceDate;
+
+        /// <summary>
+        /// komentarz
+        /// </summary>
         public string comment;
+
+        /// <summary>
+        /// ID miejsca serwisu
+        /// </summary>
         public int servicePlaceId;
+
+        /// <summary>
+        /// ID zlecenia
+        /// </summary>
         public int orderId;
 
+        /// <summary>
+        /// Bezparametrowy konstruktor klasy reprezentującej serwis
+        /// </summary>
         public Service()
         {
 
         }
 
+        /// <summary>
+        /// Jednoparametrowy konstruktor klasy reprezentującej serwis
+        /// </summary>
+        /// <param name="serviceDto">Obiekt rezeprezentujący serwis</param>
         public Service(ServiceDto serviceDto)
         {
             id = serviceDto.Id;
@@ -31,6 +64,11 @@ namespace BazyDanych
             orderId = serviceDto.OrderId;
         }
 
+        /// <summary>
+        /// Metoda pobierająca serwis z bazy
+        /// </summary>
+        /// <param name="id">Id serwisu, który chcemy pobrać</param>
+        /// <returns>Serwis</returns>
         public static Service GetServiceById(int id)
         {
             var connectionString = Functions.GetConnectionString();
@@ -72,6 +110,10 @@ namespace BazyDanych
             return new Service();
         }
 
+        /// <summary>
+        /// Metoda dodająca serwis do bazy
+        /// </summary>
+        /// <param name="serviceToAdd">Obiekt reprezenntujący serwis, który chcemy dodać</param>
         public static void AddService(ServiceDto serviceToAdd)
         {
             var connectionString = Functions.GetConnectionString();
@@ -107,6 +149,10 @@ namespace BazyDanych
             }
         }
 
+        /// <summary>
+        /// Metoda dodaje serwis z czynnością serwisową do bazy
+        /// </summary>
+        /// <param name="serviceToAdd">Obiekt reprezentujący serwis do dodania</param>
         public static void AddServiceWithServiceActions(ServiceDto serviceToAdd)
         {
             var connectionString = Functions.GetConnectionString();
@@ -148,6 +194,10 @@ namespace BazyDanych
             }
         }
 
+        /// <summary>
+        /// Metoda pobiera listę serwisów z bazy
+        /// </summary>
+        /// <returns>Lista serwisów</returns>
         public static IList<Service> GetServiceList()
         {
             var connectionString = Functions.GetConnectionString();
@@ -184,6 +234,11 @@ namespace BazyDanych
             return list;
         }
 
+        /// <summary>
+        /// Metoda pobiera listę serwisów należących do danego zlecenia
+        /// </summary>
+        /// <param name="orderId">ID zlecenia, z którego pobieramy serwisy</param>
+        /// <returns>Lista serwisów</returns>
         public static IList<Service> GetServiceListWithGivenOrderId(int orderId)
         {
             var connectionString = Functions.GetConnectionString();
@@ -220,6 +275,10 @@ namespace BazyDanych
             return list;
         }
 
+        /// <summary>
+        /// Metoda aktualizuje serwis w bazie
+        /// </summary>
+        /// <param name="serviceDto">Obiekt reprezentujący serwis do zaktualizowania w bazie</param>
         public static void UpdateService(ServiceDto serviceDto)
         {
             var connectionString = Functions.GetConnectionString();
@@ -257,6 +316,11 @@ namespace BazyDanych
             }
         }
 
+        /// <summary>
+        /// Metoda pobierająca z bazy serwis należący do zlecenia
+        /// </summary>
+        /// <param name="idOrder">Id zlecenia, z którego chcemy serwis</param>
+        /// <returns></returns>
         public static int GetIdServiceByOrder(int idOrder)
         {
             var connectionString = Functions.GetConnectionString();

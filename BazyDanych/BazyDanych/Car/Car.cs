@@ -8,23 +8,85 @@ using MySql.Data.MySqlClient;
 
 namespace BazyDanych
 {
+    /// <summary>
+    /// Klasa reprezentująca samochód
+    /// </summary>
 	class Car
 	{
+        /// <summary>
+        /// Id pojazdu
+        /// </summary>
 		public int id;
+
+        /// <summary>
+        /// Data zakupu pojazdu
+        /// </summary>
 		public DateTime dateOfPurchase;
+
+        /// <summary>
+        /// Data złomowania pojazdu
+        /// </summary>
 		public DateTime? dateOfScrapping;
+
+        /// <summary>
+        /// Klimatyzacja
+        /// </summary>
 		public bool airCondition;
+
+        /// <summary>
+        /// Koszt zakupu pojazdu
+        /// </summary>
 		public Decimal costOfPurchase;
+
+        /// <summary>
+        /// Nr rejestracyjny pojazdu
+        /// </summary>
 		public string registrationNumber;
+
+        /// <summary>
+        /// Pojemność silnika pojazdu
+        /// </summary>
 		public float engineCapacity;
+
+        /// <summary>
+        /// Rodzaj nadwozia pojazdu
+        /// </summary>
 		public string typeOfBody;
+
+        /// <summary>
+        /// Rodzaj paliwa pojazdu
+        /// </summary>
 		public char typeOfFuel;
+
+        /// <summary>
+        /// Automatyczna skrzynia biegów
+        /// </summary>
 		public bool automaticGearBox;
+
+        /// <summary>
+        /// Nr VIN pojazdu
+        /// </summary>
 		public string vin;
+
+        /// <summary>
+        /// Wspomaganie kierownicy
+        /// </summary>
 		public bool assistance;
+
+        /// <summary>
+        /// Elektryczne szyby
+        /// </summary>
 		public bool electricWindows;
+
+        /// <summary>
+        /// ID modelu, do któego należy samochód
+        /// </summary>
 		public int modelId;
 
+        /// <summary>
+        /// Jednoparametrowy konstruktor klasy reprezentującej samochód
+        /// </summary>
+        /// <param name="carDto"></param>
 		public Car(CarDto carDto)
 		{
 			id = carDto.Id;
@@ -43,10 +105,17 @@ namespace BazyDanych
 			electricWindows = carDto.ElectricWindows;
 		}
 
+        /// <summary>
+        /// Bezparametrowy konstruktor klasy reprezentującej samochód
+        /// </summary>
 		public Car()
 		{
 		}
 
+        /// <summary>
+        /// Metoda pobierająca listę samochodów z bazy
+        /// </summary>
+        /// <returns>Lista pojazdów</returns>
 		public static IList<Car> GetCarList()
 		{
 			var connectionString = Functions.GetConnectionString();
@@ -91,6 +160,11 @@ namespace BazyDanych
 			return list;
 		}
 
+        /// <summary>
+        /// Metoda pobierająca listę samochodów pod opieką danego użytkownika
+        /// </summary>
+        /// <param name="userId">Id użytkownika, pod któego opieką samochodów szukamy</param>
+        /// <returns>Lista samochodów</returns>
         public static IList<Car> GetUserCarList(int userId)
         {
             var connectionString = Functions.GetConnectionString();
@@ -135,6 +209,11 @@ namespace BazyDanych
             return list;
         }
 
+        /// <summary>
+        /// Metoda pobierająca z bazy samochód
+        /// </summary>
+        /// <param name="id">ID pojazdu, którego chcemy pobrać z bazy</param>
+        /// <returns>Pojazd</returns>
         public static Car GetCarById(int id)
 		{
 			var connectionString = Functions.GetConnectionString();
@@ -184,6 +263,10 @@ namespace BazyDanych
 			return new Car();
 		}
 
+        /// <summary>
+        /// Metoda dodająca pojazd do bazy
+        /// </summary>
+        /// <param name="carDto">Obiekt reprezentujący pojazd, który chcemy dodać do bazy</param>
 		public static void AddCar(CarDto carDto)
 		{
 			var connectionString = Functions.GetConnectionString();
@@ -231,6 +314,10 @@ namespace BazyDanych
 			}
 		}
 
+        /// <summary>
+        /// Metoda aktualizująca pojazd w bazie
+        /// </summary>
+        /// <param name="carDto">Obiekt reprezentujący zaktualizowany pojazd</param>
 		public static void UpdateCar(CarDto carDto)
 		{
 			var connectionString = Functions.GetConnectionString();

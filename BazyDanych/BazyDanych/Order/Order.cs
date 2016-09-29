@@ -7,29 +7,98 @@ using MySql.Data.MySqlClient;
 
 namespace BazyDanych
 {
+    /// <summary>
+    /// Klasa reprezentująca zlecenie
+    /// </summary>
     class Order
     {
+        /// <summary>
+        /// ID zlecenia
+        /// </summary>
         public int id;
+
+        /// <summary>
+        /// Planowana data rozpoczęcia zlecenia
+        /// </summary>
         public DateTime plannedStartDate;
+
+        /// <summary>
+        /// Planowana data zakończenia zlecenia 
+        /// </summary>
         public DateTime plannedEndDate;
+
+        /// <summary>
+        /// Rzeczywista data rozpoczęcia zlecenia
+        /// </summary>
         public DateTime? actualStartDate;
+
+        /// <summary>
+        /// Rzeczywista data zakończenia zlecenia
+        /// </summary>
         public DateTime? actualEndDate;
+
+        /// <summary>
+        /// Stanik licznika przed rozpoczęciem zlecenia
+        /// </summary>
         public int? counterStatusBefore;
+
+        /// <summary>
+        /// Stan licznika po zakończeniu zlecenia
+        /// </summary>
         public int? counterStatusAfter;
+
+        /// <summary>
+        /// Komentarz przed rozpoczęciem zlecenia
+        /// </summary>
         public string commentsBefore;
+
+        /// <summary>
+        /// komentarz po zakończeniu zlecenia
+        /// </summary>
         public string commentsAfter;
+
+        /// <summary>
+        /// typ zlecenia
+        /// </summary>
         public char type;
+
+        /// <summary>
+        /// koszt zlecenia
+        /// </summary>
         public decimal? cost;
+
+        /// <summary>
+        /// powód odwołania zlecenia
+        /// </summary>
         public string cancellationReason;
+
+        /// <summary>
+        /// Stan zlecenia
+        /// </summary>
         public char state;
+
+        /// <summary>
+        /// ID opiekuna pojazdu, którego dotyczy zlecenie
+        /// </summary>
         public int careId;
+
+        /// <summary>
+        /// Id kierowcy, który realizuje zlecenie
+        /// </summary>
         public int userId;
 
+        /// <summary>
+        /// Bezparametrowy konstruktor klasy reprezentującej zlecenie
+        /// </summary>
         public Order()
         {
 
         }
 
+        /// <summary>
+        /// Jednoparametrowy konstruktor klasy reprezentującej zlecenie
+        /// </summary>
+        /// <param name="orderDto">Obiekt reprezentujący zlecenie</param>
         public Order(OrderDto orderDto)
         {
             id = orderDto.Id;
@@ -49,6 +118,11 @@ namespace BazyDanych
             userId = orderDto.UserId;
         }
 
+        /// <summary>
+        /// Metoda pobierająca zlecenie z bazt
+        /// </summary>
+        /// <param name="id">ID zlecenia, które chcemy pobrać</param>
+        /// <returns></returns>
         public static Order GetOrderById(int id)
         {
             var connectionString = Functions.GetConnectionString();
@@ -98,6 +172,10 @@ namespace BazyDanych
             return new Order();
         }
 
+        /// <summary>
+        /// Metoda pobiera listę zleceń z bazy
+        /// </summary>
+        /// <returns>Lista zleceń</returns>
         public static List<Order> GetOrderList()
         {
             var connectionString = Functions.GetConnectionString();
@@ -143,6 +221,11 @@ namespace BazyDanych
             return list;
         }
 
+        /// <summary>
+        /// Metoda dodająca zlecenie do bazy
+        /// </summary>
+        /// <param name="orderDto">Obiekt reprezentujący zlecenie, które chcemy dodac do bazy</param>
+        /// <returns></returns>
         public static int AddOrder(OrderDto orderDto)
         {
             var connectionString = Functions.GetConnectionString();
@@ -201,6 +284,10 @@ namespace BazyDanych
             }
         }
 
+        /// <summary>
+        /// Metoda aktualizująca zlecenie w bazie
+        /// </summary>
+        /// <param name="orderDto">Obiekt reprezentujący zaktualizowane zlecenie</param>
         public static void UpdateOrder(OrderDto orderDto)
         {
             var connectionString = Functions.GetConnectionString();
@@ -259,6 +346,11 @@ namespace BazyDanych
             }
         }
 
+        /// <summary>
+        /// Metoda pobiera listę zleceń nadzorowanych przez danego opiekuna
+        /// </summary>
+        /// <param name="idCare">ID opieki</param>
+        /// <returns>Lista zleceń</returns>
         public static List<Order> GetOrderByCare(int idCare)
         {
             var connectionString = Functions.GetConnectionString();
@@ -305,6 +397,12 @@ namespace BazyDanych
             return list;
         }
 
+
+        /// <summary>
+        /// Metoda pobiera z bazy zlecenia, które realizuje dany kierowca
+        /// </summary>
+        /// <param name="idDriver">ID kierowcy, który realizuje zlecenia</param>
+        /// <returns>Lista zleceń</returns>
         public static List<Order> GetOrderByDriver(int idDriver)
         {
             var connectionString = Functions.GetConnectionString();
