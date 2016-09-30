@@ -31,5 +31,10 @@ namespace BazyDanych
         {
             this.Close();
         }
+
+        private void helpButton_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("W tym oknie możesz dokonać rezerwacji samochodu w dniach od wybranej początkowej daty do końcowej daty. Do końcowej reserwacji dojdzie jeśli zgodzi się na to administrator", "Rezerwacja Pomoc");
+        }
     }
 }

@@ -239,5 +239,10 @@ namespace BazyDanych
             }
             return pom;
         }
+
+        private void helpButton_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("W tym oknie widzisz terminarz z wyszczególnionymi zdarzeniami w dniach za pomocą kolorów, wg legendy na dole okna", "Terminarz Pomoc");
+        }
     }   
 }

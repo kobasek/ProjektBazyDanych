@@ -248,6 +248,42 @@ namespace BazyDanych
             return careId;
         }
 
+        public static List<Care> GetCareItembyKeeper(int keeperId)
+        {
+            List<Care> list = new List<Care>();
+            var connectionString = Functions.GetConnectionString();
+            int careId = 0;
+            CareDto careDto = new CareDto();
+
+            try
+            {
+                var connection = new MySql.Data.MySqlClient.MySqlConnection { ConnectionString = connectionString };
+                connection.Open();
+
+                string query = "SELECT * FROM projekt_bazy_danych.opieka where opieka.uzytkownik_id = " + keeperId;
+                var command = new MySqlCommand(query, connection);
+                var dataReader = command.ExecuteReader();
+
+                while (dataReader.Read())
+                {
+                    careDto.Id = dataReader.GetInt32(0);
+                    careDto.StartDate = dataReader.GetDateTime(1);
+                    careDto.EndDate = dataReader.IsDBNull(2) ? (DateTime?)null : dataReader.GetDateTime(2);
+                    careDto.KeeperId = dataReader.GetInt32(3);
+                    careDto.CarId = dataReader.GetInt32(4);
+
+                    var care = new Care(careDto);
+                    list.Add(care);
+                }
+                connection.Close();
+            }
+            catch (MySql.Data.MySqlClient.MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            return list;
+        }
+
         public static int CheckIsKeeper(int userId)
         {
             var connectionString = Functions.GetConnectionString();

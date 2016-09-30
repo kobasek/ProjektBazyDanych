@@ -23,6 +23,7 @@ namespace BazyDanych
         public string State { get; set; }
         public int CareId { get; set; }
         public int UserId { get; set; }
+        public string CarName { get; set; }
 
         public OrderTableElement(int id, DateTime plannedStartDate, DateTime plannedEndDate, DateTime? actualStartDate, DateTime? actualEndDate, int? counterStatusBefore, int? counterStatusAfter, string commentsBefore, string commentsAfter, char type, decimal? cost, string cancellationReason, char state, int careId, int userId)
         {
@@ -68,6 +69,8 @@ namespace BazyDanych
             CancellationReason = cancellationReason;
             CareId = careId;
             UserId = userId;
+            int carId = Care.GetCareByID(careId).carId;
+            CarName = Brand.GetBrandById(Model.GetModelById(Car.GetCarById(carId).modelId).brandId).name + " " + Model.GetModelById(Car.GetCarById(carId).modelId).name;
         }
     }
 }

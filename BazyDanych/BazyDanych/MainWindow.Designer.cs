@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
             this.panelS = new System.Windows.Forms.Panel();
+            this.mainHelpButton = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.profilLabel = new System.Windows.Forms.LinkLabel();
             this.logowanieLabel = new System.Windows.Forms.LinkLabel();
@@ -40,34 +41,25 @@
             this.addButtonMPojazdy = new System.Windows.Forms.Button();
             this.tableCarsM = new System.Windows.Forms.DataGridView();
             this.Column6 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.nrPojazduDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.markaPojazduDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.modelPojazduDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.KeeperColumn = new System.Windows.Forms.DataGridViewLinkColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewLinkColumn();
             this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.klasaTestowaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.deleteButtonMPojazdy = new System.Windows.Forms.Button();
             this.mKierowcy = new System.Windows.Forms.TabPage();
             this.addButtonMKierowcy = new System.Windows.Forms.Button();
             this.deleteButtonMKierowcy = new System.Windows.Forms.Button();
             this.tableDriversM = new System.Windows.Forms.DataGridView();
             this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.phoneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.dataGridViewLinkColumn1 = new System.Windows.Forms.DataGridViewLinkColumn();
             this.dataGridViewButtonColumn1 = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.klasaTestowauserBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.mZlecenia = new System.Windows.Forms.TabPage();
             this.addButtonMOrder = new System.Windows.Forms.Button();
             this.deleteButtonMOrder = new System.Windows.Forms.Button();
             this.ordersTableM = new System.Windows.Forms.DataGridView();
             this.dataGridViewCheckBoxColumn2 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.idDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewLinkColumn9 = new System.Windows.Forms.DataGridViewLinkColumn();
             this.State = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Type = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -78,7 +70,6 @@
             this.ActualStartDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ActualEndDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewButtonColumn2 = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.OrdersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.mFinanse = new System.Windows.Forms.TabPage();
             this.panel2 = new System.Windows.Forms.Panel();
             this.textBox7 = new System.Windows.Forms.TextBox();
@@ -124,135 +115,133 @@
             this.button5 = new System.Windows.Forms.Button();
             this.tableServicePlacesM = new System.Windows.Forms.DataGridView();
             this.dataGridViewCheckBoxColumn5 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.idDataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.companyName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.address = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewButtonColumn9 = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.ServicePlacesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.button6 = new System.Windows.Forms.Button();
             this.TemplatesTabPage = new System.Windows.Forms.TabPage();
             this.addTemplateButton = new System.Windows.Forms.Button();
             this.templatesDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewCheckBoxColumn6 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.idDataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DetailsColumn = new System.Windows.Forms.DataGridViewButtonColumn();
             this.dataGridViewButtonColumn8 = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.TemplatesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.deleteTemplateButton = new System.Windows.Forms.Button();
             this.ServiceTemplatesTabPage = new System.Windows.Forms.TabPage();
             this.addServiceTemplateButton = new System.Windows.Forms.Button();
             this.ServiceTemplatesDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewCheckBoxColumn7 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Kilometres = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Period = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewLinkColumn7 = new System.Windows.Forms.DataGridViewLinkColumn();
             this.dataGridViewLinkColumn8 = new System.Windows.Forms.DataGridViewLinkColumn();
             this.dataGridViewButtonColumn10 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.dataGridViewButtonColumn11 = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.TemplateServicesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.DeleteServiceTemplateButton = new System.Windows.Forms.Button();
             this.catalogsTabPage = new System.Windows.Forms.TabPage();
             this.addCatalogButton = new System.Windows.Forms.Button();
             this.catalogsDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewCheckBoxColumn8 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewButtonColumn12 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.dataGridViewButtonColumn13 = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.CatalogsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.deleteCatalogButton = new System.Windows.Forms.Button();
             this.ServiceActionsTabPage = new System.Windows.Forms.TabPage();
             this.addServiceActionButton = new System.Windows.Forms.Button();
             this.ServiceActionsDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewCheckBoxColumn9 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cost = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CatalogName = new System.Windows.Forms.DataGridViewLinkColumn();
             this.ServiceName = new System.Windows.Forms.DataGridViewLinkColumn();
             this.dataGridViewButtonColumn14 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.dataGridViewButtonColumn15 = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.ServiceActionsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.deleteServiceActionButton = new System.Windows.Forms.Button();
             this.servicesTabPage = new System.Windows.Forms.TabPage();
             this.addServiceButton = new System.Windows.Forms.Button();
             this.servicesDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewCheckBoxColumn10 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.idDataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.costDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.serviceDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ServicePlaceNameColumn = new System.Windows.Forms.DataGridViewLinkColumn();
-            this.orderIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewButtonColumn16 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.dataGridViewButtonColumn17 = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.ServicesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.deleteServiceButton = new System.Windows.Forms.Button();
             this.modelsTabPage = new System.Windows.Forms.TabPage();
             this.addModelButton = new System.Windows.Forms.Button();
             this.modelsDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewCheckBoxColumn11 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.idDataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.categoryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BrandName = new System.Windows.Forms.DataGridViewLinkColumn();
             this.TemplateName = new System.Windows.Forms.DataGridViewLinkColumn();
             this.dataGridViewButtonColumn19 = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.ModelsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.deleteModelButton = new System.Windows.Forms.Button();
             this.brandsTabPage = new System.Windows.Forms.TabPage();
             this.addBrandButton = new System.Windows.Forms.Button();
             this.brandsDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewCheckBoxColumn12 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.idDataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewButtonColumn20 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.dataGridViewButtonColumn21 = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.BrandsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.deleteBrandButton = new System.Windows.Forms.Button();
             this.careTabPage = new System.Windows.Forms.TabPage();
             this.addCareButton = new System.Windows.Forms.Button();
             this.careDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewCheckBoxColumn13 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.idDataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.startDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.endDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.KeeperName = new System.Windows.Forms.DataGridViewLinkColumn();
             this.CarName = new System.Windows.Forms.DataGridViewLinkColumn();
             this.dataGridViewButtonColumn22 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.dataGridViewButtonColumn23 = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.careBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.deleteCareButton = new System.Windows.Forms.Button();
             this.panelO = new System.Windows.Forms.Panel();
             this.tableControlO = new System.Windows.Forms.TabControl();
             this.oZlecenia = new System.Windows.Forms.TabPage();
+            this.oTabelaZlecenia = new System.Windows.Forms.DataGridView();
+            this.dataGridViewCheckBoxColumn3 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dataGridViewLinkColumn5 = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewButtonColumn5 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.oTabelaZlecenia = new System.Windows.Forms.DataGridView();
-            this.dataGridViewCheckBoxColumn4 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.idDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.oKierowcy = new System.Windows.Forms.TabPage();
             this.oTabelaKierowcy = new System.Windows.Forms.DataGridView();
-            this.idDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lastNameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.phoneDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewLinkColumn4 = new System.Windows.Forms.DataGridViewLinkColumn();
             this.dataGridViewButtonColumn4 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.oPojazdy = new System.Windows.Forms.TabPage();
             this.oTabelaPojazdy = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewLinkColumn3 = new System.Windows.Forms.DataGridViewLinkColumn();
             this.dataGridViewButtonColumn3 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panelK = new System.Windows.Forms.Panel();
             this.tableControlK = new System.Windows.Forms.TabControl();
             this.tabKPage1 = new System.Windows.Forms.TabPage();
+            this.ordersKHelpButton = new System.Windows.Forms.Button();
             this.kTabelaZlecenia = new System.Windows.Forms.DataGridView();
+            this.dataGridViewLinkColumn2 = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.tabKPage2 = new System.Windows.Forms.TabPage();
+            this.kTabelaRezerwacje = new System.Windows.Forms.DataGridView();
+            this.dataGridViewLinkColumn6 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.dataGridViewButtonColumn7 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.helpProvider1 = new System.Windows.Forms.HelpProvider();
+            this.button7 = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
+            this.button9 = new System.Windows.Forms.Button();
+            this.button10 = new System.Windows.Forms.Button();
+            this.button11 = new System.Windows.Forms.Button();
+            this.button12 = new System.Windows.Forms.Button();
+            this.button13 = new System.Windows.Forms.Button();
+            this.button14 = new System.Windows.Forms.Button();
+            this.button15 = new System.Windows.Forms.Button();
+            this.button16 = new System.Windows.Forms.Button();
+            this.button17 = new System.Windows.Forms.Button();
+            this.button18 = new System.Windows.Forms.Button();
+            this.button19 = new System.Windows.Forms.Button();
+            this.button20 = new System.Windows.Forms.Button();
+            this.button21 = new System.Windows.Forms.Button();
+            this.button22 = new System.Windows.Forms.Button();
+            this.button23 = new System.Windows.Forms.Button();
             this.idDataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.stateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.costDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -263,59 +252,91 @@
             this.plannedEndDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.actualStartDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.actualEndDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tabKPage2 = new System.Windows.Forms.TabPage();
-            this.kTabelaRezerwacje = new System.Windows.Forms.DataGridView();
+            this.OrdersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewTextBoxColumn22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn24 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn25 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn26 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewLinkColumn6 = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.dataGridViewButtonColumn7 = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.helpProvider1 = new System.Windows.Forms.HelpProvider();
+            this.klasaTestowaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lastNameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.phoneDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.klasaTestowauserBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nrPojazduDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.markaPojazduDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.modelPojazduDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.phoneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idDataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ServicePlacesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.idDataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TemplatesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TemplateServicesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CatalogsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ServiceActionsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.idDataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.costDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.serviceDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.orderIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ServicesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.idDataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.categoryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ModelsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.idDataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BrandsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.idDataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.startDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.endDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.careBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panelS.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelM.SuspendLayout();
             this.tableControlM.SuspendLayout();
             this.mPojazdy.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tableCarsM)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.klasaTestowaBindingSource)).BeginInit();
             this.mKierowcy.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tableDriversM)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.klasaTestowauserBindingSource)).BeginInit();
             this.mZlecenia.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ordersTableM)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.OrdersBindingSource)).BeginInit();
             this.mFinanse.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.servicePlacesTabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tableServicePlacesM)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ServicePlacesBindingSource)).BeginInit();
             this.TemplatesTabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.templatesDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TemplatesBindingSource)).BeginInit();
             this.ServiceTemplatesTabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ServiceTemplatesDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TemplateServicesBindingSource)).BeginInit();
             this.catalogsTabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.catalogsDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CatalogsBindingSource)).BeginInit();
             this.ServiceActionsTabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ServiceActionsDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ServiceActionsBindingSource)).BeginInit();
             this.servicesTabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.servicesDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ServicesBindingSource)).BeginInit();
             this.modelsTabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.modelsDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ModelsBindingSource)).BeginInit();
             this.brandsTabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.brandsDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BrandsBindingSource)).BeginInit();
             this.careTabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.careDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.careBindingSource)).BeginInit();
             this.panelO.SuspendLayout();
             this.tableControlO.SuspendLayout();
             this.oZlecenia.SuspendLayout();
@@ -330,10 +351,23 @@
             ((System.ComponentModel.ISupportInitialize)(this.kTabelaZlecenia)).BeginInit();
             this.tabKPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kTabelaRezerwacje)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.OrdersBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.klasaTestowaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.klasaTestowauserBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ServicePlacesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TemplatesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TemplateServicesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CatalogsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ServiceActionsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ServicesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ModelsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BrandsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.careBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panelS
             // 
+            this.panelS.Controls.Add(this.mainHelpButton);
             this.panelS.Controls.Add(this.pictureBox1);
             this.panelS.Controls.Add(this.profilLabel);
             this.panelS.Controls.Add(this.logowanieLabel);
@@ -342,6 +376,16 @@
             this.panelS.Name = "panelS";
             this.panelS.Size = new System.Drawing.Size(1184, 461);
             this.panelS.TabIndex = 4;
+            // 
+            // mainHelpButton
+            // 
+            this.mainHelpButton.Location = new System.Drawing.Point(961, 3);
+            this.mainHelpButton.Name = "mainHelpButton";
+            this.mainHelpButton.Size = new System.Drawing.Size(75, 23);
+            this.mainHelpButton.TabIndex = 4;
+            this.mainHelpButton.Text = "Pomoc";
+            this.mainHelpButton.UseVisualStyleBackColor = true;
+            this.mainHelpButton.Click += new System.EventHandler(this.mainHelpButton_Click);
             // 
             // pictureBox1
             // 
@@ -408,6 +452,7 @@
             // 
             // mPojazdy
             // 
+            this.mPojazdy.Controls.Add(this.button7);
             this.mPojazdy.Controls.Add(this.addButtonMPojazdy);
             this.mPojazdy.Controls.Add(this.tableCarsM);
             this.mPojazdy.Controls.Add(this.deleteButtonMPojazdy);
@@ -456,30 +501,6 @@
             this.Column6.Name = "Column6";
             this.Column6.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
-            // nrPojazduDataGridViewTextBoxColumn
-            // 
-            this.nrPojazduDataGridViewTextBoxColumn.DataPropertyName = "NrPojazdu";
-            this.nrPojazduDataGridViewTextBoxColumn.HeaderText = "Numer pojazdu";
-            this.nrPojazduDataGridViewTextBoxColumn.Name = "nrPojazduDataGridViewTextBoxColumn";
-            this.nrPojazduDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nrPojazduDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // markaPojazduDataGridViewTextBoxColumn
-            // 
-            this.markaPojazduDataGridViewTextBoxColumn.DataPropertyName = "MarkaPojazdu";
-            this.markaPojazduDataGridViewTextBoxColumn.HeaderText = "Marka pojazdu";
-            this.markaPojazduDataGridViewTextBoxColumn.Name = "markaPojazduDataGridViewTextBoxColumn";
-            this.markaPojazduDataGridViewTextBoxColumn.ReadOnly = true;
-            this.markaPojazduDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // modelPojazduDataGridViewTextBoxColumn
-            // 
-            this.modelPojazduDataGridViewTextBoxColumn.DataPropertyName = "ModelPojazdu";
-            this.modelPojazduDataGridViewTextBoxColumn.HeaderText = "Model pojazdu";
-            this.modelPojazduDataGridViewTextBoxColumn.Name = "modelPojazduDataGridViewTextBoxColumn";
-            this.modelPojazduDataGridViewTextBoxColumn.ReadOnly = true;
-            this.modelPojazduDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
             // KeeperColumn
             // 
             this.KeeperColumn.DataPropertyName = "OpiekunPojazdu";
@@ -509,10 +530,6 @@
             this.Edit.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.Edit.Text = "Edytuj";
             // 
-            // klasaTestowaBindingSource
-            // 
-            this.klasaTestowaBindingSource.DataSource = typeof(BazyDanych.KlasaTestowa_car);
-            // 
             // deleteButtonMPojazdy
             // 
             this.deleteButtonMPojazdy.Enabled = false;
@@ -525,6 +542,7 @@
             // 
             // mKierowcy
             // 
+            this.mKierowcy.Controls.Add(this.button8);
             this.mKierowcy.Controls.Add(this.addButtonMKierowcy);
             this.mKierowcy.Controls.Add(this.deleteButtonMKierowcy);
             this.mKierowcy.Controls.Add(this.tableDriversM);
@@ -583,30 +601,6 @@
             this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
             this.dataGridViewCheckBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Numer kierowcy";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "Imię";
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            // 
-            // lastNameDataGridViewTextBoxColumn
-            // 
-            this.lastNameDataGridViewTextBoxColumn.DataPropertyName = "LastName";
-            this.lastNameDataGridViewTextBoxColumn.HeaderText = "Nazwisko";
-            this.lastNameDataGridViewTextBoxColumn.Name = "lastNameDataGridViewTextBoxColumn";
-            // 
-            // phoneDataGridViewTextBoxColumn
-            // 
-            this.phoneDataGridViewTextBoxColumn.DataPropertyName = "Phone";
-            this.phoneDataGridViewTextBoxColumn.HeaderText = "Telefon";
-            this.phoneDataGridViewTextBoxColumn.Name = "phoneDataGridViewTextBoxColumn";
-            // 
             // Column2
             // 
             this.Column2.HeaderText = "Szczegóły";
@@ -630,12 +624,9 @@
             this.dataGridViewButtonColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridViewButtonColumn1.Text = "Edytuj";
             // 
-            // klasaTestowauserBindingSource
-            // 
-            this.klasaTestowauserBindingSource.DataSource = typeof(BazyDanych.KlasaTestowa_user);
-            // 
             // mZlecenia
             // 
+            this.mZlecenia.Controls.Add(this.button9);
             this.mZlecenia.Controls.Add(this.addButtonMOrder);
             this.mZlecenia.Controls.Add(this.deleteButtonMOrder);
             this.mZlecenia.Controls.Add(this.ordersTableM);
@@ -675,6 +666,7 @@
             this.ordersTableM.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewCheckBoxColumn2,
             this.idDataGridViewTextBoxColumn3,
+            this.dataGridViewLinkColumn9,
             this.State,
             this.dataGridViewTextBoxColumn14,
             this.Type,
@@ -699,11 +691,11 @@
             this.dataGridViewCheckBoxColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridViewCheckBoxColumn2.Width = 65;
             // 
-            // idDataGridViewTextBoxColumn3
+            // dataGridViewLinkColumn9
             // 
-            this.idDataGridViewTextBoxColumn3.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn3.HeaderText = "Numer zlecenia";
-            this.idDataGridViewTextBoxColumn3.Name = "idDataGridViewTextBoxColumn3";
+            this.dataGridViewLinkColumn9.DataPropertyName = "CarName";
+            this.dataGridViewLinkColumn9.HeaderText = "Samochód";
+            this.dataGridViewLinkColumn9.Name = "dataGridViewLinkColumn9";
             // 
             // State
             // 
@@ -770,12 +762,9 @@
             this.dataGridViewButtonColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridViewButtonColumn2.Text = "Edytuj";
             // 
-            // OrdersBindingSource
-            // 
-            this.OrdersBindingSource.DataSource = typeof(BazyDanych.OrderTableElement);
-            // 
             // mFinanse
             // 
+            this.mFinanse.Controls.Add(this.button10);
             this.mFinanse.Controls.Add(this.panel2);
             this.mFinanse.Controls.Add(this.panel1);
             this.mFinanse.Location = new System.Drawing.Point(4, 22);
@@ -1214,6 +1203,7 @@
             // 
             // servicePlacesTabPage
             // 
+            this.servicePlacesTabPage.Controls.Add(this.button11);
             this.servicePlacesTabPage.Controls.Add(this.button5);
             this.servicePlacesTabPage.Controls.Add(this.tableServicePlacesM);
             this.servicePlacesTabPage.Controls.Add(this.button6);
@@ -1259,12 +1249,6 @@
             this.dataGridViewCheckBoxColumn5.Name = "dataGridViewCheckBoxColumn5";
             this.dataGridViewCheckBoxColumn5.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
-            // idDataGridViewTextBoxColumn4
-            // 
-            this.idDataGridViewTextBoxColumn4.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn4.HeaderText = "Numer";
-            this.idDataGridViewTextBoxColumn4.Name = "idDataGridViewTextBoxColumn4";
-            // 
             // companyName
             // 
             this.companyName.DataPropertyName = "companyName";
@@ -1286,10 +1270,6 @@
             this.dataGridViewButtonColumn9.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridViewButtonColumn9.Text = "Edytuj";
             // 
-            // ServicePlacesBindingSource
-            // 
-            this.ServicePlacesBindingSource.DataSource = typeof(BazyDanych.ServicePlaceTableElement);
-            // 
             // button6
             // 
             this.button6.Enabled = false;
@@ -1303,6 +1283,7 @@
             // 
             // TemplatesTabPage
             // 
+            this.TemplatesTabPage.Controls.Add(this.button12);
             this.TemplatesTabPage.Controls.Add(this.addTemplateButton);
             this.TemplatesTabPage.Controls.Add(this.templatesDataGridView);
             this.TemplatesTabPage.Controls.Add(this.deleteTemplateButton);
@@ -1348,18 +1329,6 @@
             this.dataGridViewCheckBoxColumn6.Name = "dataGridViewCheckBoxColumn6";
             this.dataGridViewCheckBoxColumn6.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
-            // idDataGridViewTextBoxColumn5
-            // 
-            this.idDataGridViewTextBoxColumn5.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn5.HeaderText = "Numer";
-            this.idDataGridViewTextBoxColumn5.Name = "idDataGridViewTextBoxColumn5";
-            // 
-            // nameDataGridViewTextBoxColumn2
-            // 
-            this.nameDataGridViewTextBoxColumn2.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn2.HeaderText = "Nazwa";
-            this.nameDataGridViewTextBoxColumn2.Name = "nameDataGridViewTextBoxColumn2";
-            // 
             // DetailsColumn
             // 
             this.DetailsColumn.HeaderText = "Szczegóły";
@@ -1374,10 +1343,6 @@
             this.dataGridViewButtonColumn8.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridViewButtonColumn8.Text = "Edytuj";
             // 
-            // TemplatesBindingSource
-            // 
-            this.TemplatesBindingSource.DataSource = typeof(BazyDanych.TemplateTableElement);
-            // 
             // deleteTemplateButton
             // 
             this.deleteTemplateButton.Enabled = false;
@@ -1390,6 +1355,7 @@
             // 
             // ServiceTemplatesTabPage
             // 
+            this.ServiceTemplatesTabPage.Controls.Add(this.button13);
             this.ServiceTemplatesTabPage.Controls.Add(this.addServiceTemplateButton);
             this.ServiceTemplatesTabPage.Controls.Add(this.ServiceTemplatesDataGridView);
             this.ServiceTemplatesTabPage.Controls.Add(this.DeleteServiceTemplateButton);
@@ -1439,18 +1405,6 @@
             this.dataGridViewCheckBoxColumn7.Name = "dataGridViewCheckBoxColumn7";
             this.dataGridViewCheckBoxColumn7.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "Id";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Numer";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "Name";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Nazwa";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            // 
             // Kilometres
             // 
             this.Kilometres.DataPropertyName = "Kilometres";
@@ -1489,10 +1443,6 @@
             this.dataGridViewButtonColumn11.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridViewButtonColumn11.Text = "Edytuj";
             // 
-            // TemplateServicesBindingSource
-            // 
-            this.TemplateServicesBindingSource.DataSource = typeof(BazyDanych.ServiceTemplateTableElement);
-            // 
             // DeleteServiceTemplateButton
             // 
             this.DeleteServiceTemplateButton.Enabled = false;
@@ -1505,6 +1455,7 @@
             // 
             // catalogsTabPage
             // 
+            this.catalogsTabPage.Controls.Add(this.button14);
             this.catalogsTabPage.Controls.Add(this.addCatalogButton);
             this.catalogsTabPage.Controls.Add(this.catalogsDataGridView);
             this.catalogsTabPage.Controls.Add(this.deleteCatalogButton);
@@ -1550,18 +1501,6 @@
             this.dataGridViewCheckBoxColumn8.Name = "dataGridViewCheckBoxColumn8";
             this.dataGridViewCheckBoxColumn8.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "Id";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Numer";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "Name";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Nazwa";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            // 
             // dataGridViewButtonColumn12
             // 
             this.dataGridViewButtonColumn12.HeaderText = "Szczegóły";
@@ -1576,10 +1515,6 @@
             this.dataGridViewButtonColumn13.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridViewButtonColumn13.Text = "Edytuj";
             // 
-            // CatalogsBindingSource
-            // 
-            this.CatalogsBindingSource.DataSource = typeof(BazyDanych.CatalogTableElement);
-            // 
             // deleteCatalogButton
             // 
             this.deleteCatalogButton.Enabled = false;
@@ -1592,6 +1527,7 @@
             // 
             // ServiceActionsTabPage
             // 
+            this.ServiceActionsTabPage.Controls.Add(this.button15);
             this.ServiceActionsTabPage.Controls.Add(this.addServiceActionButton);
             this.ServiceActionsTabPage.Controls.Add(this.ServiceActionsDataGridView);
             this.ServiceActionsTabPage.Controls.Add(this.deleteServiceActionButton);
@@ -1640,18 +1576,6 @@
             this.dataGridViewCheckBoxColumn9.Name = "dataGridViewCheckBoxColumn9";
             this.dataGridViewCheckBoxColumn9.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "Id";
-            this.dataGridViewTextBoxColumn5.HeaderText = "Numer";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "Name";
-            this.dataGridViewTextBoxColumn6.HeaderText = "Nazwa";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            // 
             // Cost
             // 
             this.Cost.DataPropertyName = "Cost";
@@ -1684,10 +1608,6 @@
             this.dataGridViewButtonColumn15.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridViewButtonColumn15.Text = "Edytuj";
             // 
-            // ServiceActionsBindingSource
-            // 
-            this.ServiceActionsBindingSource.DataSource = typeof(BazyDanych.ServiceActionTableElement);
-            // 
             // deleteServiceActionButton
             // 
             this.deleteServiceActionButton.Enabled = false;
@@ -1700,6 +1620,7 @@
             // 
             // servicesTabPage
             // 
+            this.servicesTabPage.Controls.Add(this.button16);
             this.servicesTabPage.Controls.Add(this.addServiceButton);
             this.servicesTabPage.Controls.Add(this.servicesDataGridView);
             this.servicesTabPage.Controls.Add(this.deleteServiceButton);
@@ -1748,35 +1669,11 @@
             this.dataGridViewCheckBoxColumn10.Name = "dataGridViewCheckBoxColumn10";
             this.dataGridViewCheckBoxColumn10.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
-            // idDataGridViewTextBoxColumn9
-            // 
-            this.idDataGridViewTextBoxColumn9.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn9.HeaderText = "Numer";
-            this.idDataGridViewTextBoxColumn9.Name = "idDataGridViewTextBoxColumn9";
-            // 
-            // costDataGridViewTextBoxColumn
-            // 
-            this.costDataGridViewTextBoxColumn.DataPropertyName = "Cost";
-            this.costDataGridViewTextBoxColumn.HeaderText = "Koszt";
-            this.costDataGridViewTextBoxColumn.Name = "costDataGridViewTextBoxColumn";
-            // 
-            // serviceDateDataGridViewTextBoxColumn
-            // 
-            this.serviceDateDataGridViewTextBoxColumn.DataPropertyName = "ServiceDate";
-            this.serviceDateDataGridViewTextBoxColumn.HeaderText = "Data serwisu";
-            this.serviceDateDataGridViewTextBoxColumn.Name = "serviceDateDataGridViewTextBoxColumn";
-            // 
             // ServicePlaceNameColumn
             // 
             this.ServicePlaceNameColumn.DataPropertyName = "ServicePlaceName";
             this.ServicePlaceNameColumn.HeaderText = "Miejsce serwisu";
             this.ServicePlaceNameColumn.Name = "ServicePlaceNameColumn";
-            // 
-            // orderIdDataGridViewTextBoxColumn
-            // 
-            this.orderIdDataGridViewTextBoxColumn.DataPropertyName = "OrderId";
-            this.orderIdDataGridViewTextBoxColumn.HeaderText = "Numer zlecenia";
-            this.orderIdDataGridViewTextBoxColumn.Name = "orderIdDataGridViewTextBoxColumn";
             // 
             // dataGridViewButtonColumn16
             // 
@@ -1792,10 +1689,6 @@
             this.dataGridViewButtonColumn17.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridViewButtonColumn17.Text = "Edytuj";
             // 
-            // ServicesBindingSource
-            // 
-            this.ServicesBindingSource.DataSource = typeof(BazyDanych.ServiceTableElement);
-            // 
             // deleteServiceButton
             // 
             this.deleteServiceButton.Enabled = false;
@@ -1808,6 +1701,7 @@
             // 
             // modelsTabPage
             // 
+            this.modelsTabPage.Controls.Add(this.button17);
             this.modelsTabPage.Controls.Add(this.addModelButton);
             this.modelsTabPage.Controls.Add(this.modelsDataGridView);
             this.modelsTabPage.Controls.Add(this.deleteModelButton);
@@ -1855,24 +1749,6 @@
             this.dataGridViewCheckBoxColumn11.Name = "dataGridViewCheckBoxColumn11";
             this.dataGridViewCheckBoxColumn11.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
-            // idDataGridViewTextBoxColumn7
-            // 
-            this.idDataGridViewTextBoxColumn7.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn7.HeaderText = "Numer modelu";
-            this.idDataGridViewTextBoxColumn7.Name = "idDataGridViewTextBoxColumn7";
-            // 
-            // nameDataGridViewTextBoxColumn4
-            // 
-            this.nameDataGridViewTextBoxColumn4.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn4.HeaderText = "Nazwa";
-            this.nameDataGridViewTextBoxColumn4.Name = "nameDataGridViewTextBoxColumn4";
-            // 
-            // categoryDataGridViewTextBoxColumn
-            // 
-            this.categoryDataGridViewTextBoxColumn.DataPropertyName = "Category";
-            this.categoryDataGridViewTextBoxColumn.HeaderText = "Kategoria";
-            this.categoryDataGridViewTextBoxColumn.Name = "categoryDataGridViewTextBoxColumn";
-            // 
             // BrandName
             // 
             this.BrandName.DataPropertyName = "BrandName";
@@ -1894,10 +1770,6 @@
             this.dataGridViewButtonColumn19.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridViewButtonColumn19.Text = "Edytuj";
             // 
-            // ModelsBindingSource
-            // 
-            this.ModelsBindingSource.DataSource = typeof(BazyDanych.ModelTableElement);
-            // 
             // deleteModelButton
             // 
             this.deleteModelButton.Enabled = false;
@@ -1910,6 +1782,7 @@
             // 
             // brandsTabPage
             // 
+            this.brandsTabPage.Controls.Add(this.button18);
             this.brandsTabPage.Controls.Add(this.addBrandButton);
             this.brandsTabPage.Controls.Add(this.brandsDataGridView);
             this.brandsTabPage.Controls.Add(this.deleteBrandButton);
@@ -1955,18 +1828,6 @@
             this.dataGridViewCheckBoxColumn12.Name = "dataGridViewCheckBoxColumn12";
             this.dataGridViewCheckBoxColumn12.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
-            // idDataGridViewTextBoxColumn6
-            // 
-            this.idDataGridViewTextBoxColumn6.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn6.HeaderText = "Numer";
-            this.idDataGridViewTextBoxColumn6.Name = "idDataGridViewTextBoxColumn6";
-            // 
-            // nameDataGridViewTextBoxColumn3
-            // 
-            this.nameDataGridViewTextBoxColumn3.DataPropertyName = "name";
-            this.nameDataGridViewTextBoxColumn3.HeaderText = "Nazwa";
-            this.nameDataGridViewTextBoxColumn3.Name = "nameDataGridViewTextBoxColumn3";
-            // 
             // dataGridViewButtonColumn20
             // 
             this.dataGridViewButtonColumn20.HeaderText = "Szczegóły";
@@ -1981,10 +1842,6 @@
             this.dataGridViewButtonColumn21.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridViewButtonColumn21.Text = "Edytuj";
             // 
-            // BrandsBindingSource
-            // 
-            this.BrandsBindingSource.DataSource = typeof(BazyDanych.BrandTableElement);
-            // 
             // deleteBrandButton
             // 
             this.deleteBrandButton.Enabled = false;
@@ -1997,6 +1854,7 @@
             // 
             // careTabPage
             // 
+            this.careTabPage.Controls.Add(this.button19);
             this.careTabPage.Controls.Add(this.addCareButton);
             this.careTabPage.Controls.Add(this.careDataGridView);
             this.careTabPage.Controls.Add(this.deleteCareButton);
@@ -2045,24 +1903,6 @@
             this.dataGridViewCheckBoxColumn13.Name = "dataGridViewCheckBoxColumn13";
             this.dataGridViewCheckBoxColumn13.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
-            // idDataGridViewTextBoxColumn8
-            // 
-            this.idDataGridViewTextBoxColumn8.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn8.HeaderText = "Numer";
-            this.idDataGridViewTextBoxColumn8.Name = "idDataGridViewTextBoxColumn8";
-            // 
-            // startDateDataGridViewTextBoxColumn
-            // 
-            this.startDateDataGridViewTextBoxColumn.DataPropertyName = "StartDate";
-            this.startDateDataGridViewTextBoxColumn.HeaderText = "Data początkowa";
-            this.startDateDataGridViewTextBoxColumn.Name = "startDateDataGridViewTextBoxColumn";
-            // 
-            // endDateDataGridViewTextBoxColumn
-            // 
-            this.endDateDataGridViewTextBoxColumn.DataPropertyName = "EndDate";
-            this.endDateDataGridViewTextBoxColumn.HeaderText = "Data końcowa";
-            this.endDateDataGridViewTextBoxColumn.Name = "endDateDataGridViewTextBoxColumn";
-            // 
             // KeeperName
             // 
             this.KeeperName.DataPropertyName = "KeeperName";
@@ -2088,10 +1928,6 @@
             this.dataGridViewButtonColumn23.ReadOnly = true;
             this.dataGridViewButtonColumn23.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridViewButtonColumn23.Text = "Edytuj";
-            // 
-            // careBindingSource
-            // 
-            this.careBindingSource.DataSource = typeof(BazyDanych.CareTableElement);
             // 
             // deleteCareButton
             // 
@@ -2124,9 +1960,10 @@
             // 
             // oZlecenia
             // 
+            this.oZlecenia.Controls.Add(this.button21);
+            this.oZlecenia.Controls.Add(this.oTabelaZlecenia);
             this.oZlecenia.Controls.Add(this.button2);
             this.oZlecenia.Controls.Add(this.button1);
-            this.oZlecenia.Controls.Add(this.oTabelaZlecenia);
             this.oZlecenia.Location = new System.Drawing.Point(4, 22);
             this.oZlecenia.Name = "oZlecenia";
             this.oZlecenia.Padding = new System.Windows.Forms.Padding(3);
@@ -2135,9 +1972,114 @@
             this.oZlecenia.Text = "Zlecenia";
             this.oZlecenia.UseVisualStyleBackColor = true;
             // 
+            // oTabelaZlecenia
+            // 
+            this.oTabelaZlecenia.AllowUserToOrderColumns = true;
+            this.oTabelaZlecenia.AutoGenerateColumns = false;
+            this.oTabelaZlecenia.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.oTabelaZlecenia.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewCheckBoxColumn3,
+            this.dataGridViewTextBoxColumn7,
+            this.dataGridViewLinkColumn5,
+            this.dataGridViewTextBoxColumn8,
+            this.dataGridViewTextBoxColumn13,
+            this.dataGridViewTextBoxColumn15,
+            this.dataGridViewTextBoxColumn16,
+            this.dataGridViewTextBoxColumn17,
+            this.dataGridViewTextBoxColumn18,
+            this.dataGridViewTextBoxColumn19,
+            this.dataGridViewTextBoxColumn20,
+            this.dataGridViewTextBoxColumn21,
+            this.dataGridViewButtonColumn5});
+            this.oTabelaZlecenia.DataSource = this.OrdersBindingSource;
+            this.oTabelaZlecenia.Location = new System.Drawing.Point(6, 7);
+            this.oTabelaZlecenia.Name = "oTabelaZlecenia";
+            this.oTabelaZlecenia.Size = new System.Drawing.Size(1056, 341);
+            this.oTabelaZlecenia.TabIndex = 5;
+            this.oTabelaZlecenia.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.oTabelaZlecenia_CellContentClick_1);
+            // 
+            // dataGridViewCheckBoxColumn3
+            // 
+            this.dataGridViewCheckBoxColumn3.HeaderText = "Zaznacz zlecenie";
+            this.dataGridViewCheckBoxColumn3.Name = "dataGridViewCheckBoxColumn3";
+            this.dataGridViewCheckBoxColumn3.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewCheckBoxColumn3.Width = 65;
+            // 
+            // dataGridViewLinkColumn5
+            // 
+            this.dataGridViewLinkColumn5.DataPropertyName = "CarName";
+            this.dataGridViewLinkColumn5.HeaderText = "Samochód";
+            this.dataGridViewLinkColumn5.Name = "dataGridViewLinkColumn5";
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "State";
+            this.dataGridViewTextBoxColumn8.HeaderText = "Stan";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.Width = 54;
+            // 
+            // dataGridViewTextBoxColumn13
+            // 
+            this.dataGridViewTextBoxColumn13.DataPropertyName = "Cost";
+            this.dataGridViewTextBoxColumn13.HeaderText = "Koszt";
+            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
+            // 
+            // dataGridViewTextBoxColumn15
+            // 
+            this.dataGridViewTextBoxColumn15.DataPropertyName = "Type";
+            this.dataGridViewTextBoxColumn15.HeaderText = "Rodzaj";
+            this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
+            // 
+            // dataGridViewTextBoxColumn16
+            // 
+            this.dataGridViewTextBoxColumn16.DataPropertyName = "CounterStatusBefore";
+            this.dataGridViewTextBoxColumn16.HeaderText = "Stan licznika przed";
+            this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
+            // 
+            // dataGridViewTextBoxColumn17
+            // 
+            this.dataGridViewTextBoxColumn17.DataPropertyName = "CounterStatusAfter";
+            this.dataGridViewTextBoxColumn17.HeaderText = "Stan licznika po";
+            this.dataGridViewTextBoxColumn17.Name = "dataGridViewTextBoxColumn17";
+            // 
+            // dataGridViewTextBoxColumn18
+            // 
+            this.dataGridViewTextBoxColumn18.DataPropertyName = "PlannedStartDate";
+            this.dataGridViewTextBoxColumn18.HeaderText = "Planowana data rozpoczęcia";
+            this.dataGridViewTextBoxColumn18.Name = "dataGridViewTextBoxColumn18";
+            // 
+            // dataGridViewTextBoxColumn19
+            // 
+            this.dataGridViewTextBoxColumn19.DataPropertyName = "PlannedEndDate";
+            this.dataGridViewTextBoxColumn19.HeaderText = "Planowana data zakończenia";
+            this.dataGridViewTextBoxColumn19.Name = "dataGridViewTextBoxColumn19";
+            // 
+            // dataGridViewTextBoxColumn20
+            // 
+            this.dataGridViewTextBoxColumn20.DataPropertyName = "ActualStartDate";
+            this.dataGridViewTextBoxColumn20.HeaderText = "Rzeczywista data rozpoczęcia";
+            this.dataGridViewTextBoxColumn20.Name = "dataGridViewTextBoxColumn20";
+            // 
+            // dataGridViewTextBoxColumn21
+            // 
+            this.dataGridViewTextBoxColumn21.DataPropertyName = "ActualEndDate";
+            this.dataGridViewTextBoxColumn21.HeaderText = "Rzeczywista data zakończenia";
+            this.dataGridViewTextBoxColumn21.Name = "dataGridViewTextBoxColumn21";
+            // 
+            // dataGridViewButtonColumn5
+            // 
+            this.dataGridViewButtonColumn5.DataPropertyName = "EditButton";
+            this.dataGridViewButtonColumn5.HeaderText = "Edycja zlecenia";
+            this.dataGridViewButtonColumn5.Name = "dataGridViewButtonColumn5";
+            this.dataGridViewButtonColumn5.ReadOnly = true;
+            this.dataGridViewButtonColumn5.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewButtonColumn5.Text = "Edytuj";
+            // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(757, 37);
+            this.button2.Enabled = false;
+            this.button2.Location = new System.Drawing.Point(1074, 56);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 4;
@@ -2146,7 +2088,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(757, 6);
+            this.button1.Location = new System.Drawing.Point(1074, 18);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 3;
@@ -2154,35 +2096,9 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
-            // oTabelaZlecenia
-            // 
-            this.oTabelaZlecenia.AllowUserToOrderColumns = true;
-            this.oTabelaZlecenia.AutoGenerateColumns = false;
-            this.oTabelaZlecenia.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.oTabelaZlecenia.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewCheckBoxColumn4,
-            this.idDataGridViewTextBoxColumn2});
-            this.oTabelaZlecenia.DataSource = this.OrdersBindingSource;
-            this.oTabelaZlecenia.Location = new System.Drawing.Point(6, 6);
-            this.oTabelaZlecenia.Name = "oTabelaZlecenia";
-            this.oTabelaZlecenia.Size = new System.Drawing.Size(744, 341);
-            this.oTabelaZlecenia.TabIndex = 2;
-            this.oTabelaZlecenia.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.oTabelaZlecenia_CellContentClick);
-            // 
-            // dataGridViewCheckBoxColumn4
-            // 
-            this.dataGridViewCheckBoxColumn4.HeaderText = "Zaznacz zlecenie";
-            this.dataGridViewCheckBoxColumn4.Name = "dataGridViewCheckBoxColumn4";
-            this.dataGridViewCheckBoxColumn4.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // idDataGridViewTextBoxColumn2
-            // 
-            this.idDataGridViewTextBoxColumn2.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn2.HeaderText = "Numer zlecenia";
-            this.idDataGridViewTextBoxColumn2.Name = "idDataGridViewTextBoxColumn2";
-            // 
             // oKierowcy
             // 
+            this.oKierowcy.Controls.Add(this.button22);
             this.oKierowcy.Controls.Add(this.oTabelaKierowcy);
             this.oKierowcy.Location = new System.Drawing.Point(4, 22);
             this.oKierowcy.Name = "oKierowcy";
@@ -2211,30 +2127,6 @@
             this.oTabelaKierowcy.TabIndex = 2;
             this.oTabelaKierowcy.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.oTabelaKierowcy_CellContentClick);
             // 
-            // idDataGridViewTextBoxColumn1
-            // 
-            this.idDataGridViewTextBoxColumn1.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn1.HeaderText = "Numer kierowcy";
-            this.idDataGridViewTextBoxColumn1.Name = "idDataGridViewTextBoxColumn1";
-            // 
-            // lastNameDataGridViewTextBoxColumn1
-            // 
-            this.lastNameDataGridViewTextBoxColumn1.DataPropertyName = "LastName";
-            this.lastNameDataGridViewTextBoxColumn1.HeaderText = "Nazwisko";
-            this.lastNameDataGridViewTextBoxColumn1.Name = "lastNameDataGridViewTextBoxColumn1";
-            // 
-            // nameDataGridViewTextBoxColumn1
-            // 
-            this.nameDataGridViewTextBoxColumn1.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn1.HeaderText = "Imię";
-            this.nameDataGridViewTextBoxColumn1.Name = "nameDataGridViewTextBoxColumn1";
-            // 
-            // phoneDataGridViewTextBoxColumn1
-            // 
-            this.phoneDataGridViewTextBoxColumn1.DataPropertyName = "Phone";
-            this.phoneDataGridViewTextBoxColumn1.HeaderText = "Telefon";
-            this.phoneDataGridViewTextBoxColumn1.Name = "phoneDataGridViewTextBoxColumn1";
-            // 
             // dataGridViewLinkColumn4
             // 
             this.dataGridViewLinkColumn4.DataPropertyName = "ShowCalendar";
@@ -2251,6 +2143,7 @@
             // 
             // oPojazdy
             // 
+            this.oPojazdy.Controls.Add(this.button23);
             this.oPojazdy.Controls.Add(this.oTabelaPojazdy);
             this.oPojazdy.Location = new System.Drawing.Point(4, 22);
             this.oPojazdy.Name = "oPojazdy";
@@ -2275,41 +2168,9 @@
             this.oTabelaPojazdy.DataSource = this.klasaTestowaBindingSource;
             this.oTabelaPojazdy.Location = new System.Drawing.Point(6, 6);
             this.oTabelaPojazdy.Name = "oTabelaPojazdy";
-            this.oTabelaPojazdy.Size = new System.Drawing.Size(1137, 341);
+            this.oTabelaPojazdy.Size = new System.Drawing.Size(668, 341);
             this.oTabelaPojazdy.TabIndex = 1;
             this.oTabelaPojazdy.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.oTabelaPojazdy_CellContentClick);
-            // 
-            // dataGridViewTextBoxColumn9
-            // 
-            this.dataGridViewTextBoxColumn9.DataPropertyName = "NrPojazdu";
-            this.dataGridViewTextBoxColumn9.HeaderText = "Numer pojazdu";
-            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            this.dataGridViewTextBoxColumn9.ReadOnly = true;
-            this.dataGridViewTextBoxColumn9.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // dataGridViewTextBoxColumn10
-            // 
-            this.dataGridViewTextBoxColumn10.DataPropertyName = "MarkaPojazdu";
-            this.dataGridViewTextBoxColumn10.HeaderText = "Marka pojazdu";
-            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
-            this.dataGridViewTextBoxColumn10.ReadOnly = true;
-            this.dataGridViewTextBoxColumn10.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // dataGridViewTextBoxColumn11
-            // 
-            this.dataGridViewTextBoxColumn11.DataPropertyName = "ModelPojazdu";
-            this.dataGridViewTextBoxColumn11.HeaderText = "Model pojazdu";
-            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
-            this.dataGridViewTextBoxColumn11.ReadOnly = true;
-            this.dataGridViewTextBoxColumn11.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // dataGridViewTextBoxColumn12
-            // 
-            this.dataGridViewTextBoxColumn12.DataPropertyName = "OpiekunPojazdu";
-            this.dataGridViewTextBoxColumn12.HeaderText = "Opiekun pojazdu";
-            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
-            this.dataGridViewTextBoxColumn12.ReadOnly = true;
-            this.dataGridViewTextBoxColumn12.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // dataGridViewLinkColumn3
             // 
@@ -2345,12 +2206,23 @@
             // 
             // tabKPage1
             // 
+            this.tabKPage1.Controls.Add(this.ordersKHelpButton);
             this.tabKPage1.Controls.Add(this.kTabelaZlecenia);
             this.tabKPage1.Location = new System.Drawing.Point(4, 22);
             this.tabKPage1.Name = "tabKPage1";
             this.tabKPage1.Size = new System.Drawing.Size(1149, 374);
             this.tabKPage1.TabIndex = 0;
             this.tabKPage1.Text = "Zlecenia";
+            // 
+            // ordersKHelpButton
+            // 
+            this.ordersKHelpButton.Location = new System.Drawing.Point(1068, 282);
+            this.ordersKHelpButton.Name = "ordersKHelpButton";
+            this.ordersKHelpButton.Size = new System.Drawing.Size(75, 28);
+            this.ordersKHelpButton.TabIndex = 5;
+            this.ordersKHelpButton.Text = "Pomoc";
+            this.ordersKHelpButton.UseVisualStyleBackColor = true;
+            this.ordersKHelpButton.Click += new System.EventHandler(this.ordersKHelpButton_Click);
             // 
             // kTabelaZlecenia
             // 
@@ -2359,6 +2231,7 @@
             this.kTabelaZlecenia.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.kTabelaZlecenia.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn10,
+            this.dataGridViewLinkColumn2,
             this.stateDataGridViewTextBoxColumn,
             this.costDataGridViewTextBoxColumn1,
             this.typeDataGridViewTextBoxColumn,
@@ -2367,12 +2240,245 @@
             this.plannedStartDateDataGridViewTextBoxColumn,
             this.plannedEndDateDataGridViewTextBoxColumn,
             this.actualStartDateDataGridViewTextBoxColumn,
-            this.actualEndDateDataGridViewTextBoxColumn});
+            this.actualEndDateDataGridViewTextBoxColumn,
+            this.Column4});
             this.kTabelaZlecenia.DataSource = this.OrdersBindingSource;
             this.kTabelaZlecenia.Location = new System.Drawing.Point(6, 7);
             this.kTabelaZlecenia.Name = "kTabelaZlecenia";
-            this.kTabelaZlecenia.Size = new System.Drawing.Size(1137, 341);
+            this.kTabelaZlecenia.Size = new System.Drawing.Size(1036, 341);
             this.kTabelaZlecenia.TabIndex = 2;
+            this.kTabelaZlecenia.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.kTabelaZlecenia_CellContentClick);
+            // 
+            // dataGridViewLinkColumn2
+            // 
+            this.dataGridViewLinkColumn2.DataPropertyName = "CarName";
+            this.dataGridViewLinkColumn2.HeaderText = "Samochód";
+            this.dataGridViewLinkColumn2.Name = "dataGridViewLinkColumn2";
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Szczegóły";
+            this.Column4.Name = "Column4";
+            // 
+            // tabKPage2
+            // 
+            this.tabKPage2.Controls.Add(this.button20);
+            this.tabKPage2.Controls.Add(this.kTabelaRezerwacje);
+            this.tabKPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabKPage2.Name = "tabKPage2";
+            this.tabKPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabKPage2.Size = new System.Drawing.Size(1149, 374);
+            this.tabKPage2.TabIndex = 1;
+            this.tabKPage2.Text = "Rezerwuj";
+            this.tabKPage2.UseVisualStyleBackColor = true;
+            // 
+            // kTabelaRezerwacje
+            // 
+            this.kTabelaRezerwacje.AllowUserToOrderColumns = true;
+            this.kTabelaRezerwacje.AutoGenerateColumns = false;
+            this.kTabelaRezerwacje.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.kTabelaRezerwacje.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn22,
+            this.dataGridViewTextBoxColumn24,
+            this.dataGridViewTextBoxColumn25,
+            this.dataGridViewTextBoxColumn26,
+            this.dataGridViewLinkColumn6,
+            this.dataGridViewButtonColumn7,
+            this.Column3});
+            this.kTabelaRezerwacje.DataSource = this.klasaTestowaBindingSource;
+            this.kTabelaRezerwacje.Location = new System.Drawing.Point(6, 7);
+            this.kTabelaRezerwacje.Name = "kTabelaRezerwacje";
+            this.kTabelaRezerwacje.Size = new System.Drawing.Size(850, 341);
+            this.kTabelaRezerwacje.TabIndex = 1;
+            this.kTabelaRezerwacje.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.kTabelaRezerwacje_CellContentClick);
+            // 
+            // dataGridViewLinkColumn6
+            // 
+            this.dataGridViewLinkColumn6.DataPropertyName = "ShowCalendar";
+            this.dataGridViewLinkColumn6.HeaderText = "Terminarz";
+            this.dataGridViewLinkColumn6.Name = "dataGridViewLinkColumn6";
+            this.dataGridViewLinkColumn6.ReadOnly = true;
+            this.dataGridViewLinkColumn6.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // dataGridViewButtonColumn7
+            // 
+            this.dataGridViewButtonColumn7.HeaderText = "Szczegóły";
+            this.dataGridViewButtonColumn7.Name = "dataGridViewButtonColumn7";
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Rezerwuj";
+            this.Column3.Name = "Column3";
+            // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(851, 282);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(75, 28);
+            this.button7.TabIndex = 5;
+            this.button7.Text = "Pomoc";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
+            // button8
+            // 
+            this.button8.Location = new System.Drawing.Point(852, 253);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(75, 23);
+            this.button8.TabIndex = 6;
+            this.button8.Text = "Pomoc";
+            this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
+            // 
+            // button9
+            // 
+            this.button9.Location = new System.Drawing.Point(1068, 253);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(75, 23);
+            this.button9.TabIndex = 6;
+            this.button9.Text = "Pomoc";
+            this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
+            // 
+            // button10
+            // 
+            this.button10.Location = new System.Drawing.Point(945, 306);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(75, 23);
+            this.button10.TabIndex = 5;
+            this.button10.Text = "Pomoc";
+            this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
+            // 
+            // button11
+            // 
+            this.button11.Location = new System.Drawing.Point(851, 298);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(75, 23);
+            this.button11.TabIndex = 7;
+            this.button11.Text = "Pomoc";
+            this.button11.UseVisualStyleBackColor = true;
+            this.button11.Click += new System.EventHandler(this.button11_Click);
+            // 
+            // button12
+            // 
+            this.button12.Location = new System.Drawing.Point(851, 287);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(75, 23);
+            this.button12.TabIndex = 10;
+            this.button12.Text = "Pomoc";
+            this.button12.UseVisualStyleBackColor = true;
+            this.button12.Click += new System.EventHandler(this.button12_Click);
+            // 
+            // button13
+            // 
+            this.button13.Location = new System.Drawing.Point(1068, 287);
+            this.button13.Name = "button13";
+            this.button13.Size = new System.Drawing.Size(75, 23);
+            this.button13.TabIndex = 13;
+            this.button13.Text = "Pomoc";
+            this.button13.UseVisualStyleBackColor = true;
+            this.button13.Click += new System.EventHandler(this.button13_Click);
+            // 
+            // button14
+            // 
+            this.button14.Location = new System.Drawing.Point(851, 300);
+            this.button14.Name = "button14";
+            this.button14.Size = new System.Drawing.Size(75, 23);
+            this.button14.TabIndex = 14;
+            this.button14.Text = "Pomoc";
+            this.button14.UseVisualStyleBackColor = true;
+            this.button14.Click += new System.EventHandler(this.button14_Click);
+            // 
+            // button15
+            // 
+            this.button15.Location = new System.Drawing.Point(896, 299);
+            this.button15.Name = "button15";
+            this.button15.Size = new System.Drawing.Size(75, 23);
+            this.button15.TabIndex = 15;
+            this.button15.Text = "Pomoc";
+            this.button15.UseVisualStyleBackColor = true;
+            this.button15.Click += new System.EventHandler(this.button15_Click);
+            // 
+            // button16
+            // 
+            this.button16.Location = new System.Drawing.Point(851, 287);
+            this.button16.Name = "button16";
+            this.button16.Size = new System.Drawing.Size(75, 23);
+            this.button16.TabIndex = 16;
+            this.button16.Text = "Pomoc";
+            this.button16.UseVisualStyleBackColor = true;
+            this.button16.Click += new System.EventHandler(this.button16_Click);
+            // 
+            // button17
+            // 
+            this.button17.Location = new System.Drawing.Point(923, 287);
+            this.button17.Name = "button17";
+            this.button17.Size = new System.Drawing.Size(75, 23);
+            this.button17.TabIndex = 17;
+            this.button17.Text = "Pomoc";
+            this.button17.UseVisualStyleBackColor = true;
+            this.button17.Click += new System.EventHandler(this.button17_Click);
+            // 
+            // button18
+            // 
+            this.button18.Location = new System.Drawing.Point(851, 287);
+            this.button18.Name = "button18";
+            this.button18.Size = new System.Drawing.Size(75, 23);
+            this.button18.TabIndex = 18;
+            this.button18.Text = "Pomoc";
+            this.button18.UseVisualStyleBackColor = true;
+            this.button18.Click += new System.EventHandler(this.button18_Click);
+            // 
+            // button19
+            // 
+            this.button19.Location = new System.Drawing.Point(851, 282);
+            this.button19.Name = "button19";
+            this.button19.Size = new System.Drawing.Size(75, 23);
+            this.button19.TabIndex = 19;
+            this.button19.Text = "Pomoc";
+            this.button19.UseVisualStyleBackColor = true;
+            this.button19.Click += new System.EventHandler(this.button19_Click);
+            // 
+            // button20
+            // 
+            this.button20.Location = new System.Drawing.Point(874, 282);
+            this.button20.Name = "button20";
+            this.button20.Size = new System.Drawing.Size(75, 28);
+            this.button20.TabIndex = 6;
+            this.button20.Text = "Pomoc";
+            this.button20.UseVisualStyleBackColor = true;
+            this.button20.Click += new System.EventHandler(this.button20_Click);
+            // 
+            // button21
+            // 
+            this.button21.Location = new System.Drawing.Point(1074, 277);
+            this.button21.Name = "button21";
+            this.button21.Size = new System.Drawing.Size(75, 28);
+            this.button21.TabIndex = 7;
+            this.button21.Text = "Pomoc";
+            this.button21.UseVisualStyleBackColor = true;
+            this.button21.Click += new System.EventHandler(this.button21_Click);
+            // 
+            // button22
+            // 
+            this.button22.Location = new System.Drawing.Point(770, 282);
+            this.button22.Name = "button22";
+            this.button22.Size = new System.Drawing.Size(75, 28);
+            this.button22.TabIndex = 8;
+            this.button22.Text = "Pomoc";
+            this.button22.UseVisualStyleBackColor = true;
+            this.button22.Click += new System.EventHandler(this.button22_Click);
+            // 
+            // button23
+            // 
+            this.button23.Location = new System.Drawing.Point(689, 279);
+            this.button23.Name = "button23";
+            this.button23.Size = new System.Drawing.Size(75, 28);
+            this.button23.TabIndex = 9;
+            this.button23.Text = "Pomoc";
+            this.button23.UseVisualStyleBackColor = true;
+            this.button23.Click += new System.EventHandler(this.button23_Click);
             // 
             // idDataGridViewTextBoxColumn10
             // 
@@ -2419,7 +2525,7 @@
             // plannedEndDateDataGridViewTextBoxColumn
             // 
             this.plannedEndDateDataGridViewTextBoxColumn.DataPropertyName = "PlannedEndDate";
-            this.plannedEndDateDataGridViewTextBoxColumn.HeaderText = "Planowana data rozpoczęcia";
+            this.plannedEndDateDataGridViewTextBoxColumn.HeaderText = "Planowana data zakończenia";
             this.plannedEndDateDataGridViewTextBoxColumn.Name = "plannedEndDateDataGridViewTextBoxColumn";
             // 
             // actualStartDateDataGridViewTextBoxColumn
@@ -2434,36 +2540,9 @@
             this.actualEndDateDataGridViewTextBoxColumn.HeaderText = "Rzeczywista data zakończenia";
             this.actualEndDateDataGridViewTextBoxColumn.Name = "actualEndDateDataGridViewTextBoxColumn";
             // 
-            // tabKPage2
+            // OrdersBindingSource
             // 
-            this.tabKPage2.Controls.Add(this.kTabelaRezerwacje);
-            this.tabKPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabKPage2.Name = "tabKPage2";
-            this.tabKPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabKPage2.Size = new System.Drawing.Size(1149, 374);
-            this.tabKPage2.TabIndex = 1;
-            this.tabKPage2.Text = "Rezerwuj";
-            this.tabKPage2.UseVisualStyleBackColor = true;
-            // 
-            // kTabelaRezerwacje
-            // 
-            this.kTabelaRezerwacje.AllowUserToOrderColumns = true;
-            this.kTabelaRezerwacje.AutoGenerateColumns = false;
-            this.kTabelaRezerwacje.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.kTabelaRezerwacje.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn22,
-            this.dataGridViewTextBoxColumn24,
-            this.dataGridViewTextBoxColumn25,
-            this.dataGridViewTextBoxColumn26,
-            this.dataGridViewLinkColumn6,
-            this.dataGridViewButtonColumn7,
-            this.Column3});
-            this.kTabelaRezerwacje.DataSource = this.klasaTestowaBindingSource;
-            this.kTabelaRezerwacje.Location = new System.Drawing.Point(6, 7);
-            this.kTabelaRezerwacje.Name = "kTabelaRezerwacje";
-            this.kTabelaRezerwacje.Size = new System.Drawing.Size(850, 341);
-            this.kTabelaRezerwacje.TabIndex = 1;
-            this.kTabelaRezerwacje.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.kTabelaRezerwacje_CellContentClick);
+            this.OrdersBindingSource.DataSource = typeof(BazyDanych.OrderTableElement);
             // 
             // dataGridViewTextBoxColumn22
             // 
@@ -2497,33 +2576,301 @@
             this.dataGridViewTextBoxColumn26.ReadOnly = true;
             this.dataGridViewTextBoxColumn26.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
-            // dataGridViewLinkColumn6
+            // klasaTestowaBindingSource
             // 
-            this.dataGridViewLinkColumn6.DataPropertyName = "ShowCalendar";
-            this.dataGridViewLinkColumn6.HeaderText = "Terminarz";
-            this.dataGridViewLinkColumn6.Name = "dataGridViewLinkColumn6";
-            this.dataGridViewLinkColumn6.ReadOnly = true;
-            this.dataGridViewLinkColumn6.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.klasaTestowaBindingSource.DataSource = typeof(BazyDanych.KlasaTestowa_car);
             // 
-            // dataGridViewButtonColumn7
+            // dataGridViewTextBoxColumn7
             // 
-            this.dataGridViewButtonColumn7.HeaderText = "Szczegóły";
-            this.dataGridViewButtonColumn7.Name = "dataGridViewButtonColumn7";
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "Id";
+            this.dataGridViewTextBoxColumn7.HeaderText = "Numer zlecenia";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
             // 
-            // Column3
+            // idDataGridViewTextBoxColumn1
             // 
-            this.Column3.HeaderText = "Rezerwuj";
-            this.Column3.Name = "Column3";
+            this.idDataGridViewTextBoxColumn1.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn1.HeaderText = "Numer kierowcy";
+            this.idDataGridViewTextBoxColumn1.Name = "idDataGridViewTextBoxColumn1";
+            // 
+            // lastNameDataGridViewTextBoxColumn1
+            // 
+            this.lastNameDataGridViewTextBoxColumn1.DataPropertyName = "LastName";
+            this.lastNameDataGridViewTextBoxColumn1.HeaderText = "Nazwisko";
+            this.lastNameDataGridViewTextBoxColumn1.Name = "lastNameDataGridViewTextBoxColumn1";
+            // 
+            // nameDataGridViewTextBoxColumn1
+            // 
+            this.nameDataGridViewTextBoxColumn1.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn1.HeaderText = "Imię";
+            this.nameDataGridViewTextBoxColumn1.Name = "nameDataGridViewTextBoxColumn1";
+            // 
+            // phoneDataGridViewTextBoxColumn1
+            // 
+            this.phoneDataGridViewTextBoxColumn1.DataPropertyName = "Phone";
+            this.phoneDataGridViewTextBoxColumn1.HeaderText = "Telefon";
+            this.phoneDataGridViewTextBoxColumn1.Name = "phoneDataGridViewTextBoxColumn1";
+            // 
+            // klasaTestowauserBindingSource
+            // 
+            this.klasaTestowauserBindingSource.DataSource = typeof(BazyDanych.KlasaTestowa_user);
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.DataPropertyName = "NrPojazdu";
+            this.dataGridViewTextBoxColumn9.HeaderText = "Numer pojazdu";
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.ReadOnly = true;
+            this.dataGridViewTextBoxColumn9.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // dataGridViewTextBoxColumn10
+            // 
+            this.dataGridViewTextBoxColumn10.DataPropertyName = "MarkaPojazdu";
+            this.dataGridViewTextBoxColumn10.HeaderText = "Marka pojazdu";
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            this.dataGridViewTextBoxColumn10.ReadOnly = true;
+            this.dataGridViewTextBoxColumn10.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // dataGridViewTextBoxColumn11
+            // 
+            this.dataGridViewTextBoxColumn11.DataPropertyName = "ModelPojazdu";
+            this.dataGridViewTextBoxColumn11.HeaderText = "Model pojazdu";
+            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+            this.dataGridViewTextBoxColumn11.ReadOnly = true;
+            this.dataGridViewTextBoxColumn11.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // dataGridViewTextBoxColumn12
+            // 
+            this.dataGridViewTextBoxColumn12.DataPropertyName = "OpiekunPojazdu";
+            this.dataGridViewTextBoxColumn12.HeaderText = "Opiekun pojazdu";
+            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
+            this.dataGridViewTextBoxColumn12.ReadOnly = true;
+            this.dataGridViewTextBoxColumn12.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // nrPojazduDataGridViewTextBoxColumn
+            // 
+            this.nrPojazduDataGridViewTextBoxColumn.DataPropertyName = "NrPojazdu";
+            this.nrPojazduDataGridViewTextBoxColumn.HeaderText = "Numer pojazdu";
+            this.nrPojazduDataGridViewTextBoxColumn.Name = "nrPojazduDataGridViewTextBoxColumn";
+            this.nrPojazduDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nrPojazduDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // markaPojazduDataGridViewTextBoxColumn
+            // 
+            this.markaPojazduDataGridViewTextBoxColumn.DataPropertyName = "MarkaPojazdu";
+            this.markaPojazduDataGridViewTextBoxColumn.HeaderText = "Marka pojazdu";
+            this.markaPojazduDataGridViewTextBoxColumn.Name = "markaPojazduDataGridViewTextBoxColumn";
+            this.markaPojazduDataGridViewTextBoxColumn.ReadOnly = true;
+            this.markaPojazduDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // modelPojazduDataGridViewTextBoxColumn
+            // 
+            this.modelPojazduDataGridViewTextBoxColumn.DataPropertyName = "ModelPojazdu";
+            this.modelPojazduDataGridViewTextBoxColumn.HeaderText = "Model pojazdu";
+            this.modelPojazduDataGridViewTextBoxColumn.Name = "modelPojazduDataGridViewTextBoxColumn";
+            this.modelPojazduDataGridViewTextBoxColumn.ReadOnly = true;
+            this.modelPojazduDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Numer kierowcy";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Imię";
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            // 
+            // lastNameDataGridViewTextBoxColumn
+            // 
+            this.lastNameDataGridViewTextBoxColumn.DataPropertyName = "LastName";
+            this.lastNameDataGridViewTextBoxColumn.HeaderText = "Nazwisko";
+            this.lastNameDataGridViewTextBoxColumn.Name = "lastNameDataGridViewTextBoxColumn";
+            // 
+            // phoneDataGridViewTextBoxColumn
+            // 
+            this.phoneDataGridViewTextBoxColumn.DataPropertyName = "Phone";
+            this.phoneDataGridViewTextBoxColumn.HeaderText = "Telefon";
+            this.phoneDataGridViewTextBoxColumn.Name = "phoneDataGridViewTextBoxColumn";
+            // 
+            // idDataGridViewTextBoxColumn3
+            // 
+            this.idDataGridViewTextBoxColumn3.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn3.HeaderText = "Numer zlecenia";
+            this.idDataGridViewTextBoxColumn3.Name = "idDataGridViewTextBoxColumn3";
+            // 
+            // idDataGridViewTextBoxColumn4
+            // 
+            this.idDataGridViewTextBoxColumn4.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn4.HeaderText = "Numer";
+            this.idDataGridViewTextBoxColumn4.Name = "idDataGridViewTextBoxColumn4";
+            // 
+            // ServicePlacesBindingSource
+            // 
+            this.ServicePlacesBindingSource.DataSource = typeof(BazyDanych.ServicePlaceTableElement);
+            // 
+            // idDataGridViewTextBoxColumn5
+            // 
+            this.idDataGridViewTextBoxColumn5.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn5.HeaderText = "Numer";
+            this.idDataGridViewTextBoxColumn5.Name = "idDataGridViewTextBoxColumn5";
+            // 
+            // nameDataGridViewTextBoxColumn2
+            // 
+            this.nameDataGridViewTextBoxColumn2.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn2.HeaderText = "Nazwa";
+            this.nameDataGridViewTextBoxColumn2.Name = "nameDataGridViewTextBoxColumn2";
+            // 
+            // TemplatesBindingSource
+            // 
+            this.TemplatesBindingSource.DataSource = typeof(BazyDanych.TemplateTableElement);
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "Id";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Numer";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "Name";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Nazwa";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            // 
+            // TemplateServicesBindingSource
+            // 
+            this.TemplateServicesBindingSource.DataSource = typeof(BazyDanych.ServiceTemplateTableElement);
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "Id";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Numer";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "Name";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Nazwa";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            // 
+            // CatalogsBindingSource
+            // 
+            this.CatalogsBindingSource.DataSource = typeof(BazyDanych.CatalogTableElement);
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "Id";
+            this.dataGridViewTextBoxColumn5.HeaderText = "Numer";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "Name";
+            this.dataGridViewTextBoxColumn6.HeaderText = "Nazwa";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            // 
+            // ServiceActionsBindingSource
+            // 
+            this.ServiceActionsBindingSource.DataSource = typeof(BazyDanych.ServiceActionTableElement);
+            // 
+            // idDataGridViewTextBoxColumn9
+            // 
+            this.idDataGridViewTextBoxColumn9.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn9.HeaderText = "Numer";
+            this.idDataGridViewTextBoxColumn9.Name = "idDataGridViewTextBoxColumn9";
+            // 
+            // costDataGridViewTextBoxColumn
+            // 
+            this.costDataGridViewTextBoxColumn.DataPropertyName = "Cost";
+            this.costDataGridViewTextBoxColumn.HeaderText = "Koszt";
+            this.costDataGridViewTextBoxColumn.Name = "costDataGridViewTextBoxColumn";
+            // 
+            // serviceDateDataGridViewTextBoxColumn
+            // 
+            this.serviceDateDataGridViewTextBoxColumn.DataPropertyName = "ServiceDate";
+            this.serviceDateDataGridViewTextBoxColumn.HeaderText = "Data serwisu";
+            this.serviceDateDataGridViewTextBoxColumn.Name = "serviceDateDataGridViewTextBoxColumn";
+            // 
+            // orderIdDataGridViewTextBoxColumn
+            // 
+            this.orderIdDataGridViewTextBoxColumn.DataPropertyName = "OrderId";
+            this.orderIdDataGridViewTextBoxColumn.HeaderText = "Numer zlecenia";
+            this.orderIdDataGridViewTextBoxColumn.Name = "orderIdDataGridViewTextBoxColumn";
+            // 
+            // ServicesBindingSource
+            // 
+            this.ServicesBindingSource.DataSource = typeof(BazyDanych.ServiceTableElement);
+            // 
+            // idDataGridViewTextBoxColumn7
+            // 
+            this.idDataGridViewTextBoxColumn7.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn7.HeaderText = "Numer modelu";
+            this.idDataGridViewTextBoxColumn7.Name = "idDataGridViewTextBoxColumn7";
+            // 
+            // nameDataGridViewTextBoxColumn4
+            // 
+            this.nameDataGridViewTextBoxColumn4.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn4.HeaderText = "Nazwa";
+            this.nameDataGridViewTextBoxColumn4.Name = "nameDataGridViewTextBoxColumn4";
+            // 
+            // categoryDataGridViewTextBoxColumn
+            // 
+            this.categoryDataGridViewTextBoxColumn.DataPropertyName = "Category";
+            this.categoryDataGridViewTextBoxColumn.HeaderText = "Kategoria";
+            this.categoryDataGridViewTextBoxColumn.Name = "categoryDataGridViewTextBoxColumn";
+            // 
+            // ModelsBindingSource
+            // 
+            this.ModelsBindingSource.DataSource = typeof(BazyDanych.ModelTableElement);
+            // 
+            // idDataGridViewTextBoxColumn6
+            // 
+            this.idDataGridViewTextBoxColumn6.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn6.HeaderText = "Numer";
+            this.idDataGridViewTextBoxColumn6.Name = "idDataGridViewTextBoxColumn6";
+            // 
+            // nameDataGridViewTextBoxColumn3
+            // 
+            this.nameDataGridViewTextBoxColumn3.DataPropertyName = "name";
+            this.nameDataGridViewTextBoxColumn3.HeaderText = "Nazwa";
+            this.nameDataGridViewTextBoxColumn3.Name = "nameDataGridViewTextBoxColumn3";
+            // 
+            // BrandsBindingSource
+            // 
+            this.BrandsBindingSource.DataSource = typeof(BazyDanych.BrandTableElement);
+            // 
+            // idDataGridViewTextBoxColumn8
+            // 
+            this.idDataGridViewTextBoxColumn8.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn8.HeaderText = "Numer";
+            this.idDataGridViewTextBoxColumn8.Name = "idDataGridViewTextBoxColumn8";
+            // 
+            // startDateDataGridViewTextBoxColumn
+            // 
+            this.startDateDataGridViewTextBoxColumn.DataPropertyName = "StartDate";
+            this.startDateDataGridViewTextBoxColumn.HeaderText = "Data początkowa";
+            this.startDateDataGridViewTextBoxColumn.Name = "startDateDataGridViewTextBoxColumn";
+            // 
+            // endDateDataGridViewTextBoxColumn
+            // 
+            this.endDateDataGridViewTextBoxColumn.DataPropertyName = "EndDate";
+            this.endDateDataGridViewTextBoxColumn.HeaderText = "Data końcowa";
+            this.endDateDataGridViewTextBoxColumn.Name = "endDateDataGridViewTextBoxColumn";
+            // 
+            // careBindingSource
+            // 
+            this.careBindingSource.DataSource = typeof(BazyDanych.CareTableElement);
             // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1184, 461);
+            this.Controls.Add(this.panelO);
             this.Controls.Add(this.panelM);
             this.Controls.Add(this.panelK);
             this.Controls.Add(this.panelS);
-            this.Controls.Add(this.panelO);
             this.HelpButton = true;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -2537,13 +2884,10 @@
             this.tableControlM.ResumeLayout(false);
             this.mPojazdy.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.tableCarsM)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.klasaTestowaBindingSource)).EndInit();
             this.mKierowcy.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.tableDriversM)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.klasaTestowauserBindingSource)).EndInit();
             this.mZlecenia.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ordersTableM)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.OrdersBindingSource)).EndInit();
             this.mFinanse.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -2551,31 +2895,22 @@
             this.panel1.PerformLayout();
             this.servicePlacesTabPage.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.tableServicePlacesM)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ServicePlacesBindingSource)).EndInit();
             this.TemplatesTabPage.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.templatesDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TemplatesBindingSource)).EndInit();
             this.ServiceTemplatesTabPage.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ServiceTemplatesDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TemplateServicesBindingSource)).EndInit();
             this.catalogsTabPage.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.catalogsDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CatalogsBindingSource)).EndInit();
             this.ServiceActionsTabPage.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ServiceActionsDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ServiceActionsBindingSource)).EndInit();
             this.servicesTabPage.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.servicesDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ServicesBindingSource)).EndInit();
             this.modelsTabPage.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.modelsDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ModelsBindingSource)).EndInit();
             this.brandsTabPage.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.brandsDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BrandsBindingSource)).EndInit();
             this.careTabPage.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.careDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.careBindingSource)).EndInit();
             this.panelO.ResumeLayout(false);
             this.tableControlO.ResumeLayout(false);
             this.oZlecenia.ResumeLayout(false);
@@ -2590,6 +2925,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.kTabelaZlecenia)).EndInit();
             this.tabKPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.kTabelaRezerwacje)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.OrdersBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.klasaTestowaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.klasaTestowauserBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ServicePlacesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TemplatesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TemplateServicesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CatalogsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ServiceActionsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ServicesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ModelsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BrandsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.careBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2637,7 +2984,6 @@
         private System.Windows.Forms.Button deleteButtonMOrder;
         private System.Windows.Forms.DataGridView oTabelaPojazdy;
         private System.Windows.Forms.TabPage oKierowcy;
-        private System.Windows.Forms.DataGridView oTabelaZlecenia;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
@@ -2820,8 +3166,45 @@
         private System.Windows.Forms.DataGridViewLinkColumn CarName;
         private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn22;
         private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn23;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn22;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn24;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn25;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn26;
+        private System.Windows.Forms.DataGridViewButtonColumn dataGridViewLinkColumn6;
+        private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn7;
+        private System.Windows.Forms.DataGridViewButtonColumn Column3;
+        private System.Windows.Forms.HelpProvider helpProvider1;
+        private System.Windows.Forms.Button mainHelpButton;
+        private System.Windows.Forms.DataGridView oTabelaZlecenia;
+        private System.Windows.Forms.Button ordersKHelpButton;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn10;
+        private System.Windows.Forms.DataGridViewLinkColumn dataGridViewLinkColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn stateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn costDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn typeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn counterStatusBeforeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn counterStatusAfterDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn plannedStartDateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn plannedEndDateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn actualStartDateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn actualEndDateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewButtonColumn Column4;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewLinkColumn dataGridViewLinkColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn16;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn17;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn18;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn19;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn20;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn21;
+        private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn5;
         private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewLinkColumn dataGridViewLinkColumn9;
         private System.Windows.Forms.DataGridViewTextBoxColumn State;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
         private System.Windows.Forms.DataGridViewTextBoxColumn Type;
@@ -2832,25 +3215,22 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ActualStartDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn ActualEndDate;
         private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn2;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn10;
-        private System.Windows.Forms.DataGridViewTextBoxColumn stateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn costDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn typeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn counterStatusBeforeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn counterStatusAfterDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn plannedStartDateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn plannedEndDateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn actualStartDateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn actualEndDateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn22;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn24;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn25;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn26;
-        private System.Windows.Forms.DataGridViewButtonColumn dataGridViewLinkColumn6;
-        private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn7;
-        private System.Windows.Forms.DataGridViewButtonColumn Column3;
-        private System.Windows.Forms.HelpProvider helpProvider1;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.Button button12;
+        private System.Windows.Forms.Button button13;
+        private System.Windows.Forms.Button button14;
+        private System.Windows.Forms.Button button15;
+        private System.Windows.Forms.Button button16;
+        private System.Windows.Forms.Button button17;
+        private System.Windows.Forms.Button button18;
+        private System.Windows.Forms.Button button19;
+        private System.Windows.Forms.Button button20;
+        private System.Windows.Forms.Button button21;
+        private System.Windows.Forms.Button button22;
+        private System.Windows.Forms.Button button23;
     }
 }

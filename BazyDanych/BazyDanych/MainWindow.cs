@@ -18,6 +18,7 @@ namespace BazyDanych
 	{
 		private bool isLogged;
         private int userID;
+        private char permissions;
 
         /// <summary>
         /// Bezparametrowy konstruktor klasy formularza zawierającego główne okno aplikacji
@@ -84,6 +85,7 @@ namespace BazyDanych
         /// <param name="id">ID zalogowanego użytkownika</param>
 		public void InitializeComponentMenadzer(int id)
 		{
+            permissions = 'm';
             userID = id;
 			this.panelM.Visible = true;
 			this.profilLabel.Visible = true;
@@ -97,6 +99,7 @@ namespace BazyDanych
                 string keeper = User.GetUserNameById(Care.GetKeeperID(car.id));
                 klasaTestowaBindingSource.Add(new KlasaTestowa_car(car.id, brand.name, model.name, keeper));
             }
+            UpdateOrder();
         }
 
         /// <summary>
@@ -105,11 +108,23 @@ namespace BazyDanych
         /// <param name="id">ID zalogowanego użytkownika</param>
 		public void InitializeComponentOpieka(int id)
 		{
+            permissions = 'o';
             userID = id;
             this.panelO.Visible = true;
 			this.profilLabel.Visible = true;
 			this.logowanieLabel.Text = "Wyloguj";
             var carList = Car.GetUserCarList(userID);
+            var careList = Care.GetCareItembyKeeper(userID);
+            List<Order> ordersList = new List<Order>();
+            foreach (Care care in careList)
+            {
+                ordersList.AddRange(Order.GetOrderByCare(care.id));
+            }
+            OrdersBindingSource.Clear();
+            foreach (var order in ordersList)
+            {
+                OrdersBindingSource.Add(new OrderTableElement(order.id, order.plannedStartDate, order.plannedEndDate, order.actualStartDate, order.actualEndDate, order.counterStatusBefore, order.counterStatusAfter, order.commentsBefore, order.commentsAfter, order.type, order.cost, order.cancellationReason, order.state, order.careId, order.userId));
+            }
             klasaTestowaBindingSource.Clear();
             foreach (var car in carList)
             {
@@ -126,6 +141,7 @@ namespace BazyDanych
         /// <param name="id">ID zalogowanego użytkownika</param>
 		public void InitializeComponentKierowca(int id)
 		{
+            permissions = 'k';
             userID = id;
             this.panelK.Visible = true;
 			this.profilLabel.Visible = true;
@@ -537,7 +553,7 @@ namespace BazyDanych
         /// <param name="e"></param>
 		private void button1_Click_1(object sender, EventArgs e)
 		{
-			AddOrEditOrderWindow obj = new AddOrEditOrderWindow();
+			AddOrEditOrderWindow obj = new AddOrEditOrderWindow(this);
 			obj.acceptButton.Visible = false;
 			obj.Show();
 		}
@@ -549,7 +565,7 @@ namespace BazyDanych
         /// <param name="e"></param>
 		private void mTabelaZlecenia_CellContentClick(object sender, DataGridViewCellEventArgs e)
 		{
-            if (e.ColumnIndex == 11)
+            if (e.ColumnIndex == 12)
 			{
                 var row = e.RowIndex;
                 var orderId = (int)ordersTableM.Rows[row].Cells[1].Value;
@@ -559,7 +575,16 @@ namespace BazyDanych
                 obj.addServiceButton.Visible = false;
                 obj.Show();
             }
-		}
+            else if (e.ColumnIndex == 2)
+            {
+                var row = e.RowIndex;
+                var orderId = (int)ordersTableM.Rows[row].Cells[1].Value;
+                var careId = Order.GetOrderById(orderId).careId;
+                var carId = Care.GetCareByID(careId).carId;
+                CarDetailsWindow obj = new CarDetailsWindow(carId);
+                obj.Show();
+            }
+        }
 
         /// <summary>
         /// Event Handler dla przycisku dodaj zlecenie, przy tabeli zawierającej listę wszystkich zleceń, wyświetlanej, gdy użytkownik zalogowany jest jako administrator
@@ -1691,6 +1716,165 @@ namespace BazyDanych
                 obj.addButton.Visible = false;
                 obj.Show();
             }
+        }
+
+        private void mainHelpButton_Click(object sender, EventArgs e)
+        {
+            if (!isLogged)
+            {
+                MessageBox.Show("Aplikacja ta służy do zarządzania flotą samochodową.\nZaloguj się, aby uzyskać dostęp do funkcjonalności.", "Menedżer Floty - Pomoc");
+            }
+            else
+            {
+                if (permissions == 'm')
+                {
+                    MessageBox.Show("Aplikacja ta służy do zarządzania flotą samochodową.\nW pomocy znajdziesz co możesz znaleźć w zakładkach głównego okna, każda zakładka ma również swoją własną pomoc opisującą ją. Klikając na link profil w górnej części okna możesz zobaczyć swój profil użytkonika i edytować go.\n\n-Pojazdy - możesz zobaczyć aktualnie posiadane przez flotę samochody oraz informacje o nich, możesz edytować informacje o tych samochodach i zarządzać nimi.\n\nKierowcy - możesz zobaczyć kierowców należących do firmy, możesz edytować informację o nich i zarządzać nimi.\n\nZlecenia - możesz zobaczyć jakie zlecenia były, są i będą przeprowadzane przez floty (wykonywanie serwisów, itp.) możesz je edytować i zarządzać nimi.\n\n-Finanse - możesz zobaczyć informacje finansowe o flocie, możesz sprawdzić jakie były koszty wybranej operacji w wybranym okresie.\n\n-Miejsca serwisowe możesz zobaczyć w jakich firmach wykonywane były serwisy samochodów floty, sprawdzić ich adres, edytować je i zarządzać tymi miejscami.\n\n-W oknie szablony możesz zobaczyć dostępne szablony wykonywania serwisów dla danych modeli samochodów, możesz edytować je i zarządzać nimi.\n\n-Szablonowe serwisy - zobaczysz wszystkie szablony wykonywania czynności serwisowych, możesz je edytować i zarządzać nimi.\n\nKatalogi - możesz przejrzeć katalogi zawierające wykonane czynności serwisowe oraz szablony wykonywania ich, możesz je edytować i zarządzać nimi.\n\n-Czynności serwisowe - możesz przejrzeć wszystkie wykonane czynności serwisowe, możesz je edytować i zarządzać nimi.\n\n-Serwisy - możesz przejrzeć wszystkie serwisy wykonane na samochodach floty, możesz je edytować i zarządzać nimi.\n\nModele - możesz przejrzeć wszystkie dostępne modele w ramach floty, możesz je edytować i zarządzać nimi.\n\n-Marki - możesz przejrzeć marki samochodów i odpowiadające im modele, możesz je edytować i zarządzać nimi.\n\n-Opieki - możesz przejrzeć wszystkie opieki samochodów i informacje o nich, możesz je edytować i zarządzać nimi.", "Menedżer Floty - Pomoc");
+                }
+                else if (permissions == 'o')
+                {
+                    MessageBox.Show("Aplikacja ta służy do zarządzania flotą samochodową.\nW pomocy znajdziesz co możesz znaleźć w zakładkach głównego okna, każda zakładka ma również swoją własną pomoc opisującą ją. Klikając na link profil w górnej części okna możesz zobaczyć swój profil użytkonika i edytować go.\n\n-Zlecenia - możesz zobaczyć jakie zlecenia były, są i będą przeprowadzane pod twoją opieką (wykonywanie serwisów, itp.) możesz je edytować i zarządzać nimi.\n\n-Kierowcy - możesz zobaczyć kierowców należących do firmy.\n\n-Pojazdy - możesz zobaczyć aktualnie posiadane przez flotę samochody oraz informacje o nich.", "Menedżer Floty - Pomoc");
+                }
+                else if (permissions == 'k')
+                {
+                    MessageBox.Show("Aplikacja ta służy do zarządzania flotą samochodową.\nW pomocy znajdziesz co możesz znaleźć w zakładkach głównego okna, każda zakładka ma również swoją własną pomoc opisującą ją. Klikając na link profil w górnej części okna możesz zobaczyć swój profil użytkonika i edytować go.\n\n-Zlecenia - możesz zobaczyć jakie zlecenia masz do wykonania (wykonywanie serwisów, itp.).\n\n-Rezerwuj - możesz zobaczyć swoje rezerwacje samochodów i zarządzać nimi.\n\n", "Menedżer Floty - Pomoc");
+                }
+            }
+        }
+
+        private void oTabelaZlecenia_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 12)
+            {
+                var row = e.RowIndex;
+                var orderId = (int)oTabelaZlecenia.Rows[row].Cells[1].Value;
+                AddOrEditOrderWindow obj = new AddOrEditOrderWindow(this, orderId);
+                obj.Text = "Menedżer Floty - Edytuj Zlecenie";
+                obj.addButton.Visible = false;
+                obj.addServiceButton.Visible = false;
+                obj.Show();
+            }
+            else if (e.ColumnIndex == 2)
+            {
+                var row = e.RowIndex;
+                var orderId = (int)oTabelaZlecenia.Rows[row].Cells[1].Value;
+                var careId = Order.GetOrderById(orderId).careId;
+                var carId = Care.GetCareByID(careId).carId;
+                CarDetailsWindow obj = new CarDetailsWindow(carId);
+                obj.Show();
+            }
+        }
+
+        private void ordersKHelpButton_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("W tej zakładce w tabeli są pokazane wszystkie twoje zlecenia. Klikając na linki w tabeli zobaczysz szczegóły danego elementu, szczegóły zleceń są dostępne po naciśnięciu oznaczonych przycisków w tabeli.", "Menedżer Floty - Zlecenia");
+        }
+
+        private void kTabelaZlecenia_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 1)
+            {
+                var row = e.RowIndex;
+                var orderId = (int)kTabelaZlecenia.Rows[row].Cells[0].Value;
+                var careId = Order.GetOrderById(orderId).careId;
+                var carId = Care.GetCareByID(careId).carId;
+                CarDetailsWindow obj = new CarDetailsWindow(carId);
+                obj.Show();
+            }
+            else if (e.ColumnIndex == 11)
+            {
+                var row = e.RowIndex;
+                var orderId = (int)kTabelaZlecenia.Rows[row].Cells[0].Value;
+                AddOrEditOrderWindow obj = new AddOrEditOrderWindow(this, orderId);
+                obj.addButton.Visible = false;
+                obj.acceptButton.Visible = false;
+                obj.addServiceButton.Visible = false;
+                obj.Show();
+            }
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("W tej zakładce w tabeli są pokazane wszystkie pojazdy floty. Możesz zarządzać pojazdami przyciskami po prawej stronie, klikając na linki w tabeli zobaczysz szczegóły danego elementu, edycje/szczegóły pojazdów są dostępne po naciśnięciu oznaczonych przycisków w tabeli.", "Menedżer Floty - Pomoc Pojazdy");
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("W tej zakładce w tabeli są pokazani wszyscy kierowcy floty. Możesz zarządzać kierowcami przyciskami po prawej stronie, klikając na linki w tabeli zobaczysz szczegóły danego elementu, edycje/szczegóły kierowców są dostępne po naciśnięciu oznaczonych przycisków w tabeli.", "Menedżer Floty - Pomoc Kierowcy");
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("W tej zakładce w tabeli są pokazane wszystkie zlecenia. Możesz zarządzać zleceniami przyciskami po prawej stronie, klikając na linki w tabeli zobaczysz szczegóły danego elementu, edycje/szczegóły zleceń są dostępne po naciśnięciu oznaczonych przycisków w tabeli.", "Menedżer Floty - Pomoc Zlecenia");
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("W tej zakładce są pokazane finanse floty. Wybierając odpoweidnie pozycje i naciskając przycisk generuj koszty otrzymasz koszty wybranych czynności w wybranym okresie", "Menedżer Floty - Pomoc Finanse");
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("W tej zakładce w tabeli są pokazane wszystkie miejsca serwisu odwiedzane przez flotę. Możesz zarządzać miejscami serwisu przyciskami po prawej stronie, klikając na linki w tabeli zobaczysz szczegóły danego elementu, edycje/szczegóły miejsc serwisu są dostępne po naciśnięciu oznaczonych przycisków w tabeli.", "Menedżer Floty - Pomoc Miejsca Serwisowe");
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("W tej zakładce w tabeli są pokazane wszystkie szablony z szablonowymi czynnościami serwisowymi floty. Możesz zarządzać szablonami przyciskami po prawej stronie, klikając na linki w tabeli zobaczysz szczegóły danego elementu, edycje/szczegóły szablonów są dostępne po naciśnięciu oznaczonych przycisków w tabeli.", "Menedżer Floty - Pomoc Szablony");
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("W tej zakładce w tabeli są pokazane wszystkie szablonowe czynności serwisowe samochodów floty. Możesz zarządzać szablonowymi czynnościami przyciskami po prawej stronie, klikając na linki w tabeli zobaczysz szczegóły danego elementu, edycje/szczegóły szablonowych czynności są dostępne po naciśnięciu oznaczonych przycisków w tabeli.", "Menedżer Floty - Pomoc Szablonowe serwisy");
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("W tej zakładce w tabeli są pokazane wszystkie katalogi z szablonowymi czynnościami serwisowymi i tymi faktycznie wykonanymi na samochodach floty. Możesz zarządzać katalogami przyciskami po prawej stronie, klikając na linki w tabeli zobaczysz szczegóły danego elementu, edycje/szczegóły katalogów są dostępne po naciśnięciu oznaczonych przycisków w tabeli.", "Menedżer Floty - Pomoc Katalogi");
+        }
+
+        private void button15_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("W tej zakładce w tabeli są pokazane wszystkie czynności serwisowe wykonane na samochodach floty. Możesz zarządzać czynnościami serwisowymi przyciskami po prawej stronie, klikając na linki w tabeli zobaczysz szczegóły danego elementu, edycje/szczegóły czynności serwisowych są dostępne po naciśnięciu oznaczonych przycisków w tabeli.", "Menedżer Floty - Czynności Serwisowe");
+        }
+
+        private void button16_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("W tej zakładce w tabeli są pokazane wszystkie serwisy z czynnościami serwisowymi wykonanymi na samochodach floty. Możesz zarządzać serwisami przyciskami po prawej stronie, klikając na linki w tabeli zobaczysz szczegóły danego elementu, edycje/szczegóły serwisów są dostępne po naciśnięciu oznaczonych przycisków w tabeli.", "Menedżer Floty - Serwisy");
+        }
+
+        private void button17_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("W tej zakładce w tabeli są pokazane wszystkie modele samochodów floty. Możesz zarządzać modelami przyciskami po prawej stronie, klikając na linki w tabeli zobaczysz szczegóły danego elementu, edycje/szczegóły modeli są dostępne po naciśnięciu oznaczonych przycisków w tabeli.", "Menedżer Floty - Modele");
+        }
+
+        private void button18_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("W tej zakładce w tabeli są pokazane wszystkie marki samochodów floty. Możesz zarządzać markami przyciskami po prawej stronie, klikając na linki w tabeli zobaczysz szczegóły danego elementu, edycje/szczegóły marek są dostępne po naciśnięciu oznaczonych przycisków w tabeli.", "Menedżer Floty - Marki");
+        }
+
+        private void button19_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("W tej zakładce w tabeli są pokazane wszystkie opieki samochodów floty. Możesz zarządzać opiekami przyciskami po prawej stronie, klikając na linki w tabeli zobaczysz szczegóły danego elementu, edycje/szczegóły opiek są dostępne po naciśnięciu oznaczonych przycisków w tabeli.", "Menedżer Floty - Opieki");
+        }
+
+        private void button20_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("W tej zakładce w tabeli są pokazane wszystkie twoje rezerwacje samochodów floty.", "Menedżer Floty - Rezerwacje");
+        }
+
+        private void button21_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("W tej zakładce w tabeli są pokazane wszystkie zlecenia wykonywane pod twoją opieką. Możesz zarządzać zleceniami przyciskami po prawej stronie, klikając na linki w tabeli zobaczysz szczegóły danego elementu, edycje/szczegóły zleceń są dostępne po naciśnięciu oznaczonych przycisków w tabeli.", "Menedżer Floty - Zlecenia");
+        }
+
+        private void button22_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("W tej zakładce w tabeli są pokazani wszyscy kierowcy floty. Możesz zarządzać kierowcami przyciskami po prawej stronie, klikając na linki w tabeli zobaczysz szczegóły danego elementu, szczegóły kierowców są dostępne po naciśnięciu oznaczonych przycisków w tabeli.", "Menedżer Floty - Kierowcy");
+        }
+
+        private void button23_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("W tej zakładce w tabeli są pokazane wszystkie pojazdy floty, których jesteś opiekunem. Możesz zarządzać pojazdami przyciskami po prawej stronie, klikając na linki w tabeli zobaczysz szczegóły danego elementu, szczegóły pojazdów są dostępne po naciśnięciu oznaczonych przycisków w tabeli.", "Menedżer Floty - Pojazdy");
         }
     }
 }
