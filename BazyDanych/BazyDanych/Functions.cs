@@ -1,10 +1,5 @@
-﻿using MySql.Data.MySqlClient;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.Remoting.Messaging;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
+using System.IO;
 using System.Windows.Forms;
 
 namespace BazyDanych
@@ -20,6 +15,20 @@ namespace BazyDanych
         /// <returns></returns>
 		public static string GetConnectionString()
 		{
+			try
+			{   // Open the text file using a stream reader.
+				using (StreamReader sr = new StreamReader("ConnectionString.txt"))
+				{
+					// Read the stream to a string, and write the string to the console.
+					String line = sr.ReadToEnd();
+					return line;
+				}
+			}
+			catch (Exception e)
+			{
+				MessageBox.Show("Błąd wczytywania connestion stringa!");
+			}
+
 			return "server=127.0.0.1;uid=root;" +
 				"pwd=root;database=projekt_bazy_danych";
 		}
