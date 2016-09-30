@@ -10,6 +10,9 @@ using System.Windows.Forms;
 
 namespace BazyDanych
 {
+    /// <summary>
+    /// Klasa formularza wyświetlającego okno stanu technicznego samochodu
+    /// </summary>
     public partial class vehicleCondition : Form
     {
         public vehicleCondition()

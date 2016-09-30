@@ -10,6 +10,9 @@ using System.Windows.Forms;
 
 namespace BazyDanych
 {
+    /// <summary>
+    /// Klasa formularza wyświetlającego okno dodawania/edycji opieki
+    /// </summary>
     public partial class AddOrEditCareWindow : Form
     {
         private MainWindow mainWindow;

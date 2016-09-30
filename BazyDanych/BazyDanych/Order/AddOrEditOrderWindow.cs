@@ -10,6 +10,9 @@ using System.Windows.Forms;
 
 namespace BazyDanych
 {
+    /// <summary>
+    /// Klasa formularza wyświetlającego okno dodawania/edycji zlecenia
+    /// </summary>
     public partial class AddOrEditOrderWindow : Form
     {
         private MainWindow mainWindow;

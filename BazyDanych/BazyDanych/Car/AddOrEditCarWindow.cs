@@ -3,8 +3,10 @@ using System.Windows.Forms;
 
 namespace BazyDanych
 {
-	//Okno dodawania oraz edycji pojazdu
-	public partial class AddOrEditCarWindow : Form
+    /// <summary>
+    /// Klasa formularza wyświetlającego okno dodawania/edycji samochodu
+    /// </summary>
+    public partial class AddOrEditCarWindow : Form
 	{
 		private Car car;
         private string currentKeeper;

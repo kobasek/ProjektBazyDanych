@@ -10,6 +10,9 @@ using System.Windows.Forms;
 
 namespace BazyDanych
 {
+    /// <summary>
+    /// Klasa formularza wyświetlającego okno dodawania serwisu
+    /// </summary>
     public partial class AddServiceWindow : Form
     {
         public AddServiceWindow()

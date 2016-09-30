@@ -10,6 +10,9 @@ using System.Windows.Forms;
 
 namespace BazyDanych
 {
+    /// <summary>
+    /// Klasa formularza wyświetlającego okno szczegóły marki
+    /// </summary>
     public partial class BrandDetailsWindow : Form
     {
         public BrandDetailsWindow()

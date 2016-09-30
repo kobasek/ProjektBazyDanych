@@ -11,7 +11,7 @@ namespace BazyDanych
     /// <summary>
     /// Klasa reprezentująca samochód
     /// </summary>
-	class Car
+	public class Car
 	{
         /// <summary>
         /// Id pojazdu

@@ -8,13 +8,31 @@ using MySql.Data.MySqlClient;
 
 namespace BazyDanych
 {
-	class Model
+    /// <summary>
+    /// Klasa reprezentyjąca model samochodu
+    /// </summary>
+    public class Model
 	{
-		public int id;
-		public string name;
-		public string category;
-		public int brandId;
-		public int? templateId;
+        /// <summary>
+        /// Id modelu
+        /// </summary>
+        public int id;
+        /// <summary>
+        /// Nazwa modelu
+        /// </summary>
+        public string name;
+        /// <summary>
+        /// Kategoria modelu
+        /// </summary>
+        public string category;
+        /// <summary>
+        /// Id marki modelu
+        /// </summary>
+        public int brandId;
+        /// <summary>
+        /// Id szablonu modelu
+        /// </summary>
+        public int? templateId;
 
 		public Model(ModelDto model)
 		{

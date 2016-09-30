@@ -7,10 +7,28 @@ using MySql.Data.MySqlClient;
 
 namespace BazyDanych
 {
-    class ServicePlace
+    /// <summary>
+    /// Namespace zawierający wszystko co zostało stworzone do projektu menedżera floty
+    /// </summary>
+    public static class NamespaceDoc
     {
+    }
+    /// <summary>
+    /// Klasa reprezentyjąca miejsce serwisu
+    /// </summary>
+    public class ServicePlace
+    {
+        /// <summary>
+        /// Id miejsca serwisu
+        /// </summary>
         public int id;
+        /// <summary>
+        /// adres miejsca serwisu
+        /// </summary>
         public string address;
+        /// <summary>
+        /// Nazwa firmy, w której wykonywany jest serwis
+        /// </summary>
         public string companyName;
 
         public ServicePlace()

@@ -10,6 +10,9 @@ using System.Windows.Forms;
 
 namespace BazyDanych
 {
+    /// <summary>
+    /// Klasa formularza wyświetlającego okno szczegółów katalogu
+    /// </summary>
     public partial class CatalogDetailsWindow : Form
     {
         public CatalogDetailsWindow()

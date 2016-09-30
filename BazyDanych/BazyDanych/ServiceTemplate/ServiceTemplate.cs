@@ -10,7 +10,7 @@ namespace BazyDanych
     /// <summary>
     /// Klasa reprezentujący szablon serwisowy
     /// </summary>
-    class ServiceTemplate
+    public class ServiceTemplate
     {
         /// <summary>
         /// Id szablonu serwisowego

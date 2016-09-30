@@ -7,19 +7,44 @@ using MySql.Data.MySqlClient;
 
 namespace BazyDanych
 {
-    class Care
+    /// <summary>
+    /// Klasa reprezentująca opiekę
+    /// </summary>
+    public class Care
     {
+        /// <summary>
+        /// Id opieki
+        /// </summary>
         public int id;
+        /// <summary>
+        /// Początkowa data opieki
+        /// </summary>
         public DateTime startDate;
+        /// <summary>
+        /// Końcowa data opieki
+        /// </summary>
         public DateTime? endDate;
+        /// <summary>
+        /// Id opiekuna
+        /// </summary>
         public int keeperId;
+        /// <summary>
+        /// Id samochodu
+        /// </summary>
         public int carId;
 
+        /// <summary>
+        /// Bezargumentowy onstruktor klasy reprezentującej opiekę
+        /// </summary>
         public Care()
         {
 
         }
 
+        /// <summary>
+        /// Jednoargumentowy onstruktor klasy reprezentującej opiekę
+        /// </summary>
+        /// <param name="careDto">Informacje o opiece do utorzenia</param>
         public Care(CareDto careDto)
         {
             id = careDto.Id;
@@ -29,6 +54,10 @@ namespace BazyDanych
             carId = careDto.CarId;
         }
 
+        /// <summary>
+        /// Metoda zwracająca id opiekuna
+        /// </summary>
+        /// <param name="id">Id zlecenia</param>
         public static int GetKeeperID(int id)
         {
             var connectionString = Functions.GetConnectionString();
@@ -62,6 +91,12 @@ namespace BazyDanych
             return keeperID;
         }
 
+        /// <summary>
+        /// Metoda dodająca opiekę do bazy danych
+        /// </summary>
+        /// <param name="userId">Id opiekuna</param>
+        /// <param name="carId">Id samochodu</param>
+        /// <param name="startDate">Data początku opieki</param>
         public static void AddCare(int userId, int carId, DateTime startDate)
         {
             var connectionString = Functions.GetConnectionString();
@@ -91,6 +126,10 @@ namespace BazyDanych
             }
         }
 
+        /// <summary>
+        /// Metoda dodająca opiekę do bazy danych
+        /// </summary>
+        /// <param name="careDto">Informacje o opiece do dodania</param>
         public static void AddCare(CareDto careDto)
         {
             var connectionString = Functions.GetConnectionString();
@@ -126,6 +165,9 @@ namespace BazyDanych
             }
         }
 
+        /// <summary>
+        /// Metoda kończąca opiekę
+        /// </summary>
         public static void EndCare(int id)
         {
             var connectionString = Functions.GetConnectionString();
@@ -149,6 +191,11 @@ namespace BazyDanych
             }
         }
 
+        /// <summary>
+        /// Metoda pobierająca opiekę
+        /// </summary>
+        /// <param name="userId">Id opiekuna opieki</param>
+        /// <param name="carId">Id samochodu opieki</param>
         public static int GetCare(int userId, int carId)
         {
             var connectionString = Functions.GetConnectionString();
@@ -182,6 +229,10 @@ namespace BazyDanych
             return keeperId;
         }
 
+        /// <summary>
+        /// Metoda pobierająca opiekę po samochodzie
+        /// </summary>
+        /// <param name="carId">Id samochodu opieki</param>
         public static int GetCarebyCar(int carId)
         {
             var connectionString = Functions.GetConnectionString();
@@ -215,6 +266,10 @@ namespace BazyDanych
             return careId;
         }
 
+        /// <summary>
+        /// Metoda pobierająca opiekę po opiekunie
+        /// </summary>
+        /// <param name="keeperId">Id opiekuna</param>
         public static int GetCarebyKeeper(int keeperId)
         {
             var connectionString = Functions.GetConnectionString();
@@ -248,6 +303,10 @@ namespace BazyDanych
             return careId;
         }
 
+        /// <summary>
+        /// Metoda Listę opiek danego opiekuna
+        /// </summary>
+        /// <param name="keeperId">Id opiekuna</param>
         public static List<Care> GetCareItembyKeeper(int keeperId)
         {
             List<Care> list = new List<Care>();
@@ -284,6 +343,10 @@ namespace BazyDanych
             return list;
         }
 
+        /// <summary>
+        /// Metoda zwracająca Id opiekuna
+        /// </summary>
+        /// <param name="userId">Id opiekuna</param>
         public static int CheckIsKeeper(int userId)
         {
             var connectionString = Functions.GetConnectionString();
@@ -317,6 +380,10 @@ namespace BazyDanych
             return careId;
         }
 
+        /// <summary>
+        /// Metoda zwracająca opiekę po id
+        /// </summary>
+        /// <param name="id">Id opieki</param>
         public static Care GetCareByID(int id)
         {
             var connectionString = Functions.GetConnectionString();
@@ -356,6 +423,9 @@ namespace BazyDanych
             return new Care();
         }
 
+        /// <summary>
+        /// Metoda zwracająca listę opiek
+        /// </summary>
         public static IList<Care> GetCareList()
         {
             var connectionString = Functions.GetConnectionString();
@@ -390,7 +460,9 @@ namespace BazyDanych
             }
             return list;
         }
-
+        /// <summary>
+        /// Metoda zwracająca listę aktywnych opiek
+        /// </summary>
         public static IList<Care> GetActiveCareList()
         {
             var connectionString = Functions.GetConnectionString();
@@ -426,6 +498,10 @@ namespace BazyDanych
             return list;
         }
 
+        /// <summary>
+        /// Metoda aktualizująca opiekę
+        /// </summary>
+        /// <param name="careDto">Informacje o opiece do zaktualizowania</param>
         public static void UpdateCare(CareDto careDto)
         {
             var connectionString = Functions.GetConnectionString();

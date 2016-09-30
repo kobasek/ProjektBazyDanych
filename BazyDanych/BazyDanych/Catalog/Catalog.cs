@@ -7,22 +7,42 @@ using MySql.Data.MySqlClient;
 
 namespace BazyDanych
 {
-    class Catalog
+    /// <summary>
+    /// Klasa reprezentująca katalog
+    /// </summary>
+    public class Catalog
     {
+        /// <summary>
+        /// Id katalogu
+        /// </summary>
         public int id;
+        /// <summary>
+        /// Nazwa katalogu
+        /// </summary>
         public string name;
 
+        /// <summary>
+        /// Baezargumentowy konstruktor katalogu
+        /// </summary>
         public Catalog()
         {
 
         }
 
+        /// <summary>
+        /// Jednoargumentowy konstruktor katalogu
+        /// </summary>
+        ///  <param name="catalogDto">informacj eo katalogu do utworzeniau</param>
         public Catalog(CatalogDto catalogDto)
         {
             id = catalogDto.Id;
             name = catalogDto.Name;
         }
 
+        /// <summary>
+        /// Metoda pobierająca katalog po id
+        /// </summary>
+        /// <param name="id">id katalogu</param>
         public static Catalog GetCatalogById(int id)
         {
             var connectionString = Functions.GetConnectionString();
@@ -59,6 +79,10 @@ namespace BazyDanych
             return new Catalog();
         }
 
+        /// <summary>
+        /// Metoda dodająca katalog do bazy danych
+        /// </summary>
+        /// <param name="catalogDto">Informacje o katalogu do dodania</param>
         public static void AddCatalog(CatalogDto catalogDto)
         {
             var connectionString = Functions.GetConnectionString();
@@ -84,6 +108,9 @@ namespace BazyDanych
             }
         }
 
+        /// <summary>
+        /// Meetoda zwracająca listę katalogów z bazy danych
+        /// </summary>
         public static IList<Catalog> GetCatalogsList()
         {
             var connectionString = Functions.GetConnectionString();
@@ -116,6 +143,10 @@ namespace BazyDanych
             return list;
         }
 
+        /// <summary>
+        /// Metoda aktualizująca katalog
+        /// </summary>
+        ///  <param name="catalogDto">informacje o katalogu do zaktualizowania</param>
         public static void UpdateCatalog(CatalogDto catalogDto)
         {
             var connectionString = Functions.GetConnectionString();

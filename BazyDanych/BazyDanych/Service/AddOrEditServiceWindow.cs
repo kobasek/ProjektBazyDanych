@@ -10,6 +10,9 @@ using System.Windows.Forms;
 
 namespace BazyDanych
 {
+    /// <summary>
+    /// Klasa formularza wyświetlającego okno dodawania/edycji serwisu
+    /// </summary>
     public partial class AddOrEditServiceWindow : Form
     {
         private AddOrEditOrderWindow addOrEditOrderWindow;

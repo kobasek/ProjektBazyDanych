@@ -10,6 +10,9 @@ using System.Windows.Forms;
 
 namespace BazyDanych
 {
+    /// <summary>
+    /// Klasa formularza wyświetlającego okno dodawania/edycji katalogu
+    /// </summary>
     public partial class AddOrEditCatalogWindow : Form
     {
         private MainWindow mainWindow;

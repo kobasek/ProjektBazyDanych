@@ -10,6 +10,9 @@ using System.Windows.Forms;
 
 namespace BazyDanych
 {
+    /// <summary>
+    /// Klasa formularza wyświetlającego okno dodawania/edycji czynności serwisowej
+    /// </summary>
     public partial class AddOrEditServiceActionWindow : Form
     {
         private MainWindow mainWindow;

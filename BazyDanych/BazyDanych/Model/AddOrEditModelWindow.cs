@@ -10,6 +10,9 @@ using System.Windows.Forms;
 
 namespace BazyDanych
 {
+    /// <summary>
+    /// Klasa formularza wyświetlającego okno dodawania/edycji modelu
+    /// </summary>
     public partial class AddOrEditModelWindow : Form
     {
         private MainWindow mainWindow;

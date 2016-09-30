@@ -10,6 +10,9 @@ using System.Windows.Forms;
 
 namespace BazyDanych
 {
+    /// <summary>
+    /// Klasa formularza wyświetlającego okno dodawania/edycji marki
+    /// </summary>
     public partial class AddOrEditBrandWindow : Form
     {
         private MainWindow mainWindow;

@@ -10,7 +10,7 @@ namespace BazyDanych
     /// <summary>
     /// Klasa reprezentująca zlecenie
     /// </summary>
-    class Order
+    public class Order
     {
         /// <summary>
         /// ID zlecenia

@@ -10,7 +10,7 @@ namespace BazyDanych
     /// <summary>
     /// Klasa przechowująca informacje o szablonie
     /// </summary>
-    class Template
+    public class Template
     {
         /// <summary>
         /// ID szablonu

@@ -10,6 +10,9 @@ using System.Windows.Forms;
 
 namespace BazyDanych
 {
+    /// <summary>
+    /// Klasa formularza wyświetlającego okno szczegółów samochodu
+    /// </summary>
 	public partial class CarDetailsWindow : Form
 	{
 		private Car car;

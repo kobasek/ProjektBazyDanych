@@ -8,21 +8,42 @@ using System.Windows.Forms;
 
 namespace BazyDanych
 {
-	class Brand
+    /// <summary>
+    /// Klasa reprezentująca markę
+    /// </summary>
+    public class Brand
 	{
+        /// <summary>
+        /// Id marki
+        /// </summary>
 		public int id;
+        /// <summary>
+        /// Nazwa marki
+        /// </summary>
 		public string name;
 
+        /// <summary>
+        /// Bezargumentowy konstruktor klasy reprezentującej markę
+        /// </summary>
 		public Brand()
 		{
 		}
 
+        /// <summary>
+        /// Dwuargumentowy konstruktor klasy zawierającej reprezentującej markę
+        /// </summary>
+        /// <param name="name">Nazwa marki</param>
+        /// <param name="id">id marki</param>
 		public Brand(string name, int id)
 		{
 			this.name = name;
 			this.id = id;
 		}
 
+        /// <summary>
+        /// Metoda pobierająca markę po Id
+        /// </summary>
+        /// <param name="id">Id marki</param>
 		public static Brand GetBrandById(int id)
 		{
 			var connectionString = Functions.GetConnectionString();
@@ -56,7 +77,10 @@ namespace BazyDanych
 			return new Brand();
 		}
 
-		public static List<Brand> GetBrandList()
+        /// <summary>
+        /// Metoda zwracająca listę marek z bazy danych
+        /// </summary>
+        public static List<Brand> GetBrandList()
 		{
 			var connectionString = Functions.GetConnectionString();
 			var list = new List<Brand>();
@@ -87,6 +111,10 @@ namespace BazyDanych
 			return list;
 		}
 
+        /// <summary>
+        /// Metoda dodająca markę do bazy danych
+        /// </summary>
+        /// <param name="brandDto">Informacje o marce do dodania do bazy danych</param>
         public static void AddBrand(BrandDto brandDto)
         {
             var connectionString = Functions.GetConnectionString();
@@ -112,6 +140,10 @@ namespace BazyDanych
             }
         }
 
+        /// <summary>
+        /// Metoda uaktualniająca markę w bazy danych
+        /// </summary>
+        /// <param name="brandDto">Informacje o marce do zaktualizowania w bazie danych</param>
         public static void UpdateBrand(BrandDto brandDto)
         {
             var connectionString = Functions.GetConnectionString();

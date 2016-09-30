@@ -7,19 +7,44 @@ using MySql.Data.MySqlClient;
 
 namespace BazyDanych
 {
+    /// <summary>
+    /// Klasa reprezentująca czynność serwisową
+    /// </summary>
     public class ServiceAction
     {
+        /// <summary>
+        /// Id czynności seriwsowej
+        /// </summary>
         public int id;
+        /// <summary>
+        /// Nazwa czynności serwisowej
+        /// </summary>
         public string name;
+        /// <summary>
+        /// Koszt czynności serwisowej
+        /// </summary>
         public decimal cost;
+        /// <summary>
+        /// Id katalogu czynności serwisowej
+        /// </summary>
         public int catalogId;
+        /// <summary>
+        /// Id serwisu czynności serwisowej
+        /// </summary>
         public int serviceId;
 
+        /// <summary>
+        /// Bezparametrowy konstruktor
+        /// </summary>
         public ServiceAction()
         {
 
         }
 
+        /// <summary>
+        /// Jednoargumentowy konstruktor klasy zawierającej informacje o użytkowniku
+        /// </summary>
+        /// <param name="serviceActionDto">Obiekt reprezentujący czynność serwisową</param>
         public ServiceAction(ServiceActionDto serviceActionDto)
         {
             id = serviceActionDto.Id;
@@ -29,6 +54,10 @@ namespace BazyDanych
             serviceId = serviceActionDto.ServiceId;
         }
 
+        /// <summary>
+        /// Metoda pobierająca czynność serwisową o podanym Id
+        /// </summary>
+        /// <param name="id">Id czynności serwisowej</param>
         public static ServiceAction GetServiceActionById(int id)
         {
             var connectionString = Functions.GetConnectionString();
@@ -69,6 +98,10 @@ namespace BazyDanych
             return new ServiceAction();
         }
 
+        /// <summary>
+        /// Metoda dodająca do bazy danych podaną czynność serwisową
+        /// </summary>
+        /// <param name="serviceActionDto">Dane o czynności serwisowej do dodania do bazy danych</param>
         public static void AddServiceAction(ServiceActionDto serviceActionDto)
         {
             var connectionString = Functions.GetConnectionString();
@@ -100,6 +133,9 @@ namespace BazyDanych
             }
         }
 
+        /// <summary>
+        /// Metoda pobierająca listę czynności serwisowych z bazy danych
+        /// </summary>
         public static IList<ServiceAction> GetServiceActionsList()
         {
             var connectionString = Functions.GetConnectionString();
@@ -135,6 +171,10 @@ namespace BazyDanych
             return list;
         }
 
+        /// <summary>
+        /// Metoda pobierająca listę czynności serwisowych o podanym id katalogu z bazy danych
+        /// </summary>
+        /// <param name="catalogId">Id katalogu</param>
         public static IList<ServiceAction> GetServiceActionsWithGivenCatalogIdList(int catalogId)
         {
             var connectionString = Functions.GetConnectionString();
@@ -170,6 +210,10 @@ namespace BazyDanych
             return list;
         }
 
+        /// <summary>
+        /// Metoda pobierająca listę czynności serwisowych o podanym id serwisu z bazy danych
+        /// </summary>
+        /// <param name="serviceId">Id serwisu</param>
         public static IList<ServiceAction> GetServiceActionsWithGivenServiceIdList(int serviceId)
         {
             var connectionString = Functions.GetConnectionString();
@@ -205,6 +249,10 @@ namespace BazyDanych
             return list;
         }
 
+        /// <summary>
+        /// Metoda uaktualniająca dane o czynności serwisowej
+        /// </summary>
+        /// <param name="serviceActionDto">Dane o czynności serwisowej do zaktualizowania</param>
         public static void UpdateServiceAction(ServiceActionDto serviceActionDto)
         {
             var connectionString = Functions.GetConnectionString();

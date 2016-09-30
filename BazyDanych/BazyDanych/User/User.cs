@@ -10,7 +10,7 @@ namespace BazyDanych
     /// <summary>
     /// Klasa przechowywująca informacje o użytkowniku
     /// </summary>
-    class User
+    public class User
     {
         /// <summary>
         /// ID użytkownika
